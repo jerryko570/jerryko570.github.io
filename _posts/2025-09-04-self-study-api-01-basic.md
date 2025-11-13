@@ -1,0 +1,198 @@
+---
+layout: post
+title: "[셀프스터디] API 딥다이브 (1) 이론 "
+date: 2025-09-04 00:00:00 +0900
+categories: [frontend, React]
+tags: [api, fetch, axios, async, json, http]
+image: /assets/img/thumbnail/self-study.png
+
+---
+
+## **⭐️목표⭐️**
+- API의 개념과 동작 원리 이해하기
+- **fetch / axios / async-await** 같은 비동기 통신 문법 익히기
+- HTTP 메서드 (`GET`, `POST`, `PUT`, `DELETE`)와 상태코드 정리하기
+> 레퍼런스: 
+[`fetch`](https://ko.javascript.info/fetch)
+[`axios`](https://axios-http.com/kr/docs/example)
+
+---
+
+## **1. API란? (Application Programming Interface)**
+> API는 클라이언트(브라우저)와 서버가 데이터를 주고받는 **약속된 통로**이다.
+- **클라이언트(Client) :** 데이터 요청(Request)
+- **서버(Server) :** 데이터를 응답(Response)
+- **API:** 이 둘을 이어주는 규칙(Interface)
+- **흐름:** `Request` ➡  `Client` ➡  `Server` ➡  `Response` 
+
+![API 흐름 예시 1](/assets/img/self-study/api.png)
+
+![API 흐름 예시 2](/assets/img/self-study/api-2.png)
+> 점원이 손님의 요구를 요리사에게 전달하듯이 API는 프로그램의 요청을 서버로 전달해 응답을 받아온다.
+
+---
+
+### **2. REST API**
+> REST는 Representational State Transfer의 약자이다.
+> REST는 클라이언트와 서버가 데이터의 상태를 주고받는 표준화된 방법이다.
+- 즉, 정해진 규칙에 따라 요청(Request)하고 응답(Response)하는 구조이다.
+
+| 메서드        | 의미     | 예시                       |
+| ---------- | ------ | ------------------------ |
+| **GET**    | 데이터 조회 | `/products` ➡ (상품 목록 보기)   |
+| **POST**   | 데이터 생성 | `/products` ➡ (새 상품 등록)   |
+| **PUT**    | 데이터 수정 | `/products/1` ➡ (상품 정보 수정) |
+| **DELETE** | 데이터 삭제 | `/products/1` ➡ (상품 삭제)    |
+
+<img src="/assets/img/self-study/api-3.gif" alt="API 흐름 예시" width="600px" style="border-radius: 12px; margin: 16px 0;">
+
+> 클라이언트 요청이 API를 거쳐 서버로 전달되고, 처리 결과를 응답으로 반환한다.
+> `Request` ➡ 서버! 이 데이터 좀 줘! <br />
+> `Response` ➡ OK! JSON으로 줄게!
+
+---
+
+### **3. 서버응답 (Server Response)**
+
+| 코드 | 의미 | 설명 |
+|------|------|------|
+| **200** | OK | 요청이 정상적으로 처리됨 (일반 성공 응답) |
+| **201** | Created | `POST` 요청으로 리소스가 성공적으로 생성됨 |
+| **400** | Bad Request | 잘못된 요청. 서버가 이해할 수 없음 |
+| **404** | Not Found | 요청한 리소스를 찾을 수 없음 |
+
+> 상태 코드는 클라이언트의 요청을 서버에서 어떻게 처리했는지 알려주는 응답 신호이다.
+
+---
+
+## **4. fetch() - 데이터를 요청하는 손**
+> `fetch()`는 브라우저 내장 함수로, 서버에 요청을 보내고 응답을 받아온다.
+- **클라이언트에서 서버로 다녀오는 함수**이다!
+
+---
+
+### **fetch() 작동 순서**
+
+| 단계 | 코드            | 설명            |
+| -- | ------------- | ------------- |
+| 1  | `fetch()`     | 서버에 요청을 보냄    |
+| 2  | `await res`   | 응답이 올 때까지 기다림 |
+| 3  | `res.ok`      | 응답이 정상인지 확인   |
+| 4  | `res.json()`  | 응답을 JS 객체로 변환 |
+| 5  | `return data` | 변환된 결과를 반환    |
+| 6  | `catch`       | 에러 발생 시 처리    |
+
+
+```js
+fetch("URL")
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+```
+
+| 구분     | 요청 URL                         | 결과 데이터 예시       |
+| ------ | ------------------------------ | --------------- |
+| 전체  | `/products`                    | 전체 상품 (예: 100개) |
+| 페이지 | `/products?page=1&pageSize=10` | 1페이지의 10개 상품만   |
+
+## **5. then() 체이닝**
+- **Promise**가 끝난 다음에 실행할 코드를 정하는 함수이다.
+즉, 서버 응답을 기다렸다가 처리할 때 사용하는 메서드이다.
+
+---
+
+## **6. async/await - 더 깔끔한 비동기 문법**
+- `async/await:` `.then`과 똑같은 동작을 한다.
+> `async:` 함수를 **비동기 함수**로 선언한다.  
+  (이 함수는 자동으로 `Promise`를 반환한다.) <br />
+> `await:` “이 줄이 끝날 때까지 잠깐 기다려줘”라는 의미로,  
+  응답이 올 때까지 코드 실행을 멈춰준다.
+
+```js
+async function getData() {
+  try {
+    const res = await fetch("URL");
+    const data = await res.json();
+    console.log(data);
+  } catch (err) {
+    console.error(err);
+  }
+}
+```
+
+## **7. fetch() vs async/await**
+![동기식 비동기식 로딩 타임 비교](/assets/img/self-study/api-4.jpg)
+> 위 그래프는 동기와 비동기의 실행 차이를 보여준다. <br />
+> `async/await`은 비동기지만 `await` 덕분에 **순서대로 실행**되는 것처럼 보인다.
+
+
+| 비교 항목    | `then() 체이닝`    | `async / await`         |
+| -------- | ---------------- | ----------------------- |
+| 문법       | 전통적인 Promise 문법  | 최신 비동기 문법 (ES2017)      |
+| 가독성      | 체인이 길면 복잡함       | 동기 코드처럼 깔끔              |
+| 에러 처리    | `.catch()` 따로 작성 | `try / catch` 한 블록
+| 반환값      | Promise 반환       | Promise 반환 (자동)         |
+| 실무 사용 비율 | 중간 (간단한 코드에만)    |  대부분 이 방식 사용           |
+
+## **8. axios - fetch() 보다 더 간단한 요청 도우미**
+> `axios`는 `fetch()`보다 간결하고, 에러 처리나 설정을 쉽게 해주는 **HTTP 요청 라이브러리**다.
+
+## 기본 사용법 
+```js
+import axios from "axios";
+
+axios
+  .get("url")
+  .then((res) => console.log(res.data))
+  .catch((err) => console.error("Axios error:", err));
+```
+
+| 항목         | `fetch()`       | `axios`                  |
+| ---------- | --------------- | ------------------------ |
+| **내장 여부**  | 브라우저 기본 제공      | 외부 설치 필요 (`npm i axios`) |
+| **응답 데이터** | `.json()` 변환 필요 | `res.data` 바로 사용         |
+| **에러 처리**  | `.ok` 직접 확인     | 자동 예외 처리                 |
+| **설정 관리**  | 옵션 직접 지정        | 헤더·타임아웃 자동               |
+| **실무 사용**  | 학습용에 적합         | 실무 표준                  |
+
+
+<br />
+
+💡 **학습정리**
+> **fetch()는 API에 요청을 보내고, Promise로 응답을 약속받은 뒤**
+`.then()` 또는 `async/await`으로 결과를 처리하고, `.catch()`나 `try/catch`로 오류를 대비하는 구조이다.
+
+```text
+[클라이언트] (내 코드)
+   │
+   │ fetch() ➡ API 요청
+   ▼
+[API 서버] ➡ JSON 응답
+   ▼
+.then() / await ➡ 응답 처리
+   ▼
+.json() ➡ JS 객체로 변환
+   ▼
+console.log() ➡ 데이터 출력
+
+```
+
+**복습!!**
+- **fetch()**로 서버에 요청 ➡ **await**으로 응답 대기 ➡ <br/> 
+**res.ok**로 확인 ➡ **res.json()**으로 데이터 변환
+➡ 에러는 **catch**로 에러 처리한다.”
+
+
+---
+
+- `API:`는 데이터 통로
+- `fetch():` 요청을 보내는 함수
+- `Promise:` 비동기 작업의 결과를 담는 특별한 객체
+- `.then():` Promise 완료 후 실행 메서드
+- `.json():` Promise가 성공 후 실행되는 메서드
+- `.catch():` Promise가 실패 시 실행되는 에러 처리기
+- `async/await:`비동기 코드를 동기처럼 깔끔하게 작성하는 최신 문법
+
+
+
+
