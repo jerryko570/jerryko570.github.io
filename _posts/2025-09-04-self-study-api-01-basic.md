@@ -2,7 +2,7 @@
 layout: post
 title: "[셀프스터디] API 딥다이브 (1) 이론 "
 date: 2025-09-04 00:00:00 +0900
-categories: [frontend, React]
+categories: [frontend, react]
 tags: [api, fetch, axios, async, json, http]
 image: /assets/img/thumbnail/self-study.png
 

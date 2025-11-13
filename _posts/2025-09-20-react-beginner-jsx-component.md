@@ -2,7 +2,7 @@
 layout: post
 title: "[React] 입문을 위한 기초 개념 정리 (1) JSX·Component"
 date: 2025-09-20 22:32:00 +0900
-categories: [frontend, React]
+categories: [frontend, react]
 tags: [react, jsx, component]
 image: https://velog.velcdn.com/images/henny/post/d3925f21-b23d-49a5-bbb9-1dc9087fe491/image.png
 ---
