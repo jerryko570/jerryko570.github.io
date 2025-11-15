@@ -14,7 +14,7 @@ timezone:
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Jerry's blog # the main title
+title: Jerry's blog # the main title 임
 
 tagline: 프론트앤드 공부하는 <br /> 앱디자이너 # it will display as the subtitle
 
