@@ -1,10 +1,11 @@
 ---
 layout: post
-title: "[JavaScript] 기초 문법 정리"
+title: "[JavaScript] 기초 문법"
 date: 2025-09-01 19:52:00 +0900
-categories: [frontend, javaScript]
+categories: [frontend, javascript]
 tags: [javascript, basic, variable, datatype, use-strict]
-image: https://joshua1988.github.io/images/posts/web/javascript/js.png
+series: "javascript"
+image: /assets/img/thumbnail/javascript.png
 ---
 
 ## **1. script 태그**

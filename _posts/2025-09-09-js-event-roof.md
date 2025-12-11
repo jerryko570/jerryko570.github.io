@@ -1,11 +1,11 @@
 ---
 layout: post
-title: "[셀프스터디] 이벤트 루프 딥다이브"
+title: "[JavaScript] 이벤트 루프"
 date: 2025-09-09 00:00:00 +0900
-categories: [frontend, javaScript]
+categories: [frontend, javascript]
 tags: [javascript, event-loop, async, microtask, callback]
-series: "셀프스터디"
-image: /assets/img/thumbnail/self-study.png
+series: "javascript"
+image: /assets/img/thumbnail/javascript.png
 ---
 
 ## **1. 이벤트 루프란?**

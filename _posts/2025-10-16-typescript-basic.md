@@ -2,9 +2,10 @@
 layout: post
 title: "[TypeScript] 기본 동작 원리 이해하기"
 date: 2025-10-16 22:02:00 +0900
-categories: [frontend, typeScript]
+categories: [frontend, typescript]
 tags: [typescript, transpile, compile, javascript, tsc, type-checking]
-image: https://images.velog.io/images/doodream/post/30a1865e-bfbf-4feb-8dfd-3122bda13845/ts%20%E1%84%8A%E1%85%A5%E1%86%B7%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF.png
+series: "typescript"
+image: /assets/img/thumbnail/typescript.png
 ---
 
 ## **1. TypeScript? 타입스크립트!**

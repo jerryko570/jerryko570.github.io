@@ -1,10 +1,11 @@
 ---
 layout: post
-title: "[셀프스터디] API 딥다이브 (2) 실전 - React에서 API 불러오기 (미니 프로젝트)"
+title: "[ToyProject] React에서 API 불러오기"
 date: 2025-09-05 00:00:00 +0900
 categories: [frontend, react, javascript]
 tags: [api, fetch, axios, async, json, http]
-image: /assets/img/thumbnail/self-study.png
+series: "toyproject"
+image: /assets/img/thumbnail/toy-project.png
 ---
 
 ## **⭐️목표⭐️**

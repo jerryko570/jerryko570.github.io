@@ -1,10 +1,11 @@
 ---
 layout: post
-title: "[JavaScript] 기초 - 구조분해 할당"
+title: "[JavaScript] 구조분해 할당"
 date: 2025-09-03 00:00:00 +0900
 categories: [frontend, javascript]
 tags: [javascript, basic, destructuring, array, object]
-image: https://joshua1988.github.io/images/posts/web/javascript/js.png
+series: "javascript"
+image: /assets/img/thumbnail/javascript.png
 ---
 
 ## **1.구조분해 할당 (Destructuring)**

@@ -2,9 +2,10 @@
 layout: post
 title: "[JavaScript] 얕은 복사와 깊은 복사의 차이"
 date: 2025-09-13 15:11:00 +0900
-categories: [frontend, javaScript]
+categories: [frontend, javascript]
 tags: [javascript, vshallow copy, deep copy, object, reference]
-image: https://joshua1988.github.io/images/posts/web/javascript/js.png
+series: "javascript"
+image: /assets/img/thumbnail/javascript.png
 ---
 
 ## **1. 얕은 복사 (Shallow Copy)**

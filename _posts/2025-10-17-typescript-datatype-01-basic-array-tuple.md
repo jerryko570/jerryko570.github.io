@@ -2,9 +2,10 @@
 layout: post
 title: "[TypeScript] 데이터 타입 (1) 기본과 배열·튜플"
 date: 2025-10-17 00:00:00 +0900
-categories: [frontend, typeScript]
+categories: [frontend, typescript]
 tags: [typescript, basic, any, unknown, void, never, array, tuple]
-image: https://images.velog.io/images/doodream/post/30a1865e-bfbf-4feb-8dfd-3122bda13845/ts%20%E1%84%8A%E1%85%A5%E1%86%B7%E1%84%82%E1%85%A6%E1%84%8B%E1%85%B5%E1%86%AF.png
+series: "typescript"
+image: /assets/img/thumbnail/typescript.png
 ---
 
 ## **1. 기본 타입 (Basic Types)**

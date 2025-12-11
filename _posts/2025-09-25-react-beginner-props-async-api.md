@@ -4,7 +4,8 @@ title: "[React] 입문을 위한 기초 개념 정리 (3) props비동기 데이�
 date: 2025-09-25 14:11:00 +0900
 categories: [frontend, react]
 tags: [react, useState, props, async, fetch, api, axios]
-image: https://velog.velcdn.com/images/henny/post/d3925f21-b23d-49a5-bbb9-1dc9087fe491/image.png
+series: "react"
+image: /assets/img/thumbnail/react.png
 ---
 
 ## **1. props (Property)**

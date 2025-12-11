@@ -72,3 +72,34 @@ JS 문법 안에서 `className`에 Tailwind를 사용하는 게 처음엔 어색
 | 세로 중앙  | `absolute top-1/2 -translate-y-1/2`                           | 수직 중앙     |
 | 가로 중앙  | `absolute left-1/2 -translate-x-1/2`                          | 수평 중앙     |
 | 정중앙    | `absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2` | 완전 중앙     |
+
+
+```bash
+src/
+ └ app/globals.css ← 여기서 tailwind+token 묶어서 관리
+ └ styles/theme.css ← 컬러/폰트/토큰
+ └ styles/base.css  ← reset/base, body 속성 + 폰트 프리셋
+ └ styles/components.css ← 버튼 등 UI 컴포넌트
+ └ styles/utilities.css ← 간단한 헬퍼 클래스들
+
+
+| 요소                             | v4 방식                    |
+| ------------------------------ | ------------------------ |
+| Tailwind import                | `@import "tailwindcss";` |
+| Token 정의                       | CSS 변수(`:root`)로 사용      |
+| Theme Override                 | `@theme` 블록 사용           |
+| Base, Components, Utilities 확장 | `@layer` 사용              |
+| config.js 없음(선택사항)             | → CSS에서 즉시 설정 가능         |
+
+```
+## 컴포넌트 제작
+
+## @layer base 와 root의 차이
+- :root는 css변수를 정의할 때 사용 (전역에서 사용할 값들을 저장)
+- @layer base는 html 요소에 스타일을 적용할 때 사용 (한파일에서 관리하면 :root를 해야함)
+
+## 처음에는 component.css에서 각각의 컴포넌트화를 했는데..
+- tailwind스럽게 리팩토링해서 자율적인 구조로 옯기고자 함 @apply 기반으로 압축하고 TS컴포넌트로 역할 분리
+- 현재는 스타일 대부분을 CSS에서 직접 정의해서 토큰 유틸리티 확장성이 떨어지고 클래스 수가 늘어날 수록 유지보수가 어려워짐을 느낌
+- CSS는 Base Style과 Token만 유지
+- 사이즈, variant, state는 props로 리엑트 컴포넌트에서 관리하도록 함

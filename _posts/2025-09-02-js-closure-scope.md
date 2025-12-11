@@ -1,10 +1,11 @@
 ---
 layout: post
-title: "[JavaScript] 기초 - 클로저와 스코프"
+title: "[JavaScript] 클로저와 스코프"
 date: 2025-09-02 00:00:00 +0900
-categories: [frontend, javaScript]
+categories: [frontend, javascript]
 tags: [javascript, basic, scope, closure, variable]
-image: https://joshua1988.github.io/images/posts/web/javascript/js.png
+series: "javascript"
+image: /assets/img/thumbnail/javascript.png
 ---
 
 ## **1. 스코프(Scope)**

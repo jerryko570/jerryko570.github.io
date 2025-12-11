@@ -4,7 +4,8 @@ title: "[React] 입문을 위한 기초 개념 정리 (2) useState·useEffect"
 date: 2025-09-24 22:32:00 +0900
 categories: [frontend, react]
 tags: [react, useState, useEffect, EventHook]
-image: https://velog.velcdn.com/images/henny/post/d3925f21-b23d-49a5-bbb9-1dc9087fe491/image.png
+series: "react"
+image: /assets/img/thumbnail/react.png
 ---
 
 ## **1. useState**
