@@ -148,12 +148,6 @@ function PostList() {
 ```
 {% endraw %}
 
----
-
-<img src="https://i.pinimg.com/1200x/81/f0/ae/81f0aeac69ffe2f7f493d8c48eb6c073.jpg" width="500" />
-
----
-
 ## **3. EventHook**
 
 {% raw %}
