@@ -1,6 +1,6 @@
-/* === Dracula Theme === */
+/* === Dracula Theme (Safe Version) === */
 
-/* 기본 코드블록 스타일 */
+/* 코드블록 컨테이너만 타겟 */
 div.highlighter-rouge,
 figure.highlight {
   margin: 2rem 0 !important;
@@ -8,18 +8,16 @@ figure.highlight {
   background: transparent !important;
 }
 
-/* 가상 요소 제거 */
+/* 코드블록의 가상 요소만 제거 */
 div.highlighter-rouge::before,
 div.highlighter-rouge::after,
-div.highlight::before,
-div.highlight::after,
 figure.highlight::before,
 figure.highlight::after {
   display: none !important;
   content: none !important;
 }
 
-/* --- 헤더 영역 --- */
+/* --- 코드 헤더 --- */
 .code-header {
   height: 48px;
   background: linear-gradient(180deg, #21222c 0%, #191a21 100%);
@@ -51,132 +49,165 @@ figure.highlight::after {
   z-index: 10 !important;
 }
 
-/* --- 코드블록 --- */
-div.highlight,
+/* --- 코드블록 컨테이너 --- */
+div.highlighter-rouge div.highlight,
 figure.highlight > pre {
-  background: #282a36 !important; /* Dracula 배경 */
+  background: #282a36 !important;
   border-radius: 0 0 16px 16px !important;
   border: 1px solid rgba(189, 147, 249, 0.1);
   overflow: hidden !important;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
-/* 코드 영역 */
-.highlight pre,
-pre.highlight {
+/* --- 코드 영역 --- */
+div.highlighter-rouge .highlight pre,
+figure.highlight pre.highlight {
   background: transparent !important;
-  color: #f8f8f2 !important; /* Dracula 기본 텍스트 */
+  color: #f8f8f2 !important;
   padding: 24px !important;
   margin: 0 !important;
-  font-size: 13px;
-  line-height: 1.5;
+  font-size: 14px;
+  line-height: 1.6;
   font-family: 'D2Coding', 'Fira Code', 'JetBrains Mono', 'Consolas', monospace;
 }
 
+/* 코드 텍스트 */
+div.highlighter-rouge .highlight pre code,
+figure.highlight pre.highlight code {
+  background: transparent !important;
+  color: inherit !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
 /* 라인 넘버 */
-.highlight .lineno {
+div.highlighter-rouge .highlight .lineno,
+figure.highlight .lineno {
   color: #6272a4 !important;
   opacity: 0.7;
-  padding-right: 0.3rem;
+  padding-right: 0.8rem;
   user-select: none;
 }
 
 /* === Dracula Syntax Highlighting === */
 
-/* Keywords (const, let, var, return, async, await, function) */
-.highlight .k,
-.highlight .kd,
-.highlight .kr,
-.highlight .kn {
-  color: #ff79c6 !important; /* 핑크 */
+/* Keywords */
+div.highlighter-rouge .highlight .k,
+div.highlighter-rouge .highlight .kd,
+div.highlighter-rouge .highlight .kr,
+div.highlighter-rouge .highlight .kn,
+figure.highlight .k,
+figure.highlight .kd,
+figure.highlight .kr,
+figure.highlight .kn {
+  color: #ff79c6 !important;
   font-weight: 600;
 }
 
 /* Function names */
-.highlight .nf,
-.highlight .fm {
-  color: #50fa7b !important; /* 민트 그린 */
+div.highlighter-rouge .highlight .nf,
+div.highlighter-rouge .highlight .fm,
+figure.highlight .nf,
+figure.highlight .fm {
+  color: #50fa7b !important;
   font-weight: 600;
 }
 
-/* Variables & Identifiers */
-.highlight .n,
-.highlight .nx {
-  color: #f8f8f2 !important; /* 흰색 */
+/* Variables */
+div.highlighter-rouge .highlight .n,
+div.highlighter-rouge .highlight .nx,
+figure.highlight .n,
+figure.highlight .nx {
+  color: #f8f8f2 !important;
 }
 
 /* Properties */
-.highlight .na {
-  color: #50fa7b !important; /* 민트 그린 */
+div.highlighter-rouge .highlight .na,
+figure.highlight .na {
+  color: #50fa7b !important;
 }
 
 /* Strings */
-.highlight .s,
-.highlight .s1,
-.highlight .s2 {
-  color: #f1fa8c !important; /* 노랑 */
+div.highlighter-rouge .highlight .s,
+div.highlighter-rouge .highlight .s1,
+div.highlighter-rouge .highlight .s2,
+figure.highlight .s,
+figure.highlight .s1,
+figure.highlight .s2 {
+  color: #f1fa8c !important;
 }
 
 /* Numbers */
-.highlight .mi,
-.highlight .mf,
-.highlight .il {
-  color: #bd93f9 !important; /* 보라 */
+div.highlighter-rouge .highlight .mi,
+div.highlighter-rouge .highlight .mf,
+div.highlighter-rouge .highlight .il,
+figure.highlight .mi,
+figure.highlight .mf,
+figure.highlight .il {
+  color: #bd93f9 !important;
 }
 
-/* Operators (=, =>, +, -, etc) */
-.highlight .o {
-  color: #ff79c6 !important; /* 핑크 */
+/* Operators */
+div.highlighter-rouge .highlight .o,
+figure.highlight .o {
+  color: #ff79c6 !important;
 }
 
-/* Punctuation ({}, [], (), ;, :, ,) */
-.highlight .p {
+/* Punctuation */
+div.highlighter-rouge .highlight .p,
+figure.highlight .p {
   color: #f8f8f2 !important;
 }
 
 /* Classes */
-.highlight .nc,
-.highlight .nn {
-  color: #8be9fd !important; /* 시안 */
+div.highlighter-rouge .highlight .nc,
+div.highlighter-rouge .highlight .nn,
+figure.highlight .nc,
+figure.highlight .nn {
+  color: #8be9fd !important;
   font-weight: 600;
 }
 
-/* Constants (true, false, null, undefined) */
-.highlight .kc,
-.highlight .no {
-  color: #bd93f9 !important; /* 보라 */
+/* Constants */
+div.highlighter-rouge .highlight .kc,
+div.highlighter-rouge .highlight .no,
+figure.highlight .kc,
+figure.highlight .no {
+  color: #bd93f9 !important;
   font-weight: 600;
 }
 
 /* Comments */
-.highlight .c,
-.highlight .c1,
-.highlight .cm,
-.highlight .cp {
-  color: #6272a4 !important; /* 회색 파랑 */
+div.highlighter-rouge .highlight .c,
+div.highlighter-rouge .highlight .c1,
+div.highlighter-rouge .highlight .cm,
+div.highlighter-rouge .highlight .cp,
+figure.highlight .c,
+figure.highlight .c1,
+figure.highlight .cm,
+figure.highlight .cp {
+  color: #6272a4 !important;
   font-style: italic;
 }
 
-/* HTML/XML Tags */
-.highlight .nt {
-  color: #ff79c6 !important; /* 핑크 */
+/* HTML Tags */
+div.highlighter-rouge .highlight .nt,
+figure.highlight .nt {
+  color: #ff79c6 !important;
   font-weight: 600;
-}
-
-/* Attribute Names */
-.highlight .na {
-  color: #50fa7b !important; /* 민트 그린 */
 }
 
 /* Types */
-.highlight .kt {
-  color: #8be9fd !important; /* 시안 */
+div.highlighter-rouge .highlight .kt,
+figure.highlight .kt {
+  color: #8be9fd !important;
   font-weight: 600;
 }
 
-/* Built-in functions */
-.highlight .nb {
-  color: #8be9fd !important; /* 시안 */
+/* Built-in */
+div.highlighter-rouge .highlight .nb,
+figure.highlight .nb {
+  color: #8be9fd !important;
 }
 
 /* === Hover Effect === */
@@ -194,34 +225,52 @@ div.highlighter-rouge:hover div.highlight {
 }
 
 /* === Scrollbar === */
-.highlight pre::-webkit-scrollbar {
+div.highlighter-rouge .highlight pre::-webkit-scrollbar,
+figure.highlight pre::-webkit-scrollbar {
   height: 10px;
 }
 
-.highlight pre::-webkit-scrollbar-track {
+div.highlighter-rouge .highlight pre::-webkit-scrollbar-track,
+figure.highlight pre::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.03);
   border-radius: 10px;
 }
 
-.highlight pre::-webkit-scrollbar-thumb {
+div.highlighter-rouge .highlight pre::-webkit-scrollbar-thumb,
+figure.highlight pre::-webkit-scrollbar-thumb {
   background: rgba(189, 147, 249, 0.3);
   border-radius: 10px;
 }
 
-.highlight pre::-webkit-scrollbar-thumb:hover {
+div.highlighter-rouge .highlight pre::-webkit-scrollbar-thumb:hover,
+figure.highlight pre::-webkit-scrollbar-thumb:hover {
   background: rgba(189, 147, 249, 0.5);
 }
 
-/* === Inline Code === */
+/* === 인라인 코드 (본문 내) === */
 p code,
 li code,
-td code {
-  background: rgba(255, 121, 198, 0.15) !important; /* 핑크 배경 */
-  color: #ff79c6 !important; /* 핑크 */
+td code,
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+  background: rgba(255, 121, 198, 0.15) !important;
+  color: #ff79c6 !important;
   padding: 3px 7px !important;
   border-radius: 5px;
-  font-size: 0.3em;
+  font-size: 0.9em;
   font-weight: 500;
   border: 1px solid rgba(255, 121, 198, 0.25);
   font-family: 'D2Coding', 'Fira Code', 'Consolas', monospace;
+}
+
+/* 코드블록 내부의 code는 제외 */
+div.highlighter-rouge code,
+figure.highlight code {
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
 }
