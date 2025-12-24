@@ -274,13 +274,13 @@ h3 code,
 h4 code,
 h5 code,
 h6 code {
-  background: rgba(255, 121, 198, 0.15) !important;
-  color: #ff79c6 !important;
-  padding: 3px 7px !important;
+  background: rgba(30, 58, 138, 0.12) !important;
+  color: #1e3a8a !important;
+  border: 1px solid rgba(30, 58, 138, 0.25);
+  padding: 4px 8px !important;
   border-radius: 5px;
   font-size: 0.9em;
-  font-weight: 500;
-  border: 1px solid rgba(255, 121, 198, 0.25);
+  font-weight: 700;
   font-family: 'D2Coding', 'Fira Code', 'Consolas', monospace;
 }
 
