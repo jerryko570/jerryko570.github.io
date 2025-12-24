@@ -81,7 +81,7 @@ div.highlighter-rouge .highlight pre,
 figure.highlight pre.highlight {
   background: transparent !important;
   color: #f8f8f2 !important;
-  padding: 24px !important;
+  padding: 24px 1px !important;
   margin: 0 !important;
   font-size: 14px;
   line-height: 1.6;
@@ -290,4 +290,26 @@ figure.highlight code {
   background: transparent !important;
   padding: 0 !important;
   border: none !important;
+}
+
+/* String Delimiters (따옴표) */
+div.highlighter-rouge .highlight .dl,
+figure.highlight .dl {
+  color: #f1fa8c !important;
+}
+
+@media (max-width: 768px) {
+  div.highlighter-rouge,
+  div.highlighter-rouge div.highlight,
+  figure.highlight > pre {
+    border-radius: 16px !important;
+  }
+
+  .code-header {
+    border-radius: 16px 16px 0 0 !important;
+  }
+
+  div.highlighter-rouge div.highlight {
+    border-radius: 0 0 16px 16px !important;
+  }
 }
