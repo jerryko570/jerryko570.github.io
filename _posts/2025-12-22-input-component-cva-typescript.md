@@ -1,0 +1,181 @@
+---
+layout: post
+title: "[self-study] TextInput 컴포넌트와 forwardRef, 그리고 경계 선택하기"
+date: 2025-12-22 00:00:00 +0900
+categories: [frontend]
+tags: [react, typeScript, cva, component, design-system]
+image: /assets/img/thumbnail/self-study.png
+---
+
+## **1️⃣ 작업했던 TextInput이 복잡해진 이유**
+
+TextInput은 처음에는 가장 단순한 컴포넌트처럼 보였다.
+실제로도 초반에는 `placeholder` 하나만 있어도 충분했고, 필요한 옵션이 생길 때마다 `props`를 하나씩 추가하는 방식으로 빠르게 구현할 수 있었다.
+
+문제는 프로젝트가 커지기 시작하면서 부터였다.
+아이콘, 버튼, 에러 메시지, 상태 값들이 계속 붙었고, 어느 순간 TextInput은 입력과 관련된 거의 모든 역할을 혼자서 맡고 있었다.
+
+```tsx
+export default function TextInput({
+label,
+size,
+status = "default",
+icon = true,
+button = true,
+placeholder,
+value,
+clearable,
+errorMessage,
+onChange,
+aria,
+}: TextInputProps)
+```
+
+처음에는 옵션이 많아졌네 정도로만 느껴졌지만, 심화 프로젝트를 진행하면서 생각이 조금 달라졌다. 기능을 더 잘 만드는 것 보다 이 컴포넌트가 어디까지 책임지는게 맞는지를 먼저 고민해야겠다는 생각이 들었다. 그래서 이 질문에서 출발하게 되었다.
+
+> 💡 TextInput은 어디까지 책임지는 게 맞을까?
+
+## **2️⃣ 스타일 책임 분리해보기**
+
+TextInput이 복잡해진 이유를 하나씩 뜯어보니, 가장 먼저 눈에 띈 건 스타일이었다. `size, status, disabled` 같은 UI 상태들이 조건문 형태로 컴포넌트 내부에 흩어져 있었고, 스타일 규칙이 늘어날수록 코드도 함께 무거워지고 있었다.
+
+그래서 가장 먼저 한 선택은 스타일 책임을 컴포넌트 밖으로 꺼내는 것이었다.
+
+---
+
+### **👉🏻 cva로 스타일 규칙 분리**
+`cva`를 도입하면서 TextInput 내부에서 상태에 따라 클래스를 직접 계산하지 않게 되었다.
+대신 **이 상태면 이 스타일**이라는 규칙을 variant로 정리해 한 곳에 모았다.
+
+```tsx
+export const textInputStyle = cva(
+  ['inline-flex items-center w-full', 'rounded-lg border px-4'],
+  {
+    variants: {
+      size: {
+        sm: 'h-9 text-sm',
+        md: 'h-13.5 text-base',
+      },
+      state: {
+        default: 'border-gray-200 hover:border-gray-500',
+        error: 'border-red-500',
+      },
+    },
+    defaultVariants: {
+      size: 'md',
+      state: 'default',
+    },
+  }
+);
+```
+
+
+이후 TextInput은 스타일을 직접 판단하는 컴포넌트가 아니라, 필요한 상태를 전달해 **스타일을 선택만 하는 컴포넌트**가 되었다. 스타일은 정리됐지만 아직 구조적인 문제는 그.대.로이다.
+
+---
+
+## **3️⃣ Input이 아니라 Field로 보기**
+cva로 스타일은 분리했지만, 여전히 하나의 컴포넌트가 `label`, `input`, `message`를 모두 책임지고 있었다.
+스타일을 분리해도 TextInput이 맡고 있는 역할의 범위는 달라지지 않은 상태이다.
+
+여러 사례를 찾아보며 고민하다 보니, Input을 하나의 요소로 보기보다는 **입력필드(Field)** 라는 단위로 바라보는게 더 자연스럽겠다는 결론을 내리게 되었다. Input은 필드의 일부이고 `label, error message`도 같은 맥락 안에 있어야 한다는 생각이었다. 
+
+---
+
+## **4️⃣ forwardRef + Compound 도입해서 경계를 연습해보기**
+이 구조에서 `forwardRef`와 `Compound` 패턴을 선택한 이유는 지금 당장 꼭 필요해서라기보다는,
+경계를 직접 나눠보는 연습에 가까웠다.
+
+`**forwardRef**` 부모가 input에 직접 접근해서 focus 같은 행동을 제어할 수 있게 <br/>
+`**Compound**` label, input, message를 하나의 Field로 묶어서 의미 단위로 관리
+
+패턴을 쓰는 게 목적이 아니라, 경계를 어디에 둘지 감을 잡고 싶었다.
+
+---
+
+## **5️⃣ TextField 구조**
+그 결과, TextInput 대신 TextField라는 구조로 나누게 되었다.
+기준은 단순했다. 역할별로 나누기.
+
+```shell
+TextField/
+ ├─ TextField (id, status)
+ ├─ Label          
+ ├─ Input (+ ref)
+ └─ Message (에러 메시지)
+ ```
+
+## **6️⃣ TextField는 상황만 만든다**
+TextField는 값을 직접 관리하지 않는다. `id`를 생성해 label과 input을 연결하고, 현재 상태`status, error`만 하위 컴포넌트에 전달한다. <br/>
+
+👉🏻 값도, 이벤트도 관리하지 않는다. 연결만 해주는 역할.
+
+```tsx
+const TextFieldContext = createContext(null);
+
+export function TextField({ state = 'default', children }) {
+  const id = useId();
+
+  return (
+    <TextFieldContext.Provider value={{ id, state }}>
+      {children}
+    </TextFieldContext.Provider>
+  );
+}
+```
+
+## **7️⃣ Label과 Input은 각자 역할만 한다**
+Label은 텍스트를 보여주고 input과 연결하는 역할만 한다.
+Input은 입력을 담당하고, 필요하면 외부에서 focus를 제어할 수 있도록 `ref`를 전달받는다.
+
+```tsx
+// (Label) ➡ id로 input과 연결하고 클릭하면 input에 포커스됨
+export function TextFieldLabel({ children }) {
+  const { id } = useContext(TextFieldContext);
+  return <label htmlFor={id}>{children}</label>;
+}
+```
+
+```tsx
+// (Input) ➡  입력 담당 + ref로 외부에서 포커스 제어 가능
+export const TextFieldInput = forwardRef((props, ref) => {
+  const { id, state } = useContext(TextFieldContext);
+
+  return (
+    <input
+      id={id}
+      ref={ref}
+      aria-invalid={state === 'error'}
+      {...props}
+    />
+  );
+});
+```
+
+## **8️⃣ 사용하는 쪽**
+사용하는 쪽에서는 구조가 자연스럽게 드러난다. 접근성은 자동으로 챙겨지고, 필요하면 focus 같은 행동도 제어할 수 있다.
+
+```tsx
+<TextField state="error">
+  <Label>Email</Label>
+  <Input ref={inputRef} />
+  <Message>이메일을 입력해주세요</Message>
+</TextField>
+```
+
+## **9️⃣ 결론**
+이번 설계의 목적은 TextInput을 잘게 쪼개는 데 있지 않았다. Input과 Field의 경계를 어디에 둘지 직접 판단해보는 과정이었다.
+
+`cva`는 스타일 책임을 분리해줬고, Compound 패턴은 구조와 의미를 묶어줬으며,
+`forwardRef`는 input의 행동을 외부에서 제어할 수 있게 해주었다.
+
+결국 이 작업은 컴포넌트를 잘 만드는 연습이 아니라, 무엇을 어디까지 책임지게 할지 선택하는 연습에 가까웠다.
+TextInput을 분리하면서 컴포넌트 자체보다 책임의 경계를 결정하는 감각이 더 중요하다는 점을 다시 느꼈다.
+
+---
+
+## 마지막으로, UX 디자인 관점에서 이 작업을 통해 배운 점**
+이번 작업을 통해 UX에서도 중요한 것은 개별 요소가 아니라 같은 맥락(Context)을 공유하는 구조라는 점을 다시 확인했다.
+
+각 요소가 자기 역할에만 집중하도록 구조화하면 label, input, 상태, 피드백이 하나의 맥락 안에서 자연스럽게 연결되고,
+그 결과 구현 방식에 따라 UX가 달라질 가능성은 줄어들고 사용자 경험은 더 안정적이고 일관되게 유지될 수 있다는 결론을 내리게 되었다.
