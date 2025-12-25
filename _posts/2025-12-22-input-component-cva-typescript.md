@@ -92,6 +92,7 @@ export const textInputStyle = cva(
 스타일만 분리됐을 뿐, TextInput이 맡고 있는 역할의 범위는 크게 달라지지 않은 상태였다.
 
 여러 사례를 찾아보면서 Input을 하나의 요소로 보는 것보다, **입력 필드(Field)**라는 단위로 바라보는 편이 더 자연스러웠다. 사용자에게 입력은 input 하나가 아니라 label과 에러 메시지가 함께 묶인 하나의 맥락(Context)이기 때문이다. 그래서 Input은 필드의 일부로 두고, label과 message를 같은 맥락 안에서 함께 다루기로 했다.
+
 ---
 
 ## **4️⃣ forwardRef와 Compound 패턴으로 역할 경계 나누기**
