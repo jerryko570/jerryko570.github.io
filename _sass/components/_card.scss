@@ -1,0 +1,20 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin: 16px 0 24px;
+}
+
+.card {
+  background: #fff1c2;
+  border-radius: 14px;
+  padding: 14px;
+  font-weight: 600;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.card[data-type='benefit'] {
+  background: #ffe9e9;
+  position: relative;
+}

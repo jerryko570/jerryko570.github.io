@@ -16,19 +16,33 @@ series: javascript
 image: /assets/img/thumbnail/javascript.png
 ---
 
-## **1. script 태그**
-- `<script>` 태그는 브라우저에게 **“여기 자바스크립트 코드 있음!”** 하고 알려줌  
-- `src="main.js"` 를 사용하면 **외부 파일을 불러올 수 있음**
+> **JavaScript · Basic Syntax**
 
-### 💡 외부 스크립트를 사용하는 이유
-- 코드 정리 깔끔! (HTML과 JS를 분리해서 보기 쉬움)  
-- 재사용 가능! (같은 스크립트를 여러 페이지에서 사용 가능)  
-- 유지보수 편함! (HTML 수정 없이 JS만 수정 가능)  
-- 로딩 속도 향상! (브라우저 캐시에 저장되어 빠르게 실행)
+JavaScript를 처음 배울 때 가장 먼저 마주치는 개념은 `script 태그/use strict/변수`, 그리고 `자료형`인 것 같다. 이 글에서는 **브라우저가 JavaScript를 어떻게 읽고 실행하는지**를 시작으로,  변수 선언 방식과 자료형 개념을 **실행 흐름 기준**으로 하나씩 정리한다.
+문법을 외우기보다는 👉🏻 **왜 이렇게 써야 하는지**를 이해하는 데 초점을 맞춘 기초 정리 노트다.
 
-### 🧠 언제 써야 할까?
-- 코드가 짧고 한 페이지만 사용할 때 → HTML 안에 `<script>` 직접 작성  
-- 코드가 많거나 여러 페이지에서 재사용할 때 → 외부 파일로 분리  
+---
+
+## **1️⃣ script 태그**
+JavaScript 코드는 브라우저가 자동으로 실행하지 않는다. `<script>` 태그는 브라우저에게 **'여기부터 JavaScript 코드야'** 라고 알려주는 역할을 한다.
+
+#### **🤔 외부 스크립트를 사용하는 이유**
+코드가 많아질수록 JavaScript를 HTML 안에 계속 적는 것은 관리가 어렵기 때문에 JavaScript 코드는 **외부 파일로 분리**한다.
+
+<div class="card-grid">
+  <div class="card">HTML과 JavaScript 분리</div>
+  <div class="card">재사용 가능</div>
+  <div class="card">유지보수 쉬움</div>
+  <div class="card">성능 개선</div>
+</div>
+
+> 이런 이유로 실무에서는 JavaScript 코드를 HTML 내부에 직접 작성하기보다는 외부 파일로 분리하는 방식이 일반적으로 사용된다.
+
+---
+
+#### **🧠 언제 어떤 방식을 쓰면 좋을까?**
+- 코드가 짧고 한 페이지만 사용하는 경우 ➡ HTML 안에 `<script>` 직접 작성  
+- 코드가 많거나 여러 페이지에서 사용하는 경우 ➡ JavaScript 파일을 외부로 분리
 
 ```html
 <!-- HTML 안에서 직접 자바스크립트 코드 작성 -->
@@ -37,101 +51,117 @@ image: /assets/img/thumbnail/javascript.png
 </script>
 
 <!-- 외부 파일을 연결할 때 -->
-<script src="main.js"></script>
+<script src='main.js'></script>
 ```
 
-##  **2. 코드 구조 (statement)**
+---
 
-- 코드문은 명령, 세미콜론은 구분, 주석은 설명!
+## **2️⃣ 코드 구조 (statement)**
+JavaScript는 **위에서 아래로 한 줄씩 실행**된다. 이 때 실행되는 최소 단위를 **문(Statement)**이라고 한다.
 
 ```javascript
-
 // 코드문 (statement)
-let name = "jerry";   
+let name = 'jerry';   
 
 // 세미콜론 (;)
 console.log(name);   
 
 // 주석 (Comment)
-// 사람을 위한 설명, 컴퓨터는 무시함
+사람을 위한 설명이며, 실행에는 영향을 주지 않는다.
 ```
 
-## 3.  **엄격 모드 (use strict)**
-- `use strict`는 자바스크립트를 더 안전하고 정확하게 실행하도록 만듦
-- 한 줄로 스크립트 전체에 적용되며, 항상 코드 맨 위에 배치해야 함
-- 함수 내부에 쓰면 해당 함수에만 적용됨
-- 한 번 켜면 끌 수 없음
+---
+
+## 3️⃣ **엄격 모드(use strict)**
+**use strict**는 JavaScript를 더 안전하고 정확하게 실행하도록 만드는 모드이다.
+<div class="card-grid">
+  <div class="card">스크립트 최상단에 선언</div>
+  <div class="card">함수 단위 제한 적용</div>
+  <div class="card">한번 켜면 해제 불가</div>
+  <div class="card" data-type="benefit">선언·문법 오류 방지</div>
+</div>
+
 
 ```javascript
 'use strict';
-x = 10; // ❌ 오류! 변수 선언 안 함
-let y = 10; // ✔️ 올바른 선언
+x = 10; // ❎ 오류! 변수 선언 안 함
+let y = 10; // ✅ 올바른 선언
 ```
+---
 
-## 4.  **변수 (variable)**
-- 데이터를 저장하는 이름 붙은 상자
-- 값 변경 가능
+## 4️⃣ **변수(variable)**
+변수는 **값을 저장하기 위한 이름이 붙은 공간**이고, 프로그램 실행 중에 **값을 바꿀 수 있다는 점**이 가장 큰 특징이다.
 
-- **규칙은?**
-    - `문자, 숫자, _, $`만 사용가능
-    - 숫자로 시작 불가
-    - 대소문자 구분
-    - 예약어 사용금지 (`let, return, class`)
+#### **🔍 변수 이름 규칙**
+`문자/숫자/_언더바/$만 사용가능` `숫자로 시작 불가` `대소문자 구분` `예약어 사용금지(let/return/class)`
 
 ```javascript
-let name = "jerry";   // 변수 선언
-name = "bango";       // 값 변경 가능
+let name = 'jerry'; // 변수 선언
+name = 'bango'; // 값 변경 가능
 
 let age = 20;
-let user_name = "poby"; // _ 사용 가능
-let $price = 1000;       // $ 사용 가능
+let user_name = 'poby'; // _ 사용 가능
+let $price = 1000; // $ 사용 가능
 ```
 
-## 5.  **상수 (constant)**
-- 한 번 정하면 바꿀 수 없는 값 (고정값)
-- 대문자 상수는 변하지 않는 설정값 (API, 색상 등)에 사용
-- 이름은 의미 있고 읽기 쉽게 camelCase 권장
+---
+
+## 5️⃣ **상수(constant)**
+상수는 **한번 값을 정하면 다시 바꿀 수 없는 변수이다.** 변하지 않아야 하는 값이나 의미가 고정된 설정값을 표현할 때 사용한다.
+
+<div class="card-grid"> <div class="card">값 재할당 불가</div> <div class="card">설정·기준값에 적합</div> <div class="card">의미가 변하지 않는 값</div> </div>
 
 ```javascript
-const PI = 3.14; // 대문자 상수 (변하지 않는 값)
-const apiUrl = "https://api.example.com"; // 의미 있는 이름
-const mainColor = "#FF6600"; // 색상 코드
+// ❎ 재할당 불가한 상수
+const PI = 3.14;
+PI = 3.14159; // 오류! const는 값 변경 불가
 
-// ❌ 오류!
-const PI = 3.14159;  //const는 값 변경 불가
+// ✅ 프로젝트 전반에서 공유되는 설정값
+const apiUrl = 'https://api.example.com';
+const mainColor = '#FF6600';
 ```
 
-## 6.  **자료형 (data types)**
-- 값의 종류 (형태)를 자료형이라 함
-- 같은 변수에 어떤 값이든 저장할 수 있고, 언제든 자료형이 바뀔 수 있음
-- 자바스크립트는 유연한 (동적)타입 언어
+---
 
+## 6️⃣ **자료형(data types)**
+자료형은 값이 어떤 성격을 가지고 있는지를 나타내는 분류이고, JavaScript에서는 변수에 값을 담는 순간 자료형이 자동으로 결정되며, 같은 변수라도 다른 자료형의 값을 다시 담을 수 있다.
+
+<div class="card-grid"> <div class="card">값에 따라 자동 결정</div> <div class="card">선언 시 타입 지정 없음</div> <div class="card">실행 중 타입 변경 가능</div> </div>
+
+> 이런 특성 때문에 JavaScript는 **동적 타입 언어(Dynamic Typing Language)**라고 불린다.
+
+---
 
 | 자료형           | 설명                                 | 예시                                 |
 | ------------- | ---------------------------------- | ---------------------------------- |
-| **number**    | 숫자형 — 정수, 소수, `Infinity`, `NaN` 포함 | `let a = 10;`                      |
+| **number**    | 숫자형 — 정수, 소수, `Infinity` `NaN` 포함 | `let a = 10;`                      |
 | **bigint**    | 아주 큰 정수 (끝에 `n` 붙임)                | `let big = 12345678901234567890n;` |
-| **string**    | 문자형 — `"`, `'`, `` ` `` 모두 가능      | ``let name = `Hi ${user}`;``       |
+| **string**    | 문자형 — `"` `'` `` ` `` 모두 가능      | ``let name = `Hi ${user}`;``       |
 | **boolean**   | 참/거짓                               | `let isOpen = true;`               |
 | **null**      | 의도적으로 “값 없음”                       | `let data = null;`                 |
 | **undefined** | 값이 아직 없음 (자동 할당)                   | `let x;`                           |
-| **object**    | 여러 데이터를 묶음 `{}`, `[]`              | `let user = {name:"jerry"};`       |
+| **object**    | 여러 데이터를 묶음 `{}` `[]`              | `let user = {name:"jerry"};`       |
 | **symbol**    | 고유 식별자 (잘 안 씀)                     | `let id = Symbol("id");`           |
 
 
-- type of 연산자
-    - 자료형을 확인할 때 사용함
+
+#### **🔍 typeof 연산자**
+**typeof**는 **변수에 담긴 값의 자료형을 확인할 때** 사용하는 연산자다.  
+디버깅이나 값의 상태를 확인할 때 자주 쓰인다.
 
 ```javascript
 let name = "jerry";
 console.log(typeof name); // "string"
 ```
+---
 
+##  **7️⃣ 학습정리**
+이번 글을 통해 JavaScript 기초 문법에서 다음 포인트를 정리했다.
+- JavaScript는 과거 문법보다 간결하고 표준화된 작성 방식이 중요하다
+- use strict는 선언 누락이나 실수를 미리 잡아주는 안전장치다
+- 변수 선언은 const를 기본으로, 변경이 필요한 경우만 let을 사용한다
+- null과 undefined는 모두 “없음”이지만 의미와 사용 의도가 다르다
+- 자료형은 값에 따라 자동으로 결정되며, 실행 중에도 바뀔 수 있다
 
-##  **7. 학습정리**
-- 과거 문법보다 지금은 간결하고 표준화된 방식이 더 중요하다는 걸 배움
-- `use strict`는 오타나 선언 누락을 잡아주는 안전장치라는 걸 이해함
-- 변수 선언 시 `let`과 `const`를 구분해 쓰는 습관이 필요함
-- `null`과 `undefined`의 차이를 개념적으로 정리함
-
-🤔 표준 문법을 지키며 `use strict, let, const`를 올바르게 사용하면 더 안전하고 명확한 코드를 작성할 수 있음
+👉 기본 문법을 정확히 이해하고
+`use strict/let/const`를 올바르게 사용하면 더 안전하고 예측 가능한 JavaScript 코드를 작성할 수 있다.
