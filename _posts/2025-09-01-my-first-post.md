@@ -29,12 +29,13 @@ JavaScript 코드는 브라우저가 자동으로 실행하지 않는다. `<scri
 #### **🤔 외부 스크립트를 사용하는 이유**
 코드가 많아질수록 JavaScript를 HTML 안에 계속 적는 것은 관리가 어렵기 때문에 JavaScript 코드는 **외부 파일로 분리**한다.
 
-<div class="card-grid">
-  <div class="card">HTML과 JavaScript 분리</div>
-  <div class="card">재사용 가능</div>
-  <div class="card">유지보수 쉬움</div>
-  <div class="card">성능 개선</div>
+<div class="study-card-grid">
+  <div class="study-card">HTML/JavaScript 분리</div>
+  <div class="study-card">재사용 가능</div>
+  <div class="study-card">유지보수 쉬움</div>
+  <div class="study-card study-card--benefit">성능 개선</div>
 </div>
+
 
 > 이런 이유로 실무에서는 JavaScript 코드를 HTML 내부에 직접 작성하기보다는 외부 파일로 분리하는 방식이 일반적으로 사용된다.
 
@@ -64,7 +65,7 @@ JavaScript는 **위에서 아래로 한 줄씩 실행**된다. 이 때 실행되
 let name = 'jerry';   
 
 // 세미콜론 (;)
-console.log(name);   
+console.log(name);  a 
 
 // 주석 (Comment)
 사람을 위한 설명이며, 실행에는 영향을 주지 않는다.
@@ -74,13 +75,13 @@ console.log(name);
 
 ## 3️⃣ **엄격 모드(use strict)**
 **use strict**는 JavaScript를 더 안전하고 정확하게 실행하도록 만드는 모드이다.
-<div class="card-grid">
-  <div class="card">스크립트 최상단에 선언</div>
-  <div class="card">함수 단위 제한 적용</div>
-  <div class="card">한번 켜면 해제 불가</div>
-  <div class="card" data-type="benefit">선언·문법 오류 방지</div>
-</div>
 
+<div class="study-card-grid">
+  <div class="study-card">최상단 선언</div>
+  <div class="study-card">함수 단위 적용</div>
+  <div class="study-card">해제 불가</div>
+  <div class="study-card study-card--benefit">선언·문법 오류 방지</div>
+</div>
 
 ```javascript
 'use strict';
@@ -109,7 +110,11 @@ let $price = 1000; // $ 사용 가능
 ## 5️⃣ **상수(constant)**
 상수는 **한번 값을 정하면 다시 바꿀 수 없는 변수이다.** 변하지 않아야 하는 값이나 의미가 고정된 설정값을 표현할 때 사용한다.
 
-<div class="card-grid"> <div class="card">값 재할당 불가</div> <div class="card">설정·기준값에 적합</div> <div class="card">의미가 변하지 않는 값</div> </div>
+<div class="study-card-grid">
+  <div class="study-card">값 재할당 불가</div>
+  <div class="study-card">설정·기준값에 적합</div>
+  <div class="study-card">의미가 변하지 않는 값</div>
+</div>
 
 ```javascript
 // ❎ 재할당 불가한 상수
@@ -126,7 +131,11 @@ const mainColor = '#FF6600';
 ## 6️⃣ **자료형(data types)**
 자료형은 값이 어떤 성격을 가지고 있는지를 나타내는 분류이고, JavaScript에서는 변수에 값을 담는 순간 자료형이 자동으로 결정되며, 같은 변수라도 다른 자료형의 값을 다시 담을 수 있다.
 
-<div class="card-grid"> <div class="card">값에 따라 자동 결정</div> <div class="card">선언 시 타입 지정 없음</div> <div class="card">실행 중 타입 변경 가능</div> </div>
+<div class="study-card-grid">
+  <div class="study-card">값에 따라 자동 결정</div>
+  <div class="study-card">타입 선언 불필요</div>
+  <div class="study-card study-card--benefit">실행 중 타입 변경</div>
+</div>
 
 > 이런 특성 때문에 JavaScript는 **동적 타입 언어(Dynamic Typing Language)**라고 불린다.
 

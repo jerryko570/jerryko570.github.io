@@ -1,20 +1,28 @@
-.card-grid {
+/* =========================
+   Study Card (학습 카드)
+   ========================= */
+
+.study-card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 16px;
-  margin: 16px 0 24px;
+  margin: 1.5rem 0;
 }
 
-.card {
-  background: #fff1c2;
-  border-radius: 14px;
-  padding: 14px;
+.study-card {
+  background: #ebebeb;
+  border-radius: 16px;
+  padding: 16px 18px;
   font-weight: 600;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
-  position: relative;
+  font-size: 0.95rem;
+  text-align: center;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.card[data-type='benefit'] {
-  background: #ffe9e9;
-  position: relative;
+.study-card--benefit {
+  background: #fff8d9;
+  border: 2px dashed #f4c430;
+  color: #8a6a00;
 }
