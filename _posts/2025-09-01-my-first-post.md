@@ -1,10 +1,18 @@
 ---
 layout: post
-title: "[JavaScript] 기초 문법"
+title: "JavaScript 기초 문법 이해하기 | use strict와 변수·자료형 흐름"
+description: "JavaScript 실행을 시작하기 전 반드시 짚고 넘어가야 할 use strict 선언과 변수, 자료형의 기본 개념을 실행 흐름 기준으로 설명합니다."
 date: 2025-09-01 19:52:00 +0900
 categories: [frontend, javascript]
-tags: [javascript, basic, variable, datatype, use-strict]
-series: "javascript"
+tags:
+  - javascript
+  - javascript-basic
+  - use-strict
+  - variable
+  - let
+  - const
+  - data-type
+series: javascript
 image: /assets/img/thumbnail/javascript.png
 ---
 

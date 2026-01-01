@@ -1,11 +1,18 @@
 ---
 layout: post
-title: "[위클리페이퍼] (8) 리액트 생명주기와 웹 렌더링 방식의 특징"
+title: "React 생명주기 이해하기 | 렌더링 흐름 기준"
+description: "컴포넌트가 마운트되고 업데이트되며 언마운트되는 과정을 렌더링 흐름 기준으로 정리한 학습 리포트입니다."
 date: 2025-09-22 00:00:00 +0900
 categories: [frontend, react]
-tags: [react, learning-log, weekly-paper]
-series: "위클리페이퍼"
-image: /assets/img/thumbnail/weekly-paper.png
+tags:
+  - react
+  - lifecycle
+  - rendering
+  - mount
+  - update
+  - unmount
+series: self-study
+image: /assets/img/thumbnail/self-study.png
 ---
 
 ## **1. 리액트 생명주기 (Lifecycle)**

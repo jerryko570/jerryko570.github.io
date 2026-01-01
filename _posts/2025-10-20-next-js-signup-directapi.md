@@ -1,14 +1,19 @@
 ---
 layout: post
-title: "Next.js 회원가입(Signup) 구현 정리: Direct API Flow와 Public API 이해"
-description: "Next.js 회원가입 구현을 통해 API 분리 구조와 서버–DB까지의 흐름을 정리한 기록"
+title: "Next.js 회원가입 구현 정리 | Direct API Flow 설계"
+description: "Next.js에서 회원가입 기능을 구현하며 Direct API Flow와 Public API 구조를 중심으로 서버–DB 흐름을 정리합니다."
 date: 2025-10-20 00:00:00 +0900
 categories: [frontend, nextjs]
-tags: [nextjs, signup, authentication, api-flow, fetch, typescript]
+tags:
+  - nextjs
+  - signup
+  - authentication
+  - api-flow
+  - fetch
+  - typescript
 series: nextjs-auth
 image: /assets/img/thumbnail/next-js.png
 ---
-
 
 > **Next.js Auth Series · Signup Flow** 단순히 회원가입 입력 폼을 만드는 것을 넘어, 프론트엔드에서 입력된 데이터가 **서버 ➡️ DB ➡️ 다시 프론트로 돌아오기까지**  어떤 과정을 거치는지 전체 흐름을 이해하는 데 목적이 있다.
 

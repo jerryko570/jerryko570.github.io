@@ -1,10 +1,19 @@
 ---
 layout: post
-title: "[TypeScript] 데이터 타입 (3) 객체 타입 확장과 응용 Interface·Utility·Enum"
+title: "TypeScript 데이터 타입 (3) | Interface·Utility·Enum 활용"
+description: "Interface와 Utility Types, Enum을 활용해 타입을 확장하고 재사용하는 실무 패턴을 살펴봅니다."
 date: 2025-10-19 00:00:00 +0900
 categories: [frontend, typescript]
-tags: [typescript, interface, utility-types, enum, record, partial, pick, omit]
-series: "typescript"
+tags:
+  - typescript
+  - interface
+  - utility-types
+  - enum
+  - record
+  - partial
+  - pick
+  - omit
+series: typescript
 image: /assets/img/thumbnail/typescript.png
 ---
 

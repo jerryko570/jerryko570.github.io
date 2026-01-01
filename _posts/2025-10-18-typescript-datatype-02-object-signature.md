@@ -1,12 +1,20 @@
 ---
 layout: post
-title: "[TypeScript] 데이터 타입 (2) 객체 타입 리터럴·별칭·시그니처"
+title: "TypeScript 데이터 타입 (2) | 객체 타입 설계 방법"
+description: "객체 타입 리터럴과 타입 별칭, 인덱스 시그니처를 통해 타입을 설계하는 여러 접근 방식을 비교해봅니다."
 date: 2025-10-18 00:00:00 +0900
 categories: [frontend, typescript]
-tags: [typescript, object, index-signature, literal, type, type-alias]
-series: "typescript"
+tags:
+  - typescript
+  - object
+  - literal
+  - type
+  - type-alias
+  - index-signature
+series: typescript
 image: /assets/img/thumbnail/typescript.png
 ---
+
 
 ## **1. 객체 리터럴 타입 (Object Literal Type)**
 - `{ key: value }` 구조를 가지며, 각 속성의 **타입을 명시**할 수 있다.  

@@ -1,10 +1,18 @@
 ---
 layout: post
-title: "[JavaScript] 구조분해 할당"
+title: "JavaScript 구조분해 할당 이해하기 | 배열·객체 활용 패턴"
+description: "배열과 객체 구조분해 문법을 실제 코드에서 어떻게 활용하면 좋은지 예제 중심으로 살펴봅니다."
 date: 2025-09-03 00:00:00 +0900
 categories: [frontend, javascript]
-tags: [javascript, basic, destructuring, array, object]
-series: "javascript"
+tags:
+  - javascript
+  - javascript-basic
+  - destructuring
+  - array
+  - object
+  - spread
+  - rest
+series: javascript
 image: /assets/img/thumbnail/javascript.png
 ---
 

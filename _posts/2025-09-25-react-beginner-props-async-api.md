@@ -1,12 +1,20 @@
 ---
 layout: post
-title: "[React] 입문을 위한 기초 개념 정리 (3) props비동기 데이터 통신"
+title: "React 기초 개념 정리 (3) | props와 비동기 데이터 흐름"
+description: "props 전달과 비동기 통신을 통해 컴포넌트 간 데이터가 어떻게 흘러가는지 감을 잡기 위한 글입니다."
 date: 2025-09-25 14:11:00 +0900
 categories: [frontend, react]
-tags: [react, useState, props, async, fetch, api, axios]
-series: "react"
+tags:
+  - react
+  - props
+  - async
+  - api
+  - fetch
+  - data-flow
+series: react
 image: /assets/img/thumbnail/react.png
 ---
+
 
 ## **1. props (Property)**
 - 부모 컴포넌트가 자식 컴포넌트로 데이터를 **전달한다.**  

@@ -1,10 +1,17 @@
 ---
 layout: post
-title: "[JavaScript] 얕은 복사와 깊은 복사의 차이"
+title: "JavaScript 얕은 복사 vs 깊은 복사 | 객체 참조와 불변성"
+description: "객체 참조 구조를 기준으로 얕은 복사와 깊은 복사가 언제 문제를 만들고 어떻게 피할 수 있는지 살펴봅니다."
 date: 2025-09-13 15:11:00 +0900
 categories: [frontend, javascript]
-tags: [javascript, vshallow copy, deep copy, object, reference]
-series: "javascript"
+tags:
+  - javascript
+  - shallow-copy
+  - deep-copy
+  - object
+  - reference
+  - immutability
+series: javascript
 image: /assets/img/thumbnail/javascript.png
 ---
 

@@ -1,10 +1,18 @@
 ---
 layout: post
-title: "[React] 입문을 위한 기초 개념 정리 (2) useState·useEffect"
+title: "React 기초 개념 정리 (2) | useState·useEffect 흐름"
+description: "상태 변화와 사이드 이펙트가 렌더링에 어떤 영향을 주는지 흐름으로 이해해봅니다."
 date: 2025-09-24 22:32:00 +0900
 categories: [frontend, react]
-tags: [react, useState, useEffect, EventHook]
-series: "react"
+tags:
+  - react
+  - hooks
+  - useState
+  - useEffect
+  - state
+  - side-effect
+  - rendering
+series: react
 image: /assets/img/thumbnail/react.png
 ---
 

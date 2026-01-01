@@ -1,10 +1,19 @@
 ---
 layout: post
-title: "[TypeScript] 데이터 타입 (1) 기본과 배열·튜플"
+title: "TypeScript 데이터 타입 (1) | 기본 타입·배열·튜플"
+description: "TypeScript의 기본 타입과 배열, 튜플이 각각 어떤 상황에서 쓰이는지 기준을 세워봅니다."
 date: 2025-10-17 00:00:00 +0900
 categories: [frontend, typescript]
-tags: [typescript, basic, any, unknown, void, never, array, tuple]
-series: "typescript"
+tags:
+  - typescript
+  - basic
+  - any
+  - unknown
+  - void
+  - never
+  - array
+  - tuple
+series: typescript
 image: /assets/img/thumbnail/typescript.png
 ---
 

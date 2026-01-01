@@ -1,12 +1,19 @@
 ---
 layout: post
-title: "[셀프스터디] Tailwind v4"
+title: "Tailwind v4 디자인 시스템 구축하기 | 디자인 토큰 기반 스타일링"
+description: "Tailwind v4 환경에서 디자인 토큰과 타이포그래피를 중심으로 일관된 디자인 시스템을 설계하는 과정을 공유합니다."
 date: 2025-09-12 00:00:00 +0900
-categories: [frontend, javascript]
-tags: [tailwind, design-system, css, design-tokens, typography, ui]
-series: "셀프스터디"
+categories: [frontend, design-system]
+tags:
+  - tailwind
+  - design-system
+  - design-tokens
+  - css
+  - typography
+  - ui
+  - theming
+series: self-study
 image: /assets/img/thumbnail/self-study.png
-render_with_liquid: false
 ---
 
 ## **Tailwind v4가 혁신적인 이유**

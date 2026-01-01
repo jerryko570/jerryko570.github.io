@@ -1,10 +1,17 @@
 ---
 layout: post
-title: "[TypeScript] 기본 동작 원리 이해하기"
+title: "TypeScript 기본 동작 원리 | 컴파일과 타입 체크 흐름"
+description: "TypeScript 코드가 컴파일되고 타입이 검사되는 과정을 전체 흐름 관점에서 이해해봅니다."
 date: 2025-10-16 22:02:00 +0900
 categories: [frontend, typescript]
-tags: [typescript, transpile, compile, javascript, tsc, type-checking]
-series: "typescript"
+tags:
+  - typescript
+  - transpile
+  - compile
+  - javascript
+  - tsc
+  - type-checking
+series: typescript
 image: /assets/img/thumbnail/typescript.png
 ---
 

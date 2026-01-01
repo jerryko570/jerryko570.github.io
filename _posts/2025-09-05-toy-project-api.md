@@ -1,10 +1,18 @@
 ---
 layout: post
-title: "[ToyProject] React에서 API 불러오기"
+title: "React에서 API 데이터 불러오기 | useEffect 실전 패턴"
+description: "useEffect를 사용해 API 데이터를 불러오며 상태 변화와 렌더링이 어떻게 연결되는지 실제 프로젝트 경험을 기준으로 정리했습니다."
 date: 2025-09-05 00:00:00 +0900
 categories: [frontend, react, javascript]
-tags: [api, fetch, axios, async, json, http]
-series: "toyproject"
+tags:
+  - react
+  - api
+  - async
+  - useEffect
+  - fetch
+  - axios
+  - rendering
+series: toyproject
 image: /assets/img/thumbnail/toy-project.png
 ---
 

@@ -1,12 +1,19 @@
 ---
 layout: post
-title: "[React] 입문을 위한 기초 개념 정리 (1) JSX·Component"
+title: "React 입문 가이드 (1) | JSX와 컴포넌트 기본 개념 이해하기"
+description: "React를 처음 배우는 과정에서 JSX 문법과 컴포넌트 개념을 중심으로, React의 기본 구조와 사고 방식을 정리한 입문 가이드입니다."
 date: 2025-09-20 22:32:00 +0900
 categories: [frontend, react]
-tags: [react, jsx, component]
-series: "react"
+tags:
+  - react
+  - react-basic
+  - jsx
+  - component
+  - frontend
+series: react
 image: /assets/img/thumbnail/react.png
 ---
+
 
 ## **1. React? 리액트!** 
 - 페이스북 메타에서 만든 **UI 라이브러리**이다.  

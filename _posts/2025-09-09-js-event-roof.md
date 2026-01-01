@@ -1,10 +1,18 @@
 ---
 layout: post
-title: "[JavaScript] 이벤트 루프"
+title: "JavaScript 이벤트 루프 이해하기 | 콜 스택·태스크 큐·마이크로태스크"
+description: "이벤트 루프가 콜 스택과 태스크 큐, 마이크로태스크 사이를 어떻게 오가며 동작하는지 흐름으로 풀어봅니다."
 date: 2025-09-09 00:00:00 +0900
 categories: [frontend, javascript]
-tags: [javascript, event-loop, async, microtask, callback]
-series: "javascript"
+tags:
+  - javascript
+  - event-loop
+  - async
+  - call-stack
+  - task-queue
+  - microtask
+  - runtime
+series: javascript
 image: /assets/img/thumbnail/javascript.png
 ---
 

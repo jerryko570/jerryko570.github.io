@@ -1,12 +1,21 @@
 ---
 layout: post
-title: "[JavaScript] 클로저와 스코프"
+title: "JavaScript 스코프와 클로저 이해하기 | 실행 컨텍스트 기준"
+description: "스코프 체인과 클로저가 실행 컨텍스트 안에서 어떻게 생성되고 유지되는지를 코드 흐름 관점에서 풀어봅니다."
 date: 2025-09-02 00:00:00 +0900
 categories: [frontend, javascript]
-tags: [javascript, basic, scope, closure, variable]
-series: "javascript"
+tags:
+  - javascript
+  - javascript-basic
+  - scope
+  - closure
+  - execution-context
+  - lexical-environment
+  - hoisting
+series: javascript
 image: /assets/img/thumbnail/javascript.png
 ---
+
 
 ## **1. 스코프(Scope)**
 - 변수가 살아 있는 공간이다. 코드 안에서 어디까지 그 변수를 쓸 수 있는가를 정하는 규칙이다.

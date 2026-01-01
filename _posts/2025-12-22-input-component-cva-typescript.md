@@ -1,15 +1,27 @@
 ---
 layout: post
-title: "TextInput 리팩토링: 책임 분리와 Compound 패턴"
-description: "TextInput 복잡성 문제를 cva·Compound 패턴·forwardRef로 해결한 Field 단위 리팩토링"
+title: "Next.js TextInput 리팩토링 | 책임 분리와 Compound 패턴으로 구조 개선하기"
+description: "복잡해진 TextInput 컴포넌트를 Field 단위로 책임 분리하고, Compound 패턴을 적용해 구조와 유지보수성을 개선한 리팩토링 과정을 공유합니다."
 date: 2025-12-22 00:00:00 +0900
-categories: [frontend]
-tags: [react, typescript, cva, component, design-system, compound-pattern]
+categories: [frontend, nextjs]
+tags:
+  - nextjs
+  - react
+  - typescript
+  - design-system
+  - component-architecture
+  - textinput
+  - compound-pattern
+  - cva
+  - forwardref
+series: self-study
 image: /assets/img/thumbnail/self-study.png
 ---
 
 > **Self Study · Component Architecture**
-TextInput 컴포넌트는 처음에는 가장 단순한 입력 컴포넌트처럼 보였다. 하지만 프로젝트 규모가 커지면서 TextInput 하나에 너무 많은 책임이 쌓이기 시작했고, 이 글은 그 문제를 **컴포넌트 리팩토링 관점에서 어떻게 해결했는지**를 정리한 기록이다.
+
+TextInput은 가장 단순한 컴포넌트로 시작했지만, 프로젝트가 커질수록 가장 먼저 복잡해지는 컴포넌트이기도 하다.
+`label/error/icon/status` 같은 요구사항이 쌓이면서 TextInput 하나가 점점 감당하기 어려운 역할을 맡게 되었기 때문이다. 이 글에서는 그런 TextInput을 무작정 키우는 대신, **컴포넌트의 책임을 다시 나누고 구조를 재설계한 과정**을 정리한다. Field 단위로 바라보는 관점과 함께 `cva/Compound 패턴/forwardRef`를 어떻게 적용했는지를 기록했다.
 
 ---
 
