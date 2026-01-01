@@ -57,7 +57,7 @@ TextInput이 복잡해진 이유를 하나씩 뜯어보니, 가장 먼저 눈에
 `cva`를 도입하면서 TextInput 내부에서 상태에 따라 클래스를 직접 계산하지 않게 되었다.
 대신 **이 상태면 이 스타일**이라는 규칙을 variant로 정리해 한 곳에 모아놓았다.
 
-```tsx
+```ts
 // TextInput의 스타일 규칙을 정의하는 cva 설정
 // 컴포넌트 내부에서 조건문으로 스타일을 계산하지 않기 위해 분리
 export const textInputStyle = cva(
