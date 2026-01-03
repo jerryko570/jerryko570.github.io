@@ -26,3 +26,63 @@
   border: 2px dashed #f4c430;
   color: #8a6a00;
 }
+
+.study-card-grid--vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* use strict OFF - 연한 빨강/회색 */
+.study-card--off {
+  background-color: #fef2f2;
+}
+
+/* use strict ON - 연한 초록 */
+.study-card--on {
+  background-color: #f0fdf4;
+}
+
+/* Chirpy 다크모드 */
+[data-mode='dark'] .study-card--off {
+  background-color: #2d1f1f;
+}
+
+[data-mode='dark'] .study-card--on {
+  background-color: #1a2e1a;
+}
+
+/* 기본 study-card 다크모드 */
+[data-mode='dark'] .study-card {
+  background-color: #374151;
+  color: #e5e7eb;
+}
+
+/* use strict OFF */
+.study-card--off {
+  background-color: #fef2f2;
+}
+
+[data-mode='dark'] .study-card--off {
+  background-color: #3d2626;
+
+  color: #fecaca;
+}
+
+/* use strict ON */
+.study-card--on {
+  background-color: #f0fdf4;
+}
+
+[data-mode='dark'] .study-card--on {
+  background-color: #1a2e1a;
+
+  color: #bbf7d0;
+}
+
+/* null/undefined용 (기존 스타일 유지하고 싶으면) */
+[data-mode='dark'] .study-card--null,
+[data-mode='dark'] .study-card--undefined {
+  background-color: #374151;
+  color: #e5e7eb;
+}

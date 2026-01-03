@@ -93,6 +93,8 @@ let y = 10; // ✅ 올바른 선언
 
 ![let과 const의 생애](/assets/img/javascript/js-let-const-lifecycle.png)
 
+---
+
 #### **👉🏻 let: 값이 바뀔 수 있는 변수**
 프로그램 실행 중에 **값을 바꿀 수 있다는 점**이 가장 큰 특징이다.
 
@@ -124,6 +126,7 @@ PI = 3.14159; // 오류! const는 값 변경 불가
 const apiUrl = 'https://api.example.com';
 const mainColor = '#FF6600';
 ```
+---
 
 ## **5️⃣ 변수 이름 규칙**
 `문자/숫자/_/$만 사용가능` `숫자로 시작 불가` `대소문자 구분` `예약어 사용금지(let/return/class)`
@@ -157,7 +160,17 @@ const mainColor = '#FF6600';
 | **object**    | 여러 데이터를 묶음 `{}` `[]`              | `let user = {name:"jerry"};`       |
 | **symbol**    | 고유 식별자 (잘 안 씀)                     | `let id = Symbol("id");`           |
 
+####  **🔍 null vs undefined**
+<div class="study-card-grid study-card-grid--vertical">
+  <div class="study-card study-card--null">
+    <strong>null</strong> 👉🏻 의도적 비움 | 개발자가 직접 설정 | API는 '값 없음' 응답
+  </div>
+  <div class="study-card study-card--undefined">
+    <strong>undefined</strong> 👉🏻 아직 값 없음 | 자동 할당 | 선언만 한 변수
+  </div>
+</div>
 
+---
 
 #### **🔍 typeof 연산자**
 **typeof**는 **변수에 담긴 값의 자료형을 확인할 때** 사용하는 연산자다. 디버깅이나 값의 상태를 확인할 때 자주 쓰인다.
