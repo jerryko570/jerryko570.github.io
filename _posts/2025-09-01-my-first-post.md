@@ -18,13 +18,14 @@ image: /assets/img/thumbnail/javascript.png
 
 > **JavaScript · Basic Syntax**
 
-JavaScript를 처음 배울 때 가장 먼저 마주치는 개념은 `script 태그/use strict/변수`, 그리고 `자료형`인 것 같다. 이 글에서는 **브라우저가 JavaScript를 어떻게 읽고 실행하는지**를 시작으로,  변수 선언 방식과 자료형 개념을 **실행 흐름 기준**으로 하나씩 정리한다.
+JavaScript를 처음 배울 때 가장 먼저 마주치는 개념은 `script 태그`, `use strict`, `변수`, 그리고 `자료형`이다. 이 글에서는 **브라우저가 JavaScript를 어떻게 읽고 실행하는지**를 시작으로, 변수 선언 방식과 자료형 개념을 **실행 흐름 기준**으로 하나씩 정리한다.
+
 문법을 외우기보다는 👉🏻 **왜 이렇게 써야 하는지**를 이해하는 데 초점을 맞춘 기초 정리 노트다.
 
 ---
 
-## **1️⃣ script 태그**
-JavaScript 코드는 브라우저가 자동으로 실행하지 않는다. `<script>` 태그는 브라우저에게 **'여기부터 JavaScript 코드야'** 라고 알려주는 역할을 한다.
+## **1️⃣ script 태그란? JavaScript 실행의 시작점**
+JavaScript 코드는 브라우저가 자동으로 실행하지 않는다. `<script>` 태그는 브라우저에게 **여기부터 JavaScript 코드야** 라고 알려주는 역할을 한다.
 
 #### **🤔 외부 스크립트를 사용하는 이유**
 코드가 많아질수록 JavaScript를 HTML 안에 계속 적는 것은 관리가 어렵기 때문에 JavaScript 코드는 **외부 파일로 분리**한다.
@@ -35,7 +36,6 @@ JavaScript 코드는 브라우저가 자동으로 실행하지 않는다. `<scri
   <div class="study-card">유지보수 쉬움</div>
   <div class="study-card study-card--benefit">성능 개선</div>
 </div>
-
 
 > 이런 이유로 실무에서는 JavaScript 코드를 HTML 내부에 직접 작성하기보다는 외부 파일로 분리하는 방식이 일반적으로 사용된다.
 
@@ -54,27 +54,25 @@ JavaScript 코드는 브라우저가 자동으로 실행하지 않는다. `<scri
 <!-- 외부 파일을 연결할 때 -->
 <script src='main.js'></script>
 ```
-
 ---
 
-## **2️⃣ 코드 구조 (statement)**
+## **2️⃣ 코드 구조(statement)는 무엇인가?**
 JavaScript는 **위에서 아래로 한 줄씩 실행**된다. 이 때 실행되는 최소 단위를 **문(Statement)**이라고 한다.
 
 ```javascript
 // 코드문 (statement)
 let name = 'jerry';   
 
-// 세미콜론 (;)
-console.log(name);  a 
+// 세미콜론 (;)으로 문장 구분
+console.log(name);  
 
-// 주석 (Comment)
-사람을 위한 설명이며, 실행에는 영향을 주지 않는다.
+// 주석 (Comment): 사람을 위한 설명이며, 실행에는 영향을 주지 않는다.
 ```
 
 ---
 
-## 3️⃣ **엄격 모드(use strict)**
-**use strict**는 JavaScript를 더 안전하고 정확하게 실행하도록 만드는 모드이다.
+## **3️⃣ 엄격 모드(use strict) 왜 써야 할까?**
+**use strict**는 JavaScript를 더 안전하고 정확하게 실행하도록 만드는 모드이다. 선언누락이나 문법 실수를 미리 잡아주는 안전장치 역할을 한다.
 
 <div class="study-card-grid">
   <div class="study-card">최상단 선언</div>
@@ -90,11 +88,13 @@ let y = 10; // ✅ 올바른 선언
 ```
 ---
 
-## 4️⃣ **변수(variable)**
-변수는 **값을 저장하기 위한 이름이 붙은 공간**이고, 프로그램 실행 중에 **값을 바꿀 수 있다는 점**이 가장 큰 특징이다.
+## **4️⃣ let과 const는 언제 뭘 쓸까?**
+변수는 **값을 저장하기 위한 이름이 붙은 공간**이고, JavaScript에서는 `let`과 `const` 두 가지 방식으로 변수를 선언한다.
 
-#### **🔍 변수 이름 규칙**
-`문자/숫자/_언더바/$만 사용가능` `숫자로 시작 불가` `대소문자 구분` `예약어 사용금지(let/return/class)`
+![let과 const의 생애](/assets/img/javascript/js-let-const-lifecycle.png)
+
+#### **👉🏻 let: 값이 바뀔 수 있는 변수**
+프로그램 실행 중에 **값을 바꿀 수 있다는 점**이 가장 큰 특징이다.
 
 ```javascript
 let name = 'jerry'; // 변수 선언
@@ -104,11 +104,10 @@ let age = 20;
 let user_name = 'poby'; // _ 사용 가능
 let $price = 1000; // $ 사용 가능
 ```
-
 ---
 
-## 5️⃣ **상수(constant)**
-상수는 **한번 값을 정하면 다시 바꿀 수 없는 변수이다.** 변하지 않아야 하는 값이나 의미가 고정된 설정값을 표현할 때 사용한다.
+#### **👉🏻 const: 값이 고정된 상수**
+상수는 **한번 값을 정하면 다시 바꿀 수 없다.** 변하지 않아야 하는 값이나 의미가 고정된 설정값을 표현할 때 사용한다.
 
 <div class="study-card-grid">
   <div class="study-card">값 재할당 불가</div>
@@ -126,10 +125,16 @@ const apiUrl = 'https://api.example.com';
 const mainColor = '#FF6600';
 ```
 
+## **5️⃣ 변수 이름 규칙**
+`문자/숫자/_/$만 사용가능` `숫자로 시작 불가` `대소문자 구분` `예약어 사용금지(let/return/class)`
+
+> 💡 **실무 팁**: 변수 선언은 **const를 기본**으로, 변경이 필요한 경우만 **let**을 사용한다.
+
 ---
 
-## 6️⃣ **자료형(data types)**
-자료형은 값이 어떤 성격을 가지고 있는지를 나타내는 분류이고, JavaScript에서는 변수에 값을 담는 순간 자료형이 자동으로 결정되며, 같은 변수라도 다른 자료형의 값을 다시 담을 수 있다.
+## **6️⃣ JavaScript 자료형 8가지 한눈에 정리**
+자료형은 값이 어떤 성격을 가지고 있는지를 나타내는 분류다. JavaScript에서는 변수에 값을 담는 순간 자료형이 자동으로 결정되며, 같은 변수라도 다른 자료형의 값을 다시 담을 수 있다.
+
 
 <div class="study-card-grid">
   <div class="study-card">값에 따라 자동 결정</div>
@@ -165,11 +170,11 @@ console.log(typeof name); // "string"
 
 ##  **7️⃣ 학습정리**
 이번 글을 통해 JavaScript 기초 문법에서 다음 포인트를 정리했다.
+
 - JavaScript는 과거 문법보다 간결하고 표준화된 작성 방식이 중요하다
-- use strict는 선언 누락이나 실수를 미리 잡아주는 안전장치다
-- 변수 선언은 const를 기본으로, 변경이 필요한 경우만 let을 사용한다
-- null과 undefined는 모두 “없음”이지만 의미와 사용 의도가 다르다
+- **use strict**는 선언 누락이나 실수를 미리 잡아주는 안전장치다
+- 변수 선언은 **const를 기본**으로, 변경이 필요한 경우만 **let**을 사용한다
+- **null**과 **undefined**는 모두 "없음"이지만 의미와 사용 의도가 다르다
 - 자료형은 값에 따라 자동으로 결정되며, 실행 중에도 바뀔 수 있다
 
-👉 기본 문법을 정확히 이해하고
-`use strict/let/const`를 올바르게 사용하면 더 안전하고 예측 가능한 JavaScript 코드를 작성할 수 있다.
+👉 기본 문법을 정확히 이해하고 `use strict`, `let`, `const`를 올바르게 사용하면 더 안전하고 예측 가능한 JavaScript 코드를 작성할 수 있다.
