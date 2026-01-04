@@ -20,7 +20,7 @@ image: /assets/img/thumbnail/toy-project.png
 
 React에서 API 데이터를 불러오는 것은 실무에서 가장 자주 사용하는 패턴 중 하나다. 이 글에서는 `useEffect`를 사용해 API 데이터를 불러오며 **상태 변화와 렌더링이 어떻게 연결되는지** 실제 프로젝트 경험을 기준으로 정리했다.
 
-API 호출을 이해하려면 먼저 [JavaScript 비동기 처리](/posts/js-api-async/)와 [React useEffect 기초](/posts/react-beginner-hooks-basics/)를 알아야 한다.
+API 호출을 이해하려면 먼저 [JavaScript 비동기 처리](/posts/react-beginner-props-async-api/)와 [React useEffect 기초](/posts/react-beginner-hooks-basics/)를 알아야 한다.
 
 ---
 
