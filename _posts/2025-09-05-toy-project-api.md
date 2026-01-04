@@ -312,7 +312,8 @@ API 응답이 오기 전에 화면이 비어 보이는 문제를 방지한다. �
 
 ## 관련 글
 
-👉 [JavaScript API 비동기 처리](/posts/js-api-01-basic/) - fetch와 async/await 기초
+👉 [React 초보자를 위한 props와 async API 이해하기](/posts/react-beginner-props-async-api/)
+
 
 👉 [React 입문 가이드](/posts/react-beginner-jsx-component/) - JSX와 컴포넌트 기본 개념
 
