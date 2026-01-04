@@ -275,7 +275,7 @@ Chrome 98+, Firefox 94+, Safari 15.4+, Node.js 17+ 등 최신 환경에서 사�
 
 ## 다음 글
 
-👉 [React 입문 가이드](/posts/react-beginner-jsx-component/) - JSX와 컴포넌트 기본 개념을 알아보자.
+👉 [JavaScript V8 엔진 이해하기](/posts/js-v8-engine/) - 메모리 관리와 가비지 컬렉션을 알아보자.
 
 ---
 
