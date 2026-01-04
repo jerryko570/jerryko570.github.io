@@ -10,7 +10,7 @@
 }
 
 .study-card {
-  background: #ebebeb;
+  background: #ffffff;
   border-radius: 16px;
   padding: 16px 18px;
   font-weight: 600;
@@ -54,7 +54,7 @@
 
 /* 기본 study-card 다크모드 */
 [data-mode='dark'] .study-card {
-  background-color: #374151;
+  background-color: #4c5768;
   color: #e5e7eb;
 }
 
