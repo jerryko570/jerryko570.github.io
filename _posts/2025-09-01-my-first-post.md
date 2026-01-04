@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "JavaScript 기초 문법 완벽 정리 | use strict, let, const, 자료형 총정리"
-description: "JavaScript use strict 모드가 왜 필요한지, let과 const 차이, 8가지 자료형을 예제 코드와 함께 쉽게 설명합니다. 입문자를 위한 실행 흐름 기준 핵심 정리."
+title: 'JavaScript 기초 문법 완벽 정리 | use strict, let, const, 자료형 총정리'
+description: 'JavaScript use strict 모드가 왜 필요한지, let과 const 차이, 8가지 자료형을 예제 코드와 함께 쉽게 설명합니다. 입문자를 위한 실행 흐름 기준 핵심 정리.'
 date: 2025-09-01 19:52:00 +0900
 categories: [frontend, javascript]
 tags:
@@ -26,7 +26,7 @@ JavaScript를 처음 배울 때 가장 먼저 마주치는 개념은 **script �
 
 ## **1️⃣ script 태그란? JavaScript 실행의 시작점**
 
-JavaScript 코드는 브라우저가 자동으로 실행하지 않는다. `<script>` 태그는 브라우저에게 **여기부터 JavaScript 코드야**라고 알려주는 역할을 한다.
+JavaScript 코드는 브라우저가 자동으로 실행하지 않는다. `<script>` 태그는 브라우저에게 **'여기부터 JavaScript 코드야'**라고 알려주는 역할을 한다.
 
 ### 🤔 외부 스크립트를 사용하는 이유
 
@@ -45,11 +45,11 @@ JavaScript 코드는 브라우저가 자동으로 실행하지 않는다. `<scri
 ```html
 <!-- HTML 안에서 직접 자바스크립트 코드 작성 -->
 <script>
-  console.log("자바스크립트 실행 중!");
+  console.log('자바스크립트 실행 중!');
 </script>
 
 <!-- 외부 파일을 연결할 때 -->
-<script src="main.js"></script>
+<script src='main.js'></script>
 ```
 
 ---
@@ -98,9 +98,9 @@ use strict를 사용하면 실수로 전역 변수를 생성하거나, 예약어
 
 ## **4️⃣ let과 const 차이점: 언제 뭘 쓸까?**
 
-변수는 **값을 저장하기 위한 이름이 붙은 공간**이다. JavaScript에서는 `let`과 `const` 두 가지 방식으로 변수를 선언한다.
+변수는 **값을 저장하기 위한 이름이 붙은 공간**이다. JavaScript에서는 `let`과 `const` 두 가지 방식으로 변수를 선언한다. 이 개념은 [스코프와 클로저](/posts/js-closure-scope/)를 이해하는 데 기초가 된다.
 
-![JavaScript let과 const 변수 선언 방식 및 재할당 가능 여부 비교 다이어그램](/assets/img/javascript/js-let-const-lifecycle.png)
+![let은 선언 후 할당과 재할당이 가능하고, const는 선언과 동시에 할당해야 하며 재할당이 불가능한 흐름을 보여주는 다이어그램](/assets/img/javascript/js-let-const-lifecycle.png)
 
 ### 👉🏻 let: 값이 바뀔 수 있는 변수
 
@@ -169,14 +169,16 @@ let let = 'value';      // 예약어 사용 불가
 | **boolean** | 참(true) 또는 거짓(false) | `let isOpen = true;` |
 | **null** | 의도적으로 '값 없음'을 표현 | `let data = null;` |
 | **undefined** | 값이 아직 할당되지 않음 | `let x;` |
-| **object** | 여러 데이터를 묶은 복합 자료형 | `let user = {name: "jerry"};` |
-| **symbol** | 고유한 식별자 생성 | `let id = Symbol("id");` |
+| **object** | 여러 데이터를 묶은 복합 자료형 | `let user = {name: 'jerry'};` |
+| **symbol** | 고유한 식별자 생성 | `let id = Symbol('id');` |
+
+object 자료형에 대해 더 알고 싶다면 [구조분해 할당](/posts/js-destructuring/) 글에서 객체 활용 패턴을 확인할 수 있다.
 
 ### 🔍 null vs undefined 차이점
 
-이 두 가지는 모두 "값이 없음"을 나타내지만 의미가 다르다:
+이 두 가지는 모두 '값이 없음'을 나타내지만 의미가 다르다:
 
-**null**: 개발자가 의도적으로 "비어있음"을 설정한 값. API 응답에서 데이터가 없을 때 자주 사용된다.
+**null**: 개발자가 의도적으로 '비어있음'을 설정한 값. API 응답에서 데이터가 없을 때 자주 사용된다.
 
 **undefined**: JavaScript 엔진이 자동으로 할당하는 값. 변수를 선언만 하고 값을 넣지 않았을 때의 상태다.
 
@@ -191,14 +193,14 @@ console.log(notYetAssigned);      // undefined
 **typeof**는 변수에 담긴 값의 자료형을 문자열로 반환하는 연산자다. 디버깅이나 조건 분기에 자주 사용된다.
 
 ```javascript
-let name = "jerry";
-console.log(typeof name);    // "string"
+let name = 'jerry';
+console.log(typeof name);    // 'string'
 
 let count = 42;
-console.log(typeof count);   // "number"
+console.log(typeof count);   // 'number'
 
 let isActive = true;
-console.log(typeof isActive); // "boolean"
+console.log(typeof isActive); // 'boolean'
 ```
 
 ---
@@ -215,7 +217,7 @@ console.log(typeof isActive); // "boolean"
 
 ### var는 왜 사용하지 않나요?
 
-`var`는 함수 스코프를 가지고 호이스팅 동작이 혼란스러워 예기치 않은 버그를 유발할 수 있다. ES6 이후로는 블록 스코프를 가진 `let`과 `const` 사용이 표준이다.
+`var`는 함수 스코프를 가지고 호이스팅 동작이 혼란스러워 예기치 않은 버그를 유발할 수 있다. ES6 이후로는 블록 스코프를 가진 `let`과 `const` 사용이 표준이다. 스코프에 대해 더 알고 싶다면 [스코프와 클로저](/posts/js-closure-scope/) 글을 참고하자.
 
 ---
 
@@ -226,10 +228,16 @@ console.log(typeof isActive); // "boolean"
 - `<script>` 태그는 브라우저에게 JavaScript 코드의 시작을 알린다
 - **use strict**는 선언 누락이나 실수를 미리 잡아주는 안전장치다
 - 변수 선언은 **const를 기본**으로, 변경이 필요한 경우만 **let**을 사용한다
-- **null**과 **undefined**는 모두 "없음"이지만 의미와 사용 의도가 다르다
+- **null**과 **undefined**는 모두 '없음'이지만 의미와 사용 의도가 다르다
 - 자료형은 값에 따라 자동으로 결정되며, 실행 중에도 바뀔 수 있다
 
 기본 문법을 정확히 이해하고 use strict, let, const를 올바르게 사용하면 더 안전하고 예측 가능한 JavaScript 코드를 작성할 수 있다.
+
+---
+
+## 다음 글
+
+👉 [JavaScript 스코프와 클로저 이해하기](/posts/js-closure-scope/) - 실행 컨텍스트 기준으로 스코프 체인과 클로저를 정리해보고자 한다.
 
 ---
 

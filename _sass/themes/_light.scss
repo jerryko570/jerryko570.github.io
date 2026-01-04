@@ -311,3 +311,26 @@
     font-weight: bold;
   }
 }
+
+// 테이블 디자인
+.table-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  background-color: #fdfdff;
+}
+
+.table-wrapper table {
+  width: 100%;
+  min-width: 720px;
+  table-layout: fixed;
+  background-color: #fdfdff;
+  border-collapse: collapse;
+}
+
+.table-wrapper th,
+.table-wrapper td {
+  padding: 12px 16px;
+  word-break: break-word;
+  white-space: normal;
+}
