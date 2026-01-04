@@ -18,7 +18,7 @@ image: /assets/img/thumbnail/javascript.png
 
 > **JavaScript · Basic Syntax**
 
-JavaScript를 처음 배울 때 가장 먼저 마주치는 개념은 `script 태그, use strict, 변수`, 그리고 `자료형`이다. 이 글에서는 **브라우저가 JavaScript를 어떻게 읽고 실행하는지**를 시작으로, 변수 선언 방식과 자료형 개념을 **실행 흐름 기준**으로 하나씩 정리한다.
+JavaScript를 처음 배울 때 가장 먼저 마주치는 개념은 `script 태그/use strict/변수`, 그리고 `자료형`이다. 이 글에서는 **브라우저가 JavaScript를 어떻게 읽고 실행하는지**를 시작으로, 변수 선언 방식과 자료형 개념을 **실행 흐름 기준**으로 하나씩 정리한다.
 
 문법을 외우기보다는 👉🏻 **왜 이렇게 써야 하는지**를 이해하는 데 초점을 맞춘 기초 정리 노트다.
 
@@ -190,4 +190,4 @@ console.log(typeof name); // "string"
 - **null**과 **undefined**는 모두 "없음"이지만 의미와 사용 의도가 다르다
 - 자료형은 값에 따라 자동으로 결정되며, 실행 중에도 바뀔 수 있다
 
-👉 기본 문법을 정확히 이해하고 `use strict, let, const`를 올바르게 사용하면 더 안전하고 예측 가능한 JavaScript 코드를 작성할 수 있다.
+👉 기본 문법을 정확히 이해하고 `use strict/let/const`를 올바르게 사용하면 더 안전하고 예측 가능한 JavaScript 코드를 작성할 수 있다.
