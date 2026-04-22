@@ -136,13 +136,13 @@ def generate_thumbnail(
 
     # 폰트 크기 (텍스트 길이에 따라)
     if len(display) <= 6:
-        font_size = 260
+        font_size = 180
     elif len(display) <= 10:
-        font_size = 200
+        font_size = 140
     elif len(display) <= 15:
-        font_size = 150
+        font_size = 110
     else:
-        font_size = 120
+        font_size = 90
 
     font = _find_font(font_size)
 
