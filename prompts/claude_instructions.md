@@ -157,20 +157,24 @@ WebFetch(url=선택한 후보의 url, prompt="이 발표의 핵심, 구체적인
 
 ---
 
-## Step 6: 썸네일 생성
+## Step 6: 썸네일 선택 (기존 PNG 재사용)
 
-```bash
-DATE=$(TZ=Asia/Seoul date +%Y%m%d)
+`assets/img/thumbnail/`에 **이미 있는 주제별 PNG** 중에서 하나를 고른다.
+**새로 생성하지 말 것** — `make_thumbnail.py` 호출 금지.
 
-python scripts/make_thumbnail.py \
-  "<한글 title>" \
-  "<candidates.json의 category.korean_label>" \
-  "<category.color_start>" \
-  "<category.color_end>" \
-  "assets/img/thumbnail/auto-${DATE}-<slug>.png"
-```
+**매칭 규칙** (후보의 `tags` / `title` 기반):
 
-쌍따옴표 필수. 제목에 `"` 있으면 `'`로 치환.
+| 주제 키워드 | 썸네일 파일 |
+|---|---|
+| `react`, `hooks`, `jsx`, `react-19` 등 React 계열 | `react.png` |
+| `next`, `next-js`, `nextjs`, `vercel` | `next-js.png` |
+| `javascript`, `js`, `ecmascript` | `javascript.png` |
+| `typescript`, `ts` | `typescript.png` |
+| **그 외 전부** (Claude, Figma, Framer, Anthropic, DevTools 등) | `self-study.png` |
+
+매칭되는 키워드가 없으면 반드시 **`self-study.png`**를 기본값으로 사용.
+
+> Jerry 지시(2026-04-22): 자동 생성된 그라데이션 썸네일보다 기존 주제별 일러스트 PNG가 블로그 톤에 맞는다.
 
 ---
 
@@ -186,7 +190,7 @@ date: YYYY-MM-DD HH:MM:SS +0900
 categories: [<카테고리>]
 tags: [<tag1>, <tag2>, <tag3>]
 image:
-  path: /assets/img/thumbnail/auto-YYYYMMDD-<slug>.png
+  path: /assets/img/thumbnail/<Step 6에서 고른 파일명>.png
   alt: "<한글 title>"
 ---
 
@@ -201,7 +205,7 @@ image:
 - 프론트매터 모든 문자열 값을 **쌍따옴표**로 감싸기
 - title에 `|` 있으면 **반드시** 쌍따옴표
 - `categories`에 **하이픈 없는 단어만** (예: `[Design]`, `[Frontend]`, `[DevTools]`)
-- 파일명 날짜는 `YYYY-MM-DD`, 썸네일 경로는 `YYYYMMDD` (다름 주의)
+- `image.path`는 `assets/img/thumbnail/`에 **실제로 존재하는** 파일이어야 함 (Step 6 매칭표 기준)
 - date는 한국시간 `+0900`
 
 ---
@@ -264,7 +268,7 @@ python scripts/update_state.py \
 - [ ] 1500자 내외 학습 노트 작성
 - [ ] 프론트매터 전부 쌍따옴표
 - [ ] 본문 자기 검증 (체크리스트)
-- [ ] 썸네일 생성
+- [ ] 썸네일 선택 (기존 주제별 PNG 재사용, 매칭 없으면 `self-study.png`)
 - [ ] _posts에 저장
 - [ ] update_state 실행
 - [ ] 완료 보고
