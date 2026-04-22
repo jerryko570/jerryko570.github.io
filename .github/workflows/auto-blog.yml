@@ -60,7 +60,7 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           prompt: ${{ steps.instructions.outputs.content }}
-          claude_args: "--max-turns 60 --model claude-sonnet-4-6"
+          claude_args: "--max-turns 40 --model claude-sonnet-4-6 --allowedTools Read,Write,Edit,Bash,WebFetch,Glob,Grep"
 
       - name: Commit and push if changes exist
         run: |
