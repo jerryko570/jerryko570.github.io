@@ -5,7 +5,7 @@ date: 2026-04-22 10:00:00 +0900
 categories: [DevTools]
 tags: [claude, design-tool, ai, anthropic, prototyping]
 image:
-  path: /assets/img/thumbnail/auto-20260422-claude-design-study-note.png
+  path: /assets/img/thumbnail/self-study.png
   alt: "Claude Design 공부 정리 | 디자이너 없이 디자인이 가능해진다면"
 ---
 
