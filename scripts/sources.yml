@@ -1,78 +1,69 @@
 # 카테고리별 소스 설정
-# 2일마다 카테고리를 순환하며 포스트 생성 (8일에 한 바퀴)
-# - Day 1: design
-# - Day 3: frontend
-# - Day 5: backend
-# - Day 7: ai-tools
+# 3일마다 카테고리를 순환 (9일에 한 바퀴)
+# - Day 1: ai-design
+# - Day 4: dev
+# - Day 7: ai-trend
 
 categories:
-  - id: design
-    display_name: "Design"
-    korean_label: "디자인 트렌드"
-    description: "UI/UX 디자인, 웹 디자인 트렌드"
-    color_start: "#ec4899"
-    color_end: "#8b5cf6"
+  - id: ai-design
+    display_name: "AI-Design"
+    korean_label: "AI × 디자인"
+    description: "프로덕트/UX 디자인과 AI의 교차점 - Claude, Figma MCP, v0, Cursor 등"
+    color_start: "#a855f7"
+    color_end: "#ec4899"
     sources:
-      - name: "Smashing Magazine"
+      - name: "Anthropic News"
         type: rss
-        url: "https://www.smashingmagazine.com/feed/"
-      - name: "CSS-Tricks"
+        url: "https://www.anthropic.com/news/rss.xml"
+      - name: "Figma Blog"
         type: rss
-        url: "https://css-tricks.com/feed/"
-      - name: "A List Apart"
+        url: "https://www.figma.com/blog/rss.xml"
+      - name: "dev.to UX"
         type: rss
-        url: "https://alistapart.com/main/feed/"
-      - name: "Dribbble Blog"
+        url: "https://dev.to/feed/tag/ux"
+      - name: "dev.to Design"
         type: rss
-        url: "https://dribbble.com/stories.rss"
+        url: "https://dev.to/feed/tag/design"
+      - name: "UX Collective"
+        type: rss
+        url: "https://uxdesign.cc/feed"
+      - name: "Nielsen Norman Group"
+        type: rss
+        url: "https://www.nngroup.com/feed/rss/"
 
-  - id: frontend
-    display_name: "Frontend"
-    korean_label: "프론트엔드 개발"
-    description: "JavaScript, React, Next.js, TypeScript 등"
+  - id: dev
+    display_name: "Dev"
+    korean_label: "React · Next.js · Tailwind"
+    description: "React, Next.js, Tailwind CSS, TypeScript 최신 트렌드와 패턴"
     color_start: "#3b82f6"
     color_end: "#06b6d4"
     sources:
-      - name: "dev.to Frontend"
-        type: rss
-        url: "https://dev.to/feed/tag/frontend"
-      - name: "dev.to JavaScript"
-        type: rss
-        url: "https://dev.to/feed/tag/javascript"
       - name: "dev.to React"
         type: rss
         url: "https://dev.to/feed/tag/react"
-      - name: "Hacker News Frontpage"
+      - name: "dev.to Next.js"
         type: rss
-        url: "https://hnrss.org/frontpage?points=100"
-      - name: "JavaScript Weekly"
+        url: "https://dev.to/feed/tag/nextjs"
+      - name: "dev.to Tailwind"
         type: rss
-        url: "https://cprss.s3.amazonaws.com/javascriptweekly.com.xml"
+        url: "https://dev.to/feed/tag/tailwindcss"
+      - name: "dev.to TypeScript"
+        type: rss
+        url: "https://dev.to/feed/tag/typescript"
+      - name: "dev.to Frontend"
+        type: rss
+        url: "https://dev.to/feed/tag/frontend"
+      - name: "Vercel Blog"
+        type: rss
+        url: "https://vercel.com/atom"
+      - name: "React Blog"
+        type: rss
+        url: "https://react.dev/rss.xml"
 
-  - id: backend
-    display_name: "Backend"
-    korean_label: "백엔드 / 인프라"
-    description: "서버, 데이터베이스, DevOps, 클라우드"
-    color_start: "#10b981"
-    color_end: "#059669"
-    sources:
-      - name: "dev.to Backend"
-        type: rss
-        url: "https://dev.to/feed/tag/backend"
-      - name: "dev.to DevOps"
-        type: rss
-        url: "https://dev.to/feed/tag/devops"
-      - name: "dev.to Node.js"
-        type: rss
-        url: "https://dev.to/feed/tag/node"
-      - name: "Hacker News (backend keyword)"
-        type: rss
-        url: "https://hnrss.org/newest?q=backend+OR+database+OR+kubernetes&points=50"
-
-  - id: ai-tools
+  - id: ai-trend
     display_name: "AI"
-    korean_label: "AI 제품과 도구"
-    description: "AI 제품, 도구, 최신 연구 소식"
+    korean_label: "AI 트렌드"
+    description: "AI 제품, 도구, 업계 소식 - 에이전트, 모델, 개발자 도구"
     color_start: "#f59e0b"
     color_end: "#ea580c"
     sources:
@@ -82,12 +73,15 @@ categories:
       - name: "Hugging Face Blog"
         type: rss
         url: "https://huggingface.co/blog/feed.xml"
-      - name: "arXiv cs.AI"
-        type: rss
-        url: "http://export.arxiv.org/rss/cs.AI"
-      - name: "arXiv cs.LG"
-        type: rss
-        url: "http://export.arxiv.org/rss/cs.LG"
       - name: "dev.to AI"
         type: rss
         url: "https://dev.to/feed/tag/ai"
+      - name: "Simon Willison"
+        type: rss
+        url: "https://simonwillison.net/atom/everything/"
+      - name: "dev.to LLM"
+        type: rss
+        url: "https://dev.to/feed/tag/llm"
+      - name: "dev.to Agent"
+        type: rss
+        url: "https://dev.to/feed/tag/agent"
