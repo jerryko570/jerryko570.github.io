@@ -1,10 +1,11 @@
 """
-make_thumbnail.py (CLI)
------------------------
-Claude Code가 subprocess로 호출하는 썸네일 생성 CLI.
-
+make_thumbnail.py (CLI) v2
+--------------------------
 사용법:
-  python scripts/make_thumbnail.py "한글 제목" "카테고리 라벨" "#hexstart" "#hexend" "출력경로.png"
+  python scripts/make_thumbnail.py <title> <category_label> <color_start> <color_end> <output_path> [keyword]
+
+keyword: 중앙에 크게 표시할 영어 키워드 (예: "Next.js", "Claude", "Self Study")
+         생략 시 title을 사용 (한글이면 폰트 크기 자동 축소)
 """
 
 import sys
@@ -14,9 +15,9 @@ from thumbnail import generate_thumbnail
 
 
 def main() -> int:
-    if len(sys.argv) != 6:
+    if len(sys.argv) < 6:
         print(
-            "사용법: python make_thumbnail.py <title> <category_label> <color_start> <color_end> <output_path>",
+            "사용법: python make_thumbnail.py <title> <category_label> <color_start> <color_end> <output_path> [keyword]",
             file=sys.stderr,
         )
         return 1
@@ -26,6 +27,7 @@ def main() -> int:
     color_start = sys.argv[3]
     color_end = sys.argv[4]
     output_path = Path(sys.argv[5])
+    keyword = sys.argv[6] if len(sys.argv) >= 7 else ""
 
     result = generate_thumbnail(
         title=title,
@@ -33,6 +35,7 @@ def main() -> int:
         color_start=color_start,
         color_end=color_end,
         output_path=output_path,
+        keyword=keyword,
     )
     print(f"✅ 썸네일 생성 완료: {result}")
     return 0
