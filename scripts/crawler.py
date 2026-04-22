@@ -3,6 +3,7 @@ crawler.py (library)
 --------------------
 RSS 피드 파싱 로직.
 prepare.py에서 import해서 사용합니다.
+실제 크롤링 일은 crawler.py가 함
 
 v2 변경사항:
 - MAX_AGE_DAYS: 14 → 60 (최근 1~2달 이내만)
@@ -23,7 +24,7 @@ import yaml
 from bs4 import BeautifulSoup
 
 logger = logging.getLogger(__name__)
-
+#
 # 최근 60일 이내 (1~2달)
 MAX_AGE_DAYS = 60
 
