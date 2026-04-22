@@ -11,34 +11,46 @@ Claude Code Action 실행 전에 돌아가는 스크립트.
      Claude Code가 포스트 생성에 성공하면 그때 업데이트 (실패 시 같은 카테고리 재시도).
 """
 
+# 크롤링 준비 작업 (친구한테 부탁만 하는 거임)
+# prepare.py (100줄) - 메인 흐름만
+# crawler.py (200줄) - 크롤링 전문
+# state_manager.py (100줄) - 상태 관리 전문
+
+# 각자 전문 분야만 깔끔하게!
+
+# 미래에 Python 버전 올려도 수정 안 해도 됨
 from __future__ import annotations
 
-import json
-import logging
-import sys
-from pathlib import Path
+# 코딩 숙제를 하려면 4가지 준비물이 필요힘
+import json        # 파일 정리 폴더
+import logging     # 확성기 ( 나 지금 ~ 하고 있음)
+import sys         # 다음 단계로 넘어 갈 수 있게 알려줌
+from pathlib import Path  # 경로 관리 컴포넌트만 가져옴
 
+# 블로그 글 긁어오기, 설정 파일 열기
 from crawler import crawl_category, load_sources
+
+# 상태 관리자 (지금까지 뭐했는지 기억하기)
 from state_manager import StateManager
 
-# 경로
-SCRIPT_DIR = Path(__file__).resolve().parent
-SOURCES_PATH = SCRIPT_DIR / "sources.yml"
-STATE_PATH = SCRIPT_DIR / "state.json"
-CANDIDATES_PATH = SCRIPT_DIR / "candidates.json"
-
-# 로깅
+# 경로 (내가 쓸 파일 주소 4개 저장)
+SCRIPT_DIR = Path(__file__).resolve().parent # prepare.py가 있는 곳
+SOURCES_PATH = SCRIPT_DIR / "sources.yml"  # 크롤링할 블로그 목록 파일
+STATE_PATH = SCRIPT_DIR / "state.json" # 지금까지 뭐 했는지 기록 파일
+CANDIDATES_PATH = SCRIPT_DIR / "candidates.json" # 후보 글 저장할 파일
+ 
+# 로깅 (로그를 어떻게 출력할지 설정)
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 logger = logging.getLogger(__name__)
 
 
-def main() -> int:
-    logger.info("🚀 후보 수집 시작\n")
+def main() -> int: # 함수 시작!
+    logger.info("🚀 후보 수집 시작\n") # 로그 출력
 
     # 1. 설정 로드
-    sources_config = load_sources(str(SOURCES_PATH))
-    categories = sources_config["categories"]
-    state = StateManager(STATE_PATH)
+    sources_config = load_sources(str(SOURCES_PATH))  # YAML 파일 읽기
+    categories = sources_config["categories"]   # 카테고리만 꺼냄
+    state = StateManager(STATE_PATH)  # 기록 담당 로봇 생성
 
     # 2. 다음 카테고리 결정
     next_idx = state.next_category_index(len(categories))

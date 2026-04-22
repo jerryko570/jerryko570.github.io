@@ -162,55 +162,67 @@ def generate_thumbnail(
     Jerry 스펙 썸네일 생성.
 
     Args:
-        title: 호환용 (사용 안 함)
+        title: 자동 색 결정에 쓰는 시드 (keyword 없으면 본문 기본값으로도 씀)
         category_label: 호환용 (사용 안 함)
-        color_start, color_end: 배경 그라데이션
+        color_start, color_end: 배경 색.
+            - "auto" 또는 "" 이면 title 해시로 팔레트에서 픽.
+            - end를 비우거나 start와 같으면 단색.
         output_path: 저장 경로
-        keyword: 중앙에 크게 쓸 영어 키워드 (예: "Claude", "Next.js")
+        keyword: 중앙에 크게 쓸 영어 키워드. "\\n" 포함 시 2줄.
     """
+    # 색상 해석 (auto/단색)
+    cs, ce = _resolve_colors(color_start, color_end, seed=title)
+
     # 배경
-    img = _make_gradient(color_start, color_end).convert("RGB")
+    img = _make_background(cs, ce).convert("RGB")
     draw = ImageDraw.Draw(img)
 
     # 텍스트 색상 (배경 밝기 자동 반영)
-    text_color = _pick_text_color(color_start, color_end)
+    text_color = _pick_text_color(cs, ce)
 
-    # 키워드
-    display = _get_keyword(keyword or title)
+    # 1~2줄
+    lines = _prepare_lines(keyword or title)
+    longest = max(lines, key=len)
 
-    # 폰트 크기 (텍스트 길이에 따라)
-    if len(display) <= 6:
+    # 폰트 크기 (가장 긴 줄 길이 기준)
+    if len(longest) <= 6:
         font_size = 180
-    elif len(display) <= 10:
+    elif len(longest) <= 10:
         font_size = 140
-    elif len(display) <= 15:
+    elif len(longest) <= 15:
         font_size = 110
     else:
         font_size = 90
 
     font = _find_font(font_size)
 
-    # 텍스트 크기 측정
-    bbox = draw.textbbox((0, 0), display, font=font)
-    text_w = bbox[2] - bbox[0]
-    text_h = bbox[3] - bbox[1]
+    def longest_width(f: ImageFont.FreeTypeFont) -> int:
+        return max(
+            draw.textbbox((0, 0), ln, font=f)[2] - draw.textbbox((0, 0), ln, font=f)[0]
+            for ln in lines
+        )
 
-    # 너무 길면 줄이기
-    while text_w > WIDTH - 120 and font_size > 60:
-        font_size -= 20
+    # 폭 초과 시 크기 줄이기
+    while longest_width(font) > WIDTH - 120 and font_size > 60:
+        font_size -= 10
         font = _find_font(font_size)
-        bbox = draw.textbbox((0, 0), display, font=font)
+
+    # 줄 간격 — 2줄일 때만 적용 (1.05배)
+    line_step = int(font_size * 1.05)
+    total_h = line_step * (len(lines) - 1) + font_size
+    y_start = (HEIGHT - total_h) // 2
+
+    for i, line in enumerate(lines):
+        bbox = draw.textbbox((0, 0), line, font=font)
         text_w = bbox[2] - bbox[0]
-        text_h = bbox[3] - bbox[1]
-
-    # 중앙 정렬 (bbox offset 보정)
-    x = (WIDTH - text_w) // 2 - bbox[0]
-    y = (HEIGHT - text_h) // 2 - bbox[1]
-
-    # 단색 텍스트만 (그림자 없음)
-    draw.text((x, y), display, font=font, fill=text_color)
+        x = (WIDTH - text_w) // 2 - bbox[0]
+        y = y_start + i * line_step - bbox[1]
+        draw.text((x, y), line, font=font, fill=text_color)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     img.save(output_path, "PNG", optimize=True)
-    logger.info(f"🖼️ 썸네일: {output_path.name} (키워드: {display}, 색: {text_color})")
+    logger.info(
+        f"🖼️ 썸네일: {output_path.name} "
+        f"(lines={lines}, bg={cs}{'→' + ce if ce != cs else ''}, text={text_color})"
+    )
     return output_path
