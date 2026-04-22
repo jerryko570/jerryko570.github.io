@@ -5,7 +5,7 @@ date: 2026-04-22 10:00:00 +0900
 categories: [DevTools]
 tags: [claude, design-tool, anthropic, design-system]
 image:
-  path: /assets/img/thumbnail/self-study.png
+  path: /assets/img/thumbnail/claude.png
   alt: "Claude Design 공부 정리"
 ---
 
