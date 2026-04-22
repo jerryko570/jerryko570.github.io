@@ -5,7 +5,7 @@ date: 2026-04-22 20:00:00 +0900
 categories: [DevTools]
 tags: [automation, github-actions, claude-code]
 image:
-  path: /assets/img/thumbnail/self-study.png
+  path: /assets/img/thumbnail/automation.png
   alt: "블로그 자동화 세팅"
 ---
 
@@ -72,6 +72,8 @@ scripts/thumbnail.py가 카테고리별 solid 배경에 영어 키워드 하나�
 기술 문제는 시간 들이면 결국 풀렸다. 근데 톤은 **푸는** 문제가 아니라 **정의하는** 문제였다. 스타일 가이드를 쓰는 작업이 결국 "내 말투를 언어로 한 번 더 설명해두는 일"에 가까웠다.
 
 잘 돌아가는 파이프라인보다, 그 끝에서 **내가 낯설어하지 않는 글**이 나오게 만드는 쪽이 훨씬 품이 들었다. 다음 자동 생성 글이 어떻게 올라올지 조심스럽게 지켜볼 생각이다.
+
+물론 최종적으로는 내가 다시 다듬어야 할 것 같다. 한번 더 정리하면서 공부도 계속 이어가 볼 생각이다.
 
 ---
 
