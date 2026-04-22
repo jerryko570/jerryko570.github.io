@@ -1,87 +1,53 @@
 # 카테고리별 소스 설정
 # 3일마다 카테고리를 순환 (9일에 한 바퀴)
-# - Day 1: ai-design
-# - Day 4: dev
-# - Day 7: ai-trend
+#
+# 원칙:
+# 1. 공식 블로그만 (dev.to, Medium 같은 2차 소스 제외)
+# 2. 최근 60일 이내 발표만 다룸
+# 3. 카테고리 이름에 하이픈 금지 (Chirpy 호환성)
 
 categories:
-  - id: ai-design
-    display_name: "AI-Design"
-    korean_label: "AI × 디자인"
-    description: "프로덕트/UX 디자인과 AI의 교차점 - Claude, Figma MCP, v0, Cursor 등"
+  - id: design-tools
+    display_name: "Design"
+    korean_label: "디자인 도구"
+    description: "Figma, Framer 등 디자인 툴의 공식 업데이트 · 베타 기능"
     color_start: "#a855f7"
     color_end: "#ec4899"
     sources:
-      - name: "Anthropic News"
-        type: rss
-        url: "https://www.anthropic.com/news/rss.xml"
       - name: "Figma Blog"
         type: rss
         url: "https://www.figma.com/blog/rss.xml"
-      - name: "dev.to UX"
+      - name: "Framer Blog"
         type: rss
-        url: "https://dev.to/feed/tag/ux"
-      - name: "dev.to Design"
-        type: rss
-        url: "https://dev.to/feed/tag/design"
-      - name: "UX Collective"
-        type: rss
-        url: "https://uxdesign.cc/feed"
-      - name: "Nielsen Norman Group"
-        type: rss
-        url: "https://www.nngroup.com/feed/rss/"
+        url: "https://www.framer.com/blog/rss.xml"
 
-  - id: dev
-    display_name: "Dev"
-    korean_label: "React · Next.js · Tailwind"
-    description: "React, Next.js, Tailwind CSS, TypeScript 최신 트렌드와 패턴"
+  - id: frontend
+    display_name: "Frontend"
+    korean_label: "프론트엔드 프레임워크"
+    description: "React, Next.js, Tailwind 공식 업데이트 · 릴리스 노트"
     color_start: "#3b82f6"
     color_end: "#06b6d4"
     sources:
-      - name: "dev.to React"
-        type: rss
-        url: "https://dev.to/feed/tag/react"
-      - name: "dev.to Next.js"
-        type: rss
-        url: "https://dev.to/feed/tag/nextjs"
-      - name: "dev.to Tailwind"
-        type: rss
-        url: "https://dev.to/feed/tag/tailwindcss"
-      - name: "dev.to TypeScript"
-        type: rss
-        url: "https://dev.to/feed/tag/typescript"
-      - name: "dev.to Frontend"
-        type: rss
-        url: "https://dev.to/feed/tag/frontend"
-      - name: "Vercel Blog"
-        type: rss
-        url: "https://vercel.com/atom"
       - name: "React Blog"
         type: rss
         url: "https://react.dev/rss.xml"
+      - name: "Next.js Blog (Vercel)"
+        type: rss
+        url: "https://vercel.com/atom"
+      - name: "Tailwind Blog"
+        type: rss
+        url: "https://tailwindcss.com/blog/feed.xml"
 
-  - id: ai-trend
-    display_name: "AI"
-    korean_label: "AI 트렌드"
-    description: "AI 제품, 도구, 업계 소식 - 에이전트, 모델, 개발자 도구"
+  - id: dev-tools
+    display_name: "DevTools"
+    korean_label: "개발자 도구"
+    description: "Anthropic(Claude), Vercel, 에이전트 도구 공식 발표"
     color_start: "#f59e0b"
     color_end: "#ea580c"
     sources:
       - name: "Anthropic News"
         type: rss
         url: "https://www.anthropic.com/news/rss.xml"
-      - name: "Hugging Face Blog"
+      - name: "OpenAI Blog"
         type: rss
-        url: "https://huggingface.co/blog/feed.xml"
-      - name: "dev.to AI"
-        type: rss
-        url: "https://dev.to/feed/tag/ai"
-      - name: "Simon Willison"
-        type: rss
-        url: "https://simonwillison.net/atom/everything/"
-      - name: "dev.to LLM"
-        type: rss
-        url: "https://dev.to/feed/tag/llm"
-      - name: "dev.to Agent"
-        type: rss
-        url: "https://dev.to/feed/tag/agent"
+        url: "https://openai.com/blog/rss.xml"

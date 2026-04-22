@@ -3,6 +3,10 @@ crawler.py (library)
 --------------------
 RSS 피드 파싱 로직.
 prepare.py에서 import해서 사용합니다.
+
+v2 변경사항:
+- MAX_AGE_DAYS: 14 → 60 (최근 1~2달 이내만)
+- 공식 소스만 다루므로 발표 빈도가 낮아서 기간 확대
 """
 
 from __future__ import annotations
@@ -20,19 +24,19 @@ from bs4 import BeautifulSoup
 
 logger = logging.getLogger(__name__)
 
-# 너무 오래된 글은 제외 (최근 14일 이내만)
-MAX_AGE_DAYS = 14
+# 최근 60일 이내 (1~2달)
+MAX_AGE_DAYS = 60
 
 
 @dataclass
 class Candidate:
     title: str
     url: str
-    summary: str          # 원문 요약/초록
-    published: str        # 발행일 ISO
-    source: str           # 소스명 (예: "Smashing Magazine")
+    summary: str
+    published: str
+    source: str
     category_id: str
-    category_label: str   # 한글 카테고리명
+    category_label: str
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -44,7 +48,6 @@ def load_sources(path: str) -> dict:
 
 
 def _clean_html(html_text: str) -> str:
-    """HTML 태그 제거"""
     if not html_text:
         return ""
     soup = BeautifulSoup(html_text, "html.parser")
@@ -65,7 +68,6 @@ def _parse_date(entry) -> datetime | None:
 
 
 def fetch_feed(url: str, timeout: int = 15) -> list:
-    """RSS 피드에서 엔트리 목록을 가져옵니다. 실패 시 빈 리스트."""
     try:
         resp = requests.get(
             url,
@@ -84,7 +86,7 @@ def fetch_feed(url: str, timeout: int = 15) -> list:
 
 
 def crawl_category(category: dict) -> List[Candidate]:
-    """주어진 카테고리의 모든 소스를 크롤링해서 후보 리스트 반환"""
+    """주어진 카테고리의 모든 소스를 크롤링"""
     candidates: List[Candidate] = []
     cutoff = datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)
 
@@ -92,9 +94,10 @@ def crawl_category(category: dict) -> List[Candidate]:
         logger.info(f"  📡 크롤링 중: {source['name']}")
         entries = fetch_feed(source["url"])
 
-        for entry in entries[:20]:  # 소스당 최대 20개
+        for entry in entries[:20]:
             published = _parse_date(entry)
-            if published and published < cutoff:
+            # 날짜 없으면 스킵 (공식 소스는 날짜 있어야 함)
+            if not published or published < cutoff:
                 continue
 
             title = getattr(entry, "title", "").strip()
@@ -122,5 +125,5 @@ def crawl_category(category: dict) -> List[Candidate]:
             ))
 
     candidates.sort(key=lambda c: c.published, reverse=True)
-    logger.info(f"  ✅ 총 {len(candidates)}개 후보 수집됨")
+    logger.info(f"  ✅ 총 {len(candidates)}개 후보 수집됨 (최근 {MAX_AGE_DAYS}일 이내)")
     return candidates
