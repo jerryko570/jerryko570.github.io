@@ -1,7 +1,7 @@
 ---
 title: "블로그 자동화 세팅하면서 걸렸던 것들 정리"
 description: "하루 동안 블로그 자동 포스팅 시스템을 만들면서 마주친 문제들과 톤을 잡아간 과정을 기록했다."
-date: 2026-04-22 21:00:00 +0900
+date: 2026-04-22 20:00:00 +0900
 categories: [DevTools]
 tags: [automation, github-actions, claude-code, workflow]
 image:
