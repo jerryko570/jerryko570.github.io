@@ -1,0 +1,69 @@
+name: Auto Blog Post
+
+on:
+  schedule:
+    # 2일마다 한국시간 오전 9시 실행 (UTC 00:00)
+    - cron: '0 0 */2 * *'
+  workflow_dispatch: # 수동 실행 버튼
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Korean fonts (for thumbnails)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk fonts-noto-cjk-extra
+
+      - name: Install Python dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r scripts/requirements.txt
+
+      - name: Prepare candidates (crawl & filter)
+        id: prepare
+        run: |
+          python scripts/prepare.py
+          # 크롤링 결과를 워크플로우 출력으로
+          if [ -f scripts/candidates.json ]; then
+            COUNT=$(python -c "import json; print(len(json.load(open('scripts/candidates.json'))['candidates']))")
+            echo "candidate_count=$COUNT" >> $GITHUB_OUTPUT
+            echo "📊 후보 개수: $COUNT"
+          else
+            echo "candidate_count=0" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Generate post with Claude Code
+        if: steps.prepare.outputs.candidate_count != '0'
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt_file: prompts/claude_instructions.md
+          claude_args: "--max-turns 25 --model claude-sonnet-4-6"
+
+      - name: Commit and push if changes exist
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _posts/ assets/img/thumbnail/ scripts/state.json 2>/dev/null || true
+          # candidates.json은 런타임 캐시라 커밋에서 제외
+          git rm --cached scripts/candidates.json 2>/dev/null || true
+          if git diff --staged --quiet; then
+            echo "✅ 변경사항 없음 (이번 턴은 패스)"
+          else
+            git commit -m "auto: 새 블로그 포스트 자동 생성 [skip ci]"
+            git push
+            echo "🎉 새 포스트 푸시 완료"
+          fi
