@@ -1,17 +1,21 @@
 """
-thumbnail.py v3 (library)
+thumbnail.py v4 (library)
 -------------------------
 Jerry Figma 스펙:
 - Font: Pretendard ExtraBold
-- Line height: 0.9
+- Line height: 0.9 (2줄은 1.05로 살짝 넉넉)
 - Letter spacing: 0%
 - Alignment: Center
 - Fill: #FAFAFA (밝은 배경에서는 #1a1a1a 자동)
 - 그림자 없음
+- 배경: solid color 기본. color_start == color_end면 단색, 다르면 그라데이션.
+- 자동 색상: color_start == "auto" 또는 빈 문자열이면 title 해시로 팔레트에서 픽.
+- 멀티라인: keyword에 "\\n" 포함 시 2줄 렌더링.
 """
 
 from __future__ import annotations
 
+import hashlib
 import logging
 from pathlib import Path
 from typing import Tuple
@@ -21,6 +25,23 @@ from PIL import Image, ImageDraw, ImageFont
 logger = logging.getLogger(__name__)
 
 WIDTH, HEIGHT = 1200, 630
+
+# 자동 배경 팔레트 — 주제별 수동 PNG(react.png, claude.png 등)에 쓰인 색과 구분되도록
+# 선명한 단색 위주로 구성. 텍스트는 #FAFAFA와 자동 대비.
+AUTO_PALETTE = [
+    "#2DA44E",  # GitHub green (automation)
+    "#FF6B35",  # Claude orange
+    "#1E88E5",  # blue
+    "#7C3AED",  # purple
+    "#E53935",  # red
+    "#009688",  # teal
+    "#EC407A",  # pink
+    "#3949AB",  # indigo
+    "#F59E0B",  # amber
+    "#0F766E",  # deep teal
+    "#C2410C",  # burnt orange
+    "#4338CA",  # deep indigo
+]
 
 # 폰트 우선순위
 FONT_PATHS = [
@@ -77,14 +98,16 @@ def _find_font(size: int) -> ImageFont.FreeTypeFont:
     return ImageFont.load_default()
 
 
-def _make_gradient(start_hex: str, end_hex: str) -> Image.Image:
-    """대각선 그라데이션"""
+def _make_background(start_hex: str, end_hex: str) -> Image.Image:
+    """start == end면 단색, 아니면 대각선 그라데이션."""
     start = _hex_to_rgb(start_hex)
     end = _hex_to_rgb(end_hex)
 
+    if start == end:
+        return Image.new("RGB", (WIDTH, HEIGHT), start)
+
     img = Image.new("RGB", (WIDTH, HEIGHT))
     pixels = img.load()
-
     for y in range(HEIGHT):
         for x in range(WIDTH):
             t = (x / WIDTH * 0.4 + y / HEIGHT * 0.6)
@@ -92,18 +115,39 @@ def _make_gradient(start_hex: str, end_hex: str) -> Image.Image:
             g = int(start[1] + (end[1] - start[1]) * t)
             b = int(start[2] + (end[2] - start[2]) * t)
             pixels[x, y] = (r, g, b)
-
     return img
 
 
-def _get_keyword(keyword: str) -> str:
-    """중앙 배치할 영어 키워드 (최대 2단어)"""
+def _pick_auto_color(seed: str) -> str:
+    """title 해시로 팔레트에서 결정론적으로 픽 — 같은 제목은 같은 색."""
+    digest = hashlib.md5((seed or "default").encode("utf-8")).digest()
+    return AUTO_PALETTE[digest[0] % len(AUTO_PALETTE)]
+
+
+def _resolve_colors(color_start: str, color_end: str, seed: str) -> Tuple[str, str]:
+    """'auto'/빈 문자열은 팔레트 자동 선택. end가 비면 start와 동일(단색)."""
+    cs = color_start.strip() if color_start else ""
+    ce = color_end.strip() if color_end else ""
+    if not cs or cs.lower() == "auto":
+        cs = _pick_auto_color(seed)
+    if not ce or ce.lower() == "auto":
+        ce = cs
+    return cs, ce
+
+
+def _prepare_lines(keyword: str) -> list[str]:
+    """키워드 → 1~2줄 리스트. '\\n' 포함 시 split, 아니면 단어 수로 판단."""
     if not keyword:
-        return "Study"
-    words = keyword.strip().split()
+        return ["Study"]
+    text = keyword.strip()
+    # 명시적 줄바꿈이 있으면 그대로 사용
+    if "\n" in text:
+        return [ln.strip() for ln in text.split("\n") if ln.strip()][:2]
+    # 단어 3개 이상이면 앞 2단어만, 그 외는 한 줄
+    words = text.split()
     if len(words) > 2:
-        return " ".join(words[:2])
-    return keyword.strip()
+        return [" ".join(words[:2])]
+    return [text]
 
 
 def generate_thumbnail(
