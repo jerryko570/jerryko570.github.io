@@ -16,6 +16,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -63,15 +66,19 @@ jobs:
           claude_args: "--max-turns 40 --model claude-sonnet-4-6 --allowedTools Read,Write,Edit,Bash,WebFetch,Glob,Grep"
 
       - name: Commit and push if changes exist
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # git remote URL을 토큰 포함 형태로 재설정
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git add _posts/ assets/img/thumbnail/ scripts/state.json 2>/dev/null || true
           git rm --cached scripts/candidates.json 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "✅ 변경사항 없음 (이번 턴은 패스)"
           else
             git commit -m "auto: 새 블로그 포스트 자동 생성 [skip ci]"
-            git push
+            git push origin HEAD:main
             echo "🎉 새 포스트 푸시 완료"
           fi
