@@ -3,7 +3,7 @@ name: Auto Blog Post
 on:
   schedule:
     # 2일마다 한국시간 오전 9시 실행 (UTC 00:00)
-    - cron: '0 0 */2 * *'
+    - cron: "0 0 */2 * *"
   workflow_dispatch: # 수동 실행 버튼
 
 jobs:
@@ -20,7 +20,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install Korean fonts (for thumbnails)
         run: |
@@ -45,12 +45,22 @@ jobs:
             echo "candidate_count=0" >> $GITHUB_OUTPUT
           fi
 
+      - name: Read Claude instructions
+        if: steps.prepare.outputs.candidate_count != '0'
+        id: instructions
+        run: |
+          {
+            echo 'content<<PROMPT_EOF'
+            cat prompts/claude_instructions.md
+            echo PROMPT_EOF
+          } >> $GITHUB_OUTPUT
+
       - name: Generate post with Claude Code
         if: steps.prepare.outputs.candidate_count != '0'
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          prompt_file: prompts/claude_instructions.md
+          prompt: ${{ steps.instructions.outputs.content }}
           claude_args: "--max-turns 25 --model claude-sonnet-4-6"
 
       - name: Commit and push if changes exist
