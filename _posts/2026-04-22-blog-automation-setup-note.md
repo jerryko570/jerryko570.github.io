@@ -5,7 +5,7 @@ date: 2026-04-22 21:00:00 +0900
 categories: [DevTools]
 tags: [automation, github-actions, claude-code, workflow]
 image:
-  path: /assets/img/thumbnail/auto-20260422-blog-automation-setup-note.png
+  path: /assets/img/thumbnail/self-study.png
   alt: "블로그 자동화 세팅하면서 걸렸던 것들 정리"
 ---
 
@@ -47,7 +47,7 @@ Action 기본값으론 Read만 허용되더라. `Read,Write,Edit,Bash,WebFetch,G
 
 각각 따로 보면 사소한 문제였는데, 워크플로우 안에서 연달아 터지니까 디버깅이 제법 고됐다. 에러 하나 고치고 다시 돌려서 다음 에러를 보는 식이라, 한 번 반영에 워크플로우 한 사이클이 그대로 기다림이 됐다.
 
-> 💡 **여기서 든 질문?**
+> 💡 **여기서 든 질문?** 
 여기까지 와도 아직 "글의 퀄리티"는 손 못 댄 상태였다. 돌아는 가는데, 나오는 글이 어떤지는 보고 난 뒤였다.
 
 ## **3️⃣ 돌려보니 글에서 AI 티가 난다**
