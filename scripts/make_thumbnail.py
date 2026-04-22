@@ -1,11 +1,15 @@
 """
-make_thumbnail.py (CLI) v2
+make_thumbnail.py (CLI) v3
 --------------------------
 사용법:
   python scripts/make_thumbnail.py <title> <category_label> <color_start> <color_end> <output_path> [keyword]
 
-keyword: 중앙에 크게 표시할 영어 키워드 (예: "Next.js", "Claude", "Self Study")
-         생략 시 title을 사용 (한글이면 폰트 크기 자동 축소)
+v3 Jerry 스펙:
+- Pretendard ExtraBold (Noto fallback)
+- line-height 0.9
+- center alignment
+- fill #FAFAFA (밝은 배경에선 #1a1a1a 자동)
+- 그림자 없음
 """
 
 import sys
@@ -37,7 +41,7 @@ def main() -> int:
         output_path=output_path,
         keyword=keyword,
     )
-    print(f"✅ 썸네일 생성 완료: {result}")
+    print(f"✅ 썸네일 생성: {result}")
     return 0
 
 
