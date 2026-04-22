@@ -3,7 +3,7 @@ name: Auto Blog Post
 on:
   schedule:
     # 3일마다 한국시간 오전 9시 실행 (UTC 00:00)
-    - cron: '0 0 */3 * *'
+    - cron: "0 0 */3 * *"
   workflow_dispatch: # 수동 실행 버튼
 
 jobs:
@@ -20,7 +20,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.11'
+          python-version: "3.11"
 
       - name: Install Korean fonts (for thumbnails)
         run: |
@@ -60,7 +60,7 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           prompt: ${{ steps.instructions.outputs.content }}
-          claude_args: "--max-turns 25 --model claude-sonnet-4-6"
+          claude_args: "--max-turns 60 --model claude-sonnet-4-6"
 
       - name: Commit and push if changes exist
         run: |
