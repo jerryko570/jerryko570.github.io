@@ -2,7 +2,7 @@
 title: "프로토타입 vs 목업 파헤치기 | AI가 바꿔버린 피드백 획득 전략"
 description: "Static mockup으로는 절대 못 잡는 문제들이 있다. AI가 인터랙티브 프로토타이핑 비용을 없애버린 지금, 디자이너의 판단 기준이 달라져야 한다."
 date: 2026-04-22 09:00:00 +0900
-categories: [AI-Design]
+categories: [AI, Design]
 tags: [design, prototyping, ux, figma, ai-tools]
 image:
   path: /assets/img/thumbnail/auto-20260422-prototype-vs-mockup-ai-feedback-strategy.png
