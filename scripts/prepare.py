@@ -1,98 +1,121 @@
-# 카테고리별 소스 설정
-# 1일마다 카테고리를 순환 (4일에 한 바퀴)
-# state.json의 last_category_index가 다음 시작점을 결정
-#
-# 원칙:
-# 1. 공식 블로그 RSS만 (dev.to, Medium 같은 2차 소스 제외)
-# 2. crawler.py에서 최근 60일 이내 글만 통과
-# 3. display_name에는 하이픈 금지 (Chirpy 카테고리 호환성)
+"""
+prepare.py
+----------
+Claude Code Action 실행 전에 도는 스크립트.
 
-categories:
-  - id: design-tools
-    display_name: "Design"
-    korean_label: "디자인 도구"
-    description: "Figma, Webflow 등 디자인·노코드 도구의 공식 업데이트"
-    color_start: "#a855f7"
-    color_end: "#ec4899"
-    sources:
-      - name: "Figma Blog"
-        type: rss
-        url: "https://www.figma.com/blog/feed/atom.xml"
-      - name: "Webflow Blog"
-        type: rss
-        url: "https://webflow.com/blog/rss.xml"
-      - name: "Notion Blog"
-        type: rss
-        url: "https://www.notion.com/blog/rss.xml"
+흐름:
+1. sources.yml + state.json 로드
+2. state 기준 "다음 카테고리"부터 순회
+   → 새 글 있으면 채택 / 없으면 자동으로 다음 카테고리로 폴백
+3. 채택된 카테고리의 상위 N개를 candidates.json에 저장
 
-  - id: design-craft
-    display_name: "DesignCraft"
-    korean_label: "프로덕트 디자인"
-    description: "한국 IT 기업의 UX 리서치, 디자인 시스템, 프로덕트 디자인 케이스"
-    color_start: "#f43f5e"
-    color_end: "#fb923c"
-    sources:
-      - name: "Toss Tech"
-        type: rss
-        url: "https://toss.tech/rss.xml"
-      - name: "PXD Story"
-        type: rss
-        url: "https://story.pxd.co.kr/rss"
-      - name: "디지털 인사이트"
-        type: rss
-        url: "https://ditoday.com/feed/"
-      - name: "요즘IT"
-        type: rss
-        url: "https://yozm.wishket.com/magazine/feed/"
-      - name: "뱅크샐러드 블로그"
-        type: rss
-        url: "https://blog.banksalad.com/rss.xml"
+state.json은 여기서 안 건드림. 포스트 생성 성공 후 update_state.py가 처리.
+"""
+from __future__ import annotations
 
-  - id: frontend
-    display_name: "Frontend"
-    korean_label: "프론트엔드 프레임워크"
-    description: "React, Vue, Svelte 등 프레임워크와 빌드툴 공식 릴리스"
-    color_start: "#3b82f6"
-    color_end: "#06b6d4"
-    sources:
-      - name: "React Blog"
-        type: rss
-        url: "https://react.dev/rss.xml"
-      - name: "Vercel Blog"
-        type: rss
-        url: "https://vercel.com/atom"
-      - name: "Tailwind Blog"
-        type: rss
-        url: "https://tailwindcss.com/feeds/feed.xml"
-      - name: "Astro Blog"
-        type: rss
-        url: "https://astro.build/rss.xml"
-      - name: "Svelte Blog"
-        type: rss
-        url: "https://svelte.dev/blog/rss.xml"
-      - name: "web.dev Blog"
-        type: rss
-        url: "https://web.dev/blog/feed.xml"
+import json
+import logging
+import sys
+from pathlib import Path
 
-  - id: dev-tools
-    display_name: "DevTools"
-    korean_label: "개발자 도구"
-    description: "AI 코딩 에이전트 · IDE · 개발자 플랫폼 공식 발표"
-    color_start: "#f59e0b"
-    color_end: "#ea580c"
-    sources:
-      - name: "OpenAI News"
-        type: rss
-        url: "https://openai.com/blog/rss.xml"
-      - name: "GitHub Blog"
-        type: rss
-        url: "https://github.blog/feed/"
-      - name: "JetBrains Blog"
-        type: rss
-        url: "https://blog.jetbrains.com/feed/"
-      - name: "Hugging Face Blog"
-        type: rss
-        url: "https://huggingface.co/blog/feed.xml"
-      - name: "Stack Overflow Blog"
-        type: rss
-        url: "https://stackoverflow.blog/feed/"
+from crawler import crawl_category, load_sources
+from state_manager import StateManager
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+SOURCES_PATH = SCRIPT_DIR / "sources.yml"
+STATE_PATH = SCRIPT_DIR / "state.json"
+CANDIDATES_PATH = SCRIPT_DIR / "candidates.json"
+
+TOP_N = 10  # Claude에 전달할 후보 최대 개수
+
+logging.basicConfig(level=logging.INFO, format="%(message)s")
+logger = logging.getLogger(__name__)
+
+
+def collect_fresh(category: dict, state: StateManager) -> list:
+    """카테고리 크롤링 → seen URL 제거 → fresh 후보 반환.
+    크롤링이 터지면 빈 리스트 반환해서 폴백이 동작하도록."""
+    try:
+        candidates = crawl_category(category)
+    except Exception as e:
+        logger.warning(f"   ⚠️ 크롤링 실패: {e}")
+        return []
+
+    fresh = [c for c in candidates if not state.is_seen(c.url)]
+    logger.info(f"   🆕 새 후보 {len(fresh)}개 / 전체 {len(candidates)}개")
+    return fresh
+
+
+def select_category(categories: list, state: StateManager):
+    """state 기준 다음 카테고리부터 순회하며 fresh 후보가 있는 첫 카테고리 채택.
+
+    Returns:
+        (idx, category, fresh) 또는 None
+    """
+    n = len(categories)
+    start_idx = state.next_category_index(n)
+
+    for offset in range(n):
+        idx = (start_idx + offset) % n
+        category = categories[idx]
+        prefix = "📂" if offset == 0 else "↪️ 폴백"
+        logger.info(
+            f"{prefix} [{idx}] {category['display_name']} ({category['korean_label']})"
+        )
+
+        fresh = collect_fresh(category, state)
+        if fresh:
+            if offset > 0:
+                logger.info(f"   ✅ 폴백 성공 (원래 시작점: {start_idx})")
+            return idx, category, fresh
+        logger.info("")  # 카테고리 간 줄 띄우기
+
+    return None
+
+
+def write_candidates(idx: int, category: dict, fresh: list) -> int:
+    """candidates.json 저장. Claude Code가 이 파일을 읽음."""
+    top = fresh[:TOP_N]
+    payload = {
+        "category": {
+            "id": category["id"],
+            "display_name": category["display_name"],
+            "korean_label": category["korean_label"],
+            "color_start": category["color_start"],
+            "color_end": category["color_end"],
+        },
+        "next_category_index": idx,
+        "candidates": [c.to_dict() for c in top],
+    }
+    with CANDIDATES_PATH.open("w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+    return len(top)
+
+
+def main() -> int:
+    logger.info("🚀 후보 수집 시작\n")
+
+    sources_config = load_sources(str(SOURCES_PATH))
+    categories = sources_config["categories"]
+    state = StateManager(STATE_PATH)
+
+    selection = select_category(categories, state)
+
+    if selection is None:
+        logger.warning("\n⚠️ 모든 카테고리에서 새 후보 없음 - 이번 턴 스킵")
+        # 이전 실행 잔재 청소. 워크플로우의 -f 체크가 정확히 동작하도록.
+        CANDIDATES_PATH.unlink(missing_ok=True)
+        return 0
+
+    idx, category, fresh = selection
+    written = write_candidates(idx, category, fresh)
+    logger.info(f"\n✅ candidates.json 저장: {category['display_name']} ({written}개)")
+    return 0
+
+
+if __name__ == "__main__":
+    try:
+        sys.exit(main())
+    except Exception as e:
+        logger.exception(f"❌ 오류: {e}")
+        sys.exit(1)

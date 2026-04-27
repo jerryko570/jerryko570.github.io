@@ -36,7 +36,6 @@ def _err(msg: str) -> None:
 
 
 def main() -> int:
-    # 1. stdin에서 JSON 읽기
     raw = sys.stdin.read()
     if not raw.strip():
         _err("stdin이 비어있습니다. JSON을 파이프로 넘겨주세요.")
@@ -52,20 +51,17 @@ def main() -> int:
         _err("JSON 최상위는 객체여야 합니다.")
         return 1
 
-    # 2. 필수 키 검증
     missing = REQUIRED_KEYS - payload.keys()
     if missing:
         _err(f"필수 키 누락: {', '.join(sorted(missing))}")
         return 1
 
-    # 3. category_index 타입 보정
     try:
         category_index = int(payload["category_index"])
     except (TypeError, ValueError):
         _err("category_index는 정수여야 합니다.")
         return 1
 
-    # 4. state.json 업데이트
     state_path = Path(__file__).resolve().parent / "state.json"
     state = StateManager(state_path)
     state.record_post(

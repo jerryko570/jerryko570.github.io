@@ -39,7 +39,7 @@ def _atomic_write_json(path: Path, data: dict) -> None:
     try:
         with os.fdopen(fd, "w", encoding="utf-8") as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
-        os.replace(tmp, path)  # 같은 FS 내 원자적 교체
+        os.replace(tmp, path)
     except Exception:
         try:
             os.unlink(tmp)
@@ -62,7 +62,7 @@ class StateManager:
         except json.JSONDecodeError:
             # state.json 손상 → 기본값으로 복구 (워크플로우 멈추지 않게)
             return dict(DEFAULT_STATE)
-        # 누락된 필드는 기본값으로 보강 (구버전 state.json 호환)
+        # 누락 필드는 기본값으로 보강 (구버전 state.json 호환)
         return {**DEFAULT_STATE, **loaded}
 
     def save(self) -> None:

@@ -115,7 +115,6 @@ def crawl_category(category: dict) -> List[Candidate]:
 
         for entry in entries[:MAX_ENTRIES_PER_SOURCE]:
             published = _parse_date(entry)
-            # 날짜 없거나 cutoff 이전이면 스킵
             if not published or published < cutoff:
                 continue
 
