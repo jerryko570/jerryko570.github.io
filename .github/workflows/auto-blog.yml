@@ -19,6 +19,7 @@ jobs:
     timeout-minutes: 30
     permissions:
       contents: write
+      id-token: write # claude-code-action이 OIDC 토큰 발급에 필요
 
     steps:
       - name: Checkout repository
@@ -90,3 +91,9 @@ jobs:
 
           if git diff --cached --quiet; then
             echo "✅ 변경사항 없음"
+            exit 0
+          fi
+
+          git commit -m "auto: 새 블로그 포스트 자동 생성 [skip ci]"
+          git push
+          echo "🎉 푸시 완료"
