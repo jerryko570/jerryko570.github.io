@@ -83,9 +83,13 @@ jobs:
 
       - name: Commit and push changes
         if: steps.prepare.outputs.count != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # claude-code-action이 중간에 credential을 건드리므로 명시적으로 다시 설정
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
           git add _posts/ assets/img/thumbnail/ scripts/state.json
 
@@ -95,5 +99,5 @@ jobs:
           fi
 
           git commit -m "auto: 새 블로그 포스트 자동 생성 [skip ci]"
-          git push
+          git push origin HEAD:main
           echo "🎉 푸시 완료"
