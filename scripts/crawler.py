@@ -1,22 +1,16 @@
 """
 crawler.py (library)
 --------------------
-RSS 피드 파싱 로직.
-prepare.py에서 import해서 사용합니다.
-실제 크롤링 일은 crawler.py가 함
-
-v2 변경사항:
-- MAX_AGE_DAYS: 14 → 60 (최근 1~2달 이내만)
-- 공식 소스만 다루므로 발표 빈도가 낮아서 기간 확대
+RSS/Atom 피드 파싱.
+prepare.py에서 import해서 사용.
 """
-
 from __future__ import annotations
 
 import logging
 import re
 from dataclasses import dataclass, asdict
 from datetime import datetime, timedelta, timezone
-from typing import List
+from typing import List, Optional
 
 import feedparser
 import requests
@@ -24,9 +18,15 @@ import yaml
 from bs4 import BeautifulSoup
 
 logger = logging.getLogger(__name__)
-#
-# 최근 60일 이내 (1~2달)
+
+# 최근 60일 이내 글만 수집 (공식 소스 발표 빈도 고려)
 MAX_AGE_DAYS = 60
+
+# 소스당 최대로 살펴볼 entry 수 (피드 후행 노이즈 방지)
+MAX_ENTRIES_PER_SOURCE = 20
+
+# summary 글자 수 상한 (Claude 프롬프트 크기 제어)
+SUMMARY_MAX_CHARS = 2000
 
 
 @dataclass
@@ -53,19 +53,37 @@ def _clean_html(html_text: str) -> str:
         return ""
     soup = BeautifulSoup(html_text, "html.parser")
     text = soup.get_text(separator=" ", strip=True)
-    text = re.sub(r"\s+", " ", text)
-    return text.strip()
+    return re.sub(r"\s+", " ", text).strip()
 
 
-def _parse_date(entry) -> datetime | None:
+def _parse_date(entry) -> Optional[datetime]:
     for key in ("published_parsed", "updated_parsed"):
         val = getattr(entry, key, None)
         if val:
             try:
                 return datetime(*val[:6], tzinfo=timezone.utc)
-            except Exception:
+            except (TypeError, ValueError):
                 continue
     return None
+
+
+def _extract_summary(entry) -> str:
+    """feedparser에서 본문/요약 추출. RSS와 Atom 모두 대응."""
+    # 1순위: summary, description (RSS 표준)
+    for key in ("summary", "description"):
+        val = getattr(entry, key, None)
+        if val:
+            return val
+    # 2순위: content[0].value (Atom 표준 — Vercel atom 등이 사용)
+    content_list = getattr(entry, "content", None)
+    if content_list:
+        try:
+            value = content_list[0].get("value")
+            if value:
+                return value
+        except (IndexError, AttributeError, TypeError):
+            pass
+    return ""
 
 
 def fetch_feed(url: str, timeout: int = 15) -> list:
@@ -82,49 +100,46 @@ def fetch_feed(url: str, timeout: int = 15) -> list:
         parsed = feedparser.parse(resp.content)
         return parsed.entries or []
     except Exception as e:
-        logger.warning(f"  ⚠️ 피드 로딩 실패 [{url}]: {e}")
+        logger.warning(f"   ⚠️ 피드 로딩 실패 [{url}]: {e}")
         return []
 
 
 def crawl_category(category: dict) -> List[Candidate]:
-    """주어진 카테고리의 모든 소스를 크롤링"""
+    """카테고리에 묶인 모든 소스를 크롤링해서 발행일 내림차순으로 반환."""
     candidates: List[Candidate] = []
     cutoff = datetime.now(timezone.utc) - timedelta(days=MAX_AGE_DAYS)
 
     for source in category.get("sources", []):
-        logger.info(f"  📡 크롤링 중: {source['name']}")
+        logger.info(f"   📡 크롤링: {source['name']}")
         entries = fetch_feed(source["url"])
 
-        for entry in entries[:20]:
+        for entry in entries[:MAX_ENTRIES_PER_SOURCE]:
             published = _parse_date(entry)
-            # 날짜 없으면 스킵 (공식 소스는 날짜 있어야 함)
+            # 날짜 없거나 cutoff 이전이면 스킵
             if not published or published < cutoff:
                 continue
 
-            title = getattr(entry, "title", "").strip()
-            link = getattr(entry, "link", "").strip()
+            title = (getattr(entry, "title", "") or "").strip()
+            link = (getattr(entry, "link", "") or "").strip()
             if not title or not link:
                 continue
 
-            raw_summary = (
-                getattr(entry, "summary", "")
-                or getattr(entry, "description", "")
-                or ""
-            )
-            summary = _clean_html(raw_summary)
-            if len(summary) > 2000:
-                summary = summary[:2000] + "..."
+            summary = _clean_html(_extract_summary(entry))
+            if len(summary) > SUMMARY_MAX_CHARS:
+                summary = summary[:SUMMARY_MAX_CHARS] + "..."
 
             candidates.append(Candidate(
                 title=title,
                 url=link,
                 summary=summary,
-                published=published.isoformat() if published else "",
+                published=published.isoformat(),
                 source=source["name"],
                 category_id=category["id"],
                 category_label=category["korean_label"],
             ))
 
     candidates.sort(key=lambda c: c.published, reverse=True)
-    logger.info(f"  ✅ 총 {len(candidates)}개 후보 수집됨 (최근 {MAX_AGE_DAYS}일 이내)")
+    logger.info(
+        f"   ✅ 총 {len(candidates)}개 후보 (최근 {MAX_AGE_DAYS}일 이내)"
+    )
     return candidates

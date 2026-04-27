@@ -1,77 +1,86 @@
 """
 update_state.py (CLI)
 ---------------------
-포스트 생성 성공 후 state.json을 업데이트하는 CLI.
-Claude Code가 subprocess로 호출합니다.
+포스트 생성 성공 후 state.json 업데이트.
+Claude Code가 JSON을 stdin으로 흘려넣어 호출.
 
-사용법:
-  python scripts/update_state.py <category_index> <source_url> <post_title> <category_id>
+사용 예 (권장 - heredoc):
+  python scripts/update_state.py <<'JSON'
+  {
+    "category_index": 1,
+    "category_id": "design-craft",
+    "source_url": "https://toss.tech/article/...",
+    "post_title": "토스가 큰 글씨 모드를 만든 과정"
+  }
+  JSON
+
+또는 echo 파이프:
+  echo '{"category_index":1,"category_id":"...","source_url":"...","post_title":"..."}' \
+    | python scripts/update_state.py
+
+필수 키 4개 누락 시 종료 코드 1.
 """
+from __future__ import annotations
 
-import hashlib
 import json
 import sys
-from datetime import datetime, timezone
 from pathlib import Path
+
+from state_manager import StateManager
+
+REQUIRED_KEYS = {"category_index", "category_id", "source_url", "post_title"}
+
+
+def _err(msg: str) -> None:
+    print(f"❌ {msg}", file=sys.stderr)
 
 
 def main() -> int:
-    if len(sys.argv) != 5:
-        print(
-            "사용법: python update_state.py <category_index> <source_url> <post_title> <category_id>",
-            file=sys.stderr,
-        )
+    # 1. stdin에서 JSON 읽기
+    raw = sys.stdin.read()
+    if not raw.strip():
+        _err("stdin이 비어있습니다. JSON을 파이프로 넘겨주세요.")
         return 1
 
-    category_index = int(sys.argv[1])
-    source_url = sys.argv[2]
-    post_title = sys.argv[3]
-    category_id = sys.argv[4]
+    try:
+        payload = json.loads(raw)
+    except json.JSONDecodeError as e:
+        _err(f"stdin JSON 파싱 실패: {e}")
+        return 1
 
+    if not isinstance(payload, dict):
+        _err("JSON 최상위는 객체여야 합니다.")
+        return 1
+
+    # 2. 필수 키 검증
+    missing = REQUIRED_KEYS - payload.keys()
+    if missing:
+        _err(f"필수 키 누락: {', '.join(sorted(missing))}")
+        return 1
+
+    # 3. category_index 타입 보정
+    try:
+        category_index = int(payload["category_index"])
+    except (TypeError, ValueError):
+        _err("category_index는 정수여야 합니다.")
+        return 1
+
+    # 4. state.json 업데이트
     state_path = Path(__file__).resolve().parent / "state.json"
+    state = StateManager(state_path)
+    state.record_post(
+        category_index=category_index,
+        category_id=str(payload["category_id"]),
+        source_url=str(payload["source_url"]),
+        post_title=str(payload["post_title"]),
+    )
+    state.save()
 
-    # 기존 상태 로드 (없으면 초기값)
-    if state_path.exists():
-        with state_path.open("r", encoding="utf-8") as f:
-            data = json.load(f)
-    else:
-        data = {
-            "last_category_index": -1,
-            "seen_url_hashes": [],
-            "posts_generated": 0,
-            "last_run": None,
-            "history": [],
-        }
-
-    # URL 해시
-    url_hash = hashlib.sha256(source_url.encode("utf-8")).hexdigest()[:16]
-
-    # 상태 업데이트
-    data["last_category_index"] = category_index
-    if url_hash not in data["seen_url_hashes"]:
-        data["seen_url_hashes"].append(url_hash)
-    # 최근 500개만 유지 (무한 증가 방지)
-    if len(data["seen_url_hashes"]) > 500:
-        data["seen_url_hashes"] = data["seen_url_hashes"][-500:]
-
-    data["posts_generated"] += 1
-    data["last_run"] = datetime.now(timezone.utc).isoformat()
-    data["history"].append({
-        "date": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
-        "category": category_id,
-        "title": post_title,
-        "source_url": source_url,
-    })
-    # 최근 50개만 유지
-    if len(data["history"]) > 50:
-        data["history"] = data["history"][-50:]
-
-    # 저장
-    state_path.parent.mkdir(parents=True, exist_ok=True)
-    with state_path.open("w", encoding="utf-8") as f:
-        json.dump(data, f, ensure_ascii=False, indent=2)
-
-    print(f"✅ state.json 업데이트 완료 (카테고리 인덱스: {category_index}, 총 {data['posts_generated']}개 생성)")
+    print(
+        f"✅ state.json 업데이트 완료 "
+        f"(카테고리 인덱스: {category_index}, "
+        f"누적 {state.data['posts_generated']}개)"
+    )
     return 0
 
 

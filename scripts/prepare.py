@@ -1,101 +1,98 @@
-"""
-prepare.py (CLI)
-----------------
-Claude Code Action 실행 전에 돌아가는 스크립트.
-1. state.json 읽어서 다음 카테고리 결정
-2. 해당 카테고리 RSS 소스들 크롤링
-3. 이미 본 URL 제외
-4. candidates.json에 결과 저장 (Claude Code가 읽어감)
+# 카테고리별 소스 설정
+# 1일마다 카테고리를 순환 (4일에 한 바퀴)
+# state.json의 last_category_index가 다음 시작점을 결정
+#
+# 원칙:
+# 1. 공식 블로그 RSS만 (dev.to, Medium 같은 2차 소스 제외)
+# 2. crawler.py에서 최근 60일 이내 글만 통과
+# 3. display_name에는 하이픈 금지 (Chirpy 카테고리 호환성)
 
-주의: state.json의 last_category_index는 여기서 건드리지 않음.
-     Claude Code가 포스트 생성에 성공하면 그때 업데이트 (실패 시 같은 카테고리 재시도).
-"""
+categories:
+  - id: design-tools
+    display_name: "Design"
+    korean_label: "디자인 도구"
+    description: "Figma, Webflow 등 디자인·노코드 도구의 공식 업데이트"
+    color_start: "#a855f7"
+    color_end: "#ec4899"
+    sources:
+      - name: "Figma Blog"
+        type: rss
+        url: "https://www.figma.com/blog/feed/atom.xml"
+      - name: "Webflow Blog"
+        type: rss
+        url: "https://webflow.com/blog/rss.xml"
+      - name: "Notion Blog"
+        type: rss
+        url: "https://www.notion.com/blog/rss.xml"
 
-# 크롤링 준비 작업 (친구한테 부탁만 하는 거임)
-# prepare.py (100줄) - 메인 흐름만
-# crawler.py (200줄) - 크롤링 전문
-# state_manager.py (100줄) - 상태 관리 전문
+  - id: design-craft
+    display_name: "DesignCraft"
+    korean_label: "프로덕트 디자인"
+    description: "한국 IT 기업의 UX 리서치, 디자인 시스템, 프로덕트 디자인 케이스"
+    color_start: "#f43f5e"
+    color_end: "#fb923c"
+    sources:
+      - name: "Toss Tech"
+        type: rss
+        url: "https://toss.tech/rss.xml"
+      - name: "PXD Story"
+        type: rss
+        url: "https://story.pxd.co.kr/rss"
+      - name: "디지털 인사이트"
+        type: rss
+        url: "https://ditoday.com/feed/"
+      - name: "요즘IT"
+        type: rss
+        url: "https://yozm.wishket.com/magazine/feed/"
+      - name: "뱅크샐러드 블로그"
+        type: rss
+        url: "https://blog.banksalad.com/rss.xml"
 
-# 각자 전문 분야만 깔끔하게!
+  - id: frontend
+    display_name: "Frontend"
+    korean_label: "프론트엔드 프레임워크"
+    description: "React, Vue, Svelte 등 프레임워크와 빌드툴 공식 릴리스"
+    color_start: "#3b82f6"
+    color_end: "#06b6d4"
+    sources:
+      - name: "React Blog"
+        type: rss
+        url: "https://react.dev/rss.xml"
+      - name: "Vercel Blog"
+        type: rss
+        url: "https://vercel.com/atom"
+      - name: "Tailwind Blog"
+        type: rss
+        url: "https://tailwindcss.com/feeds/feed.xml"
+      - name: "Astro Blog"
+        type: rss
+        url: "https://astro.build/rss.xml"
+      - name: "Svelte Blog"
+        type: rss
+        url: "https://svelte.dev/blog/rss.xml"
+      - name: "web.dev Blog"
+        type: rss
+        url: "https://web.dev/blog/feed.xml"
 
-# 미래에 Python 버전 올려도 수정 안 해도 됨
-from __future__ import annotations
-
-# 코딩 숙제를 하려면 4가지 준비물이 필요힘
-import json        # 파일 정리 폴더
-import logging     # 확성기 ( 나 지금 ~ 하고 있음)
-import sys         # 다음 단계로 넘어 갈 수 있게 알려줌
-from pathlib import Path  # 경로 관리 컴포넌트만 가져옴
-
-# 블로그 글 긁어오기, 설정 파일 열기
-from crawler import crawl_category, load_sources
-
-# 상태 관리자 (지금까지 뭐했는지 기억하기)
-from state_manager import StateManager
-
-# 경로 (내가 쓸 파일 주소 4개 저장)
-SCRIPT_DIR = Path(__file__).resolve().parent # prepare.py가 있는 곳
-SOURCES_PATH = SCRIPT_DIR / "sources.yml"  # 크롤링할 블로그 목록 파일
-STATE_PATH = SCRIPT_DIR / "state.json" # 지금까지 뭐 했는지 기록 파일
-CANDIDATES_PATH = SCRIPT_DIR / "candidates.json" # 후보 글 저장할 파일
- 
-# 로깅 (로그를 어떻게 출력할지 설정)
-logging.basicConfig(level=logging.INFO, format="%(message)s")
-logger = logging.getLogger(__name__)
-
-
-def main() -> int: # 함수 시작!
-    logger.info("🚀 후보 수집 시작\n") # 로그 출력
-
-    # 1. 설정 로드
-    sources_config = load_sources(str(SOURCES_PATH))  # YAML 파일 읽기
-    categories = sources_config["categories"]   # 카테고리만 꺼냄
-    state = StateManager(STATE_PATH)  # 기록 담당 로봇 생성
-
-    # 2. 다음 카테고리 결정
-    next_idx = state.next_category_index(len(categories))
-    category = categories[next_idx]
-    logger.info(f"📂 이번 차례 카테고리: {category['display_name']} ({category['korean_label']})")
-    logger.info(f"   (인덱스: {next_idx})\n")
-
-    # 3. 크롤링
-    logger.info("🔍 최신 글 크롤링 중...")
-    candidates = crawl_category(category)
-
-    # 4. 이미 본 URL 필터링
-    fresh = [c for c in candidates if not state.is_seen(c.url)]
-    logger.info(f"\n  🆕 새로운 후보: {len(fresh)}개 (전체 {len(candidates)}개 중)\n")
-
-    # 5. candidates.json 저장 (Claude Code가 읽어감)
-    # 상위 10개만 전달해서 프롬프트 크기 제어
-    top = fresh[:10]
-    result = {
-        "category": {
-            "id": category["id"],
-            "display_name": category["display_name"],
-            "korean_label": category["korean_label"],
-            "color_start": category["color_start"],
-            "color_end": category["color_end"],
-        },
-        "next_category_index": next_idx,
-        "candidates": [c.to_dict() for c in top],
-    }
-
-    with CANDIDATES_PATH.open("w", encoding="utf-8") as f:
-        json.dump(result, f, ensure_ascii=False, indent=2)
-
-    logger.info(f"✅ candidates.json 저장 완료 ({len(top)}개)")
-
-    if not top:
-        logger.warning("⚠️ 새로운 후보 없음 - 이번 턴은 생성 스킵")
-
-    # state.json은 Claude Code가 성공적으로 포스트 생성 후 업데이트
-    return 0
-
-
-if __name__ == "__main__":
-    try:
-        sys.exit(main())
-    except Exception as e:
-        logger.exception(f"❌ 오류: {e}")
-        sys.exit(1)
+  - id: dev-tools
+    display_name: "DevTools"
+    korean_label: "개발자 도구"
+    description: "AI 코딩 에이전트 · IDE · 개발자 플랫폼 공식 발표"
+    color_start: "#f59e0b"
+    color_end: "#ea580c"
+    sources:
+      - name: "OpenAI News"
+        type: rss
+        url: "https://openai.com/blog/rss.xml"
+      - name: "GitHub Blog"
+        type: rss
+        url: "https://github.blog/feed/"
+      - name: "JetBrains Blog"
+        type: rss
+        url: "https://blog.jetbrains.com/feed/"
+      - name: "Hugging Face Blog"
+        type: rss
+        url: "https://huggingface.co/blog/feed.xml"
+      - name: "Stack Overflow Blog"
+        type: rss
+        url: "https://stackoverflow.blog/feed/"
