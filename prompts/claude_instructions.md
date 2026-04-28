@@ -162,22 +162,24 @@ WebFetch(
 
 ---
 
-## Step 6: 썸네일 선택 (기존 PNG 재사용)
+## Step 6: 썸네일 자동 생성
 
-`assets/img/thumbnail/`의 **기존 주제별 PNG** 중 하나를 고르세요.
-**새로 생성하지 말 것** — `make_thumbnail.py` 호출 금지.
+`scripts/make_thumbnail.py`를 호출해서 글 전용 썸네일을 만든다.
 
-매칭 규칙(후보의 `tags`/`title` 기반):
+```bash
+python scripts/make_thumbnail.py \
+  "<한글 title>" \
+  "<category.display_name>" \
+  "<category.color_start>" \
+  "<category.color_end>" \
+  "assets/img/thumbnail/<slug>.png" \
+  "<주요 영문 키워드 하나, 예: webflow>"
+```
 
-| 주제 키워드 | 썸네일 파일 |
-|---|---|
-| `react`, `hooks`, `jsx`, `react-19` 등 React 계열 | `react.png` |
-| `next`, `next-js`, `nextjs`, `vercel` | `next-js.png` |
-| `javascript`, `js`, `ecmascript` | `javascript.png` |
-| `typescript`, `ts` | `typescript.png` |
-| **그 외 전부** (Claude, Figma, Webflow, DesignCraft 글 등) | `self-study.png` |
+스크립트가 tags/title에서 영문 라벨을 자동 추출해 컬러 카드를 만든다.
+프론트매터의 `image.path`는 `/assets/img/thumbnail/<slug>.png` 로 적는다.
 
-매칭 없으면 반드시 **`self-study.png`** 사용.
+> 기존 React/Next/JS/TS PNG는 더 이상 사용하지 않는다. 모든 자동 생성 글은 슬러그명으로 새 PNG를 만든다.
 
 > Jerry 지시(2026-04-22): 자동 생성 그라데이션 썸네일보다 기존 주제별 일러스트 PNG가 블로그 톤에 맞는다.
 
