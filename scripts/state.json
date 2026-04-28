@@ -1,16 +1,23 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
-    "534b48eb6308ccd2"
+    "534b48eb6308ccd2",
+    "dd8df710b1d2a92d"
   ],
-  "posts_generated": 1,
-  "last_run": "2026-04-27T21:12:39.003214+00:00",
+  "posts_generated": 2,
+  "last_run": "2026-04-28T00:06:28.668283+00:00",
   "history": [
     {
       "date": "2026-04-27",
       "category": "design-tools",
       "title": "Webflow Claude Connector 공부 정리 | 자연어로 사이트 편집이 된다는 게 뭔지",
       "source_url": "https://webflowmarketingmain.com/blog/claude-and-webflow-mcp"
+    },
+    {
+      "date": "2026-04-28",
+      "category": "design-craft",
+      "title": "토스페이먼츠 PQC 도입기 공부 정리 | 지금 당장 문제없어도 바꿔야 할 때",
+      "source_url": "https://toss.tech/article/post-quantum-cryptography-eng"
     }
   ]
 }
