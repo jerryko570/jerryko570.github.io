@@ -5,7 +5,7 @@ date: 2026-04-27 10:00:00 +0900
 categories: [Design]
 tags: [webflow, mcp, claude, design-tools, ai]
 image:
-  path: /assets/img/thumbnail/webflow-claude-connector-study-note.png
+  path: /assets/img/thumbnail/claude.png
   alt: "Webflow Claude Connector 공부 정리 | 자연어로 사이트 편집이 된다는 게 뭔지"
 ---
 
