@@ -19,10 +19,14 @@ from __future__ import annotations
 # dict 순서가 매칭 우선순위 (먼저 정의된 게 이김)
 BRAND_COLORS: dict[str, str] = {
     # ========== AI / LLM / 에이전트 ==========
-    # Claude는 사용자 손글씨 카드(claude.png)와 같은 톤
-    "claude": "#ff7847",          # Claude 진한 주황
+    # Claude 관련 키워드는 전부 같은 주황 톤 (사용자 claude.png 카드와 결 맞춤)
+    "claude": "#ff7847",
     "anthropic": "#ff7847",
     "mcp": "#ff7847",
+    "claude code": "#ff7847",
+    "claude desktop": "#ff7847",
+    "claude skills": "#ff7847",
+    "skills": "#ff7847",          # 'Skills' 키워드는 거의 항상 Claude Skills 맥락
     "openai": "#10a37f",          # OpenAI 초록
     "gpt": "#10a37f",
     "cursor": "#000000",          # Cursor 검정
@@ -116,7 +120,7 @@ def pick_color(
 if __name__ == "__main__":
     # 간단 테스트
     cases = [
-        (["webflow", "claude", "mcp"], "Webflow Claude Connector 공부 정리", "#a855f7"),
+        (["webflow", "claude", "mcp"], "Webflow Claude Connector 공부 정리", "#FF5938"),
         (["react", "actions"], "React 19 Actions 훑어보면서", "#3b82f6"),
         (["tailwind", "v4"], "Tailwind v4 디자인 토큰", "#3b82f6"),
         (["toss", "pqc"], "토스페이먼츠 PQC 도입기", "#f43f5e"),

@@ -50,9 +50,13 @@ SOURCE_LABEL: dict[str, tuple[str, Optional[str]]] = {
     "sketch": ("Sketch", None),
 
     # AI / DevTools
-    "openai": ("OpenAI", None),
-    "anthropic": ("Anthropic", None),
+    # Claude 관련(Anthropic, MCP, Claude Code 등)은 전부 "Claude"로 통일
+    "anthropic": ("Claude", None),
     "claude": ("Claude", None),
+    "claude code": ("Claude", None),
+    "claude desktop": ("Claude", None),
+    "mcp": ("Claude", None),
+    "openai": ("OpenAI", None),
     "github blog": ("GitHub", None),
     "jetbrains": ("JetBrains", None),
     "hugging face": ("HuggingFace", None),
@@ -78,13 +82,14 @@ SOURCE_LABEL: dict[str, tuple[str, Optional[str]]] = {
 # ───────────────────────────────────────────────
 KEYWORD_LABEL: dict[str, tuple[str, Optional[str]]] = {
     # AI
+    # Claude 관련(Anthropic, MCP, Skills 등)은 전부 "Claude"로 묶음
     "claude": ("Claude", None),
-    "anthropic": ("Anthropic", None),
+    "anthropic": ("Claude", None),
+    "mcp": ("Claude", None),
     "openai": ("OpenAI", None),
     "gpt": ("GPT", None),
     "cursor": ("Cursor", None),
     "copilot": ("Copilot", None),
-    "mcp": ("Claude", None),       # MCP 글이면 Claude로 묶음
 
     # 디자인 도구
     "figma": ("Figma", None),
@@ -145,6 +150,19 @@ CATEGORY_FALLBACK: dict[str, tuple[str, Optional[str]]] = {
 }
 
 
+# Claude 패밀리 키워드 — 출처와 무관하게 무조건 'Claude' 라벨 강제
+# 이유: Webflow 사이트가 발행한 Claude 통합 글이라도 "Claude 글"로 분류되는 게
+# 시각적으로 더 일관됨. 사용자 룰(2026-04-28).
+CLAUDE_KEYWORDS: set[str] = {
+    "claude",
+    "anthropic",
+    "mcp",
+    "claude code",
+    "claude desktop",
+    "claude skills",
+}
+
+
 def extract_label(
     tags: list[str],
     title: str,
@@ -154,7 +172,19 @@ def extract_label(
     """
     Returns (line1, line2_or_None).
     대부분 line1만 채워서 한 줄 라벨로 떨어짐.
+
+    우선순위:
+    0. Claude 패밀리 키워드가 본문/태그에 있으면 → "Claude" 강제
+    1. source 필드 매칭 (Webflow Blog → Webflow 등)
+    2. tags/title 키워드 매칭
+    3. 카테고리 폴백
     """
+    haystack = " ".join(tags + [title]).lower()
+
+    # 0순위: Claude 패밀리는 출처 무시하고 무조건 Claude
+    if any(k in haystack for k in CLAUDE_KEYWORDS):
+        return ("Claude", None)
+
     # 1순위: source 필드 매칭
     if source:
         source_lower = source.lower()
@@ -163,7 +193,6 @@ def extract_label(
                 return label
 
     # 2순위: tags/title 키워드 매칭
-    haystack = " ".join(tags + [title]).lower()
     for key, label in KEYWORD_LABEL.items():
         if key in haystack:
             return label
