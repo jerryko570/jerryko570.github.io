@@ -1,4 +1,4 @@
-# 블로그 포스트 자동 생성 작업 (v3)
+# 블로그 포스트 자동 생성 작업 (v4)
 
 Jerry의 Jekyll 블로그에 올릴 새 포스트를 **한 편** 생성합니다.
 아래 단계를 **순서대로** 실행하세요.
@@ -164,7 +164,8 @@ WebFetch(
 
 ## Step 6: 썸네일 자동 생성
 
-`scripts/make_thumbnail.py`를 호출해서 글 전용 썸네일을 만든다.
+`scripts/make_thumbnail.py`를 호출해서 **글 전용 썸네일**을 만드세요.
+기존 PNG 재사용은 더 이상 하지 않습니다.
 
 ```bash
 python scripts/make_thumbnail.py \
@@ -173,15 +174,29 @@ python scripts/make_thumbnail.py \
   "<category.color_start>" \
   "<category.color_end>" \
   "assets/img/thumbnail/<slug>.png" \
-  "<주요 영문 키워드 하나, 예: webflow>"
+  "<주요 키워드 1개>" \
+  "<tag1,tag2,tag3>"
 ```
 
-스크립트가 tags/title에서 영문 라벨을 자동 추출해 컬러 카드를 만든다.
-프론트매터의 `image.path`는 `/assets/img/thumbnail/<slug>.png` 로 적는다.
+**예시 (Webflow 글)**:
 
-> 기존 React/Next/JS/TS PNG는 더 이상 사용하지 않는다. 모든 자동 생성 글은 슬러그명으로 새 PNG를 만든다.
+```bash
+python scripts/make_thumbnail.py \
+  "Webflow Claude Connector 공부 정리" \
+  "Design" \
+  "#a855f7" "#ec4899" \
+  "assets/img/thumbnail/webflow-claude-connector-study-note.png" \
+  "webflow" \
+  "webflow,claude,mcp"
+```
 
-> Jerry 지시(2026-04-22): 자동 생성 그라데이션 썸네일보다 기존 주제별 일러스트 PNG가 블로그 톤에 맞는다.
+스크립트가 `tags`와 `title`에서 영문 라벨을 자동 추출해(`Webflow / Connector` 같은 식),
+카테고리 컬러로 단색 배경 + 큰 흰 텍스트 카드 PNG를 만듭니다.
+
+**프론트매터의 `image.path`는 `/assets/img/thumbnail/<slug>.png`** 로 적습니다 (slug는 Step 5에서 정한 것).
+
+> 이 시스템은 Jerry가 지정한 톤(첨부 스샷의 `Automation GitBlog`/`Claude` 카드와 동일)에 맞춰 설계됨.
+> 자동 추출이 안 되는 글이면 `keyword_extractor.py`의 `CATEGORY_FALLBACK`이 카테고리 기반 라벨로 대체.
 
 ---
 
@@ -284,7 +299,7 @@ JSON
 - [ ] 1500자 내외 학습 노트 작성
 - [ ] 프론트매터 전부 쌍따옴표
 - [ ] 본문 자기 검증
-- [ ] 썸네일 선택 (기존 PNG, 매칭 없으면 `self-study.png`)
+- [ ] **썸네일 자동 생성** (`make_thumbnail.py` 호출, slug.png 생성)
 - [ ] `_posts/`에 저장
 - [ ] **`update_state.py` 실행 (heredoc JSON)**
 - [ ] 완료 보고
