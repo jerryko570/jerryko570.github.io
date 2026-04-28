@@ -181,7 +181,7 @@ WebFetch(
 ## Step 6: 썸네일 자동 생성
 
 `scripts/make_thumbnail.py`를 호출해서 **글 전용 썸네일**을 만드세요.
-기존 PNG 재사용은 더 이상 하지 않습니다.
+라벨은 **출처 한 단어**(Webflow, Toss, React 등)로 떨어지도록 설계됨.
 
 ```bash
 python scripts/make_thumbnail.py \
@@ -191,7 +191,8 @@ python scripts/make_thumbnail.py \
   "<category.color_end>" \
   "assets/img/thumbnail/<slug>.png" \
   "<주요 키워드 1개>" \
-  "<tag1,tag2,tag3>"
+  "<tag1,tag2,tag3>" \
+  "<candidates.json의 source 필드>"
 ```
 
 **예시 (Webflow 글)**:
@@ -203,16 +204,20 @@ python scripts/make_thumbnail.py \
   "#a855f7" "#ec4899" \
   "assets/img/thumbnail/webflow-claude-connector-study-note.png" \
   "webflow" \
-  "webflow,claude,mcp"
+  "webflow,claude,mcp" \
+  "Webflow Blog"
 ```
 
-스크립트가 `tags`와 `title`에서 영문 라벨을 자동 추출해(`Webflow / Connector` 같은 식),
-카테고리 컬러로 단색 배경 + 큰 흰 텍스트 카드 PNG를 만듭니다.
+**중요**: 마지막 인자(`source`)는 **반드시 `candidates.json`에 적힌 그대로** 넘기세요.
+`"Webflow Blog"`, `"Toss Tech"`, `"React Blog"`, `"Anthropic News"` 같은 식.
+
+이 값이 `keyword_extractor.py`의 `SOURCE_LABEL` 매핑과 가장 정확히 매칭됩니다.
+스크립트가 출처를 보고 한 단어 라벨(예: `Webflow`)로 단색 카드를 만들어요.
 
 **프론트매터의 `image.path`는 `/assets/img/thumbnail/<slug>.png`** 로 적습니다 (slug는 Step 5에서 정한 것).
 
 > 이 시스템은 Jerry가 지정한 톤(첨부 스샷의 `Automation GitBlog`/`Claude` 카드와 동일)에 맞춰 설계됨.
-> 자동 추출이 안 되는 글이면 `keyword_extractor.py`의 `CATEGORY_FALLBACK`이 카테고리 기반 라벨로 대체.
+> source가 매칭 안 되면 tags/title 키워드로 폴백, 그것도 안 되면 카테고리 폴백.
 
 ---
 

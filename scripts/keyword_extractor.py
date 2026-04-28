@@ -1,192 +1,147 @@
 """
 keyword_extractor.py
 --------------------
-글의 tags, title, category에서 썸네일에 들어갈 영문 라벨 추출.
+글의 발행처(source) 이름을 썸네일 라벨로 추출.
 
-추출 우선순위:
-1. HIGH_PRIORITY 키워드가 매칭되면 그것을 line1으로
-2. MODIFIERS에서 보조 단어가 있으면 line2로 결합
-3. 어느 것도 매칭 안 되면 카테고리 기반 폴백
+전략:
+- "어떤 사이트의 글이냐"를 한 단어로 보여주는 게 가장 깔끔.
+- candidates.json의 source 필드가 1순위 (Toss Tech, Figma Blog 등).
+- source가 없으면 tags/title에서 출처 키워드 매칭 (claude → Claude).
+- 마지막 폴백은 카테고리.
+
+반환 시그니처는 기존과 동일 (line1, line2_or_None).
+대부분 한 줄(line1)만 채우고 line2는 None — 카드가 단순해짐.
+드물게 출처 자체가 길면 두 줄로 쪼갬 (예: 'Stack' / 'Overflow').
+
+사용법:
+    line1, line2 = extract_label(
+        tags=["webflow", "claude", "mcp"],
+        title="Webflow Claude Connector 공부 정리",
+        category="Design",
+        source="Webflow Blog",   # candidates.json의 source 필드
+    )
+    # → ("Webflow", None)
 """
 from __future__ import annotations
 
 from typing import Optional
 
-# 1순위: 강한 브랜드/기술 이름. (line1, default_line2)
-# dict 순서가 매칭 우선순위 — 먼저 정의된 게 이김
-HIGH_PRIORITY: dict[str, tuple[str, Optional[str]]] = {
-    # ========== AI / LLM / 에이전트 ==========
-    "claude": ("Claude", None),
-    "anthropic": ("Anthropic", None),
-    "openai": ("OpenAI", None),
-    "gpt": ("GPT", None),
-    "cursor": ("Cursor", None),
-    "copilot": ("Copilot", None),
-    "mcp": ("MCP", "Connector"),
-    "huggingface": ("HuggingFace", None),
-    "hugging-face": ("HuggingFace", None),
-    "llm": ("LLM", None),
+# ───────────────────────────────────────────────
+# 1. source 필드 → 라벨 매핑 (candidates.json의 source 값 기준)
+# ───────────────────────────────────────────────
+# 키는 source 문자열에 포함되면 매칭 (소문자 비교)
+SOURCE_LABEL: dict[str, tuple[str, Optional[str]]] = {
+    # Frontend
+    "react blog": ("React", None),
+    "vercel": ("Vercel", None),
+    "tailwind": ("Tailwind", None),
+    "astro": ("Astro", None),
+    "svelte": ("Svelte", None),
+    "nuxt": ("Nuxt", None),
+    "web.dev": ("web.dev", None),
+    "vue": ("Vue", None),
 
-    # ========== 디자인 도구 ==========
+    # Design tools
     "figma": ("Figma", None),
     "webflow": ("Webflow", None),
     "framer": ("Framer", None),
     "notion": ("Notion", None),
     "linear": ("Linear", None),
     "sketch": ("Sketch", None),
-    "protopie": ("ProtoPie", None),
 
-    # ========== 프레임워크 / 빌드 도구 ==========
+    # AI / DevTools
+    "openai": ("OpenAI", None),
+    "anthropic": ("Anthropic", None),
+    "claude": ("Claude", None),
+    "github blog": ("GitHub", None),
+    "jetbrains": ("JetBrains", None),
+    "hugging face": ("HuggingFace", None),
+    "huggingface": ("HuggingFace", None),
+    "stack overflow": ("Stack", "Overflow"),
+    "supabase": ("Supabase", None),
+
+    # 한국 기업
+    "toss tech": ("Toss", None),
+    "tosspayments": ("Toss", None),
+    "pxd": ("PXD", None),
+    "디지털 인사이트": ("Digital", "Insight"),
+    "ditoday": ("Digital", "Insight"),
+    "요즘it": ("요즘IT", None),
+    "yozm": ("요즘IT", None),
+    "wishket": ("요즘IT", None),
+    "뱅크샐러드": ("Banksalad", None),
+    "banksalad": ("Banksalad", None),
+}
+
+# ───────────────────────────────────────────────
+# 2. source가 없거나 매칭 실패 시 — tags/title에서 키워드로 추출
+# ───────────────────────────────────────────────
+KEYWORD_LABEL: dict[str, tuple[str, Optional[str]]] = {
+    # AI
+    "claude": ("Claude", None),
+    "anthropic": ("Anthropic", None),
+    "openai": ("OpenAI", None),
+    "gpt": ("GPT", None),
+    "cursor": ("Cursor", None),
+    "copilot": ("Copilot", None),
+    "mcp": ("Claude", None),       # MCP 글이면 Claude로 묶음
+
+    # 디자인 도구
+    "figma": ("Figma", None),
+    "webflow": ("Webflow", None),
+    "framer": ("Framer", None),
+    "notion": ("Notion", None),
+    "linear": ("Linear", None),
+
+    # 프레임워크
     "react": ("React", None),
     "next": ("Next.js", None),
     "nextjs": ("Next.js", None),
     "next-js": ("Next.js", None),
+    "vercel": ("Vercel", None),
     "vue": ("Vue", None),
     "svelte": ("Svelte", None),
     "astro": ("Astro", None),
     "nuxt": ("Nuxt", None),
     "tailwind": ("Tailwind", None),
     "vite": ("Vite", None),
-    "vercel": ("Vercel", None),
     "remix": ("Remix", None),
-    "solid": ("Solid", None),
 
-    # ========== 언어 ==========
+    # 언어
     "typescript": ("TypeScript", None),
     "javascript": ("JavaScript", None),
-    "ecmascript": ("ECMAScript", None),
-    "python": ("Python", None),
-    "rust": ("Rust", None),
-    "golang": ("Go", None),
 
-    # ========== 웹 플랫폼 / 표준 ==========
-    "css": ("CSS", None),
-    "html": ("HTML", None),
-    "webgl": ("WebGL", None),
-    "webgpu": ("WebGPU", None),
-    "wasm": ("WASM", None),
-    "webassembly": ("WASM", None),
-    "baseline": ("Baseline", None),
-    "web-platform": ("Web", "Platform"),
-
-    # ========== 브라우저 ==========
+    # 브라우저 / 웹 표준
     "chrome": ("Chrome", None),
-    "chromium": ("Chromium", None),
     "firefox": ("Firefox", None),
     "safari": ("Safari", None),
-    "edge": ("Edge", None),
-    "webkit": ("WebKit", None),
+    "css": ("CSS", None),
+    "html": ("HTML", None),
+    "baseline": ("Baseline", None),
 
-    # ========== 한국 기업 ==========
-    "tosspayments": ("Toss", "Payments"),
-    "toss": ("Toss", "Tech"),
-    "pxd": ("PXD", "Story"),
+    # 한국 기업
+    "tosspayments": ("Toss", None),
+    "toss": ("Toss", None),
+    "pxd": ("PXD", None),
     "banksalad": ("Banksalad", None),
-    "woowahan": ("Woowahan", None),
     "kakao": ("Kakao", None),
     "naver": ("Naver", None),
-    "line": ("Line", None),
-    "carrot": ("Carrot", None),
-    "danggn": ("Danggeun", None),
 
-    # ========== 개발자 플랫폼 / 도구 ==========
+    # 개발 플랫폼
     "github": ("GitHub", None),
-    "gitlab": ("GitLab", None),
     "jetbrains": ("JetBrains", None),
     "supabase": ("Supabase", None),
-    "stack-overflow": ("Stack", "Overflow"),
-    "stackoverflow": ("Stack", "Overflow"),
     "docker": ("Docker", None),
-    "kubernetes": ("K8s", None),
-    "k8s": ("K8s", None),
-
-    # ========== 자동화 / DevOps ==========
-    "github-actions": ("GitHub", "Actions"),
-    "gh-actions": ("GitHub", "Actions"),
-    "ci-cd": ("CI", "CD"),
-    "cicd": ("CI", "CD"),
 }
 
-# 2순위: 보조 단어 (1순위와 결합 가능)
-MODIFIERS: dict[str, str] = {
-    # AI 관련
-    "skills": "Skills",
-    "agent": "Agent",
-    "agents": "Agents",
-    "connector": "Connector",
-    "prompt": "Prompt",
-    "tool-use": "Tools",
-
-    # 디자인 시스템 / UX
-    "design-system": "Design System",
-    "design-systems": "Design System",
-    "design-tools": "Design Tools",
-    "design-tokens": "Tokens",
-    "tokens": "Tokens",
-    "a11y": "A11y",
-    "accessibility": "A11y",
-
-    # 릴리스 / 버전
-    "release": "Release",
-    "beta": "Beta",
-    "alpha": "Alpha",
-    "rc": "RC",
-    "v3": "v3",
-    "v4": "v4",
-    "v5": "v5",
-    "v6": "v6",
-    "v18": "v18",
-    "v19": "v19",
-    "v20": "v20",
-
-    # React / 프론트엔드 개념
-    "hooks": "Hooks",
-    "actions": "Actions",
-    "rsc": "RSC",
-    "compiler": "Compiler",
-    "server-component": "Server",
-    "server-components": "Server",
-    "client-component": "Client",
-    "ssr": "SSR",
-    "ssg": "SSG",
-    "isr": "ISR",
-    "streaming": "Streaming",
-
-    # 보안 / 인프라
-    "pqc": "PQC",
-    "security": "Security",
-    "auth": "Auth",
-    "oauth": "OAuth",
-    "encryption": "Crypto",
-
-    # 자동화 / 워크플로우
-    "automation": "Automation",
-    "workflow": "Workflow",
-    "ci": "CI",
-    "deploy": "Deploy",
-    "deployment": "Deploy",
-
-    # CSS / 스타일링
-    "color": "Color",
-    "typography": "Typography",
-    "layout": "Layout",
-    "grid": "Grid",
-    "flexbox": "Flex",
-    "container-query": "Container",
-
-    # 성능 / 측정
-    "performance": "Perf",
-    "perf": "Perf",
-    "core-web-vitals": "Vitals",
-    "lighthouse": "Lighthouse",
-}
-
-# 3순위: 카테고리별 폴백 라벨
-CATEGORY_FALLBACK: dict[str, tuple[str, str]] = {
-    "Design": ("Design", "Note"),
-    "DesignCraft": ("Product", "Design"),
-    "Frontend": ("Frontend", "Note"),
-    "DevTools": ("Dev", "Note"),
+# ───────────────────────────────────────────────
+# 3. 마지막 폴백 — 카테고리 라벨
+# ───────────────────────────────────────────────
+CATEGORY_FALLBACK: dict[str, tuple[str, Optional[str]]] = {
+    "Design": ("Design", None),
+    "DesignCraft": ("Design", None),
+    "Frontend": ("Frontend", None),
+    "DevTools": ("DevTools", None),
 }
 
 
@@ -194,54 +149,55 @@ def extract_label(
     tags: list[str],
     title: str,
     category: str,
+    source: str = "",
 ) -> tuple[str, Optional[str]]:
     """
     Returns (line1, line2_or_None).
-    line1만 있으면 한 줄, 둘 다 있으면 두 줄로 표시.
+    대부분 line1만 채워서 한 줄 라벨로 떨어짐.
     """
+    # 1순위: source 필드 매칭
+    if source:
+        source_lower = source.lower()
+        for key, label in SOURCE_LABEL.items():
+            if key in source_lower:
+                return label
+
+    # 2순위: tags/title 키워드 매칭
     haystack = " ".join(tags + [title]).lower()
-
-    # 1. 강한 키워드 찾기 (dict 순서대로 먼저 매칭된 것을 사용)
-    primary: Optional[tuple[str, Optional[str]]] = None
-    for key, label_pair in HIGH_PRIORITY.items():
+    for key, label in KEYWORD_LABEL.items():
         if key in haystack:
-            primary = label_pair
-            break
+            return label
 
-    # 2. 보조 단어로 line2 보강
-    if primary:
-        line1, default_line2 = primary
-        for key, label in MODIFIERS.items():
-            if key in haystack and label != line1:
-                return (line1, label)
-        return (line1, default_line2)
-
-    # 3. 폴백 - 카테고리 기반
-    return CATEGORY_FALLBACK.get(category, ("Study", "Note"))
+    # 3순위: 카테고리 폴백
+    return CATEGORY_FALLBACK.get(category, ("Study", None))
 
 
 if __name__ == "__main__":
+    # candidates.json 형태에 맞춘 테스트
     cases = [
-        # 기존 검증
-        (["webflow", "claude", "mcp"], "Webflow Claude Connector 공부 정리", "Design"),
-        (["claude", "skills"], "Claude Skills 공부 정리", "DevTools"),
-        (["react", "actions"], "React 19 Actions 훑어보면서", "Frontend"),
-        (["tailwind", "v4"], "Tailwind v4 디자인 토큰", "Frontend"),
-        (["toss", "pqc"], "토스페이먼츠 PQC 도입기 공부 정리", "DesignCraft"),
-        (["ux"], "어떤 한국 디자인 글", "DesignCraft"),
-
-        # 오늘 발행된 글 (이전엔 'Frontend Note'로 떨어졌음)
+        # (tags, title, category, source)
+        (["webflow", "claude", "mcp"],
+         "Webflow Claude Connector 공부 정리", "Design", "Webflow Blog"),
+        (["claude", "skills"],
+         "Claude Skills 공부 정리", "DevTools", "Anthropic News"),
+        (["react", "actions"],
+         "React 19 Actions 훑어보면서", "Frontend", "React Blog"),
+        (["tailwind", "v4"],
+         "Tailwind v4 디자인 토큰", "Frontend", "Tailwind Blog"),
+        (["toss", "pqc"],
+         "토스페이먼츠 PQC 도입기 공부 정리", "DesignCraft", "Toss Tech"),
         (["chrome", "firefox", "css", "baseline"],
-         "4월 웹 플랫폼 업데이트 공부 정리 | contrast-color()가 드디어 됐다",
-         "Frontend"),
+         "4월 웹 플랫폼 업데이트 공부 정리", "Frontend", "web.dev Blog"),
 
-        # 새로 추가한 키워드들 검증
-        (["github-actions", "automation"], "GitHub Actions 자동화 정리", "DevTools"),
-        (["css", "container-query"], "CSS Container Query 공부", "Frontend"),
-        (["accessibility"], "접근성 공부 정리", "Design"),
-        (["performance", "core-web-vitals"], "웹 퍼포먼스 측정 정리", "Frontend"),
-        (["docker", "deploy"], "Docker 배포 정리", "DevTools"),
+        # source가 없는 경우 (수동 글)
+        (["css", "container-query"],
+         "CSS Container Query 공부", "Frontend", ""),
+        (["accessibility"],
+         "접근성 공부 정리", "Design", ""),
+
+        # 매칭 안 되는 글 → 카테고리 폴백
+        (["unknown"], "정체불명 글", "Frontend", ""),
     ]
-    for tags, title, cat in cases:
-        result = extract_label(tags, title, cat)
-        print(f"  {str(result):35s}  ← {title[:38]}")
+    for tags, title, cat, src in cases:
+        result = extract_label(tags, title, cat, src)
+        print(f"  {str(result):28s}  ← {title[:30]}  (source: {src or '-'})")

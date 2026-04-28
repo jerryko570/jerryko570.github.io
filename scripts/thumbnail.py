@@ -105,12 +105,13 @@ def generate_thumbnail(
     output_path: Path,
     keyword: str = "",
     tags: Optional[list[str]] = None,
+    source: str = "",
 ) -> Path:
     """단색 배경 + 큰 흰 텍스트 PNG 생성. output_path 반환."""
     tags = tags or ([keyword] if keyword else [])
 
-    # 1. 라벨 추출 (1~2줄, 영문)
-    line1, line2 = extract_label(tags, title, category_label)
+    # 1. 라벨 추출 — source가 있으면 그게 1순위, 없으면 tags/title 매칭
+    line1, line2 = extract_label(tags, title, category_label, source=source)
     lines = [line1] + ([line2] if line2 else [])
 
     # 2. 배경색 결정 — 브랜드 매칭 우선, 없으면 카테고리 기본 색
