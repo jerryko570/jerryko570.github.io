@@ -5,7 +5,7 @@ date: 2026-04-28 09:00:00 +0900
 categories: [DesignCraft]
 tags: [security, toss, pqc, legacy, product]
 image:
-  path: /assets/img/thumbnail/self-study.png
+  path: /assets/img/thumbnail/toss-pqc-adoption-study-note.png
   alt: "토스페이먼츠 PQC 도입기 공부 정리"
 ---
 
