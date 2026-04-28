@@ -1,25 +1,17 @@
 """
-thumbnail.py
-------------
+thumbnail.py (v2)
+-----------------
 단색 배경 + 큰 흰색 텍스트 (1~2줄) 형태의 PNG 썸네일 생성.
 
+배경색 결정 우선순위:
+1. brand_colors.py에 매칭되는 브랜드 키워드 → 브랜드 공식 색
+2. 매칭 없음 → sources.yml의 카테고리 color_start 사용
+
 스타일:
-- 단색 배경 (color_start 사용)
+- 단색 배경
 - Pretendard ExtraBold (없으면 Noto Sans CJK Black fallback)
 - 흰색 텍스트, line-height 1.0
 - 자동 폰트 사이즈 조정 (라벨 길이에 맞춰)
-
-사용법:
-    from thumbnail import generate_thumbnail
-    generate_thumbnail(
-        title="Webflow Claude Connector 공부 정리",
-        category_label="Design",
-        color_start="#a855f7",
-        color_end="#ec4899",  # 단색 사용 시 안 쓰지만 인터페이스 호환용
-        output_path=Path("assets/img/thumbnail/foo.png"),
-        keyword="webflow",
-        tags=["webflow", "claude", "mcp"],
-    )
 """
 from __future__ import annotations
 
@@ -28,21 +20,37 @@ from typing import Optional
 
 from PIL import Image, ImageDraw, ImageFont
 
+from brand_colors import pick_color
 from keyword_extractor import extract_label
 
 # 카드 크기 — Chirpy 카드 비율과 잘 맞음
 WIDTH, HEIGHT = 1200, 800
 
-# 텍스트 색
-TEXT_COLOR = (250, 250, 250)
+# 텍스트 색 — Figma 사양(#FFFFFF) 그대로 순백
+TEXT_COLOR = (255, 255, 255)
+
+# Line height — Figma 사양 90% (폰트 사이즈의 0.9배)
+LINE_HEIGHT_RATIO = 0.9
 
 # 폰트 후보 (워크플로우에서 Pretendard 설치, 없으면 Noto fallback)
+# macOS 로컬에서도 동작하도록 시스템 폰트 경로 다수 포함
 FONT_CANDIDATES = [
+    # 1. 워크플로우에서 설치하는 Pretendard (Linux)
     "/usr/share/fonts/truetype/pretendard/Pretendard-ExtraBold.otf",
+
+    # 2. Linux Noto (워크플로우 fallback)
     "/usr/share/fonts/opentype/noto/NotoSansCJK-Black.ttc",
     "/usr/share/fonts/truetype/noto/NotoSansCJK-Black.ttc",
-    # macOS 로컬 테스트용
+
+    # 3. macOS 한글 지원 굵은 폰트들
+    "/System/Library/Fonts/AppleSDGothicNeo.ttc",
     "/System/Library/Fonts/Supplemental/AppleSDGothicNeo.ttc",
+    "/Library/Fonts/AppleSDGothicNeo.ttc",
+    "/System/Library/Fonts/PingFang.ttc",                    # 한자도 가능
+    "/System/Library/Fonts/Helvetica.ttc",                   # 한글 못 그리지만 영문 라벨엔 OK
+    "/System/Library/Fonts/HelveticaNeue.ttc",
+    "/System/Library/Fonts/Supplemental/Arial.ttf",
+    "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
 ]
 
 
@@ -53,6 +61,16 @@ def _load_font(size: int) -> ImageFont.FreeTypeFont:
                 return ImageFont.truetype(path, size)
             except OSError:
                 continue
+    # 시스템 폰트를 못 찾은 경우 — default font는 매우 작은 비트맵이라
+    # 카드에 글씨가 거의 안 보이게 됨. 사용자가 알 수 있도록 경고.
+    import sys
+    print(
+        "⚠️  시스템에서 사용 가능한 폰트를 찾지 못했습니다. "
+        "PIL default font를 사용하므로 텍스트가 매우 작게 나옵니다.\n"
+        "    macOS: AppleSDGothicNeo가 보통 /System/Library/Fonts/에 있습니다.\n"
+        "    Linux: fonts-noto-cjk 패키지를 설치하세요.",
+        file=sys.stderr,
+    )
     return ImageFont.load_default()
 
 
@@ -95,8 +113,9 @@ def generate_thumbnail(
     line1, line2 = extract_label(tags, title, category_label)
     lines = [line1] + ([line2] if line2 else [])
 
-    # 2. 단색 배경
-    img = Image.new("RGB", (WIDTH, HEIGHT), _hex_to_rgb(color_start))
+    # 2. 배경색 결정 — 브랜드 매칭 우선, 없으면 카테고리 기본 색
+    bg_hex = pick_color(tags, title, fallback=color_start)
+    img = Image.new("RGB", (WIDTH, HEIGHT), _hex_to_rgb(bg_hex))
     draw = ImageDraw.Draw(img)
 
     # 3. 가장 긴 줄에 맞춰 폰트 사이즈 자동 조정
@@ -106,14 +125,13 @@ def generate_thumbnail(
     font_size = _fit_font_size(draw, longest, max_text_width)
     font = _load_font(font_size)
 
-    # 4. 두 줄 중앙 정렬
-    line_height = int(font_size * 1.0)
+    # 4. 두 줄 중앙 정렬 — line-height 90% (Figma 사양)
+    line_height = int(font_size * LINE_HEIGHT_RATIO)
     total_height = line_height * len(lines)
     start_y = (HEIGHT - total_height) // 2
 
-    # 폰트 baseline 보정 — 한글 폰트는 ascent 차이가 커서 살짝 위로 올라감
-    # 시각적 중앙을 맞추기 위해 살짝 내림
-    start_y -= int(font_size * 0.1)
+    # 한글 폰트 baseline 보정 — ascent가 커서 살짝 위로 올라감
+    start_y -= int(font_size * 0.08)
 
     for i, line in enumerate(lines):
         bbox = draw.textbbox((0, 0), line, font=font)
