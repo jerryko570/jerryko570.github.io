@@ -1,6 +1,6 @@
 # Jerry's Blog
 
-> 프론트엔드 공부하는 앱디자이너의 학습 저널.
+> 프론트엔드 공부하는 앱디자이너의 깃 블로그 자동화 학습 저널.
 
 🔗 **Live**: [jerryko570.github.io](https://jerryko570.github.io)
 
