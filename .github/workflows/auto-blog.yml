@@ -19,7 +19,7 @@ jobs:
     timeout-minutes: 30
     permissions:
       contents: write
-      id-token: write # claude-code-action이 OIDC 토큰 발급에 필요
+      id-token: write
 
     steps:
       - name: Checkout repository
@@ -68,9 +68,9 @@ jobs:
         id: instructions
         run: |
           {
-            echo 'content<<PROMPT_EOF'
+            echo 'content<<__BLOG_EOF__'
             cat prompts/claude_instructions.md
-            echo PROMPT_EOF
+            echo '__BLOG_EOF__'
           } >> "$GITHUB_OUTPUT"
 
       - name: Generate post with Claude Code
@@ -88,7 +88,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          # claude-code-action이 중간에 credential을 건드리므로 명시적으로 다시 설정
           git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
 
           git add _posts/ assets/img/thumbnail/ scripts/state.json
