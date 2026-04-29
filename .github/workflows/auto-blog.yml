@@ -2,7 +2,6 @@ name: Auto Blog Post
 
 on:
   schedule:
-    # 매일 한국시간 오전 9시 (UTC 00:00)
     - cron: "0 0 * * *"
   workflow_dispatch:
 
@@ -67,10 +66,11 @@ jobs:
         if: steps.prepare.outputs.count != '0'
         id: instructions
         run: |
+          DELIM=$(openssl rand -hex 16)
           {
-            echo 'content<<__BLOG_EOF__'
+            echo "content<<${DELIM}"
             cat prompts/claude_instructions.md
-            echo '__BLOG_EOF__'
+            echo "${DELIM}"
           } >> "$GITHUB_OUTPUT"
 
       - name: Generate post with Claude Code
