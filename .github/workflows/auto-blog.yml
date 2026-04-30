@@ -86,6 +86,6 @@ jobs:
             exit 0
           fi
 
-          git commit -m "auto: 새 블로그 포스트 자동 생성 [skip ci]"
+          git commit -m "auto: 새 블로그 포스트 자동 생성"
           git push origin HEAD:main
           echo "🎉 푸시 완료"
