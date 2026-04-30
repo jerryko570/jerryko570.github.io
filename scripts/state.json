@@ -1,15 +1,16 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
     "dcab92ab4af9a62c",
     "ea73a15e741b03de",
     "e29c353dc59f2db9",
-    "0f3d5a028e720624"
+    "0f3d5a028e720624",
+    "68d0ebe31dcc0903"
   ],
-  "posts_generated": 6,
-  "last_run": "2026-04-29T03:45:46.733759+00:00",
+  "posts_generated": 7,
+  "last_run": "2026-04-30T03:06:00.525652+00:00",
   "history": [
     {
       "date": "2026-04-27",
@@ -46,6 +47,12 @@
       "category": "design-craft",
       "title": "shadcn CLI v4 공부 정리 | AI에게 내 프로젝트를 어떻게 설명하지?",
       "source_url": "https://story.pxd.co.kr/1895"
+    },
+    {
+      "date": "2026-04-30",
+      "category": "frontend",
+      "title": "Vercel 배포 검사 기능 공부 정리 | 린트가 배포 흐름 안으로 들어오다",
+      "source_url": "https://vercel.com/changelog/native-deployment-checks"
     }
   ]
 }
