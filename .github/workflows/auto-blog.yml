@@ -19,10 +19,11 @@ jobs:
     permissions:
       contents: write
       id-token: write
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT_FOR_BLOG }}
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -35,7 +36,6 @@ jobs:
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq fonts-noto-cjk fonts-noto-cjk-extra
-
           sudo mkdir -p /usr/share/fonts/truetype/pretendard
           curl -fsSL "$PRETENDARD_URL" -o /tmp/pretendard.otf
           FILE_SIZE=$(wc -c < /tmp/pretendard.otf)
@@ -73,7 +73,7 @@ jobs:
       - name: Commit and push changes
         if: steps.prepare.outputs.count != '0'
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.PAT_FOR_BLOG }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
