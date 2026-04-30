@@ -1,11 +1,16 @@
 """
-thumbnail.py (v2)
+thumbnail.py (v3)
 -----------------
 단색 배경 + 큰 흰색 텍스트 (1~2줄) 형태의 PNG 썸네일 생성.
 
+v3 변경 (2026-04-30):
+- pick_color() 호출 시 category 인자 추가
+  → 브랜드 매칭 안 될 때 카테고리 팔레트에서 색 선택 (다양화)
+
 배경색 결정 우선순위:
 1. brand_colors.py에 매칭되는 브랜드 키워드 → 브랜드 공식 색
-2. 매칭 없음 → sources.yml의 카테고리 color_start 사용
+2. 매칭 없음 → 카테고리 팔레트에서 제목 해시로 색 선택 (v3 신규)
+3. 그래도 없으면 → sources.yml의 카테고리 color_start 사용
 
 스타일:
 - 단색 배경
@@ -46,8 +51,8 @@ FONT_CANDIDATES = [
     "/System/Library/Fonts/AppleSDGothicNeo.ttc",
     "/System/Library/Fonts/Supplemental/AppleSDGothicNeo.ttc",
     "/Library/Fonts/AppleSDGothicNeo.ttc",
-    "/System/Library/Fonts/PingFang.ttc",                    # 한자도 가능
-    "/System/Library/Fonts/Helvetica.ttc",                   # 한글 못 그리지만 영문 라벨엔 OK
+    "/System/Library/Fonts/PingFang.ttc",
+    "/System/Library/Fonts/Helvetica.ttc",
     "/System/Library/Fonts/HelveticaNeue.ttc",
     "/System/Library/Fonts/Supplemental/Arial.ttf",
     "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
@@ -61,8 +66,6 @@ def _load_font(size: int) -> ImageFont.FreeTypeFont:
                 return ImageFont.truetype(path, size)
             except OSError:
                 continue
-    # 시스템 폰트를 못 찾은 경우 — default font는 매우 작은 비트맵이라
-    # 카드에 글씨가 거의 안 보이게 됨. 사용자가 알 수 있도록 경고.
     import sys
     print(
         "⚠️  시스템에서 사용 가능한 폰트를 찾지 못했습니다. "
@@ -114,8 +117,14 @@ def generate_thumbnail(
     line1, line2 = extract_label(tags, title, category_label, source=source)
     lines = [line1] + ([line2] if line2 else [])
 
-    # 2. 배경색 결정 — 브랜드 매칭 우선, 없으면 카테고리 기본 색
-    bg_hex = pick_color(tags, title, fallback=color_start)
+    # 2. 배경색 결정 — 브랜드 매칭 → 카테고리 팔레트 → fallback
+    # v3: category_label도 같이 넘겨서 매칭 실패시 다양한 색 사용
+    bg_hex = pick_color(
+        tags,
+        title,
+        fallback=color_start,
+        category=category_label,
+    )
     img = Image.new("RGB", (WIDTH, HEIGHT), _hex_to_rgb(bg_hex))
     draw = ImageDraw.Draw(img)
 
@@ -157,9 +166,12 @@ if __name__ == "__main__":
             ("webflow", ["webflow", "claude", "mcp"],
              "Webflow Claude Connector 공부 정리", "Design",
              "#a855f7", "#ec4899"),
-            ("claude-skills", ["claude", "skills"],
-             "Claude Skills 공부 정리", "DevTools",
-             "#f59e0b", "#ea580c"),
+            ("shadcn", ["shadcn", "ai", "mcp", "cli"],
+             "shadcn CLI v4 공부 정리", "DesignCraft",
+             "#f43f5e", "#fb923c"),
+            ("figjam", ["figma", "figjam", "mcp"],
+             "FigJam MCP 연동 공부 정리", "Design",
+             "#a855f7", "#ec4899"),
             ("react", ["react", "actions"],
              "React 19 Actions 훑어보면서", "Frontend",
              "#3b82f6", "#06b6d4"),

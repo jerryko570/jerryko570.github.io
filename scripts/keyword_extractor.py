@@ -1,26 +1,36 @@
 """
-keyword_extractor.py
---------------------
+keyword_extractor.py (v3)
+--------------------------
 글의 발행처(source) 이름을 썸네일 라벨로 추출.
 
-전략:
-- "어떤 사이트의 글이냐"를 한 단어로 보여주는 게 가장 깔끔.
-- candidates.json의 source 필드가 1순위 (Toss Tech, Figma Blog 등).
-- source가 없으면 tags/title에서 출처 키워드 매칭 (claude → Claude).
-- 마지막 폴백은 카테고리.
+v3 변경 (2026-04-30):
+- CLAUDE 룰 좁힘: claude/anthropic이 명시적으로 있을 때만 Claude로 분류.
+  → mcp, skills는 단독으로는 Claude 라벨을 트리거하지 않음.
+- 새 키워드 추가: shadcn, figjam, MCP(단독), Skills(단독), v0, lovable 등.
+- fallback 강화: 매칭 안 되면 첫 태그를 라벨로 사용 (이름이 너무 길지 않을 때).
 
-반환 시그니처는 기존과 동일 (line1, line2_or_None).
-대부분 한 줄(line1)만 채우고 line2는 None — 카드가 단순해짐.
-드물게 출처 자체가 길면 두 줄로 쪼갬 (예: 'Stack' / 'Overflow').
+전략:
+- "어떤 사이트/도구의 글이냐"를 한 단어로 보여주는 게 가장 깔끔.
+- candidates.json의 source 필드가 1순위 (Toss Tech, Figma Blog 등).
+- source가 없으면 tags/title에서 출처 키워드 매칭.
+- 마지막 폴백은 첫 태그 → 카테고리.
 
 사용법:
     line1, line2 = extract_label(
         tags=["webflow", "claude", "mcp"],
         title="Webflow Claude Connector 공부 정리",
         category="Design",
-        source="Webflow Blog",   # candidates.json의 source 필드
+        source="Webflow Blog",
     )
-    # → ("Webflow", None)
+    # → ("Claude", None)  (claude 태그가 명시적으로 있으니 Claude)
+
+    line1, line2 = extract_label(
+        tags=["shadcn", "ai", "mcp"],
+        title="shadcn CLI v4 공부 정리",
+        category="DesignCraft",
+        source="pxd",
+    )
+    # → ("shadcn", None)  (claude 태그 없음 + shadcn 매칭)
 """
 from __future__ import annotations
 
@@ -29,7 +39,6 @@ from typing import Optional
 # ───────────────────────────────────────────────
 # 1. source 필드 → 라벨 매핑 (candidates.json의 source 값 기준)
 # ───────────────────────────────────────────────
-# 키는 source 문자열에 포함되면 매칭 (소문자 비교)
 SOURCE_LABEL: dict[str, tuple[str, Optional[str]]] = {
     # Frontend
     "react blog": ("React", None),
@@ -50,12 +59,11 @@ SOURCE_LABEL: dict[str, tuple[str, Optional[str]]] = {
     "sketch": ("Sketch", None),
 
     # AI / DevTools
-    # Claude 관련(Anthropic, MCP, Claude Code 등)은 전부 "Claude"로 통일
+    # 명시적 Claude만 통합
     "anthropic": ("Claude", None),
-    "claude": ("Claude", None),
     "claude code": ("Claude", None),
     "claude desktop": ("Claude", None),
-    "mcp": ("Claude", None),
+    "claude": ("Claude", None),
     "openai": ("OpenAI", None),
     "github blog": ("GitHub", None),
     "jetbrains": ("JetBrains", None),
@@ -78,31 +86,47 @@ SOURCE_LABEL: dict[str, tuple[str, Optional[str]]] = {
 }
 
 # ───────────────────────────────────────────────
-# 2. source가 없거나 매칭 실패 시 — tags/title에서 키워드로 추출
+# 2. tags/title 키워드 매칭 (순서가 우선순위)
 # ───────────────────────────────────────────────
+# v3 — 더 구체적인 키워드를 먼저 매칭하도록 순서 정렬
 KEYWORD_LABEL: dict[str, tuple[str, Optional[str]]] = {
-    # AI
-    # Claude 관련(Anthropic, MCP, Skills 등)은 전부 "Claude"로 묶음
+    # ===== AI 도구 (Claude와 분리) =====
+    # shadcn/ui, figjam 같은 구체적인 도구명 먼저
+    "shadcn-ui": ("shadcn", None),
+    "shadcn": ("shadcn", None),
+    "figjam": ("FigJam", None),
+    "v0": ("v0", None),
+    "lovable": ("Lovable", None),
+    "bolt": ("Bolt", None),
+
+    # ===== Claude (명시적 키워드만) =====
     "claude": ("Claude", None),
     "anthropic": ("Claude", None),
-    "mcp": ("Claude", None),
+
+    # ===== 일반 AI 컨셉 (Claude 다음에) =====
+    # mcp/skills는 단독으로 매칭되면 자체 라벨
+    "mcp": ("MCP", None),
+    "skills": ("Skills", None),
+
+    # ===== 다른 LLM/도구 =====
     "openai": ("OpenAI", None),
     "gpt": ("GPT", None),
     "cursor": ("Cursor", None),
     "copilot": ("Copilot", None),
 
-    # 디자인 도구
+    # ===== 디자인 도구 =====
     "figma": ("Figma", None),
     "webflow": ("Webflow", None),
     "framer": ("Framer", None),
     "notion": ("Notion", None),
     "linear": ("Linear", None),
 
-    # 프레임워크
+    # ===== 프레임워크 =====
     "react": ("React", None),
-    "next": ("Next.js", None),
-    "nextjs": ("Next.js", None),
+    "next.js": ("Next.js", None),
     "next-js": ("Next.js", None),
+    "nextjs": ("Next.js", None),
+    "next": ("Next.js", None),
     "vercel": ("Vercel", None),
     "vue": ("Vue", None),
     "svelte": ("Svelte", None),
@@ -112,11 +136,11 @@ KEYWORD_LABEL: dict[str, tuple[str, Optional[str]]] = {
     "vite": ("Vite", None),
     "remix": ("Remix", None),
 
-    # 언어
+    # ===== 언어 =====
     "typescript": ("TypeScript", None),
     "javascript": ("JavaScript", None),
 
-    # 브라우저 / 웹 표준
+    # ===== 브라우저 / 웹 표준 =====
     "chrome": ("Chrome", None),
     "firefox": ("Firefox", None),
     "safari": ("Safari", None),
@@ -124,7 +148,13 @@ KEYWORD_LABEL: dict[str, tuple[str, Optional[str]]] = {
     "html": ("HTML", None),
     "baseline": ("Baseline", None),
 
-    # 한국 기업
+    # ===== 디자인 토픽 =====
+    "design-system": ("Design", "System"),
+    "design-systems": ("Design", "System"),
+    "accessibility": ("A11Y", None),
+    "a11y": ("A11Y", None),
+
+    # ===== 한국 기업 =====
     "tosspayments": ("Toss", None),
     "toss": ("Toss", None),
     "pxd": ("PXD", None),
@@ -132,7 +162,8 @@ KEYWORD_LABEL: dict[str, tuple[str, Optional[str]]] = {
     "kakao": ("Kakao", None),
     "naver": ("Naver", None),
 
-    # 개발 플랫폼
+    # ===== 개발 플랫폼 =====
+    "github-actions": ("Actions", None),
     "github": ("GitHub", None),
     "jetbrains": ("JetBrains", None),
     "supabase": ("Supabase", None),
@@ -144,23 +175,38 @@ KEYWORD_LABEL: dict[str, tuple[str, Optional[str]]] = {
 # ───────────────────────────────────────────────
 CATEGORY_FALLBACK: dict[str, tuple[str, Optional[str]]] = {
     "Design": ("Design", None),
-    "DesignCraft": ("Design", None),
+    "DesignCraft": ("Design", "Craft"),
     "Frontend": ("Frontend", None),
     "DevTools": ("DevTools", None),
 }
 
 
-# Claude 패밀리 키워드 — 출처와 무관하게 무조건 'Claude' 라벨 강제
-# 이유: Webflow 사이트가 발행한 Claude 통합 글이라도 "Claude 글"로 분류되는 게
-# 시각적으로 더 일관됨. 사용자 룰(2026-04-28).
+# v3 — 명시적 Claude 키워드만 (mcp, skills는 제외)
+# 이 키워드들은 0순위로 무조건 "Claude" 라벨로 강제됨.
+# Webflow가 발행한 Claude 통합 글 같은 경우, 출처보다 Claude 정체성이 더 중요.
+# 단, 단순히 "MCP"만 언급되는 글은 Claude로 묶지 않음 (너무 광범위).
 CLAUDE_KEYWORDS: set[str] = {
     "claude",
     "anthropic",
-    "mcp",
-    "claude code",
-    "claude desktop",
-    "claude skills",
 }
+
+
+def _tag_to_label(tag: str) -> Optional[str]:
+    """첫 태그를 사람이 읽을 수 있는 라벨로 변환.
+
+    예: "design-system" → "Design System", "next-js" → "Next Js"
+    너무 길거나 너무 짧으면 None 반환.
+    """
+    if not tag:
+        return None
+    cleaned = tag.replace("-", " ").replace("_", " ").strip()
+    if not cleaned:
+        return None
+    # 너무 짧거나 너무 길면 패스
+    if len(cleaned) > 14 or len(cleaned) < 2:
+        return None
+    # 단어 첫글자만 대문자로
+    return " ".join(w.capitalize() for w in cleaned.split())
 
 
 def extract_label(
@@ -171,17 +217,17 @@ def extract_label(
 ) -> tuple[str, Optional[str]]:
     """
     Returns (line1, line2_or_None).
-    대부분 line1만 채워서 한 줄 라벨로 떨어짐.
 
     우선순위:
-    0. Claude 패밀리 키워드가 본문/태그에 있으면 → "Claude" 강제
+    0. claude/anthropic이 본문/태그에 명시적으로 있으면 → "Claude" 강제
     1. source 필드 매칭 (Webflow Blog → Webflow 등)
-    2. tags/title 키워드 매칭
-    3. 카테고리 폴백
+    2. tags/title 키워드 매칭 (shadcn → shadcn 등)
+    3. 첫 태그를 라벨로 (design-system → "Design System")
+    4. 카테고리 폴백
     """
     haystack = " ".join(tags + [title]).lower()
 
-    # 0순위: Claude 패밀리는 출처 무시하고 무조건 Claude
+    # 0순위: 명시적 Claude만 (v3에서 mcp/skills 제외)
     if any(k in haystack for k in CLAUDE_KEYWORDS):
         return ("Claude", None)
 
@@ -197,7 +243,13 @@ def extract_label(
         if key in haystack:
             return label
 
-    # 3순위: 카테고리 폴백
+    # 3순위: 첫 태그를 라벨로 사용 (v3 신규)
+    if tags:
+        label = _tag_to_label(tags[0])
+        if label:
+            return (label, None)
+
+    # 4순위: 카테고리 폴백
     return CATEGORY_FALLBACK.get(category, ("Study", None))
 
 
@@ -205,28 +257,37 @@ if __name__ == "__main__":
     # candidates.json 형태에 맞춘 테스트
     cases = [
         # (tags, title, category, source)
+        # ===== Claude 매칭 (claude/anthropic 있음) =====
         (["webflow", "claude", "mcp"],
          "Webflow Claude Connector 공부 정리", "Design", "Webflow Blog"),
         (["claude", "skills"],
          "Claude Skills 공부 정리", "DevTools", "Anthropic News"),
+
+        # ===== Claude 매칭 안 됨 (mcp만 있음) — v3 변경점 =====
+        (["shadcn", "ai", "mcp", "cli"],
+         "shadcn CLI v4 공부 정리", "DesignCraft", "pxd"),
+        (["figma", "figjam", "mcp"],
+         "FigJam MCP 연동 공부 정리", "Design", "Figma Blog"),
+        (["mcp", "automation"],
+         "MCP 서버 만들어보기", "DevTools", ""),
+
+        # ===== 다른 매칭들 =====
         (["react", "actions"],
          "React 19 Actions 훑어보면서", "Frontend", "React Blog"),
-        (["tailwind", "v4"],
-         "Tailwind v4 디자인 토큰", "Frontend", "Tailwind Blog"),
         (["toss", "pqc"],
-         "토스페이먼츠 PQC 도입기 공부 정리", "DesignCraft", "Toss Tech"),
-        (["chrome", "firefox", "css", "baseline"],
-         "4월 웹 플랫폼 업데이트 공부 정리", "Frontend", "web.dev Blog"),
+         "토스페이먼츠 PQC 도입기", "DesignCraft", "Toss Tech"),
 
-        # source가 없는 경우 (수동 글)
-        (["css", "container-query"],
-         "CSS Container Query 공부", "Frontend", ""),
+        # ===== 첫 태그 라벨 폴백 (v3 신규) =====
+        (["design-system"],
+         "디자인 시스템 토큰 구축기", "Design", ""),
         (["accessibility"],
          "접근성 공부 정리", "Design", ""),
 
-        # 매칭 안 되는 글 → 카테고리 폴백
-        (["unknown"], "정체불명 글", "Frontend", ""),
+        # ===== 매칭 전혀 안 됨 → 카테고리 폴백 =====
+        ([], "정체불명 글", "Frontend", ""),
     ]
+    print(f"{'결과':28s}  ← 제목  (source)")
+    print("-" * 80)
     for tags, title, cat, src in cases:
         result = extract_label(tags, title, cat, src)
-        print(f"  {str(result):28s}  ← {title[:30]}  (source: {src or '-'})")
+        print(f"  {str(result):28s}  ← {title[:30]}  ({src or '-'})")
