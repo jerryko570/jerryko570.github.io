@@ -1,5 +1,5 @@
 {
-  "last_category_index": 2,
+  "last_category_index": 3,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -11,10 +11,11 @@
     "565ca109c9e02f51",
     "ded3052371b39bfb",
     "e89eb33f819c956c",
-    "8c73fb1bba588538"
+    "8c73fb1bba588538",
+    "636fb7347d11b904"
   ],
-  "posts_generated": 11,
-  "last_run": "2026-05-03T03:54:07.973878+00:00",
+  "posts_generated": 12,
+  "last_run": "2026-05-04T03:49:28.227196+00:00",
   "history": [
     {
       "date": "2026-04-27",
@@ -81,6 +82,12 @@
       "category": "frontend",
       "title": "use cache 공부 정리 | 캐시가 코드 안으로 들어온다는 것",
       "source_url": "https://vercel.com/blog/how-gitbook-serves-30000-sites-with-sub-second-content-updates"
+    },
+    {
+      "date": "2026-05-04",
+      "category": "dev-tools",
+      "title": "JavaScript Temporal 공부 정리 | Date 문제가 9년짜리였던 이유",
+      "source_url": "https://stackoverflow.blog/2026/05/01/time-is-a-construct-but-it-can-break-your-software/"
     }
   ]
 }
