@@ -1,5 +1,5 @@
 {
-  "last_category_index": 3,
+  "last_category_index": 0,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -12,10 +12,11 @@
     "ded3052371b39bfb",
     "e89eb33f819c956c",
     "8c73fb1bba588538",
-    "636fb7347d11b904"
+    "636fb7347d11b904",
+    "cb69c81c6d6ba3f6"
   ],
-  "posts_generated": 12,
-  "last_run": "2026-05-04T03:49:28.227196+00:00",
+  "posts_generated": 13,
+  "last_run": "2026-05-05T03:33:24.152470+00:00",
   "history": [
     {
       "date": "2026-04-27",
@@ -88,6 +89,12 @@
       "category": "dev-tools",
       "title": "JavaScript Temporal 공부 정리 | Date 문제가 9년짜리였던 이유",
       "source_url": "https://stackoverflow.blog/2026/05/01/time-is-a-construct-but-it-can-break-your-software/"
+    },
+    {
+      "date": "2026-05-05",
+      "category": "design-tools",
+      "title": "Webflow AI 코드 컴포넌트 훑어보면서 든 생각",
+      "source_url": "https://webflowmarketingmain.com/blog/ai-code-components"
     }
   ]
 }
