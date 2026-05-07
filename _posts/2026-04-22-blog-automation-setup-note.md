@@ -1,5 +1,5 @@
 ---
-title: "깃 블로그 자동화 세팅 | 3일마다 글이 올라가게 만들어봤다"
+title: "깃 블로그 자동화 세팅 | 1일마다 글이 올라가게 만들어봤다"
 description: "하루 만에 AI 블로그 자동 포스팅 시스템을 만들면서 배운 것들."
 date: 2026-04-22 20:00:00 +0900
 categories: [DevTools]
@@ -25,7 +25,7 @@ scripts/prepare.py가 Figma, React, Vercel, Anthropic 같은 공식 블로그를
 
 ### ② 글 작성 ###
 
-.github/workflows/auto-blog.yml이 3일마다 돌면서 anthropics/claude-code-action을 깨운다. Claude는 prompts/claude_instructions.md의 지시를 따라 후보 중 하나를 골라 한국어 학습 노트로 다시 쓴다. 이때 내 블로그의 문체·어휘·톤을 담은 가이드도 같이 주입한다.
+.github/workflows/auto-blog.yml이 1일마다 돌면서 anthropics/claude-code-action을 깨운다. Claude는 prompts/claude_instructions.md의 지시를 따라 후보 중 하나를 골라 한국어 학습 노트로 다시 쓴다. 이때 내 블로그의 문체·어휘·톤을 담은 가이드도 같이 주입한다.
 
 ### ③ 썸네일 ###
 
