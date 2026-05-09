@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -17,10 +17,11 @@
     "b0b0b1dda8572ed7",
     "433be863e2c20171",
     "74f95f5ce84e2847",
-    "d345b26c842748f1"
+    "d345b26c842748f1",
+    "1e234c3c402d82a1"
   ],
-  "posts_generated": 17,
-  "last_run": "2026-05-08T03:39:38.573701+00:00",
+  "posts_generated": 18,
+  "last_run": "2026-05-09T03:44:11.739342+00:00",
   "history": [
     {
       "date": "2026-04-27",
@@ -123,6 +124,12 @@
       "category": "design-tools",
       "title": "Webflow 코드 컴포넌트 공부 정리 | 두 가지 경로가 보여주는 것",
       "source_url": "https://webflowmarketingmain.com/blog/building-with-code-components"
+    },
+    {
+      "date": "2026-05-09",
+      "category": "design-craft",
+      "title": "AI 에이전트 시대 웹 에이전시 역할 공부 정리 | 만드는 것에서 설계하는 것으로",
+      "source_url": "https://ditoday.com/ai-%ec%97%90%ec%9d%b4%ec%a0%84%ed%8a%b8-%ec%8b%9c%eb%8c%80-%ec%9b%b9-%ec%97%90%ec%9d%b4%ec%a0%84%ec%8b%9c%eb%8a%94-%ec%96%b4%eb%96%a4-%ec%97%ad%ed%95%a0%ec%9d%84-%ed%95%b4%ec%95%bc-%ed%95%a0%ea%b9%8c/"
     }
   ]
 }
