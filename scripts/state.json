@@ -1,5 +1,5 @@
 {
-  "last_category_index": 3,
+  "last_category_index": 0,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -24,10 +24,11 @@
     "d586a136cd4efd1e",
     "b0c507c5c99520f5",
     "6b07ef526ab16524",
-    "9ec345ce998e8b2b"
+    "9ec345ce998e8b2b",
+    "80fc4be89f700e80"
   ],
-  "posts_generated": 24,
-  "last_run": "2026-05-15T04:01:47.324042+00:00",
+  "posts_generated": 25,
+  "last_run": "2026-05-16T03:43:59.358273+00:00",
   "history": [
     {
       "date": "2026-04-27",
@@ -172,6 +173,12 @@
       "category": "dev-tools",
       "title": "GitHub Issues 내비게이션 성능 최적화 공부 정리 | 캐시 먼저, 검증은 나중에",
       "source_url": "https://github.blog/engineering/architecture-optimization/from-latency-to-instant-modernizing-github-issues-navigation-performance/"
+    },
+    {
+      "date": "2026-05-16",
+      "category": "design-tools",
+      "title": "Figma 디자인-코드 루프 공부 정리 | 캔버스가 코드를 받아오면",
+      "source_url": "https://www.figma.com/blog/what-the-design-to-code-loop-unlocks/"
     }
   ]
 }
