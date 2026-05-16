@@ -21,9 +21,6 @@ categories:
       - name: "Webflow Blog"
         type: rss
         url: "https://webflow.com/blog/rss.xml"
-      - name: "Notion Blog"
-        type: rss
-        url: "https://www.notion.com/blog/rss.xml"
 
   - id: design-craft
     display_name: "DesignCraft"
