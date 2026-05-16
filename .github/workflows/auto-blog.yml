@@ -68,7 +68,8 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           prompt: "prompts/claude_instructions.md 파일을 읽고 그 안의 지시사항을 그대로 따라서 실행해줘."
-          claude_args: "--max-turns 40 --model claude-sonnet-4-6 --allowedTools Read,Write,Edit,Bash,WebFetch,Glob,Grep"
+          claude_args: "--max-turns 20 --model claude-sonnet-4-6 --allowedTools Read,Write,Edit,Bash,WebFetch,Glob,Grep"
+          show_full_output: true
 
       - name: Commit and push changes
         if: steps.prepare.outputs.count != '0'
