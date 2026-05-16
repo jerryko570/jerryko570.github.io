@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -25,10 +25,11 @@
     "b0c507c5c99520f5",
     "6b07ef526ab16524",
     "9ec345ce998e8b2b",
-    "80fc4be89f700e80"
+    "80fc4be89f700e80",
+    "38ef09c250a0d4a2"
   ],
-  "posts_generated": 25,
-  "last_run": "2026-05-16T03:43:59.358273+00:00",
+  "posts_generated": 26,
+  "last_run": "2026-05-16T06:11:01.303029+00:00",
   "history": [
     {
       "date": "2026-04-27",
@@ -179,6 +180,12 @@
       "category": "design-tools",
       "title": "Figma 디자인-코드 루프 공부 정리 | 캔버스가 코드를 받아오면",
       "source_url": "https://www.figma.com/blog/what-the-design-to-code-loop-unlocks/"
+    },
+    {
+      "date": "2026-05-16",
+      "category": "design-craft",
+      "title": "서울 시민의 목소리 시각화 공부 정리 | 개별 목소리와 집계 사이에서",
+      "source_url": "https://story.pxd.co.kr/1897"
     }
   ]
 }
