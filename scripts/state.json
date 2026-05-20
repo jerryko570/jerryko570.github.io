@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -29,10 +29,11 @@
     "38ef09c250a0d4a2",
     "f88cfc4eddeb7d52",
     "1097ba82e0f71b98",
-    "6bf39168dff41d65"
+    "6bf39168dff41d65",
+    "24872752f2512e5e"
   ],
-  "posts_generated": 29,
-  "last_run": "2026-05-19T04:10:04.309683+00:00",
+  "posts_generated": 30,
+  "last_run": "2026-05-20T04:08:58.014284+00:00",
   "history": [
     {
       "date": "2026-04-27",
@@ -207,6 +208,12 @@
       "category": "design-tools",
       "title": "Webflow 플랜 개편 공부 정리 | 단순화라는 말의 무게",
       "source_url": "https://webflowmarketingmain.com/blog/simplified-plans-and-updated-pricing-2026"
+    },
+    {
+      "date": "2026-05-20",
+      "category": "design-craft",
+      "title": "컬러 토큰 설계 방식 공부 정리 | 스케일이냐, 시멘틱이냐",
+      "source_url": "https://story.pxd.co.kr/1888"
     }
   ]
 }
