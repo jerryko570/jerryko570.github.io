@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -33,10 +33,11 @@
     "24872752f2512e5e",
     "591658fd28ca42c6",
     "2172e4d634197c53",
-    "7baeb55fff0710e5"
+    "7baeb55fff0710e5",
+    "85aa902a67230abf"
   ],
-  "posts_generated": 33,
-  "last_run": "2026-05-22T04:12:53.521630+00:00",
+  "posts_generated": 34,
+  "last_run": "2026-05-23T03:53:11.876939+00:00",
   "history": [
     {
       "date": "2026-04-27",
@@ -235,6 +236,12 @@
       "category": "design-tools",
       "title": "Figma Design Agent 공부 정리 | 캔버스 안에 있다는 게 뭘 바꾸는 걸까",
       "source_url": "https://www.figma.com/blog/the-figma-agent-is-here/"
+    },
+    {
+      "date": "2026-05-23",
+      "category": "design-craft",
+      "title": "Cross Functional 역량 공부 정리 | 회의를 늘려도 안 풀리는 문제들",
+      "source_url": "https://toss.tech/article/cross-functional-tpm-tip"
     }
   ]
 }
