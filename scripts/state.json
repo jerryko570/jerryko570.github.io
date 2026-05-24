@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -34,10 +34,11 @@
     "591658fd28ca42c6",
     "2172e4d634197c53",
     "7baeb55fff0710e5",
-    "85aa902a67230abf"
+    "85aa902a67230abf",
+    "550308b24bb63fb4"
   ],
-  "posts_generated": 34,
-  "last_run": "2026-05-23T03:53:11.876939+00:00",
+  "posts_generated": 35,
+  "last_run": "2026-05-24T04:14:02.009296+00:00",
   "history": [
     {
       "date": "2026-04-27",
@@ -242,6 +243,12 @@
       "category": "design-craft",
       "title": "Cross Functional 역량 공부 정리 | 회의를 늘려도 안 풀리는 문제들",
       "source_url": "https://toss.tech/article/cross-functional-tpm-tip"
+    },
+    {
+      "date": "2026-05-24",
+      "category": "frontend",
+      "title": "Vercel flags split 명령어 훑어보면서 든 생각",
+      "source_url": "https://vercel.com/changelog/configure-weighted-traffic-splits-for-vercel-flags-from-the-vercel-cli"
     }
   ]
 }
