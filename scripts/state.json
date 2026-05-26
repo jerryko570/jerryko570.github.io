@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -37,10 +37,11 @@
     "85aa902a67230abf",
     "550308b24bb63fb4",
     "cf2c701f4b43a718",
-    "dcb8f6138e50541a"
+    "dcb8f6138e50541a",
+    "942f7f58eba6df2a"
   ],
-  "posts_generated": 37,
-  "last_run": "2026-05-25T04:25:28.556538+00:00",
+  "posts_generated": 38,
+  "last_run": "2026-05-26T04:10:06.003359+00:00",
   "history": [
     {
       "date": "2026-04-27",
@@ -263,6 +264,12 @@
       "category": "design-tools",
       "title": "누구나 만들 수 있게 됐을 때 — Figma 블로그 공부 정리",
       "source_url": "https://www.figma.com/blog/what-matters-when-anyone-can-build/"
+    },
+    {
+      "date": "2026-05-26",
+      "category": "design-craft",
+      "title": "기술 SEO 공부 정리 | 크롤러가 못 찾으면 랭킹은 없다",
+      "source_url": "https://story.pxd.co.kr/1899"
     }
   ]
 }
