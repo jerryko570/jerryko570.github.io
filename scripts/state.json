@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -41,10 +41,11 @@
     "942f7f58eba6df2a",
     "9dfabdd50385b719",
     "c6a7b34a0061f3e2",
-    "e3ae63677731f836"
+    "e3ae63677731f836",
+    "76f1f4d3ae7938ff"
   ],
-  "posts_generated": 41,
-  "last_run": "2026-05-29T04:13:43.784755+00:00",
+  "posts_generated": 42,
+  "last_run": "2026-05-30T04:05:41.252384+00:00",
   "history": [
     {
       "date": "2026-04-27",
@@ -291,6 +292,12 @@
       "category": "design-tools",
       "title": "Figma Make 로컬 코드 연결 공부 정리 | 경계가 어디까지 달라지는 걸까",
       "source_url": "https://www.figma.com/blog/figma-make-now-on-your-local-code/"
+    },
+    {
+      "date": "2026-05-30",
+      "category": "design-craft",
+      "title": "토스식 TPM 공부 정리 | 회색지대를 누가 잡아야 할까",
+      "source_url": "https://toss.tech/article/toss-tpm"
     }
   ]
 }
