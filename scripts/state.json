@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -42,10 +42,11 @@
     "9dfabdd50385b719",
     "c6a7b34a0061f3e2",
     "e3ae63677731f836",
-    "76f1f4d3ae7938ff"
+    "76f1f4d3ae7938ff",
+    "46eee3604948e48f"
   ],
-  "posts_generated": 42,
-  "last_run": "2026-05-30T04:05:41.252384+00:00",
+  "posts_generated": 43,
+  "last_run": "2026-05-31T04:24:36.904240+00:00",
   "history": [
     {
       "date": "2026-04-27",
@@ -298,6 +299,12 @@
       "category": "design-craft",
       "title": "토스식 TPM 공부 정리 | 회색지대를 누가 잡아야 할까",
       "source_url": "https://toss.tech/article/toss-tpm"
+    },
+    {
+      "date": "2026-05-31",
+      "category": "frontend",
+      "title": "Vercel Sandbox Docker 지원 공부 정리 | 샌드박스 안에 컨테이너가 들어온다는 것",
+      "source_url": "https://vercel.com/changelog/run-docker-containers-inside-vercel-sandbox"
     }
   ]
 }
