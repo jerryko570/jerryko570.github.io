@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -45,10 +45,11 @@
     "76f1f4d3ae7938ff",
     "46eee3604948e48f",
     "e13281b420cb676c",
-    "e261f313a7cf88c0"
+    "e261f313a7cf88c0",
+    "4826a275d9677b86"
   ],
-  "posts_generated": 45,
-  "last_run": "2026-06-02T04:41:37.448449+00:00",
+  "posts_generated": 46,
+  "last_run": "2026-06-03T04:52:58.677671+00:00",
   "history": [
     {
       "date": "2026-04-27",
@@ -319,6 +320,12 @@
       "category": "design-tools",
       "title": "Webflow Cloud 공부 정리 | 사이트 없어도 앱이 된다고?",
       "source_url": "https://webflowmarketingmain.com/blog/cloud-apps-without-sites"
+    },
+    {
+      "date": "2026-06-03",
+      "category": "design-craft",
+      "title": "하네스 엔지니어링 공부 정리 | 에이전트보다 환경이 어렵다",
+      "source_url": "https://story.pxd.co.kr/1896"
     }
   ]
 }
