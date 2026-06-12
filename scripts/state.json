@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -54,17 +54,12 @@
     "98db2b9e8e0317f6",
     "630d1eeb4384d9e9",
     "50892ebecce71cb0",
-    "34148ead5d2fb0a3"
+    "34148ead5d2fb0a3",
+    "8f027b2b3ff8df1c"
   ],
-  "posts_generated": 54,
-  "last_run": "2026-06-11T04:32:28.075804+00:00",
+  "posts_generated": 55,
+  "last_run": "2026-06-12T04:46:11.609823+00:00",
   "history": [
-    {
-      "date": "2026-04-29",
-      "category": "design-tools",
-      "title": "FigJam MCP 연동 공부 정리 | 에이전트도 다이어그램이 필요했나",
-      "source_url": "https://www.figma.com/blog/figjam-your-coding-agents-whiteboard/"
-    },
     {
       "date": "2026-04-29",
       "category": "design-craft",
@@ -358,6 +353,12 @@
       "category": "design-craft",
       "title": "AI가 인용하는 페이지 공부 정리 | SEO랑 뭐가 다를까",
       "source_url": "https://story.pxd.co.kr/1900"
+    },
+    {
+      "date": "2026-06-12",
+      "category": "frontend",
+      "title": "Okara 케이스 공부 정리 | 4명이 12만 회사를 어떻게 운영하나",
+      "source_url": "https://vercel.com/blog/how-okara-runs-cmo-agents-for-120000-companies-on-vercel"
     }
   ]
 }
