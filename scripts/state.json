@@ -1,5 +1,5 @@
 {
-  "last_category_index": 3,
+  "last_category_index": 0,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -60,17 +60,12 @@
     "7c4fd672ede2bb4a",
     "2ada4c116f30f821",
     "e7619582c6ce7077",
-    "2f0101a4921237ff"
+    "2f0101a4921237ff",
+    "1f9cd56fee5412c3"
   ],
-  "posts_generated": 60,
-  "last_run": "2026-06-17T04:51:38.190882+00:00",
+  "posts_generated": 61,
+  "last_run": "2026-06-18T04:42:19.462050+00:00",
   "history": [
-    {
-      "date": "2026-05-03",
-      "category": "frontend",
-      "title": "use cache 공부 정리 | 캐시가 코드 안으로 들어온다는 것",
-      "source_url": "https://vercel.com/blog/how-gitbook-serves-30000-sites-with-sub-second-content-updates"
-    },
     {
       "date": "2026-05-04",
       "category": "dev-tools",
@@ -364,6 +359,12 @@
       "category": "dev-tools",
       "title": "git worktree 공부 정리 | 브랜치 전환 없이 병렬 작업하기",
       "source_url": "https://github.blog/ai-and-ml/github-copilot/what-are-git-worktrees-and-why-should-i-use-them/"
+    },
+    {
+      "date": "2026-06-18",
+      "category": "design-tools",
+      "title": "코드는 미래에게 보내는 메시지라는 말 | 공부하면서 든 생각",
+      "source_url": "https://webflowmarketingmain.com/blog/code-as-communication"
     }
   ]
 }
