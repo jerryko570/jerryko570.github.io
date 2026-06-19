@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -61,17 +61,12 @@
     "2ada4c116f30f821",
     "e7619582c6ce7077",
     "2f0101a4921237ff",
-    "1f9cd56fee5412c3"
+    "1f9cd56fee5412c3",
+    "734a32147931825e"
   ],
-  "posts_generated": 61,
-  "last_run": "2026-06-18T04:42:19.462050+00:00",
+  "posts_generated": 62,
+  "last_run": "2026-06-19T05:02:53.788536+00:00",
   "history": [
-    {
-      "date": "2026-05-04",
-      "category": "dev-tools",
-      "title": "JavaScript Temporal 공부 정리 | Date 문제가 9년짜리였던 이유",
-      "source_url": "https://stackoverflow.blog/2026/05/01/time-is-a-construct-but-it-can-break-your-software/"
-    },
     {
       "date": "2026-05-05",
       "category": "design-tools",
@@ -365,6 +360,12 @@
       "category": "design-tools",
       "title": "코드는 미래에게 보내는 메시지라는 말 | 공부하면서 든 생각",
       "source_url": "https://webflowmarketingmain.com/blog/code-as-communication"
+    },
+    {
+      "date": "2026-06-19",
+      "category": "design-craft",
+      "title": "경험 먼저, 시스템은 역산 | 토스 챗봇 설계 공부 정리",
+      "source_url": "https://toss.tech/article/chatbot"
     }
   ]
 }
