@@ -16,7 +16,7 @@ timezone: Asia/Seoul
 
 title: Jerry's blog # the main title 임
 
-tagline: 프론트앤드 공부하는 <br /> 앱디자이너 # it will display as the subtitle
+tagline: 프론트엔드와 백엔드 공부하는 <br /> 디자인 엔지니어 # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   A minimal, responsive and feature-rich Jekyll theme for technical writing.
