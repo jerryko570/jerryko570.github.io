@@ -1,0 +1,250 @@
+---
+layout: post
+title: 'TanStack React Query 핵심 정리 — useQuery · useInfiniteQuery · useMutation'
+description: '읽기(useQuery·useInfiniteQuery)와 쓰기(useMutation)의 흐름을 핵심만. queryKey 캐시, queryFn의 return/throw, 메서드 체이닝과 SQL, staleTime, 그리고 읽기는 왜 직접·쓰기는 왜 서버를 거치는가.'
+date: 2026-06-08 00:00:00 +0900
+categories: [frontend, react]
+tags: [react, react-query, tanstack-query, useQuery, useInfiniteQuery, useMutation, supabase, 리액트쿼리]
+series: react-query
+image: /assets/img/thumbnail/react-query.png
+---
+
+## 한 줄 요약
+
+> **나는 "설정"을 넣고(queryKey·queryFn), React Query는 "결과 꾸러미"를 돌려준다(data·error·isLoading…).**
+> 요청·캐시·로딩/에러 상태 관리는 전부 React Query(매니저)가 한다. 나는 레시피만 건넨다.
+
+---
+
+# 1. 왜 React Query를 쓰나
+
+## useState vs React Query
+
+겉보기엔 둘 다 "데이터를 담는다"지만, **다루는 데이터 종류가 다르다.**
+
+- **useState = 클라이언트 상태** — 내 브라우저 안 데이터(모달, 입력값, 토글). 주인이 나.
+- **React Query = 서버 상태** — DB에 진짜 주인이 있는 데이터(상품 목록, 유저). 나는 빌려보는 입장.
+
+"주인이 서버"라서 생기는 일 — 비동기 로딩, "내가 본 게 최신인가", 중복 요청. 이걸 useState로 하면 `data`/`loading`/`error`를 직접 다 짜야 한다. React Query는 이걸 **자동**으로 해준다.
+
+| 구분 | useState | React Query |
+|------|----------|-------------|
+| 다루는 것 | 내 브라우저 데이터 | 서버 데이터 |
+| 로딩/에러/캐싱 | 직접 다 짬 | 자동 |
+| 적합한 곳 | 모달·입력값·토글 | DB 조회·API |
+
+> 경쟁 관계가 아니라 **담당 구역이 다르다.** 실무에선 같이 쓴다.
+
+## 세 가지 훅
+
+```text
+useQuery          → 단일 조회 (상품 1개)         · 자동 실행 · 읽기
+useInfiniteQuery  → 페이지 누적 (무한스크롤)      · 자동 실행 · 읽기
+useMutation       → 생성/수정/삭제              · 수동(mutate) · 쓰기
+```
+
+**읽기는 자동, 쓰기는 수동.** 셋 다 `return`으로 결과 꾸러미를 돌려주고, `const { … } = useXxx()`로 꺼내 쓴다.
+
+---
+
+# 2. 읽기 흐름 (useInfiniteQuery)
+
+```ts
+export const useProducts = (category?: string) => {
+  const supabase = createClient()
+
+  return useInfiniteQuery({
+    queryKey: ['products', category],
+    queryFn: async ({ pageParam = 0 }) => {
+      let query = supabase
+        .from('products')
+        .select('*')
+        .eq('is_active', true)
+        .range(pageParam as number, (pageParam as number) + PAGE_SIZE - 1)
+        .order('created_at', { ascending: false })
+
+      if (category) query = query.eq('category', category)
+
+      const { data, error } = await query
+      if (error) throw error
+      return data as Product[]
+    },
+    getNextPageParam: (lastPage, allPages) =>
+      lastPage.length === PAGE_SIZE ? allPages.length * PAGE_SIZE : undefined,
+    initialPageParam: 0,
+    staleTime: 1000 * 60 * 5,
+  })
+}
+```
+
+## queryKey — 캐시 이름표
+
+데이터를 보관할 때 붙이는 **라벨**. `['products', category]` = 고정값 + 가변값.
+
+**라벨 같으면 창고에서 바로 꺼내고(캐시 히트), 다르면 새로 요청.** category를 빼먹으면 → 카테고리를 바꿔도 이전 캐시가 그대로 보이는 버그가 난다.
+
+## queryFn — return ↔ throw
+
+요리사(queryFn)는 **성공한 접시만 `return`**, 실패는 **`throw`로 신고**만 한다.
+
+```ts
+if (error) throw error     // 실패 → 던짐
+return data as Product[]    // 성공 → 내보냄
+```
+
+핵심: supabase는 실패해도 자동 throw 안 하고 `{ data, error }`로 준다. 그래서 **내 코드가 직접 `throw`** 해야 한다. 던지는 쪽 = 내 queryFn / 받는 쪽 = React Query.
+
+**왜 React Query가 받나?** queryFn을 실행한 게 React Query라서. 내부적으로 try/catch로 감싸 실행한다:
+
+```ts
+try {
+  const result = await queryFn()  // return → data 칸 (setData)
+} catch (e) {
+  // throw → error 칸 (setError, isError=true)
+} finally {
+  // 로딩 플래그 끔 (isLoading, isFetching = false)
+}
+```
+
+→ 나는 `throw` 한 줄만, 나머지(error 담기·isError·로딩·재시도·리렌더)는 React Query가 다 한다.
+
+## 메서드 체이닝 = SQL 짓기
+
+`from().select()...`는 SQL을 자바스크립트로 짓는 방식. 주문서의 빈칸을 하나씩 채운다.
+
+```ts
+.from('products')        // FROM products      (어느 테이블)
+.select('*')             // SELECT *           (어느 컬럼)
+.eq('is_active', true)   // WHERE is_active=true (조건)
+.range(0, 11)            // LIMIT 12 OFFSET 0  (12개씩)
+.order('created_at', …)  // ORDER BY ... DESC  (정렬)
+```
+
+**작성 ≠ 제출.** 체이닝은 주문서 "작성"만 (데이터 X). `await query` 하는 순간 SQL로 번역돼 DB로 "제출"된다. → 제출 전이라 `if(category)`로 조건을 더 붙일 수 있고, 그래서 `let`을 쓴다.
+
+## `as Product[]` — 타입 단언
+
+supabase가 준 `data`는 타입이 두루뭉술해서, "이건 Product 배열이야"라고 못박는 것.
+
+> ⚠️ `as`는 **검사가 아니라 약속**. 실제 모양을 대조하지 않으니 DB와 어긋나도 컴파일러는 못 잡는다.
+
+- 목록(`.range()`→배열) → `as Product[]`  /  상세(`.single()`→1개) → `as Product`
+
+## data: undefined vs null
+
+| 값 | 뜻 |
+|---|---|
+| `undefined` | **아직 안 옴** (요청 전이거나 에러) |
+| `null` | **가져와봤는데 결과가 없음** (정상 결과) |
+
+"안 옴"과 "왔는데 비었음"을 구분하려고 다르게 쓴다. → `undefined` = 택배 아직 안 옴 / `null` = 택배 왔는데 빈 상자.
+
+## 무한스크롤
+
+- `getNextPageParam` → 마지막 페이지가 꽉 찼으면(=PAGE_SIZE) 다음 offset, 적게 왔으면 `undefined`(끝).
+- `pageParam`은 React Query가 주입(첫 값은 `initialPageParam: 0`).
+- `useInfiniteQuery`는 **페이지 데이터 관리만** 한다. "언제 다음 페이지를 부를지"는 `IntersectionObserver`로 `fetchNextPage()`를 직접 연결.
+
+## 런타임 순서 (한눈에)
+
+```text
+① 카테고리 버튼 클릭 → ② queryKey 변경
+   ↓
+③ React Query가 변화 감지 → 캐시 없으면 queryFn 실행
+   ↓ (여기부터 queryFn 내부 = 내가 짠 코드)
+④ 메서드 체이닝으로 주문서 작성
+⑤ await query → DB 제출 → { data, error } 받음
+⑥ error면 throw / data면 return as Product[]
+   ↓ (다시 React Query 담당)
+⑦ queryKey 라벨로 캐싱 + 컴포넌트에 꾸러미 전달 → 화면 렌더
+```
+
+> 내가 짠 코드가 줄줄이 도는 건 ④~⑥뿐. ③⑦은 React Query가 조율. 캐시가 신선하면 ④~⑥은 통째로 생략된다.
+
+---
+
+# 3. 캐싱과 staleTime
+
+## 캐시는 어디에? — 브라우저 메모리(QueryClient)
+
+"창고"의 실체는 `QueryClient` — 브라우저 메모리(RAM)에 사는 객체. 앱 최상단에 한 번 만들어 모든 훅이 공유한다.
+
+```text
+queryClient (메모리)
+├── ['products', '패션'] → [상품들…]
+└── ['product', 'slug']  → { 상세 }
+```
+
+> ⚠️ 메모리라서 **새로고침하면 날아감.** 첫 요청은 다시 DB로.
+
+## staleTime — "신선하다고 믿는 시간"
+
+```ts
+staleTime: 1000 * 60 * 5   // 5분 (ms 단위: 1000*60*5 = 300000ms)
+```
+
+받은 데이터를 **얼마 동안 신선(fresh)하다고 볼지.** 그 안엔 재요청 안 하고 캐시를 바로 준다.
+
+```text
+받음 ──[ fresh: 캐시 바로 씀 ]──|──[ stale: 낡음 표시 ]──→
+       0초                    5분
+```
+
+**핵심: stale 돼도 데이터가 사라지는 게 아니다.** "낡음" 표시만 되고, **트리거가 생기면** 백그라운드에서 조용히 갱신(옛날 거 보여주며 새 거 가져옴).
+
+**stale일 때 자동 refetch 트리거:**
+- 컴포넌트 다시 마운트 / 창 다시 포커스(다른 탭 갔다 옴) / 네트워크 재연결 / 같은 queryKey 새로 구독
+
+기본값은 `0`(받자마자 stale). 그래서 명시하면 "이만큼은 재요청 마"라는 뜻.
+
+```ts
+useProducts  → 5분   // 목록
+useProduct   → 10분  // 상세는 더 안 바뀌니까 더 길게
+```
+
+## isLoading vs isFetching
+
+- `isLoading` — **첫 로딩**(보여줄 게 아예 없음) → 스피너
+- `isFetching` — **모든 요청 순간**(백그라운드 갱신 포함) → "새로고침 중…"
+
+---
+
+# 4. 읽기 vs 쓰기 — 경로가 다르다
+
+| | 읽기 (조회) | 쓰기 (주문) |
+|---|---|---|
+| 훅 | useQuery / useInfiniteQuery | useMutation |
+| 경로 | 훅 → **supabase 직접** | 훅 → **route.ts(서버)** → supabase |
+| 실행 | 자동 | `mutate()` 수동 |
+
+## 왜 읽기는 직접, 쓰기는 서버를 거치나
+
+**브라우저를 믿을 수 있나?** 가 기준.
+
+- **읽기 = 믿어도 됨.** 공개 데이터고, 접근은 DB의 **RLS** 정책이 막아준다. → 직접 가는 게 빠르고 간단.
+- **쓰기 = 못 믿음.** 브라우저 코드는 조작 가능(가격 50,000→1원). → **route.ts(서버)가 문지기**로 검증.
+
+> 읽기 = 공개 → 직접 / 쓰기 = 신뢰 불가 → 서버가 검증.
+
+## client.ts vs server.ts
+
+**세션을 어디서 꺼내느냐**가 환경마다 달라서 둘로 나눈다.
+
+- `page.tsx`(`'use client'`) → 브라우저 실행 → 세션이 쿠키/스토리지에 → **client.ts**
+- `route.ts` → 서버 실행 → 브라우저 스토리지 못 봄 → 쿠키로 받음 → **server.ts**
+
+(렌더링 위치 ≠ supabase 호출 위치 — 별개의 축으로 본다.)
+
+---
+
+# 자주 밟는 함정
+
+- **queryKey에 가변값(category) 빠뜨림** → 필터 바꿔도 이전 캐시가 보임.
+- **`.single()`** → 결과가 0·2개+면 throw. 유연하게는 `.maybeSingle()`.
+- **`as`는 약속이지 검사 아님** → DB와 타입 어긋나도 컴파일러는 못 잡음.
+- **mutation 로딩은 `isLoading`이 아니라 `isPending`** → 성공 후 `invalidateQueries`로 읽기 캐시 새로고침.
+
+---
+
+> **요리사(queryFn)는 접시만 내보내고 실패는 벨로 알릴 뿐, 상태판은 매니저(React Query)가 관리한다.**
+> **읽기는 공개라 직접, 쓰기는 신뢰 불가라 서버를 거친다.**
