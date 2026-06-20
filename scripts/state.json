@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -62,17 +62,12 @@
     "e7619582c6ce7077",
     "2f0101a4921237ff",
     "1f9cd56fee5412c3",
-    "734a32147931825e"
+    "734a32147931825e",
+    "c2819be897ac6240"
   ],
-  "posts_generated": 62,
-  "last_run": "2026-06-19T05:02:53.788536+00:00",
+  "posts_generated": 63,
+  "last_run": "2026-06-20T04:15:15.158051+00:00",
   "history": [
-    {
-      "date": "2026-05-05",
-      "category": "design-tools",
-      "title": "Webflow AI 코드 컴포넌트 훑어보면서 든 생각",
-      "source_url": "https://webflowmarketingmain.com/blog/ai-code-components"
-    },
     {
       "date": "2026-05-06",
       "category": "design-craft",
@@ -366,6 +361,12 @@
       "category": "design-craft",
       "title": "경험 먼저, 시스템은 역산 | 토스 챗봇 설계 공부 정리",
       "source_url": "https://toss.tech/article/chatbot"
+    },
+    {
+      "date": "2026-06-20",
+      "category": "frontend",
+      "title": "eve 공부 정리 | 에이전트에도 프레임워크 시대가 오는 걸까",
+      "source_url": "https://vercel.com/blog/introducing-eve"
     }
   ]
 }
