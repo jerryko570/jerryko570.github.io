@@ -7,7 +7,7 @@ tags: [tailwind, css, study, routine]
 image: /assets/img/thumbnail/self-study.png
 ---
 
-## 🧭 왜 Tailwind를 공부하게 되었나
+## 🧭 왜 Tailwind를 공부하게 되었나?
 프로젝트에서 빠르게 UI를 구성하고 싶어서 시작했다.
 
 ## 📚 공부 순서
