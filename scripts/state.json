@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -65,17 +65,12 @@
     "734a32147931825e",
     "c2819be897ac6240",
     "3c538b4fb66edae9",
-    "45adf591f53cd140"
+    "45adf591f53cd140",
+    "3a46226489071b22"
   ],
-  "posts_generated": 65,
-  "last_run": "2026-06-22T05:05:34.839027+00:00",
+  "posts_generated": 66,
+  "last_run": "2026-06-23T04:08:07.651150+00:00",
   "history": [
-    {
-      "date": "2026-05-08",
-      "category": "dev-tools",
-      "title": "GitHub 에이전트 워크플로우 토큰 효율화 공부 정리",
-      "source_url": "https://github.blog/ai-and-ml/github-copilot/improving-token-efficiency-in-github-agentic-workflows/"
-    },
     {
       "date": "2026-05-08",
       "category": "design-tools",
@@ -369,6 +364,12 @@
       "category": "design-tools",
       "title": "Runway Aleph 2.0 공부 정리 | Figma Weave에서 영상을 다루는 방식이 달라졌다",
       "source_url": "https://www.figma.com/blog/direct-every-frame-with-runway-aleph-2/"
+    },
+    {
+      "date": "2026-06-23",
+      "category": "design-craft",
+      "title": "토스 TW가 AI에게 자기 리뷰를 가르친 이야기",
+      "source_url": "https://toss.tech/article/technical-writing-5"
     }
   ]
 }
