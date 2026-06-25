@@ -1,5 +1,5 @@
 {
-  "last_category_index": 2,
+  "last_category_index": 3,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -67,17 +67,12 @@
     "3c538b4fb66edae9",
     "45adf591f53cd140",
     "3a46226489071b22",
-    "c978b727707b9164"
+    "c978b727707b9164",
+    "a6896f1295e61998"
   ],
-  "posts_generated": 67,
-  "last_run": "2026-06-24T04:10:05.941915+00:00",
+  "posts_generated": 68,
+  "last_run": "2026-06-25T04:07:00.692921+00:00",
   "history": [
-    {
-      "date": "2026-05-09",
-      "category": "design-craft",
-      "title": "AI 에이전트 시대 웹 에이전시 역할 공부 정리 | 만드는 것에서 설계하는 것으로",
-      "source_url": "https://ditoday.com/ai-%ec%97%90%ec%9d%b4%ec%a0%84%ed%8a%b8-%ec%8b%9c%eb%8c%80-%ec%9b%b9-%ec%97%90%ec%9d%b4%ec%a0%84%ec%8b%9c%eb%8a%94-%ec%96%b4%eb%96%a4-%ec%97%ad%ed%95%a0%ec%9d%84-%ed%95%b4%ec%95%bc-%ed%95%a0%ea%b9%8c/"
-    },
     {
       "date": "2026-05-10",
       "category": "frontend",
@@ -371,6 +366,12 @@
       "category": "frontend",
       "title": "Claude Design에서 Vercel 배포 공부 정리 | 디자인에서 URL까지",
       "source_url": "https://vercel.com/changelog/claude-design-and-vercel"
+    },
+    {
+      "date": "2026-06-25",
+      "category": "dev-tools",
+      "title": "Kotlin Toolchain 0.11 공부 정리 | Amper는 어디로 갔을까",
+      "source_url": "https://blog.jetbrains.com/amper/2026/06/kotlin-toolchain-0-11/"
     }
   ]
 }
