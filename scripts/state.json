@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -70,17 +70,12 @@
     "c978b727707b9164",
     "a6896f1295e61998",
     "5b025728135f5706",
-    "6d540eefd46cd1ba"
+    "6d540eefd46cd1ba",
+    "52b37a6fe2f23eb1"
   ],
-  "posts_generated": 70,
-  "last_run": "2026-06-27T04:03:39.261691+00:00",
+  "posts_generated": 71,
+  "last_run": "2026-06-28T04:24:24.345710+00:00",
   "history": [
-    {
-      "date": "2026-05-12",
-      "category": "design-tools",
-      "title": "Webflow Cloud + Claude 채팅 공부 정리 | API 키는 어떻게 숨기는 걸까",
-      "source_url": "https://webflowmarketingmain.com/blog/claude-chat-webflow"
-    },
     {
       "date": "2026-05-13",
       "category": "design-craft",
@@ -374,6 +369,12 @@
       "category": "design-craft",
       "title": "토스 QA 글 읽으면서 든 생각 | 가설이 틀렸을 때",
       "source_url": "https://toss.tech/article/50893"
+    },
+    {
+      "date": "2026-06-28",
+      "category": "frontend",
+      "title": "AI SDK 7 훑어보면서 든 생각",
+      "source_url": "https://vercel.com/blog/ai-sdk-7"
     }
   ]
 }
