@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -74,17 +74,12 @@
     "52b37a6fe2f23eb1",
     "c3f6706abee2a341",
     "a4797e865a7f0ebe",
-    "656ae8542e6674dc"
+    "656ae8542e6674dc",
+    "0382f79f25a14cf5"
   ],
-  "posts_generated": 74,
-  "last_run": "2026-07-01T04:29:31.586427+00:00",
+  "posts_generated": 75,
+  "last_run": "2026-07-02T04:06:02.645870+00:00",
   "history": [
-    {
-      "date": "2026-05-16",
-      "category": "design-tools",
-      "title": "Figma 디자인-코드 루프 공부 정리 | 캔버스가 코드를 받아오면",
-      "source_url": "https://www.figma.com/blog/what-the-design-to-code-loop-unlocks/"
-    },
     {
       "date": "2026-05-16",
       "category": "design-craft",
@@ -378,6 +373,12 @@
       "category": "design-craft",
       "title": "앱 리뷰에서 의사결정까지 | ABSA 공부 정리",
       "source_url": "https://story.pxd.co.kr/1905"
+    },
+    {
+      "date": "2026-07-02",
+      "category": "frontend",
+      "title": "konsistent 공부 정리 | 구조 규칙을 에이전트도 읽는 명세로",
+      "source_url": "https://vercel.com/changelog/enforce-consistent-code-for-agents-and-humans-with-konsistent"
     }
   ]
 }
