@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -81,17 +81,12 @@
     "ff3b6ed46c7cb80d",
     "b715e2f388ba4e0c",
     "bf55a61637b6dda9",
-    "9dceb976c16c9b72"
+    "9dceb976c16c9b72",
+    "b895056234f9659e"
   ],
-  "posts_generated": 81,
-  "last_run": "2026-07-08T03:26:12.811450+00:00",
+  "posts_generated": 82,
+  "last_run": "2026-07-09T03:58:36.924045+00:00",
   "history": [
-    {
-      "date": "2026-05-21",
-      "category": "dev-tools",
-      "title": "Kotlin 생산성 데이터 공부 정리 | 설계가 속도를 만든다는 게 어떤 의미인지",
-      "source_url": "https://blog.jetbrains.com/kotlin/2026/05/built-for-productivity-what-the-data-shows-about-kotlin/"
-    },
     {
       "date": "2026-05-22",
       "category": "design-tools",
@@ -385,6 +380,12 @@
       "category": "design-tools",
       "title": "Figma 캔버스 접근성 공부 정리 | 보이지 않는 DOM 이야기",
       "source_url": "https://www.figma.com/blog/building-accessibility-into-a-canvas-based-product/"
+    },
+    {
+      "date": "2026-07-09",
+      "category": "design-craft",
+      "title": "package.json 공부 정리 | 공통 컴포넌트 패키지를 만들면서 마주친 설정들",
+      "source_url": "https://story.pxd.co.kr/1906"
     }
   ]
 }
