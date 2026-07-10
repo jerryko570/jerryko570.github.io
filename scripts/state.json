@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -82,17 +82,12 @@
     "b715e2f388ba4e0c",
     "bf55a61637b6dda9",
     "9dceb976c16c9b72",
-    "b895056234f9659e"
+    "b895056234f9659e",
+    "1eb4e1f7c68f870e"
   ],
-  "posts_generated": 82,
-  "last_run": "2026-07-09T03:58:36.924045+00:00",
+  "posts_generated": 83,
+  "last_run": "2026-07-10T03:52:41.110081+00:00",
   "history": [
-    {
-      "date": "2026-05-22",
-      "category": "design-tools",
-      "title": "Figma Design Agent 공부 정리 | 캔버스 안에 있다는 게 뭘 바꾸는 걸까",
-      "source_url": "https://www.figma.com/blog/the-figma-agent-is-here/"
-    },
     {
       "date": "2026-05-23",
       "category": "design-craft",
@@ -386,6 +381,12 @@
       "category": "design-craft",
       "title": "package.json 공부 정리 | 공통 컴포넌트 패키지를 만들면서 마주친 설정들",
       "source_url": "https://story.pxd.co.kr/1906"
+    },
+    {
+      "date": "2026-07-10",
+      "category": "frontend",
+      "title": "Vercel Agent 공부 정리 | 에이전트에 어디까지 맡겨도 될까",
+      "source_url": "https://vercel.com/blog/vercel-agent"
     }
   ]
 }
