@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -85,17 +85,12 @@
     "b895056234f9659e",
     "1eb4e1f7c68f870e",
     "6e4ea61ea6fdf631",
-    "608c68c7b657c680"
+    "608c68c7b657c680",
+    "c909a4ff66ba1056"
   ],
-  "posts_generated": 85,
-  "last_run": "2026-07-12T03:33:08.050314+00:00",
+  "posts_generated": 86,
+  "last_run": "2026-07-13T03:38:57.807852+00:00",
   "history": [
-    {
-      "date": "2026-05-25",
-      "category": "dev-tools",
-      "title": "Nemotron-Labs Diffusion LM 공부 정리 | 토큰을 동시에 만든다는 게 무슨 말인가",
-      "source_url": "https://huggingface.co/blog/nvidia/nemotron-labs-diffusion"
-    },
     {
       "date": "2026-05-25",
       "category": "design-tools",
@@ -389,6 +384,12 @@
       "category": "design-tools",
       "title": "Figma Make에 GPT-5.6 들어온 것 공부 정리",
       "source_url": "https://www.figma.com/blog/gpt-5-6-is-now-available-in-figma-make/"
+    },
+    {
+      "date": "2026-07-13",
+      "category": "design-craft",
+      "title": "토스 문서화 거버넌스 공부 정리 | 기준 없는 자동화가 헛도는 이유",
+      "source_url": "https://toss.tech/article/technical-writing-6"
     }
   ]
 }
