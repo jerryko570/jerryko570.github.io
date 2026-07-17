@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -89,17 +89,12 @@
     "c909a4ff66ba1056",
     "7f9a13d7a176eef7",
     "8d05cbb355d7f9fd",
-    "adb352c6274b7c29"
+    "adb352c6274b7c29",
+    "25457040444e4a2d"
   ],
-  "posts_generated": 89,
-  "last_run": "2026-07-16T03:17:22.584047+00:00",
+  "posts_generated": 90,
+  "last_run": "2026-07-17T03:19:55.148541+00:00",
   "history": [
-    {
-      "date": "2026-05-28",
-      "category": "dev-tools",
-      "title": "ITBench-AA 공부 정리 | 에이전트 AI가 실무 IT 작업을 얼마나 잘할까",
-      "source_url": "https://huggingface.co/blog/ibm-research/itbench-aa"
-    },
     {
       "date": "2026-05-29",
       "category": "design-tools",
@@ -393,6 +388,12 @@
       "category": "design-tools",
       "title": "Figma MCP 공부 정리 | AI가 Figma를 읽으면 뭐가 달라질까",
       "source_url": "https://www.figma.com/blog/how-decagon-uses-ai-for-design-system-saturation/"
+    },
+    {
+      "date": "2026-07-17",
+      "category": "design-craft",
+      "title": "그린그린 업무 대화 공부 정리 | 어떻게 말하냐보다 뭘 함께 넘기냐",
+      "source_url": "https://story.pxd.co.kr/1904"
     }
   ]
 }
