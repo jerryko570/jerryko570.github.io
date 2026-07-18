@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -90,17 +90,12 @@
     "7f9a13d7a176eef7",
     "8d05cbb355d7f9fd",
     "adb352c6274b7c29",
-    "25457040444e4a2d"
+    "25457040444e4a2d",
+    "bb2d4f82fc170825"
   ],
-  "posts_generated": 90,
-  "last_run": "2026-07-17T03:19:55.148541+00:00",
+  "posts_generated": 91,
+  "last_run": "2026-07-18T02:58:43.576618+00:00",
   "history": [
-    {
-      "date": "2026-05-29",
-      "category": "design-tools",
-      "title": "Figma Make 로컬 코드 연결 공부 정리 | 경계가 어디까지 달라지는 걸까",
-      "source_url": "https://www.figma.com/blog/figma-make-now-on-your-local-code/"
-    },
     {
       "date": "2026-05-30",
       "category": "design-craft",
@@ -394,6 +389,12 @@
       "category": "design-craft",
       "title": "그린그린 업무 대화 공부 정리 | 어떻게 말하냐보다 뭘 함께 넘기냐",
       "source_url": "https://story.pxd.co.kr/1904"
+    },
+    {
+      "date": "2026-07-18",
+      "category": "frontend",
+      "title": "Vercel 정적 자산 최적화 공부 정리 | 배포마다 파일을 다시 올려야 할까",
+      "source_url": "https://vercel.com/changelog/optimized-cdn-caching-and-deploying-of-immutable-static-assets"
     }
   ]
 }
