@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -93,17 +93,12 @@
     "25457040444e4a2d",
     "bb2d4f82fc170825",
     "6792a6598ab6a153",
-    "d4114fabd2f40d51"
+    "d4114fabd2f40d51",
+    "c21c8f69a5bbcb14"
   ],
-  "posts_generated": 93,
-  "last_run": "2026-07-20T03:45:34.253428+00:00",
+  "posts_generated": 94,
+  "last_run": "2026-07-21T03:23:49.300329+00:00",
   "history": [
-    {
-      "date": "2026-06-01",
-      "category": "dev-tools",
-      "title": "NVIDIA Cosmos 3 공부 정리 | 통합 모델이라는 게 뭘 바꾸는 건지",
-      "source_url": "https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai"
-    },
     {
       "date": "2026-06-02",
       "category": "design-tools",
@@ -397,6 +392,12 @@
       "category": "design-tools",
       "title": "Figma Make 공부 정리 | 디자이너가 직접 PR 올리는 게 맞는 건지",
       "source_url": "https://www.figma.com/blog/workflow-lab-deploying-designs-directly-with-figma-make/"
+    },
+    {
+      "date": "2026-07-21",
+      "category": "design-craft",
+      "title": "구글 AI 검색 최적화 가이드 공부 정리 | GEO는 SEO면 충분할까",
+      "source_url": "https://story.pxd.co.kr/1908"
     }
   ]
 }
