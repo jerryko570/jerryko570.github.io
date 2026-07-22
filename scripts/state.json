@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -94,17 +94,12 @@
     "bb2d4f82fc170825",
     "6792a6598ab6a153",
     "d4114fabd2f40d51",
-    "c21c8f69a5bbcb14"
+    "c21c8f69a5bbcb14",
+    "99206d7da778e57a"
   ],
-  "posts_generated": 94,
-  "last_run": "2026-07-21T03:23:49.300329+00:00",
+  "posts_generated": 95,
+  "last_run": "2026-07-22T03:22:12.102075+00:00",
   "history": [
-    {
-      "date": "2026-06-02",
-      "category": "design-tools",
-      "title": "Webflow Cloud 공부 정리 | 사이트 없어도 앱이 된다고?",
-      "source_url": "https://webflowmarketingmain.com/blog/cloud-apps-without-sites"
-    },
     {
       "date": "2026-06-03",
       "category": "design-craft",
@@ -398,6 +393,12 @@
       "category": "design-craft",
       "title": "구글 AI 검색 최적화 가이드 공부 정리 | GEO는 SEO면 충분할까",
       "source_url": "https://story.pxd.co.kr/1908"
+    },
+    {
+      "date": "2026-07-22",
+      "category": "frontend",
+      "title": "Vercel Connect 프리셋 커넥터 공부 정리 | 연결을 만들던 것에서 고르는 것으로",
+      "source_url": "https://vercel.com/changelog/vercel-connect-preset-connectors"
     }
   ]
 }
