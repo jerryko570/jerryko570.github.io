@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -98,17 +98,12 @@
     "99206d7da778e57a",
     "860827f8221d497e",
     "8d7d4fdbbea2f9e5",
-    "cce16e5ecc4b8ef6"
+    "cce16e5ecc4b8ef6",
+    "e8c005b5050bd8f0"
   ],
-  "posts_generated": 98,
-  "last_run": "2026-07-25T03:20:16.071911+00:00",
+  "posts_generated": 99,
+  "last_run": "2026-07-26T03:32:38.014546+00:00",
   "history": [
-    {
-      "date": "2026-06-06",
-      "category": "design-tools",
-      "title": "Figma AI 도구 공부 정리 | 아이디어에서 제품까지",
-      "source_url": "https://www.figma.com/blog/4-new-ways-to-go-from-idea-to-product-with-ai-tools/"
-    },
     {
       "date": "2026-06-07",
       "category": "design-craft",
@@ -402,6 +397,12 @@
       "category": "design-craft",
       "title": "es-toolkit 공부 정리 | 토스가 lodash를 안 쓰기로 한 이유",
       "source_url": "https://toss.tech/article/50693"
+    },
+    {
+      "date": "2026-07-26",
+      "category": "frontend",
+      "title": "Vercel WAF for Blob 공부 정리 | Blob에도 방화벽이 붙는다고?",
+      "source_url": "https://vercel.com/changelog/vercel-waf-for-blob-is-now-in-beta"
     }
   ]
 }
