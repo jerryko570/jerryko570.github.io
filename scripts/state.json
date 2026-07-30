@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -102,17 +102,12 @@
     "e8c005b5050bd8f0",
     "940e51e18a9119e8",
     "24f09ac071d84b1e",
-    "48de3983abe93c5f"
+    "48de3983abe93c5f",
+    "3a033e6c9468031e"
   ],
-  "posts_generated": 102,
-  "last_run": "2026-07-29T03:17:57.553247+00:00",
+  "posts_generated": 103,
+  "last_run": "2026-07-30T02:49:38.919939+00:00",
   "history": [
-    {
-      "date": "2026-06-10",
-      "category": "design-tools",
-      "title": "AI가 취향을 키워주지 않는다 | Figma 에세이 공부 정리",
-      "source_url": "https://www.figma.com/blog/you-never-stop-cultivating-taste/"
-    },
     {
       "date": "2026-06-11",
       "category": "design-craft",
@@ -406,6 +401,12 @@
       "category": "design-craft",
       "title": "GEO 최적화 진단 케이스 공부 정리 | 콘텐츠 품질과 기술 준비는 달랐다",
       "source_url": "https://story.pxd.co.kr/1909"
+    },
+    {
+      "date": "2026-07-30",
+      "category": "frontend",
+      "title": "Vercel Global Config 공부 정리 | Edge Config가 왜 이름을 바꿨을까",
+      "source_url": "https://vercel.com/changelog/edge-config-is-now-global-config"
     }
   ]
 }
