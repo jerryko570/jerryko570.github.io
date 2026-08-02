@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -105,17 +105,12 @@
     "48de3983abe93c5f",
     "3a033e6c9468031e",
     "7e5e1e8610f9c5a9",
-    "f2a6d4f3b2b8c412"
+    "f2a6d4f3b2b8c412",
+    "8bdb8adbeac6c12f"
   ],
-  "posts_generated": 105,
-  "last_run": "2026-08-01T03:31:58.050425+00:00",
+  "posts_generated": 106,
+  "last_run": "2026-08-02T03:31:34.430483+00:00",
   "history": [
-    {
-      "date": "2026-06-13",
-      "category": "dev-tools",
-      "title": "Copilot CLI delegation 공부 정리 | 언제 직접 하고 언제 넘기는가",
-      "source_url": "https://github.blog/ai-and-ml/how-we-made-github-copilot-cli-more-selective-about-delegation/"
-    },
     {
       "date": "2026-06-14",
       "category": "design-tools",
@@ -409,6 +404,12 @@
       "category": "design-tools",
       "title": "Figma Make에 Properties Panel 추가 — 공부하면서 든 생각",
       "source_url": "https://www.figma.com/blog/properties-panel-and-annotations-now-in-figma-make/"
+    },
+    {
+      "date": "2026-08-02",
+      "category": "design-craft",
+      "title": "Writone 개선기 공부 정리 | 도구가 어디에 있어야 하는가",
+      "source_url": "https://story.pxd.co.kr/1911"
     }
   ]
 }
