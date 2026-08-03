@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -106,17 +106,12 @@
     "3a033e6c9468031e",
     "7e5e1e8610f9c5a9",
     "f2a6d4f3b2b8c412",
-    "8bdb8adbeac6c12f"
+    "8bdb8adbeac6c12f",
+    "97c90a85f0cca7bd"
   ],
-  "posts_generated": 106,
-  "last_run": "2026-08-02T03:31:34.430483+00:00",
+  "posts_generated": 107,
+  "last_run": "2026-08-03T03:32:31.276203+00:00",
   "history": [
-    {
-      "date": "2026-06-14",
-      "category": "design-tools",
-      "title": "Figma 레이어 패널 아키텍처 개선 훑어보면서 든 생각",
-      "source_url": "https://www.figma.com/blog/improving-performance-in-the-layers-panel/"
-    },
     {
       "date": "2026-06-15",
       "category": "design-craft",
@@ -410,6 +405,12 @@
       "category": "design-craft",
       "title": "Writone 개선기 공부 정리 | 도구가 어디에 있어야 하는가",
       "source_url": "https://story.pxd.co.kr/1911"
+    },
+    {
+      "date": "2026-08-03",
+      "category": "frontend",
+      "title": "SvelteKit 3 프리뷰 공부 정리 | API가 꽤 많이 바뀌는 것 같다",
+      "source_url": "https://svelte.dev/blog/whats-new-in-svelte-august-2026"
     }
   ]
 }
