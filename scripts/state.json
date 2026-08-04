@@ -1,5 +1,5 @@
 {
-  "last_category_index": 2,
+  "last_category_index": 3,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -107,17 +107,12 @@
     "7e5e1e8610f9c5a9",
     "f2a6d4f3b2b8c412",
     "8bdb8adbeac6c12f",
-    "97c90a85f0cca7bd"
+    "97c90a85f0cca7bd",
+    "12755258f3986f49"
   ],
-  "posts_generated": 107,
-  "last_run": "2026-08-03T03:32:31.276203+00:00",
+  "posts_generated": 108,
+  "last_run": "2026-08-04T03:04:10.722093+00:00",
   "history": [
-    {
-      "date": "2026-06-15",
-      "category": "design-craft",
-      "title": "별점 2.6점짜리 사용자는 없다 — 리뷰 분포 분석 공부 정리",
-      "source_url": "https://story.pxd.co.kr/1901"
-    },
     {
       "date": "2026-06-16",
       "category": "frontend",
@@ -411,6 +406,12 @@
       "category": "frontend",
       "title": "SvelteKit 3 프리뷰 공부 정리 | API가 꽤 많이 바뀌는 것 같다",
       "source_url": "https://svelte.dev/blog/whats-new-in-svelte-august-2026"
+    },
+    {
+      "date": "2026-08-04",
+      "category": "dev-tools",
+      "title": "JetBrains AI 지출 통제 첫 시도 정리 | 개발자 자유와 비용 관리 사이에서",
+      "source_url": "https://blog.jetbrains.com/ai/2026/08/our-first-moves-to-get-ai-spend-under-control/"
     }
   ]
 }
