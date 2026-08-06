@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -109,17 +109,12 @@
     "8bdb8adbeac6c12f",
     "97c90a85f0cca7bd",
     "12755258f3986f49",
-    "773d9e135c562c46"
+    "773d9e135c562c46",
+    "6579ac5750bb022a"
   ],
-  "posts_generated": 109,
-  "last_run": "2026-08-05T02:58:57.446031+00:00",
+  "posts_generated": 110,
+  "last_run": "2026-08-06T03:01:43.042590+00:00",
   "history": [
-    {
-      "date": "2026-06-17",
-      "category": "dev-tools",
-      "title": "git worktree 공부 정리 | 브랜치 전환 없이 병렬 작업하기",
-      "source_url": "https://github.blog/ai-and-ml/github-copilot/what-are-git-worktrees-and-why-should-i-use-them/"
-    },
     {
       "date": "2026-06-18",
       "category": "design-tools",
@@ -413,6 +408,12 @@
       "category": "design-tools",
       "title": "Figma nested folders 공부 정리 | 코드를 제안서로 쓴다는 것",
       "source_url": "https://www.figma.com/blog/code-craft-and-the-making-of-nested-folders/"
+    },
+    {
+      "date": "2026-08-06",
+      "category": "design-craft",
+      "title": "AI 협업 워크플로우 공부 정리 | 만들던 사람에서 평가하는 사람으로",
+      "source_url": "https://story.pxd.co.kr/1914"
     }
   ]
 }
