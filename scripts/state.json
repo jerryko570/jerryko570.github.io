@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -110,17 +110,12 @@
     "97c90a85f0cca7bd",
     "12755258f3986f49",
     "773d9e135c562c46",
-    "6579ac5750bb022a"
+    "6579ac5750bb022a",
+    "3a786048ac6a598e"
   ],
-  "posts_generated": 110,
-  "last_run": "2026-08-06T03:01:43.042590+00:00",
+  "posts_generated": 111,
+  "last_run": "2026-08-08T02:01:47.825131+00:00",
   "history": [
-    {
-      "date": "2026-06-18",
-      "category": "design-tools",
-      "title": "코드는 미래에게 보내는 메시지라는 말 | 공부하면서 든 생각",
-      "source_url": "https://webflowmarketingmain.com/blog/code-as-communication"
-    },
     {
       "date": "2026-06-19",
       "category": "design-craft",
@@ -414,6 +409,12 @@
       "category": "design-craft",
       "title": "AI 협업 워크플로우 공부 정리 | 만들던 사람에서 평가하는 사람으로",
       "source_url": "https://story.pxd.co.kr/1914"
+    },
+    {
+      "date": "2026-08-08",
+      "category": "frontend",
+      "title": "Vercel Hermes Agent 공부 정리 | AI Gateway랑 Sandbox 통합이 뭔 말인가",
+      "source_url": "https://vercel.com/changelog/vercel-ai-gateway-and-vercel-sandbox-now-available-on-hermes-agent"
     }
   ]
 }
