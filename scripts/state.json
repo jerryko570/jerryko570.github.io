@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -113,17 +113,12 @@
     "6579ac5750bb022a",
     "3a786048ac6a598e",
     "624979042481ff50",
-    "3ac120ec68d06fd8"
+    "3ac120ec68d06fd8",
+    "2a47bd8afbef78c5"
   ],
-  "posts_generated": 113,
-  "last_run": "2026-08-10T02:14:38.640611+00:00",
+  "posts_generated": 114,
+  "last_run": "2026-08-11T02:12:14.852118+00:00",
   "history": [
-    {
-      "date": "2026-06-21",
-      "category": "dev-tools",
-      "title": "GitHub Qubot 공부 정리 | 사내 분석 에이전트를 만든다는 게 뭔지",
-      "source_url": "https://github.blog/ai-and-ml/github-copilot/how-we-built-an-internal-data-analytics-agent/"
-    },
     {
       "date": "2026-06-22",
       "category": "design-tools",
@@ -417,6 +412,12 @@
       "category": "design-tools",
       "title": "Webflow Gemini 콘텐츠 어시스턴트 공부 정리",
       "source_url": "https://webflowmarketingmain.com/blog/gemini-content-assistant-webflow"
+    },
+    {
+      "date": "2026-08-11",
+      "category": "design-craft",
+      "title": "토션(Tossion) 공부 정리 | 상용 도구가 막힐 때 어떤 선택을 했나",
+      "source_url": "https://toss.tech/article/tossion"
     }
   ]
 }
