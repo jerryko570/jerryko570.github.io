@@ -1,5 +1,5 @@
 {
-  "last_category_index": 3,
+  "last_category_index": 0,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -116,17 +116,12 @@
     "3ac120ec68d06fd8",
     "2a47bd8afbef78c5",
     "c5993615a9aebec6",
-    "e7ebe94da85da416"
+    "e7ebe94da85da416",
+    "8b31f19835fe7208"
   ],
-  "posts_generated": 116,
-  "last_run": "2026-08-13T02:28:39.364712+00:00",
+  "posts_generated": 117,
+  "last_run": "2026-08-14T02:26:09.652824+00:00",
   "history": [
-    {
-      "date": "2026-06-24",
-      "category": "frontend",
-      "title": "Claude Design에서 Vercel 배포 공부 정리 | 디자인에서 URL까지",
-      "source_url": "https://vercel.com/changelog/claude-design-and-vercel"
-    },
     {
       "date": "2026-06-25",
       "category": "dev-tools",
@@ -420,6 +415,12 @@
       "category": "dev-tools",
       "title": "AI가 PR 올리는 시대의 오픈소스 | AGENTS.md 공부 정리",
       "source_url": "https://github.blog/open-source/maintainers/your-contributors-are-ai-first-now-is-your-project/"
+    },
+    {
+      "date": "2026-08-14",
+      "category": "design-tools",
+      "title": "Figma Skills 공부 정리 | 에이전트에게 내 방식을 가르칠 수 있다면",
+      "source_url": "https://www.figma.com/blog/try-these-10-skills-and-show-off-your-own/"
     }
   ]
 }
