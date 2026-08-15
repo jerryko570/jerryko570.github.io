@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -117,17 +117,12 @@
     "2a47bd8afbef78c5",
     "c5993615a9aebec6",
     "e7ebe94da85da416",
-    "8b31f19835fe7208"
+    "8b31f19835fe7208",
+    "8f0e2a8c9d3961b3"
   ],
-  "posts_generated": 117,
-  "last_run": "2026-08-14T02:26:09.652824+00:00",
+  "posts_generated": 118,
+  "last_run": "2026-08-15T01:37:55.284553+00:00",
   "history": [
-    {
-      "date": "2026-06-25",
-      "category": "dev-tools",
-      "title": "Kotlin Toolchain 0.11 공부 정리 | Amper는 어디로 갔을까",
-      "source_url": "https://blog.jetbrains.com/amper/2026/06/kotlin-toolchain-0-11/"
-    },
     {
       "date": "2026-06-26",
       "category": "design-tools",
@@ -421,6 +416,12 @@
       "category": "design-tools",
       "title": "Figma Skills 공부 정리 | 에이전트에게 내 방식을 가르칠 수 있다면",
       "source_url": "https://www.figma.com/blog/try-these-10-skills-and-show-off-your-own/"
+    },
+    {
+      "date": "2026-08-15",
+      "category": "design-craft",
+      "title": "토스증권 AI 투자정보 서비스 공부 정리 | 근거를 고르는 것부터 시작한다",
+      "source_url": "https://toss.tech/article/tech_talk_talk_1"
     }
   ]
 }
