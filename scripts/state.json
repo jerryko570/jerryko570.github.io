@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -122,17 +122,12 @@
     "05c652fe0c36aa0e",
     "bf0528da7ff2a7f0",
     "31cb2fe334412b9a",
-    "00c2b0feec2d6779"
+    "00c2b0feec2d6779",
+    "18b4e0d0bf53db8c"
   ],
-  "posts_generated": 122,
-  "last_run": "2026-08-20T01:39:07.707108+00:00",
+  "posts_generated": 123,
+  "last_run": "2026-08-21T01:44:26.831920+00:00",
   "history": [
-    {
-      "date": "2026-06-30",
-      "category": "design-tools",
-      "title": "Figma Config 2026 공부 정리 | 캔버스에 코드가 들어온다는 게 뭔지",
-      "source_url": "https://www.figma.com/blog/config-2026-recap/"
-    },
     {
       "date": "2026-07-01",
       "category": "design-craft",
@@ -426,6 +421,12 @@
       "category": "design-craft",
       "title": "토스 광고 대시보드 공부 정리 | 브라우저가 목록의 주인이 되면",
       "source_url": "https://toss.tech/article/ads_dashboard_fe"
+    },
+    {
+      "date": "2026-08-21",
+      "category": "frontend",
+      "title": "Vercel Agent Slack 코드 채널 공부 정리 | 팀 대화 안으로 들어온 에이전트",
+      "source_url": "https://vercel.com/changelog/vercel-agent-is-now-available-in-slack-code-channels"
     }
   ]
 }
