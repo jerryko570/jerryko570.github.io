@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -126,17 +126,12 @@
     "18b4e0d0bf53db8c",
     "5326052fa9a2d964",
     "ea6d2d4c6dee5d88",
-    "a9342b3a7d5ee58d"
+    "a9342b3a7d5ee58d",
+    "3869555e015525b8"
   ],
-  "posts_generated": 126,
-  "last_run": "2026-08-24T01:45:47.938131+00:00",
+  "posts_generated": 127,
+  "last_run": "2026-08-25T01:40:50.208076+00:00",
   "history": [
-    {
-      "date": "2026-07-04",
-      "category": "design-tools",
-      "title": "Figma 에이전트 Skills 공부 정리 | 반복 프롬프트를 팀과 나누는 방법",
-      "source_url": "https://www.figma.com/blog/got-skills-make-the-figma-agent-a-better-collaborator/"
-    },
     {
       "date": "2026-07-05",
       "category": "design-craft",
@@ -430,6 +425,12 @@
       "category": "design-craft",
       "title": "어피니티버블 피봇 공부 정리 | 에이전트한테 UI가 비용이 된다는 얘기",
       "source_url": "https://story.pxd.co.kr/1917"
+    },
+    {
+      "date": "2026-08-25",
+      "category": "frontend",
+      "title": "Vercel Connect 훑어보면서 든 생각 | v0 앱을 Slack이랑 Google에 연결하는 방식",
+      "source_url": "https://vercel.com/changelog/connect-v0-apps-to-slack-google-and-100-other-services"
     }
   ]
 }
