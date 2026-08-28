@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -129,17 +129,12 @@
     "a9342b3a7d5ee58d",
     "3869555e015525b8",
     "e5fe0cb509cb740f",
-    "61aaf75e01533bd7"
+    "61aaf75e01533bd7",
+    "2273f3d9ee7065b5"
   ],
-  "posts_generated": 129,
-  "last_run": "2026-08-27T08:38:15.543631+00:00",
+  "posts_generated": 130,
+  "last_run": "2026-08-28T10:52:03.108886+00:00",
   "history": [
-    {
-      "date": "2026-07-07",
-      "category": "dev-tools",
-      "title": "LeRobot v0.6.0 공부 정리 | 로봇이 '상상'한다는 게 무슨 뜻일까",
-      "source_url": "https://huggingface.co/blog/lerobot-release-v060"
-    },
     {
       "date": "2026-07-08",
       "category": "design-tools",
@@ -433,6 +428,12 @@
       "category": "design-tools",
       "title": "Webflow Skills 공부 정리 | Codex랑 ChatGPT에서 뭐가 달라지는 걸까",
       "source_url": "https://webflowmarketingmain.com/blog/webflow-is-now-available-in-codex-and-chatgpt"
+    },
+    {
+      "date": "2026-08-28",
+      "category": "design-craft",
+      "title": "1%의 버그를 고칠까 말까 — 토스 QA팀의 판단 기준 공부 정리",
+      "source_url": "https://toss.tech/article/qa_hotfix"
     }
   ]
 }
