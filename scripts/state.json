@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -134,17 +134,12 @@
     "cd9db5f6a6685f53",
     "b42ac281ecaf56c0",
     "ed8a54f62c347ed2",
-    "b95dcecb0e29d81d"
+    "b95dcecb0e29d81d",
+    "f4b81d01d2401979"
   ],
-  "posts_generated": 134,
-  "last_run": "2026-09-01T04:33:54.378529+00:00",
+  "posts_generated": 135,
+  "last_run": "2026-09-02T03:57:39.555655+00:00",
   "history": [
-    {
-      "date": "2026-07-12",
-      "category": "design-tools",
-      "title": "Figma Make에 GPT-5.6 들어온 것 공부 정리",
-      "source_url": "https://www.figma.com/blog/gpt-5-6-is-now-available-in-figma-make/"
-    },
     {
       "date": "2026-07-13",
       "category": "design-craft",
@@ -438,6 +433,12 @@
       "category": "design-craft",
       "title": "SpecSaver 공부 정리 | 스펙 작업에 AI를 어떻게 끼워 넣었나",
       "source_url": "https://story.pxd.co.kr/1918"
+    },
+    {
+      "date": "2026-09-02",
+      "category": "frontend",
+      "title": "Svelte 9월 업데이트 공부 정리 | SvelteKit 3 RC 앞에서",
+      "source_url": "https://svelte.dev/blog/whats-new-in-svelte-september-2026"
     }
   ]
 }
