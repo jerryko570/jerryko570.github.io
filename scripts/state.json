@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -137,17 +137,12 @@
     "b95dcecb0e29d81d",
     "f4b81d01d2401979",
     "407299432d9998ec",
-    "b9c96b696494e4b2"
+    "b9c96b696494e4b2",
+    "00b4548e8f723aa7"
   ],
-  "posts_generated": 137,
-  "last_run": "2026-09-04T03:58:03.627632+00:00",
+  "posts_generated": 138,
+  "last_run": "2026-09-05T03:55:28.051232+00:00",
   "history": [
-    {
-      "date": "2026-07-15",
-      "category": "dev-tools",
-      "title": "MPS 2026.1 공부 정리 | AI 에이전트가 DSL 모델을 직접 읽는다는 것",
-      "source_url": "https://blog.jetbrains.com/mps/2026/07/mps-2026-1-released/"
-    },
     {
       "date": "2026-07-16",
       "category": "design-tools",
@@ -441,6 +436,12 @@
       "category": "design-tools",
       "title": "Webflow Conf 2026 발표 공부 정리 | Source랑 Campaigns가 뭔지 알아봤다",
       "source_url": "https://webflowmarketingmain.com/blog/webflow-conf-2026-announcements"
+    },
+    {
+      "date": "2026-09-05",
+      "category": "design-craft",
+      "title": "TOI 공부 정리 | AI 코드를 어드민 화면으로 만들기까지의 결정들",
+      "source_url": "https://toss.tech/article/52885"
     }
   ]
 }
