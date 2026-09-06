@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -138,17 +138,12 @@
     "f4b81d01d2401979",
     "407299432d9998ec",
     "b9c96b696494e4b2",
-    "00b4548e8f723aa7"
+    "00b4548e8f723aa7",
+    "88527679bc2f8782"
   ],
-  "posts_generated": 138,
-  "last_run": "2026-09-05T03:55:28.051232+00:00",
+  "posts_generated": 139,
+  "last_run": "2026-09-06T04:00:27.246396+00:00",
   "history": [
-    {
-      "date": "2026-07-16",
-      "category": "design-tools",
-      "title": "Figma MCP 공부 정리 | AI가 Figma를 읽으면 뭐가 달라질까",
-      "source_url": "https://www.figma.com/blog/how-decagon-uses-ai-for-design-system-saturation/"
-    },
     {
       "date": "2026-07-17",
       "category": "design-craft",
@@ -442,6 +437,12 @@
       "category": "design-craft",
       "title": "TOI 공부 정리 | AI 코드를 어드민 화면으로 만들기까지의 결정들",
       "source_url": "https://toss.tech/article/52885"
+    },
+    {
+      "date": "2026-09-06",
+      "category": "frontend",
+      "title": "Cursor Cloud Agents 공부 정리 | Vercel Sandbox에서 에이전트 돌리기",
+      "source_url": "https://vercel.com/changelog/run-cursor-cloud-agents-vercel-sandbox"
     }
   ]
 }
