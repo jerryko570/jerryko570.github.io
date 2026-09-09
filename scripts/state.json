@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -141,17 +141,12 @@
     "00b4548e8f723aa7",
     "88527679bc2f8782",
     "f811cada5ee199e3",
-    "5db0d3a211a2511c"
+    "5db0d3a211a2511c",
+    "d71eb87f0bc15b86"
   ],
-  "posts_generated": 141,
-  "last_run": "2026-09-08T04:01:30.019386+00:00",
+  "posts_generated": 142,
+  "last_run": "2026-09-09T04:07:50.324269+00:00",
   "history": [
-    {
-      "date": "2026-07-19",
-      "category": "dev-tools",
-      "title": "GitHub 블로그 공부 정리 | 코드 작성 비용이 싸진다는 게 무슨 말인지",
-      "source_url": "https://github.blog/engineering/the-cost-of-saying-yes-has-changed/"
-    },
     {
       "date": "2026-07-20",
       "category": "design-tools",
@@ -445,6 +440,12 @@
       "category": "design-tools",
       "title": "Webflow Cloud AI 앱 공부 정리 | 배포가 하나로 묶이면 뭐가 달라질까",
       "source_url": "https://webflowmarketingmain.com/blog/ai-app-webflow-cloud-openai-supabase"
+    },
+    {
+      "date": "2026-09-09",
+      "category": "design-craft",
+      "title": "Coding Agent에 팀 규칙 먹이는 법 공부 정리",
+      "source_url": "https://toss.tech/article/52631"
     }
   ]
 }
