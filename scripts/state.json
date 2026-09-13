@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -145,17 +145,12 @@
     "d71eb87f0bc15b86",
     "c45550bed620f8f1",
     "53dc2a824ef94f8a",
-    "5cd42335680f0dad"
+    "5cd42335680f0dad",
+    "1d92735c96b930d1"
   ],
-  "posts_generated": 145,
-  "last_run": "2026-09-12T04:07:05.180666+00:00",
+  "posts_generated": 146,
+  "last_run": "2026-09-13T04:14:53.805018+00:00",
   "history": [
-    {
-      "date": "2026-07-23",
-      "category": "dev-tools",
-      "title": "GitHub Copilot 과금 방식 공부 정리 | 결국 뭘 사는 걸까",
-      "source_url": "https://github.blog/ai-and-ml/github-copilot/copilot-vs-raw-api-access-what-are-you-actually-paying-for/"
-    },
     {
       "date": "2026-07-24",
       "category": "design-tools",
@@ -449,6 +444,12 @@
       "category": "design-tools",
       "title": "MCP eval harness 공부 정리 | 도구 테스트 통과가 전부가 아닌 이유",
       "source_url": "https://webflowmarketingmain.com/blog/mcp-eval-harness"
+    },
+    {
+      "date": "2026-09-13",
+      "category": "design-craft",
+      "title": "App Router 훑어보면서 든 생각 | 토스뱅크 검토 케이스 정리",
+      "source_url": "https://toss.tech/article/52999"
     }
   ]
 }
