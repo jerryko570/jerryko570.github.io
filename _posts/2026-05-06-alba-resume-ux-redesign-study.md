@@ -5,7 +5,7 @@ date: 2026-05-06 09:00:00 +0900
 categories: [DesignCraft]
 tags: [ux, product-design, onboarding, form-design]
 image:
-  path: /assets/img/thumbnail/alba-resume-ux-redesign-study.png
+  path: /assets/img/thumbnail/design-craft.png
   alt: "알바천국 이력서 개편 정리 | 진입장벽을 없앤다는 게 뭔가"
 ---
 

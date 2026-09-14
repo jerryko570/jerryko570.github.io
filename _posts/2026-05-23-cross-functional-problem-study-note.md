@@ -5,7 +5,7 @@ date: 2026-05-23 10:00:00 +0900
 categories: [DesignCraft]
 tags: [cross-functional, tpm, collaboration, product-design]
 image:
-  path: /assets/img/thumbnail/cross-functional-problem-study-note.png
+  path: /assets/img/thumbnail/design-craft.png
   alt: "Cross Functional 역량 공부 정리 | 회의를 늘려도 안 풀리는 문제들"
 ---
 

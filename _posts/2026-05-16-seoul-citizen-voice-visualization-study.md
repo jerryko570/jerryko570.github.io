@@ -5,7 +5,7 @@ date: 2026-05-16 09:00:00 +0900
 categories: [DesignCraft]
 tags: [data-visualization, ux, affinity-bubble, design-craft]
 image:
-  path: /assets/img/thumbnail/seoul-citizen-voice-visualization-study.png
+  path: /assets/img/thumbnail/design-craft.png
   alt: "서울 시민의 목소리 시각화 공부 정리 | 개별 목소리와 집계 사이에서"
 ---
 

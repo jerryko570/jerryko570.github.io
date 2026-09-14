@@ -5,7 +5,7 @@ date: 2026-06-06 10:00:00 +0900
 categories: [Design]
 tags: [figma, ai-tools, mcp, design-workflow, figma-make]
 image:
-  path: /assets/img/thumbnail/figma-ai-idea-to-product-study-note.png
+  path: /assets/img/thumbnail/mcp.png
   alt: "Figma AI 도구 공부 정리 | 아이디어에서 제품까지"
 ---
 

@@ -12,7 +12,9 @@ tags:
   - fetch
   - data-flow
 series: react
-image: /assets/img/thumbnail/react.png
+image:
+  path: /assets/img/thumbnail/react.png
+  alt: "React 기초 개념 정리 (3) | props와 비동기 데이터 흐름"
 ---
 
 

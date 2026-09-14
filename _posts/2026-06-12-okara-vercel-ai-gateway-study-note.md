@@ -5,7 +5,7 @@ date: 2026-06-12 09:00:00 +0900
 categories: [Frontend]
 tags: [vercel, ai-gateway, agents]
 image:
-  path: /assets/img/thumbnail/okara-vercel-ai-gateway-study-note.png
+  path: /assets/img/thumbnail/vercel.png
   alt: "Okara 케이스 공부 정리 | 4명이 12만 회사를 어떻게 운영하나"
 ---
 

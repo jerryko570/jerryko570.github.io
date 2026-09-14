@@ -5,7 +5,7 @@ date: 2026-06-05 10:00:00 +0900
 categories: [DevTools]
 tags: [nvidia, ai-safety, llm, content-moderation]
 image:
-  path: /assets/img/thumbnail/nemotron-35-content-safety-study-note.png
+  path: /assets/img/thumbnail/devtools.png
   alt: "Nemotron 3.5 공부 정리 | AI 앱 안전 필터, 어디까지 바꿀 수 있을까"
 ---
 

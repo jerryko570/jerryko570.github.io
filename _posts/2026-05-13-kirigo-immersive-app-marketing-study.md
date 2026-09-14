@@ -5,7 +5,7 @@ date: 2026-05-13 09:00:00 +0900
 categories: [DesignCraft]
 tags: [ux, product-design, marketing, immersive, netflix]
 image:
-  path: /assets/img/thumbnail/kirigo-immersive-app-marketing-study.png
+  path: /assets/img/thumbnail/design-craft.png
   alt: "넷플릭스 '기리고' 앱 케이스 정리 | 마케팅인지 UX인지 헷갈리는 설계"
 ---
 

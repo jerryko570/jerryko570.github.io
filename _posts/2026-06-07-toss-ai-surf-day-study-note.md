@@ -5,7 +5,7 @@ date: 2026-06-07 09:00:00 +0900
 categories: [DesignCraft]
 tags: [toss, ai, team-culture, product-culture]
 image:
-  path: /assets/img/thumbnail/toss-ai-surf-day-study-note.png
+  path: /assets/img/thumbnail/toss.png
   alt: "토스 AI Surf Day 공부 정리 | 기술보다 먼저 놓은 것들"
 ---
 

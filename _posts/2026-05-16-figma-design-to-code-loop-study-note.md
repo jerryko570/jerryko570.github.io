@@ -5,7 +5,7 @@ date: 2026-05-16 09:00:00 +0900
 categories: [Design]
 tags: [figma, design-to-code, frontend, workflow]
 image:
-  path: /assets/img/thumbnail/figma-design-to-code-loop-study-note.png
+  path: /assets/img/thumbnail/figma.png
   alt: "Figma 디자인-코드 루프 공부 정리 | 캔버스가 코드를 받아오면"
 ---
 

@@ -5,7 +5,7 @@ date: 2026-06-18 09:00:00 +0900
 categories: [Design]
 tags: [webflow, clean-code, git, commit]
 image:
-  path: /assets/img/thumbnail/code-as-message-to-future-study-note.png
+  path: /assets/img/thumbnail/webflow.png
   alt: "코드는 미래에게 보내는 메시지라는 말 | 공부하면서 든 생각"
 ---
 

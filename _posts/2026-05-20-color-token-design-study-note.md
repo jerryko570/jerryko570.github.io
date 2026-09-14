@@ -5,7 +5,7 @@ date: 2026-05-20 09:00:00 +0900
 categories: [DesignCraft]
 tags: [design-system, color-token, semantic-token, design-craft]
 image:
-  path: /assets/img/thumbnail/color-token-design-study-note.png
+  path: /assets/img/thumbnail/design-system.png
   alt: "컬러 토큰 설계 방식 공부 정리 | 스케일이냐, 시멘틱이냐"
 ---
 

@@ -5,7 +5,7 @@ date: 2026-08-31 09:00:00 +0900
 categories: [Design]
 tags: [figma, mcp, design-system, code-connect, frontend]
 image:
-  path: /assets/img/thumbnail/figma-mcp-workflow-study-note.png
+  path: /assets/img/thumbnail/mcp.png
   alt: "Figma MCP 워크플로우 공부 정리 | 에이전트에게 맥락을 준다는 것"
 ---
 

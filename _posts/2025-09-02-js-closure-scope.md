@@ -15,7 +15,9 @@ tags:
   - 자바스크립트-스코프
   - 자바스크립트-클로저
 series: javascript
-image: /assets/img/thumbnail/javascript.png
+image:
+  path: /assets/img/thumbnail/javascript.png
+  alt: "JavaScript 스코프와 클로저 완벽 정리 | 실행 컨텍스트 기준 핵심 이해"
 ---
 
 JavaScript 스코프(Scope)와 클로저(Closure)는 변수가 어디서 유효한지, 함수가 어떻게 외부 변수를 기억하는지를 결정하는 핵심 개념이다. 이 글에서는 **스코프 체인의 탐색 원리**와 **클로저가 메모리에서 변수를 유지하는 방식**을 실행 컨텍스트 기준으로 정리한다.

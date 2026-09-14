@@ -5,7 +5,7 @@ date: 2026-05-05 10:00:00 +0900
 categories: [Design]
 tags: [webflow, ai, react, components, nocode]
 image:
-  path: /assets/img/thumbnail/webflow-ai-code-components-study.png
+  path: /assets/img/thumbnail/webflow.png
   alt: "Webflow AI 코드 컴포넌트 훑어보면서 든 생각"
 ---
 

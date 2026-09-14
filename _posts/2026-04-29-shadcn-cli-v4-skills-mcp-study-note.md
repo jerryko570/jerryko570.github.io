@@ -5,7 +5,7 @@ date: 2026-04-29 12:00:00 +0900
 categories: [DesignCraft]
 tags: [shadcn, ai, mcp, cli, design-system]
 image:
-  path: /assets/img/thumbnail/shadcn-cli-v4-skills-mcp-study-note.png
+  path: /assets/img/thumbnail/shadcn.png
   alt: "shadcn CLI v4 공부 정리 | AI에게 내 프로젝트를 어떻게 설명하지?"
 ---
 

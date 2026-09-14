@@ -5,7 +5,7 @@ date: 2026-06-23 09:00:00 +0900
 categories: [DesignCraft]
 tags: [technical-writing, ai, automation, documentation, toss]
 image:
-  path: /assets/img/thumbnail/toss-tw-ai-knowledge-study-note.png
+  path: /assets/img/thumbnail/toss.png
   alt: "토스 TW가 AI에게 자기 리뷰를 가르친 이야기"
 ---
 

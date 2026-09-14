@@ -5,7 +5,7 @@ date: 2026-05-01 09:00:00 +0900
 categories: [Design]
 tags: [figma, mcp, design-tools, workflow, code-sync]
 image:
-  path: /assets/img/thumbnail/figma-mcp-canvas-workflow-study.png
+  path: /assets/img/thumbnail/mcp.png
   alt: "Figma MCP 워크플로우 공부 정리 | 코드 상태가 캔버스에 올라오면"
 ---
 

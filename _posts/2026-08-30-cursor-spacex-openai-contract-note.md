@@ -5,7 +5,7 @@ date: 2026-08-30 12:00:00 +0900
 categories: [DevTools]
 tags: [cursor, openai, spacex, dev-tools, ai-tools]
 image:
-  path: /assets/img/thumbnail/cursor-spacex-openai-contract-note.png
+  path: /assets/img/thumbnail/openai.png
   alt: "Cursor SpaceX 인수 뒤 OpenAI가 계약을 끊었다 — 발표 읽으면서 든 생각"
 ---
 

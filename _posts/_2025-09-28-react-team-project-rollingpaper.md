@@ -4,8 +4,9 @@ title: "[Project] Rolling Paper — React 기반 UI·UX 구현기"
 date: 2025-09-28 00:00:00 +0900
 categories: [frontend, react]
 tags: [react, teamwork, library, uiux, component, accessibility]
-image: /assets/img/rollingpaper/main.png
-
+image:
+  path: /assets/img/thumbnail/react.png
+  alt: "[Project] Rolling Paper — React 기반 UI·UX 구현기"
 ---
 
 ## **1. 프로젝트 개요**

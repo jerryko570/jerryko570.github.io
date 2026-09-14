@@ -5,7 +5,7 @@ date: 2026-08-27 10:00:00 +0900
 categories: [Design]
 tags: [webflow, codex, chatgpt, mcp, ai-tools]
 image:
-  path: /assets/img/thumbnail/webflow-skills-codex-chatgpt-study.png
+  path: /assets/img/thumbnail/mcp.png
   alt: "Webflow Skills 공부 정리 | Codex랑 ChatGPT에서 뭐가 달라지는 걸까"
 ---
 

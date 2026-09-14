@@ -5,7 +5,7 @@ date: 2026-07-31 09:00:00 +0900
 categories: [DevTools]
 tags: [github, copilot, ai, pull-request, workflow]
 image:
-  path: /assets/img/thumbnail/github-copilot-stacked-sessions-study-note.png
+  path: /assets/img/thumbnail/copilot.png
   alt: "GitHub Copilot 스택 세션 공부 정리"
 ---
 

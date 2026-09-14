@@ -5,7 +5,7 @@ date: 2026-06-10 10:00:00 +0900
 categories: [Design]
 tags: [figma, design, ai-tools, craft, taste]
 image:
-  path: /assets/img/thumbnail/figma-taste-cultivation-study-note.png
+  path: /assets/img/thumbnail/figma.png
   alt: "AI가 취향을 키워주지 않는다 | Figma 에세이 공부 정리"
 ---
 

@@ -15,7 +15,9 @@ tags:
   - cva
   - forwardref
 series: self-study
-image: /assets/img/thumbnail/self-study.png
+image:
+  path: /assets/img/thumbnail/react.png
+  alt: "Next.js TextInput 리팩토링 | 책임 분리와 Compound 패턴으로 구조 개선하기"
 ---
 
 > **Self Study · Component Architecture**

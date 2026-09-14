@@ -5,7 +5,7 @@ date: 2026-07-16 10:00:00 +0900
 categories: [Design]
 tags: [figma, mcp, design-system, figma-make]
 image:
-  path: /assets/img/thumbnail/figma-mcp-design-system-study.png
+  path: /assets/img/thumbnail/mcp.png
   alt: "Figma MCP 공부 정리 | AI가 Figma를 읽으면 뭐가 달라질까"
 ---
 

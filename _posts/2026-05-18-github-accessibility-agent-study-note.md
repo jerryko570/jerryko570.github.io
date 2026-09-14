@@ -5,7 +5,7 @@ date: 2026-05-18 10:00:00 +0900
 categories: [DevTools]
 tags: [github, accessibility, wcag, copilot, ai-agent]
 image:
-  path: /assets/img/thumbnail/github-accessibility-agent-study-note.png
+  path: /assets/img/thumbnail/copilot.png
   alt: "GitHub 접근성 에이전트 공부 정리 | AI가 WCAG를 어디까지 고칠 수 있을까"
 ---
 

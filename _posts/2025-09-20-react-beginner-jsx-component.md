@@ -11,7 +11,9 @@ tags:
   - component
   - frontend
 series: react
-image: /assets/img/thumbnail/react.png
+image:
+  path: /assets/img/thumbnail/react.png
+  alt: "React 입문 가이드 (1) | JSX와 컴포넌트 기본 개념 이해하기"
 ---
 
 

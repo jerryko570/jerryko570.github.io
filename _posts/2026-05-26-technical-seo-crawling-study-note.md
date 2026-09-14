@@ -5,7 +5,7 @@ date: 2026-05-26 10:00:00 +0900
 categories: [DesignCraft]
 tags: [seo, crawling, robots-txt, frontend, next-js]
 image:
-  path: /assets/img/thumbnail/technical-seo-crawling-study-note.png
+  path: /assets/img/thumbnail/next-js.png
   alt: "기술 SEO 공부 정리 | 크롤러가 못 찾으면 랭킹은 없다"
 ---
 

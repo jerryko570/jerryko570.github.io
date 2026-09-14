@@ -12,7 +12,9 @@ tags:
   - tsc
   - type-checking
 series: typescript
-image: /assets/img/thumbnail/typescript.png
+image:
+  path: /assets/img/thumbnail/typescript.png
+  alt: "TypeScript 기본 동작 원리 | 컴파일과 타입 체크 흐름"
 ---
 
 ## **1. TypeScript? 타입스크립트!**

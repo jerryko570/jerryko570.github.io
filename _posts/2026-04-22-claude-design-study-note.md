@@ -6,7 +6,7 @@ categories: [DevTools]
 tags: [claude, design-tool, anthropic, design-system]
 image:
   path: /assets/img/thumbnail/claude.png
-  alt: "Claude Design 공부 정리"
+  alt: "Claude Design 공부 정리 | 디자이너가 아닌 사람이 초안을 만들면"
 ---
 
 Anthropic에서 **디자이너가 아닌 사람도 대화로 시각 결과물을 만들 수 있는 툴**을 발표했다.

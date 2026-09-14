@@ -15,7 +15,9 @@ tags:
   - 리액트-API
   - 리액트-useEffect
 series: toyproject
-image: /assets/img/thumbnail/toy-project.png
+image:
+  path: /assets/img/thumbnail/react.png
+  alt: "React에서 API 데이터 불러오기 완벽 가이드 | useEffect와 fetch 실전 패턴"
 ---
 
 React에서 API 데이터를 불러오는 것은 실무에서 가장 자주 사용하는 패턴 중 하나다. 이 글에서는 `useEffect`를 사용해 API 데이터를 불러오며 **상태 변화와 렌더링이 어떻게 연결되는지** 실제 프로젝트 경험을 기준으로 정리했다.

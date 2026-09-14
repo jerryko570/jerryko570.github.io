@@ -5,7 +5,7 @@ date: 2026-06-24 09:00:00 +0900
 categories: [Frontend]
 tags: [vercel, claude, mcp, deployment, design-tools]
 image:
-  path: /assets/img/thumbnail/claude-design-to-vercel-study-note.png
+  path: /assets/img/thumbnail/claude.png
   alt: "Claude Design에서 Vercel 배포 공부 정리 | 디자인에서 URL까지"
 ---
 

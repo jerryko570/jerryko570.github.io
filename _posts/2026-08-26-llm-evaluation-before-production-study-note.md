@@ -5,7 +5,7 @@ date: 2026-08-26 10:00:00 +0900
 categories: [DevTools]
 tags: [llm, evaluation, github, ai]
 image:
-  path: /assets/img/thumbnail/llm-evaluation-before-production-study-note.png
+  path: /assets/img/thumbnail/github.png
   alt: "프로덕션 전에 LLM을 어떻게 평가할까 — GitHub 블로그 정리"
 ---
 

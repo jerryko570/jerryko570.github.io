@@ -5,7 +5,7 @@ date: 2026-05-21 10:00:00 +0900
 categories: [Frontend]
 tags: [vercel, chat-sdk, ai-sdk, agent, frontend]
 image:
-  path: /assets/img/thumbnail/chat-sdk-ai-tools-study-note.png
+  path: /assets/img/thumbnail/vercel.png
   alt: "Chat SDK AI 도구 내장 공부 정리 | 승인 게이트가 흥미로웠다"
 ---
 

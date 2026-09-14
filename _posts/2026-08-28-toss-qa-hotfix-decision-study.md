@@ -5,7 +5,7 @@ date: 2026-08-28 10:00:00 +0900
 categories: [DesignCraft]
 tags: [qa, hotfix, toss, product, process]
 image:
-  path: /assets/img/thumbnail/toss-qa-hotfix-decision-study.png
+  path: /assets/img/thumbnail/toss.png
   alt: "1%의 버그를 고칠까 말까 — 토스 QA팀의 판단 기준 공부 정리"
 ---
 

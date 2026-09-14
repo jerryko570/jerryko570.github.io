@@ -5,7 +5,7 @@ date: 2026-07-25 10:00:00 +0900
 categories: [DesignCraft]
 tags: [javascript, lodash, utility, open-source]
 image:
-  path: /assets/img/thumbnail/es-toolkit-toss-study-note.png
+  path: /assets/img/thumbnail/javascript.png
   alt: "es-toolkit 공부 정리 | 토스가 lodash를 안 쓰기로 한 이유"
 ---
 

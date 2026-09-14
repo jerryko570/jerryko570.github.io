@@ -5,7 +5,7 @@ date: 2026-05-29 10:00:00 +0900
 categories: [Design]
 tags: [figma, figma-make, design-tools, frontend]
 image:
-  path: /assets/img/thumbnail/figma-make-local-code-study.png
+  path: /assets/img/thumbnail/figma.png
   alt: "Figma Make 로컬 코드 연결 공부 정리 | 경계가 어디까지 달라지는 걸까"
 ---
 

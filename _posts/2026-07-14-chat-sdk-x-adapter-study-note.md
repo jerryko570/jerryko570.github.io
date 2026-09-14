@@ -5,7 +5,7 @@ date: 2026-07-14 10:00:00 +0900
 categories: [Frontend]
 tags: [vercel, chat-sdk, x, bot, twitter]
 image:
-  path: /assets/img/thumbnail/chat-sdk-x-adapter-study-note.png
+  path: /assets/img/thumbnail/vercel.png
   alt: "Chat SDK X 어댑터 공부 정리 | 추상화가 어디까지 책임지는지"
 ---
 

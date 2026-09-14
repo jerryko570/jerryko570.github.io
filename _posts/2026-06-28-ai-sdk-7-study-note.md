@@ -5,7 +5,7 @@ date: 2026-06-28 10:00:00 +0900
 categories: [Frontend]
 tags: [vercel, ai-sdk, typescript, agents]
 image:
-  path: /assets/img/thumbnail/ai-sdk-7-study-note.png
+  path: /assets/img/thumbnail/vercel.png
   alt: "AI SDK 7 훑어보면서 든 생각"
 ---
 

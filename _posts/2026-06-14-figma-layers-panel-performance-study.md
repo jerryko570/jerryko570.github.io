@@ -5,7 +5,7 @@ date: 2026-06-14 09:00:00 +0900
 categories: [Design]
 tags: [figma, performance, layers-panel, virtualization]
 image:
-  path: /assets/img/thumbnail/figma-layers-panel-performance-study.png
+  path: /assets/img/thumbnail/figma.png
   alt: "Figma 레이어 패널 아키텍처 개선 훑어보면서 든 생각"
 ---
 

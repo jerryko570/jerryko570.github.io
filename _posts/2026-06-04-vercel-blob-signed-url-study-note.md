@@ -5,7 +5,7 @@ date: 2026-06-04 10:00:00 +0900
 categories: [Frontend]
 tags: [vercel, blob, signed-url, security]
 image:
-  path: /assets/img/thumbnail/vercel-blob-signed-url-study-note.png
+  path: /assets/img/thumbnail/vercel.png
   alt: "Vercel Blob Signed URL 공부 정리 | 서버가 열쇠를 쥐는 구조"
 ---
 

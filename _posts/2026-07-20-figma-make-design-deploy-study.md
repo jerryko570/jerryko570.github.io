@@ -5,7 +5,7 @@ date: 2026-07-20 10:00:00 +0900
 categories: [Design]
 tags: [figma, figma-make, design-to-code, handoff, accessibility]
 image:
-  path: /assets/img/thumbnail/figma-make-design-deploy-study.png
+  path: /assets/img/thumbnail/figma.png
   alt: "Figma Make 공부 정리 | 디자이너가 직접 PR 올리는 게 맞는 건지"
 ---
 

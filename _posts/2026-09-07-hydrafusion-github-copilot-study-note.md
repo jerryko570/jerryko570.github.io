@@ -5,7 +5,7 @@ date: 2026-09-07 10:00:00 +0900
 categories: [DevTools]
 tags: [github-copilot, multi-model, copilot]
 image:
-  path: /assets/img/thumbnail/hydrafusion-github-copilot-study-note.png
+  path: /assets/img/thumbnail/copilot.png
   alt: "HydraFusion 공부 정리 | 여러 모델을 섞으면 뭐가 달라질까"
 ---
 

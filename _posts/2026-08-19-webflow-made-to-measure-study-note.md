@@ -5,7 +5,7 @@ date: 2026-08-19 10:00:00 +0900
 categories: [Design]
 tags: [webflow, ai, interface, design-tools, adaptive-ui]
 image:
-  path: /assets/img/thumbnail/webflow-made-to-measure-study-note.png
+  path: /assets/img/thumbnail/webflow.png
   alt: "Webflow 'Made to Measure' 공부 정리 | 인터페이스도 맞춤이 될 수 있을까"
 ---
 

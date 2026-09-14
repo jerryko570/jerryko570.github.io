@@ -5,7 +5,7 @@ date: 2026-05-08 10:00:00 +0900
 categories: [Design]
 tags: [webflow, react, ai, code-components]
 image:
-  path: /assets/img/thumbnail/webflow-code-components-two-paths.png
+  path: /assets/img/thumbnail/webflow.png
   alt: "Webflow 코드 컴포넌트 공부 정리 | 두 가지 경로가 보여주는 것"
 ---
 

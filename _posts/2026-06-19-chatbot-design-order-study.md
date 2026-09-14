@@ -5,7 +5,7 @@ date: 2026-06-19 10:00:00 +0900
 categories: [DesignCraft]
 tags: [chatbot, ai, product-design, ux, toss]
 image:
-  path: /assets/img/thumbnail/chatbot-design-order-study.png
+  path: /assets/img/thumbnail/toss.png
   alt: "경험 먼저, 시스템은 역산 | 토스 챗봇 설계 공부 정리"
 ---
 

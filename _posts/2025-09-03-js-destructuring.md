@@ -15,7 +15,9 @@ tags:
   - 자바스크립트-구조분해
   - 자바스크립트-배열
 series: javascript
-image: /assets/img/thumbnail/javascript.png
+image:
+  path: /assets/img/thumbnail/react.png
+  alt: "JavaScript 구조분해 할당 완벽 정리 | 배열·객체 활용 패턴과 React props"
 ---
 
 JavaScript 구조분해 할당(Destructuring Assignment)은 배열과 객체에서 값을 간결하게 추출하는 ES6 문법이다. 이 글에서는 **배열·객체 구조분해의 동작 원리**와 **React props에서 자주 사용되는 패턴**을 예제 중심으로 정리한다.

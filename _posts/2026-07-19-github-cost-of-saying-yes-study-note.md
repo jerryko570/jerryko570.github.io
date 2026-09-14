@@ -5,7 +5,7 @@ date: 2026-07-19 10:00:00 +0900
 categories: [DevTools]
 tags: [ai, github, engineering, code-review]
 image:
-  path: /assets/img/thumbnail/github-cost-of-saying-yes-study-note.png
+  path: /assets/img/thumbnail/github.png
   alt: "GitHub 블로그 공부 정리 | 코드 작성 비용이 싸진다는 게 무슨 말인지"
 ---
 

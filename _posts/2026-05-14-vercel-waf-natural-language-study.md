@@ -5,7 +5,7 @@ date: 2026-05-14 10:00:00 +0900
 categories: [Frontend]
 tags: [vercel, firewall, waf, security, frontend]
 image:
-  path: /assets/img/thumbnail/vercel-waf-natural-language-study.png
+  path: /assets/img/thumbnail/vercel.png
   alt: "Vercel Firewall 자연어 규칙 훑어보면서 든 생각"
 ---
 

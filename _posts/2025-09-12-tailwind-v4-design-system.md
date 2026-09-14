@@ -13,7 +13,9 @@ tags:
   - ui
   - theming
 series: self-study
-image: /assets/img/thumbnail/self-study.png
+image:
+  path: /assets/img/thumbnail/tailwind.png
+  alt: "Tailwind v4 디자인 시스템 구축하기 | 디자인 토큰 기반 스타일링"
 ---
 
 ## **Tailwind v4가 혁신적인 이유**

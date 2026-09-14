@@ -5,7 +5,7 @@ date: 2026-07-30 10:00:00 +0900
 categories: [Frontend]
 tags: [vercel, feature-flags, global-config]
 image:
-  path: /assets/img/thumbnail/vercel-global-config-study-note.png
+  path: /assets/img/thumbnail/vercel.png
   alt: "Vercel Global Config 공부 정리 | Edge Config가 왜 이름을 바꿨을까"
 ---
 

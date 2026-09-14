@@ -12,7 +12,9 @@ tags:
   - update
   - unmount
 series: self-study
-image: /assets/img/thumbnail/self-study.png
+image:
+  path: /assets/img/thumbnail/react.png
+  alt: "React 생명주기 이해하기 | 렌더링 흐름 기준"
 ---
 
 ## **1. 리액트 생명주기 (Lifecycle)**

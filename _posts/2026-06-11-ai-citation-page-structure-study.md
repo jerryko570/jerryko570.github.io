@@ -5,8 +5,8 @@ date: 2026-06-11 10:00:00 +0900
 categories: [DesignCraft]
 tags: [geo, seo, html, information-architecture, frontend]
 image:
-  path: /assets/img/thumbnail/ai-citation-page-structure-study.png
-  alt: "AI가 인용하는 페이지 공부 정리"
+  path: /assets/img/thumbnail/html.png
+  alt: "AI가 인용하는 페이지 공부 정리 | SEO랑 뭐가 다를까"
 ---
 
 PXD 블로그에서 AI가 페이지를 어떻게 읽는지를 다룬 글을 봤다. SEO라는 개념은 들어봤는데, ChatGPT나 Perplexity 같은 AI 검색 서비스가 늘어나면서 최적화 방식이 달라지고 있다는 내용이었다.

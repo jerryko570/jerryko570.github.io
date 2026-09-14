@@ -5,7 +5,7 @@ date: 2026-07-07 09:00:00 +0900
 categories: [DevTools]
 tags: [lerobot, huggingface, world-model, robotics]
 image:
-  path: /assets/img/thumbnail/lerobot-v060-study-note.png
+  path: /assets/img/thumbnail/v0.png
   alt: "LeRobot v0.6.0 공부 정리 | 로봇이 '상상'한다는 게 무슨 뜻일까"
 ---
 

@@ -5,7 +5,7 @@ date: 2026-09-09 09:00:00 +0900
 categories: [DesignCraft]
 tags: [ai, coding-agent, toss]
 image:
-  path: /assets/img/thumbnail/toss-coding-agent-stylepack-study.png
+  path: /assets/img/thumbnail/toss.png
   alt: "Coding Agent에 팀 규칙 먹이는 법 공부 정리"
 ---
 

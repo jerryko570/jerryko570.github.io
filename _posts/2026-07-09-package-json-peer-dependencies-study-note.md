@@ -5,7 +5,7 @@ date: 2026-07-09 10:00:00 +0900
 categories: [DesignCraft]
 tags: [javascript, package-json, peerdependencies, npm, component-library]
 image:
-  path: /assets/img/thumbnail/package-json-peer-dependencies-study-note.png
+  path: /assets/img/thumbnail/javascript.png
   alt: "package.json 공부 정리 | 공통 컴포넌트 패키지를 만들면서 마주친 설정들"
 ---
 

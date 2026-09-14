@@ -14,7 +14,9 @@ tags:
   - array
   - tuple
 series: typescript
-image: /assets/img/thumbnail/typescript.png
+image:
+  path: /assets/img/thumbnail/typescript.png
+  alt: "TypeScript 데이터 타입 (1) | 기본 타입·배열·튜플"
 ---
 
 ## **1. 기본 타입 (Basic Types)**

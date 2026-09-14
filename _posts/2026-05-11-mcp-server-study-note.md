@@ -5,7 +5,7 @@ date: 2026-05-11 10:00:00 +0900
 categories: [DevTools]
 tags: [mcp, ai-agent, api, llm, dev-tools]
 image:
-  path: /assets/img/thumbnail/mcp-server-study-note.png
+  path: /assets/img/thumbnail/mcp.png
   alt: "MCP 서버 공부 정리 | AI가 맥락을 갖는다는 게 어떤 의미일까"
 ---
 

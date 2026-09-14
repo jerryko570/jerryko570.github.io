@@ -5,7 +5,7 @@ date: 2026-05-19 10:00:00 +0900
 categories: [Design]
 tags: [webflow, pricing, design-tools]
 image:
-  path: /assets/img/thumbnail/webflow-simplified-plans-2026.png
+  path: /assets/img/thumbnail/webflow.png
   alt: "Webflow 플랜 개편 공부 정리 | 단순화라는 말의 무게"
 ---
 

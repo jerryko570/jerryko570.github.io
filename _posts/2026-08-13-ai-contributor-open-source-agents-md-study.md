@@ -5,7 +5,7 @@ date: 2026-08-13 10:00:00 +0900
 categories: [DevTools]
 tags: [github, open-source, ai-agent, agents-md]
 image:
-  path: /assets/img/thumbnail/ai-contributor-open-source-agents-md-study.png
+  path: /assets/img/thumbnail/github.png
   alt: "AI가 PR 올리는 시대의 오픈소스 | AGENTS.md 공부 정리"
 ---
 

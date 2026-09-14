@@ -5,7 +5,7 @@ date: 2026-06-29 09:00:00 +0900
 categories: [DevTools]
 tags: [lsp, jetbrains, intellij, plugin, ide]
 image:
-  path: /assets/img/thumbnail/intellij-lsp-client-api-open-source.png
+  path: /assets/img/thumbnail/jetbrains.png
   alt: "IntelliJ LSP Client API 오픈소스화 정리 | 플러그인 개발의 구조가 달라지는 지점"
 ---
 

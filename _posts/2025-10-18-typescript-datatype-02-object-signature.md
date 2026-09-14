@@ -12,7 +12,9 @@ tags:
   - type-alias
   - index-signature
 series: typescript
-image: /assets/img/thumbnail/typescript.png
+image:
+  path: /assets/img/thumbnail/typescript.png
+  alt: "TypeScript 데이터 타입 (2) | 객체 타입 설계 방법"
 ---
 
 

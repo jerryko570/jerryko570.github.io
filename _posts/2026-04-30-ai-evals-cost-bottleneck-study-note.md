@@ -5,7 +5,7 @@ date: 2026-04-30 09:00:00 +0900
 categories: [DevTools]
 tags: [ai, evals, benchmark, llm, huggingface]
 image:
-  path: /assets/img/thumbnail/ai-evals-cost-bottleneck-study-note.png
+  path: /assets/img/thumbnail/devtools.png
   alt: "AI evals 비용 공부 정리 | 평가가 비싸지면 무슨 일이 생기나"
 ---
 

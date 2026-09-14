@@ -5,7 +5,7 @@ date: 2026-06-08 10:00:00 +0900
 categories: [Frontend]
 tags: [vercel, sandbox, frontend, agent, storage]
 image:
-  path: /assets/img/thumbnail/vercel-sandbox-drives-study-note.png
+  path: /assets/img/thumbnail/vercel.png
   alt: "Vercel Sandbox Drives 훑어보면서 든 생각"
 ---
 

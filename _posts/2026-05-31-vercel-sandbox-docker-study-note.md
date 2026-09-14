@@ -5,7 +5,7 @@ date: 2026-05-31 10:00:00 +0900
 categories: [Frontend]
 tags: [vercel, docker, sandbox, container]
 image:
-  path: /assets/img/thumbnail/vercel-sandbox-docker-study-note.png
+  path: /assets/img/thumbnail/vercel.png
   alt: "Vercel Sandbox Docker 지원 공부 정리 | 샌드박스 안에 컨테이너가 들어온다는 것"
 ---
 

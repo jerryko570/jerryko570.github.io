@@ -5,7 +5,7 @@ date: 2026-06-22 10:00:00 +0900
 categories: [Design]
 tags: [figma, runway, ai-video, figma-weave, design-tools]
 image:
-  path: /assets/img/thumbnail/runway-aleph-2-figma-weave-study-note.png
+  path: /assets/img/thumbnail/figma.png
   alt: "Runway Aleph 2.0 공부 정리 | Figma Weave에서 영상을 다루는 방식이 달라졌다"
 ---
 

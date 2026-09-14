@@ -5,7 +5,7 @@ date: 2026-06-15 09:00:00 +0900
 categories: [DesignCraft]
 tags: [ux-research, user-review, data-analysis, affinity-diagram, pxd]
 image:
-  path: /assets/img/thumbnail/star-rating-distribution-review-study.png
+  path: /assets/img/thumbnail/pxd.png
   alt: "별점 2.6점짜리 사용자는 없다 — 리뷰 분포 분석 공부 정리"
 ---
 

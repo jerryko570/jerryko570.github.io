@@ -5,7 +5,7 @@ date: 2026-07-02 10:00:00 +0900
 categories: [Frontend]
 tags: [typescript, linter, vercel, konsistent]
 image:
-  path: /assets/img/thumbnail/konsistent-study-note.png
+  path: /assets/img/thumbnail/vercel.png
   alt: "konsistent 공부 정리 | 구조 규칙을 에이전트도 읽는 명세로"
 ---
 

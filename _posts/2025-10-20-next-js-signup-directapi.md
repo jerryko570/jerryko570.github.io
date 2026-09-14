@@ -12,7 +12,9 @@ tags:
   - fetch
   - typescript
 series: nextjs-auth
-image: /assets/img/thumbnail/next-js.png
+image:
+  path: /assets/img/thumbnail/next-js.png
+  alt: "Next.js 회원가입 구현 정리 | Direct API Flow 설계"
 ---
 
 > **Next.js Auth Series · Signup Flow** 단순히 회원가입 입력 폼을 만드는 것을 넘어, 프론트엔드에서 입력된 데이터가 **서버 ➡️ DB ➡️ 다시 프론트로 돌아오기까지**  어떤 과정을 거치는지 전체 흐름을 이해하는 데 목적이 있다.

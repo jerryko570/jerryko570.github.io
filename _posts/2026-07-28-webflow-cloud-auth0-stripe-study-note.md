@@ -5,7 +5,7 @@ date: 2026-07-28 09:00:00 +0900
 categories: [Design]
 tags: [webflow, auth0, stripe, webflow-cloud]
 image:
-  path: /assets/img/thumbnail/webflow-cloud-auth0-stripe-study-note.png
+  path: /assets/img/thumbnail/webflow.png
   alt: "Webflow Cloud에 Auth0 + Stripe 붙이는 흐름 공부 정리"
 ---
 

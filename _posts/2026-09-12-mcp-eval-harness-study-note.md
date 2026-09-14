@@ -5,8 +5,8 @@ date: 2026-09-12 10:00:00 +0900
 categories: [Design]
 tags: [mcp, webflow, agent, eval, ai]
 image:
-  path: /assets/img/thumbnail/mcp-eval-harness-study-note.png
-  alt: "MCP eval harness 공부 정리"
+  path: /assets/img/thumbnail/mcp.png
+  alt: "MCP eval harness 공부 정리 | 도구 테스트 통과가 전부가 아닌 이유"
 ---
 
 Webflow 블로그에서 MCP eval harness에 관한 글을 봤다. MCP 도구를 만들었을 때, 에이전트가 그 도구를 제대로 활용하는지 확인하는 평가 시스템을 직접 구축했다는 내용이었다. 처음엔 단순한 도구 테스트 이야기인 줄 알았는데, 읽다 보니 생각보다 근본적인 문제를 건드리고 있었다.

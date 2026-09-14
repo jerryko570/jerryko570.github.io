@@ -5,7 +5,7 @@ date: 2026-09-02 09:00:00 +0900
 categories: [Frontend]
 tags: [svelte, sveltekit, frontend]
 image:
-  path: /assets/img/thumbnail/svelte-september-2026-study-note.png
+  path: /assets/img/thumbnail/svelte.png
   alt: "Svelte 9월 업데이트 공부 정리 | SvelteKit 3 RC 앞에서"
 ---
 

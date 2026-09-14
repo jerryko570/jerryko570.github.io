@@ -14,7 +14,9 @@ tags:
   - pick
   - omit
 series: typescript
-image: /assets/img/thumbnail/typescript.png
+image:
+  path: /assets/img/thumbnail/typescript.png
+  alt: "TypeScript 데이터 타입 (3) | Interface·Utility·Enum 활용"
 ---
 
 ## **1. 인터페이스 (Interface)**

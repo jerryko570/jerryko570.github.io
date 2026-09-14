@@ -5,7 +5,7 @@ date: 2026-06-21 10:00:00 +0900
 categories: [DevTools]
 tags: [github, copilot, ai-agent, data-analytics, llm]
 image:
-  path: /assets/img/thumbnail/github-qubot-analytics-agent-study.png
+  path: /assets/img/thumbnail/copilot.png
   alt: "GitHub Qubot 공부 정리 | 사내 분석 에이전트를 만든다는 게 뭔지"
 ---
 

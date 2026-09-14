@@ -5,7 +5,7 @@ date: 2026-07-12 10:00:00 +0900
 categories: [Design]
 tags: [figma, gpt, figma-make, ai]
 image:
-  path: /assets/img/thumbnail/figma-make-gpt-5-6-study-note.png
+  path: /assets/img/thumbnail/gpt.png
   alt: "Figma Make에 GPT-5.6 들어온 것 공부 정리"
 ---
 

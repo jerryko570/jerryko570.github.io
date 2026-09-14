@@ -5,7 +5,7 @@ date: 2026-08-12 10:00:00 +0900
 categories: [Frontend]
 tags: [vercel, connect, cli]
 image:
-  path: /assets/img/thumbnail/vercel-connect-cli-study.png
+  path: /assets/img/thumbnail/vercel.png
   alt: "Vercel Connect CLI 공부 정리 | 서비스 연결이 터미널 안으로"
 ---
 

@@ -15,7 +15,9 @@ tags:
   - 자바스크립트-기초
   - 자바스크립트-변수
 series: javascript
-image: /assets/img/thumbnail/javascript.png
+image:
+  path: /assets/img/thumbnail/javascript.png
+  alt: "JavaScript 기초 문법 완벽 정리 | use strict, let, const, 자료형 총정리"
 ---
 
 JavaScript를 처음 배울 때 가장 먼저 마주치는 개념은 **script 태그**, **use strict**, **변수 선언**, 그리고 **자료형**이다. 이 글에서는 브라우저가 JavaScript를 어떻게 읽고 실행하는지를 시작으로, 변수 선언 방식과 자료형 개념을 실행 흐름 기준으로 하나씩 정리한다.

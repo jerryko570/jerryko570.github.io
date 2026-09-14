@@ -5,7 +5,7 @@ date: 2026-07-29 09:00:00 +0900
 categories: [DesignCraft]
 tags: [geo, seo, content-design, ai-search, pxd]
 image:
-  path: /assets/img/thumbnail/geoniq-geo-diagnosis-study-note.png
+  path: /assets/img/thumbnail/pxd.png
   alt: "GEO 최적화 진단 케이스 공부 정리 | 콘텐츠 품질과 기술 준비는 달랐다"
 ---
 

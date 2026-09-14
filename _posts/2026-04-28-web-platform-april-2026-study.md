@@ -5,7 +5,7 @@ date: 2026-04-28 10:00:00 +0900
 categories: [Frontend]
 tags: [css, browser, web-platform, view-transition]
 image:
-  path: /assets/img/thumbnail/web-platform-april-2026-study.png
+  path: /assets/img/thumbnail/css.png
   alt: "4월 웹 플랫폼 업데이트 공부 정리 | contrast-color()가 드디어 됐다"
 ---
 

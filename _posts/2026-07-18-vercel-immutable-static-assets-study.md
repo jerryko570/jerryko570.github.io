@@ -5,8 +5,8 @@ date: 2026-07-18 10:00:00 +0900
 categories: [Frontend]
 tags: [vercel, nextjs, cdn, deployment, static-assets]
 image:
-  path: /assets/img/thumbnail/vercel-immutable-static-assets-study.png
-  alt: "Vercel 정적 자산 최적화 공부 정리"
+  path: /assets/img/thumbnail/next-js.png
+  alt: "Vercel 정적 자산 최적화 공부 정리 | 배포마다 파일을 다시 올려야 할까"
 ---
 
 Vercel 체인지로그를 훑다가 "immutable static assets 최적화" 발표를 봤다. 제목만 보고는 캐시 헤더 설정 이야기인가 싶었는데, 읽어보니 배포 방식 자체에 관한 내용이었다.

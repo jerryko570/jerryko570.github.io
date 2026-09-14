@@ -5,7 +5,7 @@ date: 2026-08-09 10:00:00 +0900
 categories: [DevTools]
 tags: [ai, education, llm, tutoring, benchmark]
 image:
-  path: /assets/img/thumbnail/tutormoments-ai-tutor-study-note.png
+  path: /assets/img/thumbnail/devtools.png
   alt: "TutorMoments 훑어보면서 | AI 튜터가 언제 도와줄지 어떻게 판단하나"
 ---
 

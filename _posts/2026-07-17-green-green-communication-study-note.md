@@ -5,8 +5,8 @@ date: 2026-07-17 10:00:00 +0900
 categories: [DesignCraft]
 tags: [communication, teamwork, product-design, ux-research, pxd]
 image:
-  path: /assets/img/thumbnail/green-green-communication-study-note.png
-  alt: "그린그린 업무 대화 공부 정리"
+  path: /assets/img/thumbnail/pxd.png
+  alt: "그린그린 업무 대화 공부 정리 | 어떻게 말하냐보다 뭘 함께 넘기냐"
 ---
 
 PXD 스토리에서 "그린그린 업무 대화"라는 글을 읽었다. 제목만 봤을 땐 흔한 소통 팁 글이겠거니 했는데, 읽다 보니 예전 팀 프로젝트에서 겪었던 몇 가지 장면들이 자꾸 떠올랐다.

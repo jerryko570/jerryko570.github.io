@@ -5,7 +5,7 @@ date: 2026-09-10 10:00:00 +0900
 categories: [Frontend]
 tags: [react, view-transitions, fragment-refs, ssr]
 image:
-  path: /assets/img/thumbnail/react-19-3-study-note.png
+  path: /assets/img/thumbnail/react.png
   alt: "React 19.3 릴리스 훑어보면서 든 생각"
 ---
 

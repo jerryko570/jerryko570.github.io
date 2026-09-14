@@ -5,7 +5,7 @@ date: 2026-06-20 10:00:00 +0900
 categories: [Frontend]
 tags: [vercel, eve, ai-sdk, agent-framework]
 image:
-  path: /assets/img/thumbnail/vercel-eve-study-note.png
+  path: /assets/img/thumbnail/vercel.png
   alt: "eve 공부 정리 | 에이전트에도 프레임워크 시대가 오는 걸까"
 ---
 

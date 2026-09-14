@@ -5,7 +5,7 @@ date: 2026-06-27 09:00:00 +0900
 categories: [DesignCraft]
 tags: [qa, toss, product-design]
 image:
-  path: /assets/img/thumbnail/toss-qa-study-note.png
+  path: /assets/img/thumbnail/toss.png
   alt: "토스 QA 글 읽으면서 든 생각 | 가설이 틀렸을 때"
 ---
 

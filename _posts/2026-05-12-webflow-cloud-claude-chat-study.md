@@ -5,7 +5,7 @@ date: 2026-05-12 10:00:00 +0900
 categories: [Design]
 tags: [webflow, claude, edge-runtime, api-security, webflow-cloud]
 image:
-  path: /assets/img/thumbnail/webflow-cloud-claude-chat-study.png
+  path: /assets/img/thumbnail/claude.png
   alt: "Webflow Cloud + Claude 채팅 공부 정리 | API 키는 어떻게 숨기는 걸까"
 ---
 

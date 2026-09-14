@@ -5,7 +5,7 @@ date: 2026-07-27 09:00:00 +0900
 categories: [DevTools]
 tags: [vite, javascript, open-source, cloudflare]
 image:
-  path: /assets/img/thumbnail/voidzero-cloudflare-acquisition-study.png
+  path: /assets/img/thumbnail/vite.png
   alt: "VoidZero 인수 공부 정리 | Vite와 오픈소스 지속가능성"
 ---
 

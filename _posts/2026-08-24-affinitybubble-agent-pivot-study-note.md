@@ -5,7 +5,7 @@ date: 2026-08-24 09:00:00 +0900
 categories: [DesignCraft]
 tags: [ux, qualitative-research, ai-agent, product-design]
 image:
-  path: /assets/img/thumbnail/affinitybubble-agent-pivot-study-note.png
+  path: /assets/img/thumbnail/design-craft.png
   alt: "어피니티버블 피봇 공부 정리 | 에이전트한테 UI가 비용이 된다는 얘기"
 ---
 

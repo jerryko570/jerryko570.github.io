@@ -5,8 +5,8 @@ date: 2026-04-28 09:00:00 +0900
 categories: [DesignCraft]
 tags: [security, toss, pqc, legacy, product]
 image:
-  path: /assets/img/thumbnail/toss-pqc-adoption-study-note.png
-  alt: "토스페이먼츠 PQC 도입기 공부 정리"
+  path: /assets/img/thumbnail/toss.png
+  alt: "토스페이먼츠 PQC 도입기 공부 정리 | 지금 당장 문제없어도 바꿔야 할 때"
 ---
 
 Toss Tech 블로그에 포스트퀀텀 암호화(PQC)를 도입한 과정을 다룬 글이 올라왔다. 처음엔 보안 엔지니어링 이야기라 좀 멀게 느껴졌다. 양자 컴퓨터, 암호화 알고리즘 같은 단어들이 튀어나왔으니까. 그런데 읽다 보니 달랐다.

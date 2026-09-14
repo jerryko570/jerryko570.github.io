@@ -5,7 +5,7 @@ date: 2026-09-03 09:00:00 +0900
 categories: [DevTools]
 tags: [ai, agent, github, llm, harness]
 image:
-  path: /assets/img/thumbnail/ai-dev-lingo-study-note.png
+  path: /assets/img/thumbnail/github.png
   alt: "AI 개발 신조어 공부 정리 | 루프, 하네스, 스쿼드가 다 뭔 뜻이야"
 ---
 

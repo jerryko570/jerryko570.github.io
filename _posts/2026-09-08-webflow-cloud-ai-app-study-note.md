@@ -5,7 +5,7 @@ date: 2026-09-08 09:00:00 +0900
 categories: [Design]
 tags: [webflow, openai, supabase, streaming, webflow-cloud]
 image:
-  path: /assets/img/thumbnail/webflow-cloud-ai-app-study-note.png
+  path: /assets/img/thumbnail/openai.png
   alt: "Webflow Cloud AI 앱 공부 정리 | 배포가 하나로 묶이면 뭐가 달라질까"
 ---
 

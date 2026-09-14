@@ -5,7 +5,7 @@ date: 2026-08-11 10:00:00 +0900
 categories: [DesignCraft]
 tags: [qa, testing, toss, product-design, internal-tools]
 image:
-  path: /assets/img/thumbnail/tossion-qa-platform-study.png
+  path: /assets/img/thumbnail/toss.png
   alt: "토션(Tossion) 공부 정리 | 상용 도구가 막힐 때 어떤 선택을 했나"
 ---
 

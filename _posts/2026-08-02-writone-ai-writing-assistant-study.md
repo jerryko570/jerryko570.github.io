@@ -5,7 +5,7 @@ date: 2026-08-02 10:00:00 +0900
 categories: [DesignCraft]
 tags: [figma, ux-writing, ai-tools, product-design]
 image:
-  path: /assets/img/thumbnail/writone-ai-writing-assistant-study.png
+  path: /assets/img/thumbnail/figma.png
   alt: "Writone 개선기 공부 정리 | 도구가 어디에 있어야 하는가"
 ---
 

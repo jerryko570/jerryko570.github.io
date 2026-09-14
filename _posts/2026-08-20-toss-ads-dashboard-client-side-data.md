@@ -5,7 +5,7 @@ date: 2026-08-20 09:00:00 +0900
 categories: [DesignCraft]
 tags: [frontend, dashboard, ux, toss, architecture]
 image:
-  path: /assets/img/thumbnail/toss-ads-dashboard-client-side-data.png
+  path: /assets/img/thumbnail/toss.png
   alt: "토스 광고 대시보드 공부 정리 | 브라우저가 목록의 주인이 되면"
 ---
 

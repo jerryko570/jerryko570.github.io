@@ -5,7 +5,7 @@ date: 2026-05-03 09:00:00 +0900
 categories: [Frontend]
 tags: [nextjs, caching, vercel, use-cache]
 image:
-  path: /assets/img/thumbnail/nextjs-use-cache-study-note.png
+  path: /assets/img/thumbnail/next-js.png
   alt: "use cache 공부 정리 | 캐시가 코드 안으로 들어온다는 것"
 ---
 

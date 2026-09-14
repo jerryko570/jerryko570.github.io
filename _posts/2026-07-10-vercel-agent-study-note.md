@@ -5,7 +5,7 @@ date: 2026-07-10 10:00:00 +0900
 categories: [Frontend]
 tags: [vercel, agent, ai, deployment]
 image:
-  path: /assets/img/thumbnail/vercel-agent-study-note.png
+  path: /assets/img/thumbnail/vercel.png
   alt: "Vercel Agent 공부 정리 | 에이전트에 어디까지 맡겨도 될까"
 ---
 

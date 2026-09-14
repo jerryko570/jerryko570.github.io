@@ -5,7 +5,7 @@ date: 2026-06-26 09:00:00 +0900
 categories: [Design]
 tags: [figma, motion, animation, timeline]
 image:
-  path: /assets/img/thumbnail/figma-motion-study-note.png
+  path: /assets/img/thumbnail/figma.png
   alt: "Figma Motion 공부 정리 | 캔버스 안에 타임라인이 생긴다는 게 어떤 의미인지"
 ---
 

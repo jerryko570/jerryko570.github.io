@@ -5,7 +5,7 @@ date: 2026-08-01 10:00:00 +0900
 categories: [Design]
 tags: [figma, figma-make, properties-panel, annotations, design-tools]
 image:
-  path: /assets/img/thumbnail/figma-make-properties-panel-study.png
+  path: /assets/img/thumbnail/figma.png
   alt: "Figma Make에 Properties Panel 추가 — 공부하면서 든 생각"
 ---
 

@@ -5,7 +5,7 @@ date: 2026-05-04 12:00:00 +0900
 categories: [DevTools]
 tags: [javascript, temporal, tc39, date, frontend]
 image:
-  path: /assets/img/thumbnail/javascript-temporal-study-note.png
+  path: /assets/img/thumbnail/javascript.png
   alt: "JavaScript Temporal 공부 정리 | Date 문제가 9년짜리였던 이유"
 ---
 

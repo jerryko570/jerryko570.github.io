@@ -5,8 +5,8 @@ date: 2026-07-22 10:00:00 +0900
 categories: [Frontend]
 tags: [vercel, connect, mcp, preset, integration]
 image:
-  path: /assets/img/thumbnail/vercel-connect-preset-connectors-study.png
-  alt: "Vercel Connect 프리셋 커넥터 공부 정리"
+  path: /assets/img/thumbnail/mcp.png
+  alt: "Vercel Connect 프리셋 커넥터 공부 정리 | 연결을 만들던 것에서 고르는 것으로"
 ---
 
 Vercel 블로그에서 Connect에 프리셋 커넥터가 추가됐다는 공지를 읽었다. Shopify, Okta, Workday, Jira, Sanity 같은 서비스들을 미리 구성된 형태로 연결할 수 있다는 내용이었다. 처음엔 UI 편의 기능 정도겠지 했는데, 읽다 보니 커넥터 설정 방식 자체가 조금 달라지는 이야기였다.

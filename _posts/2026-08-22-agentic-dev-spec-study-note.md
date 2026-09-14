@@ -5,7 +5,7 @@ date: 2026-08-22 09:00:00 +0900
 categories: [DevTools]
 tags: [agentic, spec, llm, developer-tools]
 image:
-  path: /assets/img/thumbnail/agentic-dev-spec-study-note.png
+  path: /assets/img/thumbnail/devtools.png
   alt: "에이전틱 개발, 스펙보다 검증이 먼저라는 얘기 공부 정리"
 ---
 

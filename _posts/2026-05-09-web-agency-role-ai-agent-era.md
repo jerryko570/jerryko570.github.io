@@ -5,7 +5,7 @@ date: 2026-05-09 09:00:00 +0900
 categories: [DesignCraft]
 tags: [design, agency, ai-agent, product-design, ux]
 image:
-  path: /assets/img/thumbnail/web-agency-role-ai-agent-era.png
+  path: /assets/img/thumbnail/design-craft.png
   alt: "AI 에이전트 시대 웹 에이전시 역할 공부 정리 | 만드는 것에서 설계하는 것으로"
 ---
 

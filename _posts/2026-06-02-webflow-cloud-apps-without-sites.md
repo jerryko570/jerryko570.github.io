@@ -5,7 +5,7 @@ date: 2026-06-02 09:00:00 +0900
 categories: [Design]
 tags: [webflow, cloud, devlink, deployment]
 image:
-  path: /assets/img/thumbnail/webflow-cloud-apps-without-sites.png
+  path: /assets/img/thumbnail/webflow.png
   alt: "Webflow Cloud 공부 정리 | 사이트 없어도 앱이 된다고?"
 ---
 

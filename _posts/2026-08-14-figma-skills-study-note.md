@@ -5,7 +5,7 @@ date: 2026-08-14 09:00:00 +0900
 categories: [Design]
 tags: [figma, design-tools, ai-agent, skills]
 image:
-  path: /assets/img/thumbnail/figma-skills-study-note.png
+  path: /assets/img/thumbnail/skills.png
   alt: "Figma Skills 공부 정리 | 에이전트에게 내 방식을 가르칠 수 있다면"
 ---
 

@@ -5,8 +5,8 @@ date: 2026-07-08 10:00:00 +0900
 categories: [Design]
 tags: [figma, accessibility, canvas, dom, aria]
 image:
-  path: /assets/img/thumbnail/figma-canvas-accessibility-study.png
-  alt: "Figma 캔버스 접근성 공부 정리"
+  path: /assets/img/thumbnail/figma.png
+  alt: "Figma 캔버스 접근성 공부 정리 | 보이지 않는 DOM 이야기"
 ---
 
 Figma 블로그에서 "캔버스 기반 제품에 접근성 구축하기"라는 글을 읽었다. 처음엔 그냥 스크롤할 뻔 했는데, 첫 문단에서 멈췄다.

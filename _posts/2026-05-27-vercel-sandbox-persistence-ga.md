@@ -5,7 +5,7 @@ date: 2026-05-27 10:00:00 +0900
 categories: [Frontend]
 tags: [vercel, sandbox, javascript, frontend]
 image:
-  path: /assets/img/thumbnail/vercel-sandbox-persistence-ga.png
+  path: /assets/img/thumbnail/vercel.png
   alt: "Vercel Sandbox 영속성 GA 공부 정리 | 기본값이 바뀐다는 것"
 ---
 

@@ -5,8 +5,8 @@ date: 2026-07-21 10:00:00 +0900
 categories: [DesignCraft]
 tags: [geo, seo, ai-search, google]
 image:
-  path: /assets/img/thumbnail/google-geo-seo-guide-study-note.png
-  alt: "구글 AI 검색 최적화 가이드 공부 정리"
+  path: /assets/img/thumbnail/design-craft.png
+  alt: "구글 AI 검색 최적화 가이드 공부 정리 | GEO는 SEO면 충분할까"
 ---
 
 구글이 올해 AI 검색 최적화 가이드를 발표하면서 GEO(생성형 엔진 최적화) 분야에서 처음으로 공식 지침이 생겼다. 이후 "그동안의 GEO 방법론은 다 미신이었다", "결국 SEO만 잘하면 된다더라" 같은 요약이 퍼지기 시작했다.

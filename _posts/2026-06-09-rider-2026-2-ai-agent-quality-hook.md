@@ -5,7 +5,7 @@ date: 2026-06-09 10:00:00 +0900
 categories: [DevTools]
 tags: [rider, jetbrains, ai-agent, ide, code-quality]
 image:
-  path: /assets/img/thumbnail/rider-2026-2-ai-agent-quality-hook.png
+  path: /assets/img/thumbnail/jetbrains.png
   alt: "Rider 2026.2 훑어보면서 든 생각 | AI 에이전트에 IDE 검증 훅이 붙었다"
 ---
 

@@ -5,7 +5,7 @@ date: 2026-08-08 10:00:00 +0900
 categories: [Frontend]
 tags: [vercel, hermes, ai-gateway, sandbox, agent]
 image:
-  path: /assets/img/thumbnail/vercel-hermes-agent-gateway-sandbox-study.png
+  path: /assets/img/thumbnail/vercel.png
   alt: "Vercel Hermes Agent 공부 정리 | AI Gateway랑 Sandbox 통합이 뭔 말인가"
 ---
 

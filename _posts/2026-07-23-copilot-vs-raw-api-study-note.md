@@ -5,7 +5,7 @@ date: 2026-07-23 10:00:00 +0900
 categories: [DevTools]
 tags: [copilot, github, ai-coding, llm, api]
 image:
-  path: /assets/img/thumbnail/copilot-vs-raw-api-study-note.png
+  path: /assets/img/thumbnail/copilot.png
   alt: "GitHub Copilot 과금 방식 공부 정리 | 결국 뭘 사는 걸까"
 ---
 

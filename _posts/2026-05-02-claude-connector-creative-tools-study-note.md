@@ -5,7 +5,7 @@ date: 2026-05-02 10:00:00 +0900
 categories: [DesignCraft]
 tags: [claude, design-tools, photoshop, blender, ai]
 image:
-  path: /assets/img/thumbnail/claude-connector-creative-tools-study-note.png
+  path: /assets/img/thumbnail/claude.png
   alt: "Claude 커넥터 공부 정리 | 포토샵 안에서 AI가 뭘 할 수 있을까"
 ---
 

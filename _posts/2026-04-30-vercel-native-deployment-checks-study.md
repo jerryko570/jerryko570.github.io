@@ -5,8 +5,8 @@ date: 2026-04-30 10:00:00 +0900
 categories: [Frontend]
 tags: [vercel, deployment, typescript, ci, frontend]
 image:
-  path: /assets/img/thumbnail/vercel-native-deployment-checks-study.png
-  alt: "Vercel 배포 검사 기능 공부 정리"
+  path: /assets/img/thumbnail/vercel.png
+  alt: "Vercel 배포 검사 기능 공부 정리 | 린트가 배포 흐름 안으로 들어오다"
 ---
 
 Vercel changelog를 보다가 "Native Deployment Checks" 출시 소식을 접했다. 처음엔 제목만 보고 넘기려 했는데, "빌드와 병렬로 린트·타입체크가 돌아간다"는 문구에서 잠깐 멈췄다.

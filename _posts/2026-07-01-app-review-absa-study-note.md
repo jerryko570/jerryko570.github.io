@@ -5,7 +5,7 @@ date: 2026-07-01 10:00:00 +0900
 categories: [DesignCraft]
 tags: [ux-research, absa, app-review, product-design]
 image:
-  path: /assets/img/thumbnail/app-review-absa-study-note.png
+  path: /assets/img/thumbnail/design-craft.png
   alt: "앱 리뷰에서 의사결정까지 | ABSA 공부 정리"
 ---
 

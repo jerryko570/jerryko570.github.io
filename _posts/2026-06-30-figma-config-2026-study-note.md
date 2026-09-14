@@ -5,7 +5,7 @@ date: 2026-06-30 10:00:00 +0900
 categories: [Design]
 tags: [figma, config2026, code-layers, agent]
 image:
-  path: /assets/img/thumbnail/figma-config-2026-study-note.png
+  path: /assets/img/thumbnail/figma.png
   alt: "Figma Config 2026 공부 정리 | 캔버스에 코드가 들어온다는 게 뭔지"
 ---
 

@@ -13,7 +13,9 @@ tags:
   - side-effect
   - rendering
 series: react
-image: /assets/img/thumbnail/react.png
+image:
+  path: /assets/img/thumbnail/react.png
+  alt: "React 기초 개념 정리 (2) | useState·useEffect 흐름"
 ---
 
 ## **1. useState**

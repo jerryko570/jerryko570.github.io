@@ -5,7 +5,7 @@ date: 2026-07-06 09:00:00 +0900
 categories: [Frontend]
 tags: [vercel, ai-gateway, routing, model-management]
 image:
-  path: /assets/img/thumbnail/vercel-ai-gateway-routing-rules-study.png
+  path: /assets/img/thumbnail/vercel.png
   alt: "Vercel AI Gateway 라우팅 규칙 공부 정리 | 모델도 방화벽이 필요하더라"
 ---
 

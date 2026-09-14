@@ -5,7 +5,7 @@ date: 2026-05-25 12:00:00 +0900
 categories: [DevTools]
 tags: [nvidia, llm, diffusion, inference, ai]
 image:
-  path: /assets/img/thumbnail/nemotron-labs-diffusion-lm-study-note.png
+  path: /assets/img/thumbnail/devtools.png
   alt: "Nemotron-Labs Diffusion LM 공부 정리 | 토큰을 동시에 만든다는 게 무슨 말인가"
 ---
 

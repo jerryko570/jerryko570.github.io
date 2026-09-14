@@ -14,7 +14,9 @@ tags:
   - 자바스크립트-복사
   - 자바스크립트-객체
 series: javascript
-image: /assets/img/thumbnail/javascript.png
+image:
+  path: /assets/img/thumbnail/javascript.png
+  alt: "JavaScript 얕은 복사 vs 깊은 복사 완벽 정리 | 객체 참조와 불변성 이해"
 ---
 
 JavaScript에서 객체를 복사할 때 **얕은 복사**와 **깊은 복사**의 차이를 이해하는 것은 매우 중요하다. 이 글에서는 **객체 참조 구조**를 기준으로 얕은 복사와 깊은 복사가 언제 문제를 만들고 어떻게 피할 수 있는지 살펴본다.

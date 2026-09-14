@@ -5,7 +5,7 @@ date: 2026-07-04 09:00:00 +0900
 categories: [Design]
 tags: [figma, design-tools, agent, skills, mcp]
 image:
-  path: /assets/img/thumbnail/figma-agent-skills-study-note.png
+  path: /assets/img/thumbnail/mcp.png
   alt: "Figma 에이전트 Skills 공부 정리 | 반복 프롬프트를 팀과 나누는 방법"
 ---
 

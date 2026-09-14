@@ -5,7 +5,7 @@ date: 2026-06-13 10:00:00 +0900
 categories: [DevTools]
 tags: [github, copilot, cli, ai-agent]
 image:
-  path: /assets/img/thumbnail/copilot-cli-delegation-study.png
+  path: /assets/img/thumbnail/copilot.png
   alt: "Copilot CLI delegation 공부 정리 | 언제 직접 하고 언제 넘기는가"
 ---
 

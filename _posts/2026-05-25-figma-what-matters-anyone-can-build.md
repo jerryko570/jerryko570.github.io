@@ -5,7 +5,7 @@ date: 2026-05-25 10:00:00 +0900
 categories: [Design]
 tags: [figma, ai, design, craft, product-design]
 image:
-  path: /assets/img/thumbnail/figma-what-matters-anyone-can-build.png
+  path: /assets/img/thumbnail/figma.png
   alt: "누구나 만들 수 있게 됐을 때 — Figma 블로그 공부 정리"
 ---
 

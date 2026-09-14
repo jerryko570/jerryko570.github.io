@@ -5,7 +5,7 @@ date: 2026-05-30 10:00:00 +0900
 categories: [DesignCraft]
 tags: [tpm, product, organization, toss]
 image:
-  path: /assets/img/thumbnail/toss-tpm-study-note.png
+  path: /assets/img/thumbnail/toss.png
   alt: "토스식 TPM 공부 정리 | 회색지대를 누가 잡아야 할까"
 ---
 

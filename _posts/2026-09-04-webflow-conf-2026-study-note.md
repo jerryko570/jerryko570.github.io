@@ -5,7 +5,7 @@ date: 2026-09-04 09:00:00 +0900
 categories: [Design]
 tags: [webflow, design-tools, no-code, mcp, campaigns]
 image:
-  path: /assets/img/thumbnail/webflow-conf-2026-study-note.png
+  path: /assets/img/thumbnail/mcp.png
   alt: "Webflow Conf 2026 발표 공부 정리 | Source랑 Campaigns가 뭔지 알아봤다"
 ---
 

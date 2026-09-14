@@ -5,7 +5,7 @@ date: 2026-06-17 09:00:00 +0900
 categories: [DevTools]
 tags: [git, worktree, github-copilot]
 image:
-  path: /assets/img/thumbnail/git-worktree-study-note.png
+  path: /assets/img/thumbnail/copilot.png
   alt: "git worktree 공부 정리 | 브랜치 전환 없이 병렬 작업하기"
 ---
 

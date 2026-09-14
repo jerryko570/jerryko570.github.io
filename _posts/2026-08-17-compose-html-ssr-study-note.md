@@ -5,7 +5,7 @@ date: 2026-08-17 12:00:00 +0900
 categories: [DevTools]
 tags: [kotlin, compose-html, ssr, jetbrains]
 image:
-  path: /assets/img/thumbnail/compose-html-ssr-study-note.png
+  path: /assets/img/thumbnail/html.png
   alt: "Compose HTML SSR 공부 정리 | JVM에서 HTML을 Kotlin 함수로 렌더링한다는 게 어떤 건지"
 ---
 

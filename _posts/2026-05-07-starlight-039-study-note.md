@@ -5,7 +5,7 @@ date: 2026-05-07 09:00:00 +0900
 categories: [Frontend]
 tags: [astro, starlight, docs, frontend]
 image:
-  path: /assets/img/thumbnail/starlight-039-study-note.png
+  path: /assets/img/thumbnail/astro.png
   alt: "Starlight 0.39 공부 정리 | 사이드바랑 다국어가 달라졌다"
 ---
 

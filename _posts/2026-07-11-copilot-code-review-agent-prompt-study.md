@@ -5,7 +5,7 @@ date: 2026-07-11 09:00:00 +0900
 categories: [DevTools]
 tags: [github, copilot, ai-agent, code-review]
 image:
-  path: /assets/img/thumbnail/copilot-code-review-agent-prompt-study.png
+  path: /assets/img/thumbnail/copilot.png
   alt: "Copilot 코드 리뷰 개선 공부 정리 | 더 좋은 도구가 더 나쁜 결과를 냈을 때"
 ---
 

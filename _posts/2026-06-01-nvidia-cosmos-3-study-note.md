@@ -5,7 +5,7 @@ date: 2026-06-01 10:00:00 +0900
 categories: [DevTools]
 tags: [nvidia, cosmos, physical-ai, diffusers, omni-model]
 image:
-  path: /assets/img/thumbnail/nvidia-cosmos-3-study-note.png
+  path: /assets/img/thumbnail/devtools.png
   alt: "NVIDIA Cosmos 3 공부 정리 | 통합 모델이라는 게 뭘 바꾸는 건지"
 ---
 

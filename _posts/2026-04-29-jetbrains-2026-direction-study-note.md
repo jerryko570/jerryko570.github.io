@@ -5,7 +5,7 @@ date: 2026-04-29 10:00:00 +0900
 categories: [DevTools]
 tags: [jetbrains, ide, ai, acp, workflow]
 image:
-  path: /assets/img/thumbnail/jetbrains-2026-direction-study-note.png
+  path: /assets/img/thumbnail/jetbrains.png
   alt: "JetBrains 2026 방향 공부 정리 | AI 코딩, 강요 아닌 선택지로"
 ---
 

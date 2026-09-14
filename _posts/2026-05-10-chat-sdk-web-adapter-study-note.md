@@ -5,7 +5,7 @@ date: 2026-05-10 10:00:00 +0900
 categories: [Frontend]
 tags: [vercel, chat-sdk, react, ai-sdk]
 image:
-  path: /assets/img/thumbnail/chat-sdk-web-adapter-study-note.png
+  path: /assets/img/thumbnail/react.png
   alt: "Chat SDK 웹 어댑터 공부 정리 | 브라우저 챗 UI가 이렇게 연결되는구나"
 ---
 

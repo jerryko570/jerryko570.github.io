@@ -5,7 +5,7 @@ date: 2026-05-22 10:00:00 +0900
 categories: [Design]
 tags: [figma, ai, design-system, agent]
 image:
-  path: /assets/img/thumbnail/figma-design-agent-study-note.png
+  path: /assets/img/thumbnail/figma.png
   alt: "Figma Design Agent 공부 정리 | 캔버스 안에 있다는 게 뭘 바꾸는 걸까"
 ---
 

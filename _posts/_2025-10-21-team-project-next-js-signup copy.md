@@ -4,7 +4,9 @@ title: "[Team Project] 회원가입(Signup) 구축기"
 date: 2025-10-21 00:00:00 +0900
 categories: [frontend]
 tags: [nextjs, signup, api]
-image: /assets/img/thumbnail/next-js.png
+image:
+  path: /assets/img/thumbnail/next-js.png
+  alt: "[Team Project] 회원가입(Signup) 구축기"
 ---
 
 

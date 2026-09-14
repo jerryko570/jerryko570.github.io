@@ -5,7 +5,7 @@ date: 2026-05-08 09:00:00 +0900
 categories: [DevTools]
 tags: [github, copilot, agentic-workflow, llm, observability]
 image:
-  path: /assets/img/thumbnail/github-agentic-token-efficiency-study.png
+  path: /assets/img/thumbnail/copilot.png
   alt: "GitHub 에이전트 워크플로우 토큰 효율화 공부 정리"
 ---
 

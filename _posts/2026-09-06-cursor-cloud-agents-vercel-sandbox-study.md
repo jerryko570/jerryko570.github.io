@@ -5,7 +5,7 @@ date: 2026-09-06 10:00:00 +0900
 categories: [Frontend]
 tags: [cursor, vercel, ai-agents, sandbox]
 image:
-  path: /assets/img/thumbnail/cursor-cloud-agents-vercel-sandbox-study.png
+  path: /assets/img/thumbnail/cursor.png
   alt: "Cursor Cloud Agents 공부 정리 | Vercel Sandbox에서 에이전트 돌리기"
 ---
 

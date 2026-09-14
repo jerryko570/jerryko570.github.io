@@ -5,7 +5,7 @@ date: 2026-06-25 10:00:00 +0900
 categories: [DevTools]
 tags: [kotlin, jetbrains, build-tools, cli]
 image:
-  path: /assets/img/thumbnail/kotlin-toolchain-0-11-study-note.png
+  path: /assets/img/thumbnail/jetbrains.png
   alt: "Kotlin Toolchain 0.11 공부 정리 | Amper는 어디로 갔을까"
 ---
 

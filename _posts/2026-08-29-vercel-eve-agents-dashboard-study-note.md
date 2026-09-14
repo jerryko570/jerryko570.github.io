@@ -5,7 +5,7 @@ date: 2026-08-29 09:00:00 +0900
 categories: [Frontend]
 tags: [vercel, ai-agents, mcp, dashboard]
 image:
-  path: /assets/img/thumbnail/vercel-eve-agents-dashboard-study-note.png
+  path: /assets/img/thumbnail/mcp.png
   alt: "Vercel 대시보드에서 에이전트 만들기 공부 정리"
 ---
 

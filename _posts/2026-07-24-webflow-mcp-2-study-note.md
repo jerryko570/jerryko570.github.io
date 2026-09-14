@@ -5,7 +5,7 @@ date: 2026-07-24 10:00:00 +0900
 categories: [Design]
 tags: [webflow, mcp, design-system]
 image:
-  path: /assets/img/thumbnail/webflow-mcp-2-study-note.png
+  path: /assets/img/thumbnail/mcp.png
   alt: "Webflow MCP 2.0 공부 정리 | 에이전트한테 맥락을 전달하는 구조"
 ---
 

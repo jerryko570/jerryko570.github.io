@@ -5,7 +5,7 @@ date: 2026-08-23 10:00:00 +0900
 categories: [Design]
 tags: [figma, agent, ux, design, product]
 image:
-  path: /assets/img/thumbnail/figma-sightlines-2-agent-design-note.png
+  path: /assets/img/thumbnail/figma.png
   alt: "Figma Sightlines 2호 정리 | 에이전트 제품 설계할 때 뭐가 중요한가"
 ---
 

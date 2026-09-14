@@ -5,7 +5,7 @@ date: 2026-09-14 10:00:00 +0900
 categories: [Frontend]
 tags: [vercel, ai-sdk, github-copilot]
 image:
-  path: /assets/img/thumbnail/ai-sdk-harnessagent-study.png
+  path: /assets/img/thumbnail/copilot.png
   alt: "AI SDK HarnessAgent 공부 정리 | 에이전트 바꿔도 코드 그대로라는 얘기"
 ---
 

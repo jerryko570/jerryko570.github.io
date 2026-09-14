@@ -5,7 +5,7 @@ date: 2026-09-13 10:00:00 +0900
 categories: [DesignCraft]
 tags: [nextjs, app-router, toss, frontend, rsc]
 image:
-  path: /assets/img/thumbnail/app-router-tossbank-case-note.png
+  path: /assets/img/thumbnail/next-js.png
   alt: "App Router 훑어보면서 든 생각 | 토스뱅크 검토 케이스 정리"
 ---
 

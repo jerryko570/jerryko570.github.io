@@ -13,7 +13,9 @@ tags:
   - microtask
   - runtime
 series: javascript
-image: /assets/img/thumbnail/javascript.png
+image:
+  path: /assets/img/thumbnail/javascript.png
+  alt: "JavaScript 이벤트 루프 이해하기 | 콜 스택·태스크 큐·마이크로태스크"
 ---
 
 ## **1. 이벤트 루프란?**

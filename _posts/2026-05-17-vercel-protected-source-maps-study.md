@@ -5,7 +5,7 @@ date: 2026-05-17 10:00:00 +0900
 categories: [Frontend]
 tags: [vercel, source-maps, debugging, security]
 image:
-  path: /assets/img/thumbnail/vercel-protected-source-maps-study.png
+  path: /assets/img/thumbnail/vercel.png
   alt: "Vercel Protected Source Maps 공부 정리 | 소스맵이 뭐길래 숨겨야 할까"
 ---
 

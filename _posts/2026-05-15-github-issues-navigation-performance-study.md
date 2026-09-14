@@ -5,7 +5,7 @@ date: 2026-05-15 09:00:00 +0900
 categories: [DevTools]
 tags: [github, performance, service-worker, indexeddb, caching]
 image:
-  path: /assets/img/thumbnail/github-issues-navigation-performance-study.png
+  path: /assets/img/thumbnail/github.png
   alt: "GitHub Issues 내비게이션 성능 최적화 공부 정리 | 캐시 먼저, 검증은 나중에"
 ---
 

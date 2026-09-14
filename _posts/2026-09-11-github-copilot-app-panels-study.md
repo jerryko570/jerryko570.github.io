@@ -5,7 +5,7 @@ date: 2026-09-11 09:00:00 +0900
 categories: [DevTools]
 tags: [github-copilot, ai-coding, developer-tools, code-review]
 image:
-  path: /assets/img/thumbnail/github-copilot-app-panels-study.png
+  path: /assets/img/thumbnail/copilot.png
   alt: "GitHub Copilot 앱 공부 정리 | Diff, 터미널, 브라우저를 한 화면에서"
 ---
 

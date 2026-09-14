@@ -5,8 +5,8 @@ date: 2026-04-22 20:00:00 +0900
 categories: [DevTools]
 tags: [automation, github-actions, claude-code]
 image:
-  path: /assets/img/thumbnail/automation.png
-  alt: "블로그 자동화 세팅"
+  path: /assets/img/thumbnail/claude.png
+  alt: "깃 블로그 자동화 세팅 | 1일마다 글이 올라가게 만들어봤다"
 ---
 
 블로그에 **1일마다 새 글이 자동으로 올라오게** 만들어봤다.

@@ -5,7 +5,7 @@ date: 2026-07-13 09:00:00 +0900
 categories: [DesignCraft]
 tags: [documentation, technical-writing, governance, toss]
 image:
-  path: /assets/img/thumbnail/toss-documentation-governance-study-note.png
+  path: /assets/img/thumbnail/toss.png
   alt: "토스 문서화 거버넌스 공부 정리 | 기준 없는 자동화가 헛도는 이유"
 ---
 

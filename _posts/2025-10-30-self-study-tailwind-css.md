@@ -4,7 +4,9 @@ title: "[셀프스터디] 테일윈드 CSS 딥다이브"
 date: 2025-10-30
 categories: [frontend, tailwind]
 tags: [tailwind, css, study, routine]
-image: /assets/img/thumbnail/self-study.png
+image:
+  path: /assets/img/thumbnail/tailwind.png
+  alt: "[셀프스터디] 테일윈드 CSS 딥다이브"
 ---
 
 ## 🧭 왜 Tailwind를 공부하게 되었나?

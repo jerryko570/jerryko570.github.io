@@ -5,7 +5,7 @@ date: 2026-07-03 10:00:00 +0900
 categories: [DevTools]
 tags: [github, security, secret-scanning]
 image:
-  path: /assets/img/thumbnail/github-secret-scanning-inbox-zero.png
+  path: /assets/img/thumbnail/github.png
   alt: "GitHub Secret Scanning 공부 정리 | 알림 2만 개 정리한 이야기"
 ---
 

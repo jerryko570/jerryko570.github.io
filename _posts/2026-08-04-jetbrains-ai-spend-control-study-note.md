@@ -5,7 +5,7 @@ date: 2026-08-04 09:00:00 +0900
 categories: [DevTools]
 tags: [jetbrains, ai, devtools, cli, governance]
 image:
-  path: /assets/img/thumbnail/jetbrains-ai-spend-control-study-note.png
+  path: /assets/img/thumbnail/jetbrains.png
   alt: "JetBrains AI 지출 통제 첫 시도 정리 | 개발자 자유와 비용 관리 사이에서"
 ---
 

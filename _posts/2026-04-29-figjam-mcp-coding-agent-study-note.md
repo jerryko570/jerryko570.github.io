@@ -5,7 +5,7 @@ date: 2026-04-29 10:00:00 +0900
 categories: [Design]
 tags: [figma, figjam, mcp, ai-agent, design-tools]
 image:
-  path: /assets/img/thumbnail/figjam-mcp-coding-agent-study-note.png
+  path: /assets/img/thumbnail/figjam.png
   alt: "FigJam MCP 연동 공부 정리 | 에이전트도 다이어그램이 필요했나"
 ---
 

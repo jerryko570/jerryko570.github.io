@@ -5,7 +5,7 @@ date: 2026-08-06 10:00:00 +0900
 categories: [DesignCraft]
 tags: [ai, workflow, design, ux]
 image:
-  path: /assets/img/thumbnail/ai-collaboration-workflow-study.png
+  path: /assets/img/thumbnail/design-craft.png
   alt: "AI 협업 워크플로우 공부 정리 | 만들던 사람에서 평가하는 사람으로"
 ---
 

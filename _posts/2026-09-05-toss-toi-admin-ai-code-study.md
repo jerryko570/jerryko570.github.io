@@ -5,7 +5,7 @@ date: 2026-09-05 10:00:00 +0900
 categories: [DesignCraft]
 tags: [toss, ai, react, admin, esbuild]
 image:
-  path: /assets/img/thumbnail/toss-toi-admin-ai-code-study.png
+  path: /assets/img/thumbnail/react.png
   alt: "TOI 공부 정리 | AI 코드를 어드민 화면으로 만들기까지의 결정들"
 ---
 

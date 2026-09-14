@@ -5,7 +5,7 @@ date: 2026-07-15 12:00:00 +0900
 categories: [DevTools]
 tags: [mps, jetbrains, ai-agent, mcp, dsl]
 image:
-  path: /assets/img/thumbnail/mps-2026-1-projectional-agent-toolkit.png
+  path: /assets/img/thumbnail/mcp.png
   alt: "MPS 2026.1 공부 정리 | AI 에이전트가 DSL 모델을 직접 읽는다는 것"
 ---
 

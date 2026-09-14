@@ -5,7 +5,7 @@ date: 2026-05-28 09:00:00 +0900
 categories: [DevTools]
 tags: [ai, agent, benchmark, kubernetes, llm]
 image:
-  path: /assets/img/thumbnail/itbench-aa-study-note.png
+  path: /assets/img/thumbnail/devtools.png
   alt: "ITBench-AA 공부 정리 | 에이전트 AI가 실무 IT 작업을 얼마나 잘할까"
 ---
 

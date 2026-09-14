@@ -5,7 +5,7 @@ date: 2026-07-05 09:00:00 +0900
 categories: [DesignCraft]
 tags: [es-toolkit, lodash, javascript, frontend, opensource]
 image:
-  path: /assets/img/thumbnail/es-toolkit-study-note.png
+  path: /assets/img/thumbnail/javascript.png
   alt: "es-toolkit 공부 정리 | lodash를 다시 만들기로 한 이유"
 ---
 

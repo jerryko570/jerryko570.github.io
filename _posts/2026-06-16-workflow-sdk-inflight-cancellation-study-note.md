@@ -5,7 +5,7 @@ date: 2026-06-16 10:00:00 +0900
 categories: [Frontend]
 tags: [vercel, workflow-sdk, abortsignal, web-api]
 image:
-  path: /assets/img/thumbnail/workflow-sdk-inflight-cancellation-study-note.png
+  path: /assets/img/thumbnail/vercel.png
   alt: "Workflow SDK inflight cancellation 공부 정리 | AbortSignal이 step 경계를 넘는다"
 ---
 

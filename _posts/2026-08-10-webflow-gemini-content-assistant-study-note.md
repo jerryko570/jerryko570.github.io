@@ -5,7 +5,7 @@ date: 2026-08-10 09:00:00 +0900
 categories: [Design]
 tags: [webflow, gemini, cms, ai]
 image:
-  path: /assets/img/thumbnail/webflow-gemini-content-assistant-study-note.png
+  path: /assets/img/thumbnail/webflow.png
   alt: "Webflow Gemini 콘텐츠 어시스턴트 공부 정리"
 ---
 

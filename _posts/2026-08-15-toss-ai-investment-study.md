@@ -5,8 +5,8 @@ date: 2026-08-15 10:00:00 +0900
 categories: [DesignCraft]
 tags: [ai, llm, product-design, toss]
 image:
-  path: /assets/img/thumbnail/toss-ai-investment-study.png
-  alt: "토스증권 AI 투자정보 서비스 공부 정리"
+  path: /assets/img/thumbnail/toss.png
+  alt: "토스증권 AI 투자정보 서비스 공부 정리 | 근거를 고르는 것부터 시작한다"
 ---
 
 토스 테크 블로그에서 흥미로운 글을 읽었다. 토스증권이 AI로 투자정보를 서비스하기까지의 과정을 세 개의 관문으로 정리한 글이었다. 처음엔 "또 AI 도입기겠지" 싶었는데, 읽으면서 생각이 좀 달라졌다.

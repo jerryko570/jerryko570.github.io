@@ -5,7 +5,7 @@ date: 2026-07-26 10:00:00 +0900
 categories: [Frontend]
 tags: [vercel, waf, blob, security]
 image:
-  path: /assets/img/thumbnail/vercel-waf-for-blob-study-note.png
+  path: /assets/img/thumbnail/vercel.png
   alt: "Vercel WAF for Blob 공부 정리 | Blob에도 방화벽이 붙는다고?"
 ---
 

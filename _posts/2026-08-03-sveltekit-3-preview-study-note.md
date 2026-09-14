@@ -5,7 +5,7 @@ date: 2026-08-03 10:00:00 +0900
 categories: [Frontend]
 tags: [svelte, sveltekit, frontend]
 image:
-  path: /assets/img/thumbnail/sveltekit-3-preview-study-note.png
+  path: /assets/img/thumbnail/svelte.png
   alt: "SvelteKit 3 프리뷰 공부 정리 | API가 꽤 많이 바뀌는 것 같다"
 ---
 

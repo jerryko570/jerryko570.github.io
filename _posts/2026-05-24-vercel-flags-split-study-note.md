@@ -5,7 +5,7 @@ date: 2026-05-24 10:00:00 +0900
 categories: [Frontend]
 tags: [vercel, feature-flags, ab-testing, cli]
 image:
-  path: /assets/img/thumbnail/vercel-flags-split-study-note.png
+  path: /assets/img/thumbnail/vercel.png
   alt: "Vercel flags split 명령어 훑어보면서 든 생각"
 ---
 

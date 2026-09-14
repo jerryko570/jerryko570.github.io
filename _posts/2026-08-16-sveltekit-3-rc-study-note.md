@@ -5,7 +5,7 @@ date: 2026-08-16 09:00:00 +0900
 categories: [Frontend]
 tags: [svelte, sveltekit, vite, frontend]
 image:
-  path: /assets/img/thumbnail/sveltekit-3-rc-study-note.png
+  path: /assets/img/thumbnail/svelte.png
   alt: "SvelteKit 3 RC 훑어보면서 든 생각"
 ---
 

@@ -5,7 +5,7 @@ date: 2026-08-05 10:00:00 +0900
 categories: [Design]
 tags: [figma, design, collaboration, frontend, workflow]
 image:
-  path: /assets/img/thumbnail/figma-nested-folders-code-as-proposal.png
+  path: /assets/img/thumbnail/figma.png
   alt: "Figma nested folders 공부 정리 | 코드를 제안서로 쓴다는 것"
 ---
 

@@ -5,7 +5,7 @@ date: 2026-05-21 12:00:00 +0900
 categories: [DevTools]
 tags: [kotlin, jetbrains, productivity, typescript]
 image:
-  path: /assets/img/thumbnail/kotlin-productivity-data-study.png
+  path: /assets/img/thumbnail/typescript.png
   alt: "Kotlin 생산성 데이터 공부 정리 | 설계가 속도를 만든다는 게 어떤 의미인지"
 ---
 

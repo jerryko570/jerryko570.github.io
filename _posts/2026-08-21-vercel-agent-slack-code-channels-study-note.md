@@ -5,7 +5,7 @@ date: 2026-08-21 10:00:00 +0900
 categories: [Frontend]
 tags: [vercel, slack, ai-agent, vercel-agent]
 image:
-  path: /assets/img/thumbnail/vercel-agent-slack-code-channels-study-note.png
+  path: /assets/img/thumbnail/vercel.png
   alt: "Vercel Agent Slack 코드 채널 공부 정리 | 팀 대화 안으로 들어온 에이전트"
 ---
 

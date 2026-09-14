@@ -5,7 +5,7 @@ date: 2026-09-01 09:00:00 +0900
 categories: [DesignCraft]
 tags: [figma, design-tools, ai, ux, spec]
 image:
-  path: /assets/img/thumbnail/specsaver-figma-plugin-study-note.png
+  path: /assets/img/thumbnail/figma.png
   alt: "SpecSaver 공부 정리 | 스펙 작업에 AI를 어떻게 끼워 넣었나"
 ---
 

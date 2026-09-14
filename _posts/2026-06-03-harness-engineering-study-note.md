@@ -5,7 +5,7 @@ date: 2026-06-03 09:00:00 +0900
 categories: [DesignCraft]
 tags: [ai, agent, harness-engineering, context-engineering]
 image:
-  path: /assets/img/thumbnail/harness-engineering-study-note.png
+  path: /assets/img/thumbnail/design-craft.png
   alt: "하네스 엔지니어링 공부 정리 | 에이전트보다 환경이 어렵다"
 ---
 
