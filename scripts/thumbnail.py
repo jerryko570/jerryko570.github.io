@@ -37,9 +37,15 @@ TEXT_COLOR = (255, 255, 255)
 # Line height — Figma 사양 90% (폰트 사이즈의 0.9배)
 LINE_HEIGHT_RATIO = 0.9
 
-# 폰트 후보 (워크플로우에서 Pretendard 설치, 없으면 Noto fallback)
+# 폰트 후보 (레포 번들 Pretendard ExtraBold를 최우선 → 로컬·CI 동일 굵기 보장)
 # macOS 로컬에서도 동작하도록 시스템 폰트 경로 다수 포함
+_BUNDLED_PRETENDARD = str(
+    Path(__file__).resolve().parent.parent / "assets" / "fonts" / "Pretendard-ExtraBold.otf"
+)
 FONT_CANDIDATES = [
+    # 0. 레포에 번들된 Pretendard ExtraBold (환경 무관, 항상 extra-bold)
+    _BUNDLED_PRETENDARD,
+
     # 1. 워크플로우에서 설치하는 Pretendard (Linux)
     "/usr/share/fonts/truetype/pretendard/Pretendard-ExtraBold.otf",
 

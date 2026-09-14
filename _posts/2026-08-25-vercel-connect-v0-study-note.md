@@ -5,7 +5,7 @@ date: 2026-08-25 12:00:00 +0900
 categories: [Frontend]
 tags: [v0, vercel, vercel-connect, api]
 image:
-  path: /assets/img/thumbnail/v0.png
+  path: /assets/img/thumbnail/vercel.png
   alt: "Vercel Connect 훑어보면서 든 생각 | v0 앱을 Slack이랑 Google에 연결하는 방식"
 ---
 
