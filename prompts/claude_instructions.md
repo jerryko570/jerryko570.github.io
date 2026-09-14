@@ -178,46 +178,45 @@ WebFetch(
 
 ---
 
-## Step 6: 썸네일 자동 생성
+## Step 6: 썸네일 (주제별 공유 카드)
 
-`scripts/make_thumbnail.py`를 호출해서 **글 전용 썸네일**을 만드세요.
-라벨은 **출처 한 단어**(Webflow, Toss, React 등)로 떨어지도록 설계됨.
+**포스트마다 새 이미지를 만들지 마세요.** `scripts/pick_thumbnail.py`가 글의
+주제(source/태그)를 보고 **주제별 공유 썸네일**을 골라줍니다. 같은 주제의 글은
+항상 같은 카드 1장을 재사용해요 (색·이미지 일관, 파일이 쌓이지 않음).
 
 ```bash
-python scripts/make_thumbnail.py \
-  "<한글 title>" \
-  "<category.display_name>" \
-  "<category.color_start>" \
-  "<category.color_end>" \
-  "assets/img/thumbnail/<slug>.png" \
-  "<주요 키워드 1개>" \
+python scripts/pick_thumbnail.py \
+  "<candidates.json의 source 필드>" \
   "<tag1,tag2,tag3>" \
-  "<candidates.json의 source 필드>"
+  "<한글 title>" \
+  "<category.display_name>"
 ```
 
-**예시 (Webflow 글)**:
+**예시 (Toss 글)**:
 
 ```bash
-python scripts/make_thumbnail.py \
-  "Webflow Claude Connector 공부 정리" \
-  "Design" \
-  "#a855f7" "#ec4899" \
-  "assets/img/thumbnail/webflow-claude-connector-study-note.png" \
-  "webflow" \
-  "webflow,claude,mcp" \
-  "Webflow Blog"
+python scripts/pick_thumbnail.py \
+  "Toss Tech" \
+  "toss,qa,frontend" \
+  "토스 QA 자동화 공부 정리" \
+  "Frontend"
+# → 표준출력: /assets/img/thumbnail/toss.png
 ```
 
-**중요**: 마지막 인자(`source`)는 **반드시 `candidates.json`에 적힌 그대로** 넘기세요.
-`"Webflow Blog"`, `"Toss Tech"`, `"React Blog"`, `"Anthropic News"` 같은 식.
+동작:
 
-이 값이 `keyword_extractor.py`의 `SOURCE_LABEL` 매핑과 가장 정확히 매칭됩니다.
-스크립트가 출처를 보고 한 단어 라벨(예: `Webflow`)로 단색 카드를 만들어요.
+- 표준출력으로 **선택된 썸네일의 웹 경로**(`/assets/img/thumbnail/<주제>.png`)가 한 줄 나옵니다.
+- 해당 주제 카드가 없으면 **자동으로 한 번만** 생성되고, 이미 있으면 그대로 재사용됩니다(색 고정).
+- 예: 모든 Toss 글 → `/assets/img/thumbnail/toss.png` (항상 동일), 모든 Figma 글 → `figma.png` 등.
 
-**프론트매터의 `image.path`는 `/assets/img/thumbnail/<slug>.png`** 로 적습니다 (slug는 Step 5에서 정한 것).
+**중요**:
 
-> 이 시스템은 Jerry가 지정한 톤(첨부 스샷의 `Automation GitBlog`/`Claude` 카드와 동일)에 맞춰 설계됨.
-> source가 매칭 안 되면 tags/title 키워드로 폴백, 그것도 안 되면 카테고리 폴백.
+- 첫 인자(`source`)는 **반드시 `candidates.json`에 적힌 그대로** 넘기세요.
+  `"Webflow Blog"`, `"Toss Tech"`, `"React Blog"`, `"Anthropic News"` 같은 식.
+- **프론트매터의 `image.path`에는 이 스크립트가 출력한 경로를 그대로** 넣으세요
+  (slug별 새 파일을 만들지 않습니다).
+
+> source가 매칭 안 되면 tags/title 키워드로 폴백, 그것도 안 되면 카테고리 폴백 카드를 씁니다.
 
 ---
 
@@ -233,7 +232,7 @@ date: YYYY-MM-DD HH:MM:SS +0900
 categories: [<카테고리>]
 tags: [<tag1>, <tag2>, <tag3>]
 image:
-  path: /assets/img/thumbnail/<Step 6에서 고른 파일명>.png
+  path: <Step 6의 pick_thumbnail.py가 출력한 경로 그대로>
   alt: "<한글 title>"
 ---
 
@@ -321,7 +320,7 @@ JSON
 - [ ] 1500자 내외 학습 노트 작성
 - [ ] 프론트매터 전부 쌍따옴표
 - [ ] 본문 자기 검증
-- [ ] **썸네일 자동 생성** (`make_thumbnail.py` 호출, slug.png 생성)
+- [ ] **주제 공유 썸네일 선택** (`pick_thumbnail.py` 호출, 출력 경로를 image.path에 사용)
 - [ ] `_posts/`에 저장
 - [ ] **`update_state.py` 실행 (heredoc JSON)**
 - [ ] 완료 보고
