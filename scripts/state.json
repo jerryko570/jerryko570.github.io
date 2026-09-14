@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -146,17 +146,12 @@
     "c45550bed620f8f1",
     "53dc2a824ef94f8a",
     "5cd42335680f0dad",
-    "1d92735c96b930d1"
+    "1d92735c96b930d1",
+    "da7536dad478973b"
   ],
-  "posts_generated": 146,
-  "last_run": "2026-09-13T04:14:53.805018+00:00",
+  "posts_generated": 147,
+  "last_run": "2026-09-14T04:23:40.566285+00:00",
   "history": [
-    {
-      "date": "2026-07-24",
-      "category": "design-tools",
-      "title": "Webflow MCP 2.0 공부 정리 | 에이전트한테 맥락을 전달하는 구조",
-      "source_url": "https://webflowmarketingmain.com/blog/mcp-2-features"
-    },
     {
       "date": "2026-07-25",
       "category": "design-craft",
@@ -450,6 +445,12 @@
       "category": "design-craft",
       "title": "App Router 훑어보면서 든 생각 | 토스뱅크 검토 케이스 정리",
       "source_url": "https://toss.tech/article/52999"
+    },
+    {
+      "date": "2026-09-14",
+      "category": "frontend",
+      "title": "AI SDK HarnessAgent 공부 정리 | 에이전트 바꿔도 코드 그대로라는 얘기",
+      "source_url": "https://vercel.com/changelog/github-copilot-ai-sdk-harness-adapter"
     }
   ]
 }
