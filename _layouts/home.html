@@ -6,8 +6,21 @@ refactor: true
 {% include lang.html %}
 
 {% comment %} '끄적임' 카테고리 글은 홈 피드에서 제외하고 전용 탭에서만 노출 {% endcomment %}
-{% assign all_pinned = site.posts | where: 'pin', 'true' | where_exp: 'item', 'item.categories contains "끄적임" == false' %}
-{% assign all_normal = site.posts | where_exp: 'item', 'item.pin != true and item.hidden != true' | where_exp: 'item', 'item.categories contains "끄적임" == false' %}
+{% assign all_pinned_raw = site.posts | where: 'pin', 'true' %}
+{% assign all_pinned = '' | split: '' %}
+{% for item in all_pinned_raw %}
+  {% unless item.categories contains '끄적임' %}
+    {% assign all_pinned = all_pinned | push: item %}
+  {% endunless %}
+{% endfor %}
+
+{% assign all_normal_raw = site.posts | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
+{% assign all_normal = '' | split: '' %}
+{% for item in all_normal_raw %}
+  {% unless item.categories contains '끄적임' %}
+    {% assign all_normal = all_normal | push: item %}
+  {% endunless %}
+{% endfor %}
 
 {% assign posts = '' | split: '' %}
 
