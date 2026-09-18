@@ -5,50 +5,20 @@ refactor: true
 
 {% include lang.html %}
 
-{% comment %} '끄적임' 카테고리 글은 홈 피드에서 제외하고 전용 탭에서만 노출 {% endcomment %}
-{% assign all_pinned = site.posts | where: 'pin', 'true' | where_exp: 'item', 'item.categories contains "끄적임" == false' %}
-{% assign all_normal = site.posts | where_exp: 'item', 'item.pin != true and item.hidden != true' | where_exp: 'item', 'item.categories contains "끄적임" == false' %}
+{% comment %} '끄적임' 카테고리에 속한 글만 모아서 보여주는 전용 탭 {% endcomment %}
+{% assign posts = site.posts | where_exp: 'item', 'item.categories contains "끄적임"' %}
 
-{% assign posts = '' | split: '' %}
-
-<!-- Get pinned posts on current page -->
-
-{% assign visible_start = paginator.page | minus: 1 | times: paginator.per_page %}
-{% assign visible_end = visible_start | plus: paginator.per_page %}
-
-{% if all_pinned.size > visible_start %}
-  {% if all_pinned.size > visible_end %}
-    {% assign pinned_size = paginator.per_page %}
-  {% else %}
-    {% assign pinned_size = all_pinned.size | minus: visible_start %}
-  {% endif %}
-
-  {% for i in (visible_start..all_pinned.size) limit: pinned_size %}
-    {% assign posts = posts | push: all_pinned[i] %}
-  {% endfor %}
-{% else %}
-  {% assign pinned_size = 0 %}
-{% endif %}
-
-<!-- Get normal posts on current page -->
-
-{% assign normal_size = paginator.posts | size | minus: pinned_size %}
-
-{% if normal_size > 0 %}
-  {% if pinned_size > 0 %}
-    {% assign normal_start = 0 %}
-  {% else %}
-    {% assign normal_start = visible_start | minus: all_pinned.size %}
-  {% endif %}
-
-  {% assign normal_end = normal_start | plus: normal_size | minus: 1 %}
-
-  {% for i in (normal_start..normal_end) %}
-    {% assign posts = posts | push: all_normal[i] %}
-  {% endfor %}
+{% if page.content != '' %}
+  <div class="px-1 mb-4">
+    {{ content }}
+  </div>
 {% endif %}
 
 <div id="post-list" class="flex-grow-1 px-xl-1">
+  {% if posts.size == 0 %}
+    <p class="text-muted">아직 끄적인 글이 없어. 곧 채워질 예정!</p>
+  {% endif %}
+
   {% for post in posts %}
     <article class="card-wrapper card">
       <a href="{{ post.url | relative_url }}" class="post-preview row g-0 flex-md-row-reverse">
@@ -100,13 +70,6 @@ refactor: true
                   </span>
                 {% endif %}
               </div>
-
-              {% if post.pin %}
-                <div class="pin ms-1">
-                  <i class="fas fa-thumbtack fa-fw"></i>
-                  <span>{{ site.data.locales[lang].post.pin_prompt }}</span>
-                </div>
-              {% endif %}
             </div>
             <!-- .post-meta -->
           </div>
@@ -117,7 +80,3 @@ refactor: true
   {% endfor %}
 </div>
 <!-- #post-list -->
-
-{% if paginator.total_pages > 1 %}
-  {% include post-paginator.html %}
-{% endif %}
