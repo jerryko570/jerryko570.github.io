@@ -1,5 +1,5 @@
 ---
-title: 끄적임
+title: Log
 layout: scribble
 icon: fas fa-feather-pointed
 order: 1
