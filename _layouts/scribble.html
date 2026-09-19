@@ -5,8 +5,8 @@ refactor: true
 
 {% include lang.html %}
 
-{% comment %} '끄적임' 카테고리에 속한 글만 모아서 보여주는 전용 탭 {% endcomment %}
-{% assign posts = site.posts | where_exp: 'item', 'item.categories contains "끄적임"' %}
+{% comment %} 'scribbles' 컬렉션 글만 모아서 보여주는 전용 탭 (최신순) {% endcomment %}
+{% assign posts = site.scribbles | sort: 'date' | reverse %}
 
 {% if page.content != '' %}
   <div class="px-1 mb-4">
