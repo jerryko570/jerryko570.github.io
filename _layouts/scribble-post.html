@@ -1,0 +1,32 @@
+---
+layout: default
+refactor: true
+---
+
+{% include lang.html %}
+
+<article class="px-1">
+  <header>
+    <h1 data-toc-skip>{{ page.title }}</h1>
+    {% if page.description %}
+      <p class="post-desc fw-light mb-4">{{ page.description }}</p>
+    {% endif %}
+
+    <div class="post-meta text-muted mb-4">
+      <span>
+        <i class="far fa-calendar fa-fw me-1"></i>
+        {% include datetime.html date=page.date lang=lang %}
+      </span>
+    </div>
+  </header>
+
+  <div class="content">
+    {{ content }}
+  </div>
+</article>
+
+<div class="post-tail-wrapper text-muted">
+  <a href="{{ '/scribble/' | relative_url }}" class="btn btn-outline-primary btn-sm">
+    <i class="fas fa-arrow-left fa-fw me-1"></i>끄적임 목록으로
+  </a>
+</div>
