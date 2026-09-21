@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -153,17 +153,12 @@
     "29263ced9089ad9f",
     "46fdf20c257a9c4d",
     "c646b213c0be5113",
-    "951cc2d99ee7083e"
+    "951cc2d99ee7083e",
+    "4ea2f3b2573794b7"
   ],
-  "posts_generated": 153,
-  "last_run": "2026-09-20T04:26:13.751099+00:00",
+  "posts_generated": 154,
+  "last_run": "2026-09-21T04:23:33.869088+00:00",
   "history": [
-    {
-      "date": "2026-07-31",
-      "category": "dev-tools",
-      "title": "GitHub Copilot 스택 세션 공부 정리",
-      "source_url": "https://github.blog/ai-and-ml/github-copilot/stacked-sessions-and-pull-requests-in-the-github-copilot-app/"
-    },
     {
       "date": "2026-08-01",
       "category": "design-tools",
@@ -457,6 +452,12 @@
       "category": "design-tools",
       "title": "Figma Weave 커뮤니티 퍼블리싱 공부 정리 | AI 툴을 누구나 올릴 수 있게 됐다",
       "source_url": "https://www.figma.com/blog/try-these-5-weave-tools-and-share-your-own/"
+    },
+    {
+      "date": "2026-09-21",
+      "category": "design-craft",
+      "title": "토스 잠금 저금통 케이스 공부 정리",
+      "source_url": "https://toss.tech/article/lockbank"
     }
   ]
 }
