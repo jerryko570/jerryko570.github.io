@@ -10,9 +10,12 @@ categories: [Log]
 
 tags: [일상, 생각, 블로그, routine]
 
+image:
+  path: /assets/img/sunlove/sunlove_og.png
+  alt: "SUNLOVE, TOUR 브랜드 이미지"
+
 ---
 
-![SUNLOVE, TOUR 브랜드 이미지](/assets/img/sunlove/sunlove_og.png)
 ![SUNLOVE, TOUR 그래픽 이미지](/assets/img/sunlove/sunlove-graphic.jpg)
 
 ## 요즘 최애 스트릿 브랜드, 썬러브 (sunlove-tour)
