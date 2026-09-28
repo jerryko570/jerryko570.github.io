@@ -15,7 +15,7 @@ tags: [일상, 생각, 블로그, routine]
 ![SUNLOVE, TOUR 브랜드 이미지](/assets/img/sunlove/sunlove_og.png)
 
 ## 요즘 최애 스트릿 브랜드, 썬러브 (sunlove-tour)
-![SUNLOVE, TOUR 브랜드 이미지](/assets/img/sunlove/sunlove-graphic.png)
+![SUNLOVE, TOUR 브랜드 이미지](/assets/img/sunlove/sunlove-graphic.jpg)
 
 골프를 좋아했던 디스이즈네버댓 출신 디렉터가 자신의 경험과 취향에서 시작한 브랜드라고 한다.  
 시장의 빈틈을 찾기보다 자신이 좋아하고 잘 아는 것에서 출발했다는 점이 흥미로웠고,  
