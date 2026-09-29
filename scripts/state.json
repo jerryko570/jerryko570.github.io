@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -161,17 +161,12 @@
     "4b70283c89efab6d",
     "c44ffca2a20287d1",
     "a2908e03cf24041e",
-    "e3571e2815a7d254"
+    "e3571e2815a7d254",
+    "189c2caaff1f018f"
   ],
-  "posts_generated": 161,
-  "last_run": "2026-09-28T04:46:22.271705+00:00",
+  "posts_generated": 162,
+  "last_run": "2026-09-29T05:15:24.115523+00:00",
   "history": [
-    {
-      "date": "2026-08-09",
-      "category": "dev-tools",
-      "title": "TutorMoments 훑어보면서 | AI 튜터가 언제 도와줄지 어떻게 판단하나",
-      "source_url": "https://huggingface.co/blog/allenai/tutormoments"
-    },
     {
       "date": "2026-08-10",
       "category": "design-tools",
@@ -465,6 +460,12 @@
       "category": "design-tools",
       "title": "Webflow Cloud 사용자 인증 공부 정리 | 같은 사이트 안에서 멤버십까지",
       "source_url": "https://webflowmarketingmain.com/blog/user-authentication-webflow-site-visitors"
+    },
+    {
+      "date": "2026-09-29",
+      "category": "design-craft",
+      "title": "토스 자산관리 UI 개선 사례 공부 정리 | 구조를 바꿔야 풀리는 문제들",
+      "source_url": "https://toss.tech/article/asset_management"
     }
   ]
 }
