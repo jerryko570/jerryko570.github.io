@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -162,17 +162,12 @@
     "c44ffca2a20287d1",
     "a2908e03cf24041e",
     "e3571e2815a7d254",
-    "189c2caaff1f018f"
+    "189c2caaff1f018f",
+    "986e709af0c5d5c9"
   ],
-  "posts_generated": 162,
-  "last_run": "2026-09-29T05:15:24.115523+00:00",
+  "posts_generated": 163,
+  "last_run": "2026-09-30T05:01:07.634090+00:00",
   "history": [
-    {
-      "date": "2026-08-10",
-      "category": "design-tools",
-      "title": "Webflow Gemini 콘텐츠 어시스턴트 공부 정리",
-      "source_url": "https://webflowmarketingmain.com/blog/gemini-content-assistant-webflow"
-    },
     {
       "date": "2026-08-11",
       "category": "design-craft",
@@ -466,6 +461,12 @@
       "category": "design-craft",
       "title": "토스 자산관리 UI 개선 사례 공부 정리 | 구조를 바꿔야 풀리는 문제들",
       "source_url": "https://toss.tech/article/asset_management"
+    },
+    {
+      "date": "2026-09-30",
+      "category": "frontend",
+      "title": "Vercel Connect 서비스 제출 공부 정리 | 커넥터를 직접 올릴 수 있게 됐다",
+      "source_url": "https://vercel.com/changelog/vercel-connect-service-submissions"
     }
   ]
 }
