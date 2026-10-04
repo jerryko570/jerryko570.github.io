@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -166,17 +166,12 @@
     "986e709af0c5d5c9",
     "d8b7ee0502c26764",
     "c6fc564a4e463caa",
-    "7d8b7f68b58ca578"
+    "7d8b7f68b58ca578",
+    "d2681c53903b855d"
   ],
-  "posts_generated": 166,
-  "last_run": "2026-10-03T04:47:48.498107+00:00",
+  "posts_generated": 167,
+  "last_run": "2026-10-04T05:20:54.264360+00:00",
   "history": [
-    {
-      "date": "2026-08-14",
-      "category": "design-tools",
-      "title": "Figma Skills 공부 정리 | 에이전트에게 내 방식을 가르칠 수 있다면",
-      "source_url": "https://www.figma.com/blog/try-these-10-skills-and-show-off-your-own/"
-    },
     {
       "date": "2026-08-15",
       "category": "design-craft",
@@ -470,6 +465,12 @@
       "category": "design-craft",
       "title": "9인조 다람쥐 아이돌 공부 정리 | 캐릭터가 인터페이스가 될 때",
       "source_url": "https://toss.tech/article/chipmunk"
+    },
+    {
+      "date": "2026-10-04",
+      "category": "frontend",
+      "title": "Jev 공부 정리 | LLM이 분류기가 된다는 건 어떤 의미인가",
+      "source_url": "https://vercel.com/blog/jev-for-python-engineers"
     }
   ]
 }
