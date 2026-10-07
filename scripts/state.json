@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -169,17 +169,12 @@
     "7d8b7f68b58ca578",
     "d2681c53903b855d",
     "c38af6e5cae43e23",
-    "cd3e60f84e01b8ce"
+    "cd3e60f84e01b8ce",
+    "7bd7edb57d88c679"
   ],
-  "posts_generated": 169,
-  "last_run": "2026-10-06T05:52:00.431021+00:00",
+  "posts_generated": 170,
+  "last_run": "2026-10-07T05:22:24.355166+00:00",
   "history": [
-    {
-      "date": "2026-08-17",
-      "category": "dev-tools",
-      "title": "Compose HTML SSR 공부 정리 | JVM에서 HTML을 Kotlin 함수로 렌더링한다는 게 어떤 건지",
-      "source_url": "https://blog.jetbrains.com/kotlin/2026/08/exploring-compose-html-for-server-side-rendering/"
-    },
     {
       "date": "2026-08-19",
       "category": "design-tools",
@@ -473,6 +468,12 @@
       "category": "design-tools",
       "title": "Webflow MCP 업데이트 공부 정리 | 에이전트가 애니메이션을 만든다는 게 뭔 뜻일까",
       "source_url": "https://webflowmarketingmain.com/blog/interactions-gsap-mcp"
+    },
+    {
+      "date": "2026-10-07",
+      "category": "design-craft",
+      "title": "도메인 없던 디자이너가 팀 기준을 바꾼 케이스 공부 정리",
+      "source_url": "https://toss.tech/article/remittance_transfer"
     }
   ]
 }
