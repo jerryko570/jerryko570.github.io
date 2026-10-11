@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -173,17 +173,12 @@
     "7bd7edb57d88c679",
     "9241bb628f048442",
     "49dcb2798a7df375",
-    "e49c1724b343e165"
+    "e49c1724b343e165",
+    "3aa8b71775a73065"
   ],
-  "posts_generated": 173,
-  "last_run": "2026-10-10T05:18:47.023198+00:00",
+  "posts_generated": 174,
+  "last_run": "2026-10-11T05:09:42.331209+00:00",
   "history": [
-    {
-      "date": "2026-08-22",
-      "category": "dev-tools",
-      "title": "에이전틱 개발, 스펙보다 검증이 먼저라는 얘기 공부 정리",
-      "source_url": "https://stackoverflow.blog/2026/08/21/dispatches-from-o-reilly-the-right-amount-of-spec-for-agentic-development/"
-    },
     {
       "date": "2026-08-23",
       "category": "design-tools",
@@ -477,6 +472,12 @@
       "category": "design-tools",
       "title": "AI 팀 도입 리추얼 공부 정리 | 혼자 쓰는 것과 팀이 쓰는 건 어떻게 다를까",
       "source_url": "https://www.figma.com/blog/4-team-rituals-that-drive-ai-adoption/"
+    },
+    {
+      "date": "2026-10-11",
+      "category": "design-craft",
+      "title": "Figma Make 프로토타이핑 공부 정리 | 컨셉과 화면 사이 어딘가",
+      "source_url": "https://story.pxd.co.kr/1926"
     }
   ]
 }
