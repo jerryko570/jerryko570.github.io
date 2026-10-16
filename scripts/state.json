@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -178,17 +178,12 @@
     "6fda1f7c05cc391a",
     "23216cfbe10c8c92",
     "2d2ae1e1222ac53a",
-    "bb4442634053b371"
+    "bb4442634053b371",
+    "5f9d5716f578b19c"
   ],
-  "posts_generated": 178,
-  "last_run": "2026-10-15T04:07:32.774468+00:00",
+  "posts_generated": 179,
+  "last_run": "2026-10-16T04:03:52.431416+00:00",
   "history": [
-    {
-      "date": "2026-08-27",
-      "category": "design-tools",
-      "title": "Webflow Skills 공부 정리 | Codex랑 ChatGPT에서 뭐가 달라지는 걸까",
-      "source_url": "https://webflowmarketingmain.com/blog/webflow-is-now-available-in-codex-and-chatgpt"
-    },
     {
       "date": "2026-08-28",
       "category": "design-craft",
@@ -482,6 +477,12 @@
       "category": "design-craft",
       "title": "토스 RPG 적금 케이스 공부 정리",
       "source_url": "https://toss.tech/article/rpg-savings"
+    },
+    {
+      "date": "2026-10-16",
+      "category": "frontend",
+      "title": "Vercel 백엔드 확장 공부 정리 | Python, 컨테이너, Daemon까지",
+      "source_url": "https://vercel.com/blog/backends-on-vercel-python-containers-and-daemons"
     }
   ]
 }
