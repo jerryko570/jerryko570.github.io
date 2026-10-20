@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -182,17 +182,12 @@
     "5f9d5716f578b19c",
     "4c4f7a5668584764",
     "0c6286e4c6baaf98",
-    "a0ffe9da4bda811e"
+    "a0ffe9da4bda811e",
+    "797342f077d61dba"
   ],
-  "posts_generated": 182,
-  "last_run": "2026-10-19T04:09:58.866208+00:00",
+  "posts_generated": 183,
+  "last_run": "2026-10-20T04:20:39.030925+00:00",
   "history": [
-    {
-      "date": "2026-08-31",
-      "category": "design-tools",
-      "title": "Figma MCP 워크플로우 공부 정리 | 에이전트에게 맥락을 준다는 것",
-      "source_url": "https://www.figma.com/blog/workflow-lab-moving-between-design-and-code-with-agents/"
-    },
     {
       "date": "2026-09-01",
       "category": "design-craft",
@@ -486,6 +481,12 @@
       "category": "design-craft",
       "title": "토스 DW팀 Airflow 이관 공부 정리 | 멈추지 않고 옮긴다는 게 어떤 건지",
       "source_url": "https://toss.tech/article/dw-airflow-migration"
+    },
+    {
+      "date": "2026-10-20",
+      "category": "frontend",
+      "title": "Mercury 3 공부 정리 | 텍스트도 diffusion으로 만든다는 것",
+      "source_url": "https://vercel.com/changelog/mercury-3-now-available-on-ai-gateway"
     }
   ]
 }
