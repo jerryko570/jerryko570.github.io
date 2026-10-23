@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -185,17 +185,12 @@
     "a0ffe9da4bda811e",
     "797342f077d61dba",
     "806b1f92932cb664",
-    "10e67738685ec539"
+    "10e67738685ec539",
+    "20d38d50bbb831d3"
   ],
-  "posts_generated": 185,
-  "last_run": "2026-10-22T04:10:12.938997+00:00",
+  "posts_generated": 186,
+  "last_run": "2026-10-23T04:19:16.917269+00:00",
   "history": [
-    {
-      "date": "2026-09-03",
-      "category": "dev-tools",
-      "title": "AI 개발 신조어 공부 정리 | 루프, 하네스, 스쿼드가 다 뭔 뜻이야",
-      "source_url": "https://github.blog/ai-and-ml/decoding-the-new-ai-lingo-loops-harnesses-squads-hill-climbing-oh-my/"
-    },
     {
       "date": "2026-09-04",
       "category": "design-tools",
@@ -489,6 +484,12 @@
       "category": "design-tools",
       "title": "Webflow Campaigns 공부 정리 | 마케터가 직접 만든다는 게 어디까지인지",
       "source_url": "https://webflowmarketingmain.com/blog/campaigns-launch"
+    },
+    {
+      "date": "2026-10-23",
+      "category": "design-craft",
+      "title": "로그 정의 기준을 AI 스킬로 만들기 공부 정리",
+      "source_url": "https://toss.tech/article/dataops-log-definition-skill"
     }
   ]
 }
