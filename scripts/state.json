@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -186,17 +186,12 @@
     "797342f077d61dba",
     "806b1f92932cb664",
     "10e67738685ec539",
-    "20d38d50bbb831d3"
+    "20d38d50bbb831d3",
+    "d91d3fc9b564d6b5"
   ],
-  "posts_generated": 186,
-  "last_run": "2026-10-23T04:19:16.917269+00:00",
+  "posts_generated": 187,
+  "last_run": "2026-10-24T04:05:51.333673+00:00",
   "history": [
-    {
-      "date": "2026-09-04",
-      "category": "design-tools",
-      "title": "Webflow Conf 2026 발표 공부 정리 | Source랑 Campaigns가 뭔지 알아봤다",
-      "source_url": "https://webflowmarketingmain.com/blog/webflow-conf-2026-announcements"
-    },
     {
       "date": "2026-09-05",
       "category": "design-craft",
@@ -490,6 +485,12 @@
       "category": "design-craft",
       "title": "로그 정의 기준을 AI 스킬로 만들기 공부 정리",
       "source_url": "https://toss.tech/article/dataops-log-definition-skill"
+    },
+    {
+      "date": "2026-10-24",
+      "category": "frontend",
+      "title": "Vercel Agent 권한 설계 공부 정리",
+      "source_url": "https://vercel.com/blog/how-vercel-agent-accesses-production-safely"
     }
   ]
 }
