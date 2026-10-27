@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -189,17 +189,12 @@
     "20d38d50bbb831d3",
     "d91d3fc9b564d6b5",
     "ee4c22366ef7e7ab",
-    "ef87398f001c86a1"
+    "ef87398f001c86a1",
+    "faa0ce20bdc0d13d"
   ],
-  "posts_generated": 189,
-  "last_run": "2026-10-26T04:11:58.765262+00:00",
+  "posts_generated": 190,
+  "last_run": "2026-10-27T04:31:04.553976+00:00",
   "history": [
-    {
-      "date": "2026-09-07",
-      "category": "dev-tools",
-      "title": "HydraFusion 공부 정리 | 여러 모델을 섞으면 뭐가 달라질까",
-      "source_url": "https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/"
-    },
     {
       "date": "2026-09-08",
       "category": "design-tools",
@@ -493,6 +488,12 @@
       "category": "design-tools",
       "title": "Webflow Cloud RSS 피드 공부 정리 | CMS 필드 설계가 출력을 정한다",
       "source_url": "https://webflowmarketingmain.com/blog/webflow-blog-rss-newsletter-feed"
+    },
+    {
+      "date": "2026-10-27",
+      "category": "design-craft",
+      "title": "AI 크롤러 공부 정리 | 학습용이랑 검색용이 다르다",
+      "source_url": "https://story.pxd.co.kr/1930"
     }
   ]
 }
