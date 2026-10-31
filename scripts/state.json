@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -193,17 +193,12 @@
     "faa0ce20bdc0d13d",
     "008512bdedf0ef91",
     "8d24f5677c199a45",
-    "119c15f79ce55d70"
+    "119c15f79ce55d70",
+    "ae9b4b0a79ed865d"
   ],
-  "posts_generated": 193,
-  "last_run": "2026-10-30T05:13:32.728658+00:00",
+  "posts_generated": 194,
+  "last_run": "2026-10-31T05:00:30.563117+00:00",
   "history": [
-    {
-      "date": "2026-09-11",
-      "category": "dev-tools",
-      "title": "GitHub Copilot 앱 공부 정리 | Diff, 터미널, 브라우저를 한 화면에서",
-      "source_url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-using-the-diff-terminal-and-browser/"
-    },
     {
       "date": "2026-09-12",
       "category": "design-tools",
@@ -497,6 +492,12 @@
       "category": "design-tools",
       "title": "Figma 편집 모델 공부 정리 | AI는 어떻게 디자인 규칙을 배울까",
       "source_url": "https://www.figma.com/blog/training-a-figma-fluent-editing-model/"
+    },
+    {
+      "date": "2026-10-31",
+      "category": "design-craft",
+      "title": "토스 SNAP 공부 정리 | LLM이 자신 없을 때 어떻게 할까",
+      "source_url": "https://toss.tech/article/snap-llm-cost-reduction"
     }
   ]
 }
