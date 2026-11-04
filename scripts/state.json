@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -197,17 +197,12 @@
     "ae9b4b0a79ed865d",
     "e5cdfa5a5ad03fb3",
     "de459375b3175e1f",
-    "ccd9cd1dde5b4e8e"
+    "ccd9cd1dde5b4e8e",
+    "b3072a86c12cf5ac"
   ],
-  "posts_generated": 197,
-  "last_run": "2026-11-03T06:04:22.997598+00:00",
+  "posts_generated": 198,
+  "last_run": "2026-11-04T05:46:06.470991+00:00",
   "history": [
-    {
-      "date": "2026-09-15",
-      "category": "dev-tools",
-      "title": "GitHub Copilot Skills 공부 정리 | 문서를 쓰면 자동화가 된다고?",
-      "source_url": "https://github.blog/ai-and-ml/github-copilot/marketing-ops-as-code-automating-events-from-planning-to-follow-up-on-github/"
-    },
     {
       "date": "2026-09-16",
       "category": "design-tools",
@@ -501,6 +496,12 @@
       "category": "design-tools",
       "title": "Figma Weave 공부 정리 | 창작 과정이 산출물이 되는 도구",
       "source_url": "https://www.figma.com/blog/the-tldr-on-figma-weave/"
+    },
+    {
+      "date": "2026-11-04",
+      "category": "design-craft",
+      "title": "뱅샐 아이콘 개편기 1편 정리 | 선을 걷어냈을 때 생기는 일",
+      "source_url": "https://blog.banksalad.com/pnc/banksalad-icon-renewal-1/"
     }
   ]
 }
