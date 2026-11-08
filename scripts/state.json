@@ -1,5 +1,5 @@
 {
-  "last_category_index": 0,
+  "last_category_index": 1,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -201,17 +201,12 @@
     "b3072a86c12cf5ac",
     "a44af420774e4554",
     "51dc1d2f6b3bd6df",
-    "98082d5e81222800"
+    "98082d5e81222800",
+    "009459ebf4dc1e55"
   ],
-  "posts_generated": 201,
-  "last_run": "2026-11-07T05:30:19.094416+00:00",
+  "posts_generated": 202,
+  "last_run": "2026-11-08T05:29:54.960583+00:00",
   "history": [
-    {
-      "date": "2026-09-19",
-      "category": "dev-tools",
-      "title": "Junie /demo 공부 정리 | diff 다음엔 뭐가 와야 할까",
-      "source_url": "https://blog.jetbrains.com/junie/2026/09/junie-demo/"
-    },
     {
       "date": "2026-09-20",
       "category": "design-tools",
@@ -505,6 +500,12 @@
       "category": "design-tools",
       "title": "Figma 코드 레이어 공부 정리 | 에이전트로 여러 안을 캔버스에서 비교한다는 것",
       "source_url": "https://www.figma.com/blog/workflow-lab-build-with-code-on-the-canvas-using-the-figma-agent-and-code-layers/"
+    },
+    {
+      "date": "2026-11-08",
+      "category": "design-craft",
+      "title": "뱅샐 아이콘 개편기 공부 | 선을 없애는 게 개성을 없애는 건지",
+      "source_url": "https://corp.banksalad.com/blog/design/banksalad-icon-renewal-1/"
     }
   ]
 }
