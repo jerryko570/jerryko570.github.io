@@ -1,5 +1,5 @@
 {
-  "last_category_index": 3,
+  "last_category_index": 0,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -204,17 +204,12 @@
     "98082d5e81222800",
     "009459ebf4dc1e55",
     "756b395aedd8b82e",
-    "a4e770d01536105b"
+    "a4e770d01536105b",
+    "4f95a9a7722c6f04"
   ],
-  "posts_generated": 204,
-  "last_run": "2026-11-11T05:39:09.569033+00:00",
+  "posts_generated": 205,
+  "last_run": "2026-11-12T06:43:10.036083+00:00",
   "history": [
-    {
-      "date": "2026-09-22",
-      "category": "frontend",
-      "title": "Vercel Connect Teams 커넥터 공부 정리 | Managed가 뭘 가져가는 걸까",
-      "source_url": "https://vercel.com/changelog/vercel-connect-microsoft-teams"
-    },
     {
       "date": "2026-09-23",
       "category": "dev-tools",
@@ -508,6 +503,12 @@
       "category": "dev-tools",
       "title": "ReSharper 2026.3 공부 정리 | 에이전트가 IDE 리팩터링을 직접 실행한다",
       "source_url": "https://blog.jetbrains.com/dotnet/2026/11/10/resharper-2026-3-release/"
+    },
+    {
+      "date": "2026-11-12",
+      "category": "design-tools",
+      "title": "Figma Agent 훑어보면서 든 생각 | 캔버스 안의 AI가 뭘 바꾸나",
+      "source_url": "https://www.figma.com/blog/6-easy-ways-to-use-the-figma-agent-right-now/"
     }
   ]
 }
