@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -206,17 +206,12 @@
     "756b395aedd8b82e",
     "a4e770d01536105b",
     "4f95a9a7722c6f04",
-    "240c9b7875df77b4"
+    "240c9b7875df77b4",
+    "7968226ff07d62d7"
   ],
-  "posts_generated": 206,
-  "last_run": "2026-11-13T06:00:29.835332+00:00",
+  "posts_generated": 207,
+  "last_run": "2026-11-14T05:51:23.685026+00:00",
   "history": [
-    {
-      "date": "2026-09-24",
-      "category": "design-tools",
-      "title": "Webflow MCP 업데이트 공부 정리 | 인터랙션에 배포까지",
-      "source_url": "https://webflowmarketingmain.com/blog/mcp-interactions"
-    },
     {
       "date": "2026-09-25",
       "category": "design-craft",
@@ -510,6 +505,12 @@
       "category": "design-craft",
       "title": "토스 Agent Platform 설계기 공부 정리 | 세션은 어떻게 이어가나",
       "source_url": "https://toss.tech/article/agent-platform-foundation"
+    },
+    {
+      "date": "2026-11-14",
+      "category": "frontend",
+      "title": "Workflow SDK 5 공부 정리 | async 코드, 멈추면 어떻게 되나",
+      "source_url": "https://vercel.com/blog/workflow-sdk-5"
     }
   ]
 }
