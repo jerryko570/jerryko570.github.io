@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -214,17 +214,12 @@
     "341333f6cd123692",
     "f0b81ce3c1461288",
     "4eca17a808cb9db0",
-    "0dbd2fd1a674872c"
+    "0dbd2fd1a674872c",
+    "8bef2d897c81f9b1"
   ],
-  "posts_generated": 214,
-  "last_run": "2026-11-21T06:37:03.996327+00:00",
+  "posts_generated": 215,
+  "last_run": "2026-11-22T06:03:16.336826+00:00",
   "history": [
-    {
-      "date": "2026-10-02",
-      "category": "design-tools",
-      "title": "Figma Weave 워크플로우 공부 정리 | 디자인 시스템에서 캠페인까지",
-      "source_url": "https://www.figma.com/blog/workflow-lab-from-design-system-to-campaign-in-figma-weave/"
-    },
     {
       "date": "2026-10-03",
       "category": "design-craft",
@@ -518,6 +513,12 @@
       "category": "design-craft",
       "title": "디자이너가 AI로 3D 그래픽 만든 과정 정리 | 토스 케이스",
       "source_url": "https://toss.tech/article/bankbook_graphic"
+    },
+    {
+      "date": "2026-11-22",
+      "category": "frontend",
+      "title": "Vercel Functions 요청 본문 한도 변경 공부 정리 | 미들웨어 동작이 같이 바뀌는 게 흥미로웠다",
+      "source_url": "https://vercel.com/changelog/vercel-functions-now-support-request-bodies-up-to-20mib"
     }
   ]
 }
