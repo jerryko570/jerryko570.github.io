@@ -1,5 +1,5 @@
 {
-  "last_category_index": 1,
+  "last_category_index": 2,
   "seen_url_hashes": [
     "534b48eb6308ccd2",
     "dd8df710b1d2a92d",
@@ -218,17 +218,12 @@
     "8bef2d897c81f9b1",
     "1a10f1676d46fc01",
     "d2bf236e5fb0cf89",
-    "43449c926d28cf31"
+    "43449c926d28cf31",
+    "91b32f91b9341832"
   ],
-  "posts_generated": 218,
-  "last_run": "2026-11-25T08:00:23.971659+00:00",
+  "posts_generated": 219,
+  "last_run": "2026-11-26T07:46:47.018798+00:00",
   "history": [
-    {
-      "date": "2026-10-06",
-      "category": "design-tools",
-      "title": "Webflow MCP 업데이트 공부 정리 | 에이전트가 애니메이션을 만든다는 게 뭔 뜻일까",
-      "source_url": "https://webflowmarketingmain.com/blog/interactions-gsap-mcp"
-    },
     {
       "date": "2026-10-07",
       "category": "design-craft",
@@ -522,6 +517,12 @@
       "category": "design-craft",
       "title": "New20 Timeline Hub 케이스 정리 | 흩어진 기록을 묶는 방식",
       "source_url": "https://toss.tech/article/new20-timeline-hub"
+    },
+    {
+      "date": "2026-11-26",
+      "category": "frontend",
+      "title": "Svelte 10주년 발표 훑어보기 | 렌더러 교체가 왜 흥미로웠나",
+      "source_url": "https://svelte.dev/blog/ten-years-of-svelte"
     }
   ]
 }
